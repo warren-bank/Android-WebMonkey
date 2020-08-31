@@ -3,6 +3,7 @@ package com.github.warren_bank.webmonkey;
 import at.pardus.android.webview.gm.demo.WebViewGmImpl;
 import at.pardus.android.webview.gm.run.WebViewGm;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -23,6 +24,14 @@ public class BrowserActivity extends WebViewGmImpl {
 
     webViewGm.addJavascriptInterface(jsApi.getGlobalJsApi(), WmJsApi.GlobalJsApiNamespace);
     ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());
+
+    processIntent(getIntent());
+  }
+
+  @Override
+  public void onNewIntent (Intent in) {
+    super.onNewIntent(in);
+    processIntent(in);
   }
 
   @Override
@@ -40,6 +49,13 @@ public class BrowserActivity extends WebViewGmImpl {
       finishAndRemoveTask();
     else
       finish();
+  }
+
+  private void processIntent(Intent in) {
+    String url = in.getDataString();
+
+    if ((url != null) && (url.length() > 0))
+      scriptBrowser.loadUrl(url);
   }
 
 }
