@@ -22,4 +22,4 @@
 //   which permits access to HLS video stream
 // ==========================================
 
-GM_startIntent("https://global.bioscopelive.com/vod/vod/j/f/jfnoj6o2wGB/jfnoj6o2wGB.m3u8", "referUrl", "https://www.bioscopelive.com/en/prime-details?type=channel&slug=channel-24");
+GM_startIntent(/* action= */ "android.intent.action.VIEW", /* data= */ "https://global.bioscopelive.com/vod/vod/j/f/jfnoj6o2wGB/jfnoj6o2wGB.m3u8", /* extras: */ "referUrl", "https://www.bioscopelive.com/en/prime-details?type=channel&slug=channel-24");
