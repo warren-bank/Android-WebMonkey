@@ -86,7 +86,10 @@ public class WmJsApi {
           return;
         }
         try {
-          WmJsApi.this.activity.finish();
+          if (WmJsApi.this.activity instanceof BrowserActivity)
+            ((BrowserActivity) WmJsApi.this.activity).exit();
+          else
+            WmJsApi.this.activity.finish();
         }
         catch(Exception e) {
         }
