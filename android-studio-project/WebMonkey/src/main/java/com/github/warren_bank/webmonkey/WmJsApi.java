@@ -45,7 +45,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void startIntent(String secret, String data, String ... extras) {
+      public void startIntent(String secret, String data, String[] extras) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not supply correct secret");
           return;
@@ -54,16 +54,20 @@ public class WmJsApi {
           Intent in = new Intent();
           in.setData(Uri.parse(data));
 
-          int length = (extras.length % 2 == 0)
-            ? extras.length
-            : (extras.length - 1)
-          ;
+          if ((extras != null) && (extras.length >= 2)) {
+            int length = (extras.length % 2 == 0)
+              ? extras.length
+              : (extras.length - 1)
+            ;
 
-          for (int i=0; i < length; i+=2) {
-            in.putExtra(extras[i], extras[i+1]);
+            for (int i=0; i < length; i+=2) {
+              in.putExtra(extras[i], extras[i+1]);
+            }
           }
 
-          WmJsApi.this.activity.startActivity(in);
+          if (in.resolveActivity(WmJsApi.this.activity.getPackageManager()) != null) {
+            WmJsApi.this.activity.startActivity(in);
+          }
         }
         catch(Exception e) {
           Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not supply valid input and raised the following error", e);
@@ -93,7 +97,7 @@ public class WmJsApi {
 
     jsApi += "var GM_toastLong"   + " = function(message) { "         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);" + " };\n";
     jsApi += "var GM_toastShort"  + " = function(message) { "         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);" + " };\n";
-    jsApi += "var GM_startIntent" + " = function(data, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", data, ...extras);"                     + " };\n";
+    jsApi += "var GM_startIntent" + " = function(data, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", data, extras);"                        + " };\n";
     jsApi += "var GM_exit"        + " = function() { "                + jsBridgeName + ".exit("        + defaultSignature + ");"                                      + " };\n";
 
     return jsApi;
