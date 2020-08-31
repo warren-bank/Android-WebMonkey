@@ -88,13 +88,13 @@ public class WmJsApi {
 
   public String getWrappedJsApi() {
     String jsBridgeName = WmJsApi.GlobalJsApiNamespace;
-    String defaultSignature = "null, \"" + WmJsApi.this.secret + "\"";  // .bind(this=null, secret)
+    String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
     String jsApi = "";
 
-    jsApi += "var GM_toastLong   = " + jsBridgeName + ".toast.bind("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ");\n";
-    jsApi += "var GM_toastShort  = " + jsBridgeName + ".toast.bind("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ");\n";
-    jsApi += "var GM_startIntent = " + jsBridgeName + ".startIntent.bind(" + defaultSignature + ");\n";
-    jsApi += "var GM_exit = "        + jsBridgeName + ".exit.bind("        + defaultSignature + ");\n";
+    jsApi += "var GM_toastLong"   + " = function(message) { "         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);" + " };\n";
+    jsApi += "var GM_toastShort"  + " = function(message) { "         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);" + " };\n";
+    jsApi += "var GM_startIntent" + " = function(data, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", data, ...extras);"                     + " };\n";
+    jsApi += "var GM_exit"        + " = function() { "                + jsBridgeName + ".exit("        + defaultSignature + ");"                                      + " };\n";
 
     return jsApi;
   }
