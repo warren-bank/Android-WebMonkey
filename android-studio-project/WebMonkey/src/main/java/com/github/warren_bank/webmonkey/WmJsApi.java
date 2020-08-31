@@ -45,7 +45,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void startIntent(String secret, String action, String data, String[] extras) {
+      public void startIntent(String secret, String action, String data, String type, String[] extras) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not supply correct secret");
           return;
@@ -56,8 +56,15 @@ public class WmJsApi {
           if ((action != null) && (action.length() > 0))
             in.setAction(action);
 
-          if ((data != null) && (data.length() > 0))
-            in.setData(Uri.parse(data));
+          if ((data != null) && (data.length() > 0)) {
+            if ((type != null) && (type.length() > 0))
+              in.setDataAndType(Uri.parse(data), type);
+            else
+              in.setData(Uri.parse(data));
+          }
+          else if ((type != null) && (type.length() > 0)) {
+            in.setType(type);
+          }
 
           if ((extras != null) && (extras.length >= 2)) {
             int length = (extras.length % 2 == 0)
@@ -103,10 +110,10 @@ public class WmJsApi {
     String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
     String jsApi = "";
 
-    jsApi += "var GM_toastLong"   + " = function(message) { "                 + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);" + " };\n";
-    jsApi += "var GM_toastShort"  + " = function(message) { "                 + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);" + " };\n";
-    jsApi += "var GM_startIntent" + " = function(action, data, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, extras);"                + " };\n";
-    jsApi += "var GM_exit"        + " = function() { "                        + jsBridgeName + ".exit("        + defaultSignature + ");"                                      + " };\n";
+    jsApi += "var GM_toastLong"   + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);" + " };\n";
+    jsApi += "var GM_toastShort"  + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);" + " };\n";
+    jsApi += "var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"          + " };\n";
+    jsApi += "var GM_exit"        + " = function() { "                              + jsBridgeName + ".exit("        + defaultSignature + ");"                                      + " };\n";
 
     return jsApi;
   }

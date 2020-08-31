@@ -13,14 +13,15 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
 * an additional Javascript API interface to provide the following functions to user scripts:
   - `GM_toastLong(message)`
   - `GM_toastShort(message)`
-  - `GM_startIntent(action, data, ...extras)`
-    * shows an Activity chooser to start an implicit Intent
+  - `GM_startIntent(action, data, type, ...extras)`
+    * starts an implicit [Intent](https://developer.android.com/training/basics/intents/sending)
     * where:
       - `action` is a String
       - `data`   is a String URL
+      - `type`   is a String mime-type for format of `data`
       - `extras` is a list of String name/value pairs
     * example:
-      - `('android.intent.action.VIEW', 'http://example.com/video.mp4', 'referUrl', 'http://example.com/videos.html')`
+      - `('android.intent.action.VIEW', 'http://example.com/video.mp4', 'video/mp4', 'referUrl', 'http://example.com/videos.html')`
   - `GM_exit()`
     * causes [WebMonkey](https://github.com/warren-bank/Android-WebMonkey) to close
 
