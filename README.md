@@ -1,5 +1,7 @@
 ### [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
 
+No-frills light-weight Android web browser with support for Greasemonkey user scripts.
+
 Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-gm) demo application.
 
 #### Background
