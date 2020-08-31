@@ -5,46 +5,53 @@ import at.pardus.android.webview.gm.store.ScriptStoreSQLite;
 
 import android.content.Context;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class WmScriptStore extends ScriptStoreSQLite {
 
-  private ArrayList<Script> scripts;
+  private String scripts;
 
   public WmScriptStore(Context context) {
     super(context);
-    scripts = new ArrayList<Script>();
+    scripts = "";
   }
 
-  public boolean addScript(String content) {
-    return scripts.add(new Script(
-      /* name=        */ WmJsApi.GlobalJsApiNamespace,
-      /* namespace=   */ WmJsApi.GlobalJsApiNamespace,
-      /* exclude=     */ null,
-      /* include=     */ null,
-      /* match=       */ null,
-      /* description= */ null,
-      /* downloadurl= */ null,
-      /* updateurl=   */ null,
-      /* installurl=  */ null,
-      /* icon=        */ null,
-      /* runAt=       */ Script.RUNATSTART,
-      /* unwrap=      */ false,
-      /* version=     */ null,
-      /* requires=    */ null,
-      /* resources=   */ null,
-      /* content=     */ content
-    ));
+  public void addScript(String content) {
+    scripts += content + "\n";
+  }
+
+  private Script[] injectScripts(Script[] pre) {
+    Script[] post = new Script[pre.length];
+
+    for (int i=0; i < pre.length; i++) {
+      Script old = pre[i];
+
+      post[i] = new Script(
+        /* name        = */ old.getName(),
+        /* namespace   = */ old.getNamespace(),
+        /* exclude     = */ old.getExclude(),
+        /* include     = */ old.getInclude(),
+        /* match       = */ old.getMatch(),
+        /* description = */ old.getDescription(),
+        /* downloadurl = */ old.getDownloadurl(),
+        /* updateurl   = */ old.getUpdateurl(),
+        /* installurl  = */ old.getInstallurl(),
+        /* icon        = */ old.getIcon(),
+        /* runAt       = */ old.getRunAt(),
+        /* unwrap      = */ old.isUnwrap(),
+        /* version     = */ old.getVersion(),
+        /* requires    = */ old.getRequires(),
+        /* resources   = */ old.getResources(),
+        /* content     = */ (scripts + old.getContent())
+      );
+    }
+
+    return post;
   }
 
   @Override
   public Script[] get(String url) {
     Script[] matchingScripts = super.get(url);
-    if ((matchingScripts != null) && (scripts.size() > 0)) {
-      ArrayList<Script> all = new ArrayList<Script>(scripts);
-      all.addAll(Arrays.asList(matchingScripts));
-      matchingScripts = all.toArray(new Script[all.size()]);
+    if ((matchingScripts != null) && (matchingScripts.length > 0) && (scripts.length() > 0)) {
+      matchingScripts = injectScripts(matchingScripts);
     }
     return matchingScripts;
   }
