@@ -17,6 +17,9 @@ public class BrowserActivity extends WebViewGmImpl {
 
     super.onCreate(savedInstanceState);
 
+    if (Build.VERSION.SDK_INT >= 19)
+      WebViewGm.setWebContentsDebuggingEnabled(true);
+
     WebViewGm webViewGm = scriptBrowser.getWebView();
     String secret = webViewGm.getWebViewClient().getSecret();
 
