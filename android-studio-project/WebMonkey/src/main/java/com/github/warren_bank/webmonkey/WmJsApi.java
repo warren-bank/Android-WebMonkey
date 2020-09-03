@@ -3,6 +3,7 @@ package com.github.warren_bank.webmonkey;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
@@ -11,12 +12,14 @@ public class WmJsApi {
 
   public static final String TAG = "WebViewGmApi";
 
-  public String secret;
+  public String   secret;
   public Activity activity;
+  public boolean  useES6;
 
   public WmJsApi(String secret, Activity activity) {
-    this.secret = secret;
+    this.secret   = secret;
     this.activity = activity;
+    this.useES6   = (Build.VERSION.SDK_INT >= 21);  // use ES5 in Android <= 4.4 because WebView is outdated and cannot be updated
   }
 
   public static final String GlobalJsApiNamespace = "WebViewWM";
@@ -110,10 +113,13 @@ public class WmJsApi {
     String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
     String jsApi = "";
 
-    jsApi += "var GM_toastLong"   + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);" + " };\n";
-    jsApi += "var GM_toastShort"  + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);" + " };\n";
-    jsApi += "var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"          + " };\n";
-    jsApi += "var GM_exit"        + " = function() { "                              + jsBridgeName + ".exit("        + defaultSignature + ");"                                      + " };\n";
+    jsApi += "var GM_toastLong"   + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);"                          + " };\n";
+    jsApi += "var GM_toastShort"  + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);"                          + " };\n";
+    jsApi += (useES6)
+          ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
+          : ("var GM_startIntent" + " = function(action, data, type) { "            + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")
+    ;
+    jsApi += "var GM_exit"        + " = function() { "                              + jsBridgeName + ".exit("        + defaultSignature + ");"                                                               + " };\n";
 
     return jsApi;
   }
