@@ -22,8 +22,22 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
       - `extras` is a list of String name/value pairs
     * example:
       - `('android.intent.action.VIEW', 'http://example.com/video.mp4', 'video/mp4', 'referUrl', 'http://example.com/videos.html')`
+  - `GM_loadUrl(url, ...headers)`
+    * loads a URL into the WebView with additional HTTP request headers
+    * where:
+      - `url`     is a String URL
+      - `headers` is a list of String name/value pairs
+    * example:
+      - `('http://example.com/iframe_window.html', 'Referer', 'http://example.com/parent_window.html')`
   - `GM_exit()`
     * causes [WebMonkey](https://github.com/warren-bank/Android-WebMonkey) to close
+
+#### Caveats
+
+* userscripts only run in the top window
+  - they are __not__ loaded into iframes
+* issue [#1](https://github.com/warren-bank/Android-WebMonkey/issues/1)
+  - a userscript will __not__ run when its `@name` begins with a numeric character
 
 #### Legal:
 

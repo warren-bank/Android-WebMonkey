@@ -23,7 +23,7 @@ public class BrowserActivity extends WebViewGmImpl {
     WebViewGm webViewGm = scriptBrowser.getWebView();
     String secret = webViewGm.getWebViewClient().getSecret();
 
-    WmJsApi jsApi = new WmJsApi(secret, this);
+    WmJsApi jsApi = new WmJsApi(secret, this, webViewGm);
 
     webViewGm.addJavascriptInterface(jsApi.getGlobalJsApi(), WmJsApi.GlobalJsApiNamespace);
     ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());

@@ -6,7 +6,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 import android.widget.Toast;
+
+import java.util.HashMap;
 
 public class WmJsApi {
 
@@ -14,11 +17,13 @@ public class WmJsApi {
 
   public String   secret;
   public Activity activity;
+  public WebView  webview;
   public boolean  useES6;
 
-  public WmJsApi(String secret, Activity activity) {
+  public WmJsApi(String secret, Activity activity, WebView webview) {
     this.secret   = secret;
     this.activity = activity;
+    this.webview  = webview;
     this.useES6   = (Build.VERSION.SDK_INT >= 21);  // use ES5 in Android <= 4.4 because WebView is outdated and cannot be updated
   }
 
@@ -90,6 +95,40 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
+      public void loadUrl(String secret, String url, String[] headers) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"loadUrl\" did not supply correct secret");
+          return;
+        }
+        activity.runOnUiThread(new Runnable() {
+          public void run() {
+            try {
+              if ((headers != null) && (headers.length >= 2)) {
+                int length = (headers.length % 2 == 0)
+                  ? headers.length
+                  : (headers.length - 1)
+                ;
+
+                HashMap<String, String> httpHeaders = new HashMap<String, String>();
+
+                for (int i=0; i < length; i+=2) {
+                  httpHeaders.put(headers[i], headers[i+1]);
+                }
+
+                webview.loadUrl(url, httpHeaders);
+              }
+              else {
+                webview.loadUrl(url);
+              }          
+            }
+            catch(Exception e) {
+              Log.e(WmJsApi.TAG, "Call to \"loadUrl\" did not supply valid input and raised the following error", e);
+            }
+          }
+        });
+      }
+
+      @JavascriptInterface
       public void exit(String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"exit\" did not supply correct secret");
@@ -118,6 +157,10 @@ public class WmJsApi {
     jsApi += (useES6)
           ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
           : ("var GM_startIntent" + " = function(action, data, type) { "            + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")
+    ;
+    jsApi += (useES6)
+          ? ("var GM_loadUrl"     + " = function(url, ...headers) { "               + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, headers);"                                                 + " };\n")
+          : ("var GM_loadUrl"     + " = function(url) { "                           + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, Array.prototype.slice.call(arguments, 1));"                + " };\n")
     ;
     jsApi += "var GM_exit"        + " = function() { "                              + jsBridgeName + ".exit("        + defaultSignature + ");"                                                               + " };\n";
 
