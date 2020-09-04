@@ -2,18 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curated Userscript Collection</title>
   <style>
     body
       {font-family: sans-serif; font-size: 16px;}
-    div.heading
-      {height: 100px; line-height: 100px;}
     div.heading > a
-      {text-decoration: none;}
+      {display: block; float: left; width: 100px; text-decoration: none;}
     div.heading > a > img.logo
-      {width: auto; max-height: 100px;}
+      {width: 100px; height: 100px;}
     div.heading > div.title
-      {display: inline-block; padding-left: 25px; vertical-align: top; font-size: 2em;}
+      {padding-left: 110px; vertical-align: top; font-size: 2em;}
+    hr
+      {clear: both;}
     li
       {line-height: 2.0em;}
     li > a
@@ -24,6 +25,11 @@
       {margin-bottom: 0;}
     h5.post
       {margin-top: 0; padding-left: 1em; margin-bottom: 1em;}
+
+    @media screen and (min-width: 500px) {
+      div.heading > div.title
+        {line-height: 100px; padding-left: 125px;}
+    }
   </style>
 </head>
 <body>
