@@ -29,6 +29,51 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
       - `headers` is a list of String name/value pairs
     * example:
       - `('http://example.com/iframe_window.html', 'Referer', 'http://example.com/parent_window.html')`
+  - `GM_loadFrame(urlFrame, urlParent)`
+    * loads an iframe into the WebView
+    * where:
+      - `urlFrame`  is a String URL: the page loaded into the iframe
+      - `urlParent` is a String URL: value for `window.top.location.href` and `window.parent.location.href` as observed from within the iframe
+    * example:
+      - `('http://example.com/iframe_window.html', 'http://example.com/parent_window.html')`
+    * use case:
+      - _"parent_window.html"_ contains:
+        * an iframe to display _"iframe_window.html"_
+        * other content that is not wanted
+      - though a userscript could easily do the necessary housekeeping:
+        * detach the iframe
+        * remove all other DOM elements from body
+        * reattach the iframe
+      - this method provides a better solution:
+        * removes all scripts that are loaded into the parent window
+        * handles all the css needed to resize the iframe to maximize its display within the parent window
+        * makes it easy to handle this common case
+    * why this is a common case:
+      - _"iframe_window.html"_ performs a check to verify that it is loaded in the proper parent window
+      - example 1:
+        ```javascript
+          const urlParent = 'http://example.com/parent_window.html'
+          try {
+            // will throw when either:
+            // - `top` is loaded from a different domain
+            // - `top` is loaded from the same origin, but the URL path does not match 'parent_window.html'
+            if(window.top.location.href !== urlParent)
+              throw ''
+          }
+          catch(e) {
+            // will redirect `top` window to the proper parent window
+            window.top.location = urlParent
+          }
+        ```
+      - example 2:
+        ```javascript
+          const urlParent = 'http://example.com/parent_window.html'
+          {
+            // will redirect to proper parent window when 'iframe_window.html' is loaded without a `top` window
+            if(window === window.top)
+              window.location = urlParent
+          }
+        ```
   - `GM_exit()`
     * causes [WebMonkey](https://github.com/warren-bank/Android-WebMonkey) to close
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>test: GM_loadFrame</title>
+</head>
+<body>
+  <script>
+    let url_error, url_win, url_parent, url_top
+    url_error    = 'Error: cannot access cross-origin window'
+    url_win      = '"' + window.location.href + '"'
+    try {
+      url_parent = '"' + window.parent.location.href + '"'
+    }
+    catch(e){}
+    try {
+      url_top    = '"' + window.top.location.href + '"'
+    }
+    catch(e){}
+
+    document.body.innerHTML = `
+<pre>
+window.location.href
+  =&gt; ${url_win}
+window.parent.location.href
+  =&gt; ${url_parent ? url_parent : url_error}
+window.top.location.href
+  =&gt; ${url_top    ? url_top    : url_error}
+(null === window.parent)
+  =&gt; ${(null       === window.parent) ? 'true' : 'false'}
+(null === window.top)
+  =&gt; ${(null       === window.top)    ? 'true' : 'false'}
+(window === window.parent)
+  =&gt; ${(window     === window.parent) ? 'true' : 'false'}
+(window === window.top)
+  =&gt; ${(window     === window.top)    ? 'true' : 'false'}
+(window.top === window.parent)
+  =&gt; ${(window.top === window.parent) ? 'true' : 'false'}
+</pre>`
+  </script>
+</body>
+</html>

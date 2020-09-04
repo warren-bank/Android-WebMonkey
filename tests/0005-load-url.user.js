@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         test: GM_startIntent
+// @name         test: GM_loadUrl
 // @namespace    WebViewWM
 // @match        *://*
 // @run-at       document-start
