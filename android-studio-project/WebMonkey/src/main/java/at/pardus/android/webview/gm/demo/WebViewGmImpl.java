@@ -17,9 +17,9 @@
 package at.pardus.android.webview.gm.demo;
 
 import com.github.warren_bank.webmonkey.R;
+import com.github.warren_bank.webmonkey.settings.SettingsUtils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,8 +42,6 @@ import at.pardus.android.webview.gm.store.ui.ScriptManagerActivity;
 public class WebViewGmImpl extends ScriptManagerActivity {
 
 	private Stack<Integer> placeHistory = new Stack<Integer>();
-
-	private SharedPreferences preferences;
 
 	private static final Integer LIST = 1;
 
@@ -84,7 +82,7 @@ public class WebViewGmImpl extends ScriptManagerActivity {
 				scriptStore.open();
 			}
 			scriptBrowser = new ScriptBrowser(this, scriptStore,
-					preferences.getString("lastUrl", "https://greasyfork.org/"));
+					SettingsUtils.getHomePage(this));
 		}
 		setContentView(scriptBrowser.getBrowser());
 		placeHistory.push(BROWSER);
@@ -114,7 +112,6 @@ public class WebViewGmImpl extends ScriptManagerActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_PROGRESS);
-		preferences = getSharedPreferences("P", Context.MODE_PRIVATE);
 		openScriptBrowser();
 	}
 
@@ -132,9 +129,7 @@ public class WebViewGmImpl extends ScriptManagerActivity {
 	@Override
 	protected void onPause() {
 		if (scriptBrowser != null) {
-			SharedPreferences.Editor editor = preferences.edit();
-			editor.putString("lastUrl", scriptBrowser.getUrl());
-			editor.commit();
+			SettingsUtils.setLastUrl(this, scriptBrowser.getUrl());
 			scriptBrowser.pause();
 		}
 		if (scriptStore != null) {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+    android:key="@string/pref_settings_key"
+    android:title="@string/pref_settings_title">
+
+    <ListPreference
+      android:key="@string/pref_homepage_key"
+      android:title="@string/pref_homepage_title"
+      android:summary="@string/pref_homepage_summary"
+      android:entries="@array/pref_homepage_array_names"
+      android:entryValues="@array/pref_homepage_array_values"
+      android:defaultValue="@string/pref_homepage_default" />
+
+  </PreferenceCategory>
+</PreferenceScreen>

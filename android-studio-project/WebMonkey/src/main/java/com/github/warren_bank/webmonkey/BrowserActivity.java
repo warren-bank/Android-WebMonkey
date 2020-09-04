@@ -1,5 +1,7 @@
 package com.github.warren_bank.webmonkey;
 
+import com.github.warren_bank.webmonkey.settings.SettingsActivity;
+
 import at.pardus.android.webview.gm.demo.WebViewGmImpl;
 import at.pardus.android.webview.gm.run.WebViewGm;
 
@@ -39,7 +41,11 @@ public class BrowserActivity extends WebViewGmImpl {
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.menu_exit) {
+    if (item.getItemId() == R.id.menu_settings) {
+      Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
+      startActivity(in);
+      return true;
+    } else if (item.getItemId() == R.id.menu_exit) {
       exit();
       return true;
     } else {

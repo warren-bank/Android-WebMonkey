@@ -10,6 +10,10 @@
         android:title="@string/list_scripts">
     </item>
     <item
+        android:id="@+id/menu_settings"
+        android:title="@string/menu_settings">
+    </item>
+    <item
         android:id="@+id/menu_exit"
         android:title="@string/menu_exit">
     </item>
