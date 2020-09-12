@@ -19,13 +19,20 @@ public class WmScriptStore extends ScriptStoreSQLite {
   }
 
   private Script[] injectScripts(Script[] pre) {
+    return injectScripts(pre, /* name_prefix= */ "WM_");
+  }
+
+  private Script[] injectScripts(Script[] pre, String name_prefix) {
     Script[] post = new Script[pre.length];
+
+    if (name_prefix == null)
+      name_prefix = "";
 
     for (int i=0; i < pre.length; i++) {
       Script old = pre[i];
 
       post[i] = new Script(
-        /* name        = */ old.getName(),
+        /* name        = */ (name_prefix + old.getName()),
         /* namespace   = */ old.getNamespace(),
         /* exclude     = */ old.getExclude(),
         /* include     = */ old.getInclude(),

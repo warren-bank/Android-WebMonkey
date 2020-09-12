@@ -81,8 +81,6 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
 
 * userscripts only run in the top window
   - they are __not__ loaded into iframes
-* issue [#1](https://github.com/warren-bank/Android-WebMonkey/issues/1)
-  - a userscript will __not__ run when its `@name` begins with a numeric character
 
 #### Legal:
 
