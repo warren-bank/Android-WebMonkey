@@ -32,7 +32,7 @@ public class BrowserActivity extends WebViewGmImpl {
 
     processIntent(getIntent());
 
-    WmScriptUpdateMgr.init(this, scriptStore);
+    WmScriptUpdateMgr.run_check_interval(this, scriptStore);
   }
 
   @Override
@@ -43,7 +43,10 @@ public class BrowserActivity extends WebViewGmImpl {
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.menu_settings) {
+    if (item.getItemId() == R.id.menu_update_scripts) {
+      WmScriptUpdateMgr.run_check_now(BrowserActivity.this, scriptStore);
+      return true;
+    } else if (item.getItemId() == R.id.menu_settings) {
       Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
       startActivity(in);
       return true;

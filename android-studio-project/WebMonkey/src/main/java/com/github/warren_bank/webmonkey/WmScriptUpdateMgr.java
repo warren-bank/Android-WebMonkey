@@ -72,7 +72,16 @@ public final class WmScriptUpdateMgr {
 
   private static long MS_PER_DAY = 86400000;  // (1000 ms/sec)(60 sec/min)(60 min/hr)(24 hr/day)
 
-  public static void init(Context context, ScriptStore scriptStore) {
+  public static void run_check_now(Context context, ScriptStore scriptStore) {
+    long thisUpdate = System.currentTimeMillis();
+
+    SettingsUtils.setLastUpdateTimestamp(context, thisUpdate);
+
+    WmScriptUpdateRunner runner = new WmScriptUpdateRunner(scriptStore);
+    new Thread(runner).start();
+  }
+
+  public static void run_check_interval(Context context, ScriptStore scriptStore) {
     int intervalDays = SettingsUtils.getUpdateIntervalDays(context);
     if (intervalDays <= 0) return;
 
@@ -81,10 +90,7 @@ public final class WmScriptUpdateMgr {
     long thisUpdate = System.currentTimeMillis();
     if (thisUpdate <= (lastUpdate + intervalMs)) return;
 
-    SettingsUtils.setLastUpdateTimestamp(context, thisUpdate);
-
-    WmScriptUpdateRunner runner = new WmScriptUpdateRunner(scriptStore);
-    new Thread(runner).start();
+    run_check_now(context, scriptStore);
   }
 
 }

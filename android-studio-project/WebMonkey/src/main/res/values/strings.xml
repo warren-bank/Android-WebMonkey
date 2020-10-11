@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
 
   <!-- menu/impl_menu -->
+  <string name="menu_update_scripts">Update Scripts</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_exit">Exit</string>
 
