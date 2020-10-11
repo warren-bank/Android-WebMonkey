@@ -31,6 +31,8 @@ public class BrowserActivity extends WebViewGmImpl {
     ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());
 
     processIntent(getIntent());
+
+    WmScriptUpdateMgr.init(this, scriptStore);
   }
 
   @Override

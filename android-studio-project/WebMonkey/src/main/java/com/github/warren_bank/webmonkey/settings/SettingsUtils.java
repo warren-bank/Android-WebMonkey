@@ -17,6 +17,8 @@ public class SettingsUtils {
     return prefs.edit();
   }
 
+  // --------------------
+
   public static void setLastUrl(Context context, String url) {
     SharedPreferences.Editor editor = getPrefsEditor(context);
     String pref_key = context.getString(R.string.pref_lasturl);
@@ -35,6 +37,28 @@ public class SettingsUtils {
     return prefs.getString(pref_key, "about:blank");
   }
 
+  // --------------------
+
+  public static void setLastUpdateTimestamp(Context context, long timestamp) {
+    SharedPreferences.Editor editor = getPrefsEditor(context);
+    String pref_key = context.getString(R.string.pref_lastupdate);
+
+    editor.putLong(pref_key, timestamp);
+    editor.commit();
+  }
+
+  public static long getLastUpdateTimestamp(Context context) {
+    return getLastUpdateTimestamp(context, getPrefs(context));
+  }
+
+  private static long getLastUpdateTimestamp(Context context, SharedPreferences prefs) {
+    String pref_key = context.getString(R.string.pref_lastupdate);
+
+    return prefs.getLong(pref_key, 0l);
+  }
+
+  // --------------------
+
   public static String getHomePage(Context context) {
     return getHomePage(context, getPrefs(context));
   }
@@ -48,6 +72,20 @@ public class SettingsUtils {
       ? getLastUrl(context, prefs)
       : pref_value
     ;
+  }
+
+  // --------------------
+
+  public static int getUpdateIntervalDays(Context context) {
+    return getUpdateIntervalDays(context, getPrefs(context));
+  }
+
+  private static int getUpdateIntervalDays(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_updateinterval_key);
+    String pref_default = context.getString(R.string.pref_updateinterval_default);
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return Integer.parseInt(pref_value, 10);
   }
 
 }

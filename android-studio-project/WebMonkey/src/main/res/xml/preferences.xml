@@ -12,5 +12,13 @@
       android:entryValues="@array/pref_homepage_array_values"
       android:defaultValue="@string/pref_homepage_default" />
 
+    <EditTextPreference
+      android:key="@string/pref_updateinterval_key"
+      android:title="@string/pref_updateinterval_title"
+      android:summary="@string/pref_updateinterval_summary"
+      android:numeric="integer"
+      android:maxLength="3"
+      android:defaultValue="@string/pref_updateinterval_default" />
+
   </PreferenceCategory>
 </PreferenceScreen>

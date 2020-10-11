@@ -77,6 +77,13 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
   - `GM_exit()`
     * causes [WebMonkey](https://github.com/warren-bank/Android-WebMonkey) to close
 
+#### Settings
+
+* default browser home page
+* script update interval
+  - number of days to wait between checks
+  - special case: `0` disables automatic script updates
+
 #### Caveats
 
 * userscripts only run in the top window

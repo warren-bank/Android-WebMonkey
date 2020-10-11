@@ -8,6 +8,7 @@
 
   <!-- Preferences -->
   <string translatable="false" name="pref_lasturl">last_url</string>
+  <string translatable="false" name="pref_lastupdate">last_update_timestamp</string>
 
   <!-- Settings -->
   <string translatable="false" name="pref_settings_key">settings_key</string>
@@ -42,4 +43,10 @@
   <string translatable="false" name="pref_homepage_default">@string/pref_homepage_array_values_1</string>
   <string name="pref_homepage_title">On Startup</string>
   <string name="pref_homepage_summary">choose home page..</string>
+
+  <!-- Settings: Script Update Interval -->
+  <string translatable="false" name="pref_updateinterval_key">pref_updateinterval</string>
+  <string translatable="false" name="pref_updateinterval_default">1</string>
+  <string name="pref_updateinterval_title">Script Update Interval</string>
+  <string name="pref_updateinterval_summary">days between checks..</string>
 </resources>
