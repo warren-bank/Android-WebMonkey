@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">స్క్రిప్ట్లను నవీకరణ చేయి</string>
+  <string name="menu_settings">అమరిక</string>
+  <string name="menu_exit">ఎక్విట్</string>
+  <string name="pref_settings_title">WebMonkey అమరిక</string>
+  <string name="pref_homepage_array_names_1">మీరు విడిచిపెట్టు ఎక్కడ కొనసాగించుము</string>
+  <string name="pref_homepage_array_names_2">ఖాళీ పేజీ</string>
+  <string name="pref_homepage_array_names_3">డెవలపర్ ద్వారా Userscripts</string>
+  <string name="pref_homepage_array_names_4">Greasy Fork వద్ద Userscripts</string>
+  <string name="pref_homepage_title">ప్రారంభంలో</string>
+  <string name="pref_homepage_summary">హోమ్ పేజీ యెంపికచేయుము..</string>
+  <string name="pref_updateinterval_title">స్క్రిప్ట్ నవీకరణ Interval</string>
+  <string name="pref_updateinterval_summary">పరిశీలనల మధ్య రోజులు..</string>
+</resources>

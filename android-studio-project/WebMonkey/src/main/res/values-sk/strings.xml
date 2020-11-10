@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Aktualizovať skripty</string>
+  <string name="menu_settings">Nastavenia</string>
+  <string name="menu_exit">Ukončiť</string>
+  <string name="pref_settings_title">WebMonkey Nastavenia</string>
+  <string name="pref_homepage_array_names_1">Pokračovať tam, kde ste odišli</string>
+  <string name="pref_homepage_array_names_2">Prázdna stránka</string>
+  <string name="pref_homepage_array_names_3">Užívateľské skripty podľa vývojára</string>
+  <string name="pref_homepage_array_names_4">Používateľské skripty v Greasy Fork</string>
+  <string name="pref_homepage_title">Pri štarte</string>
+  <string name="pref_homepage_summary">vybrať domovskú stránku..</string>
+  <string name="pref_updateinterval_title">Interval aktualizácie skriptu</string>
+  <string name="pref_updateinterval_summary">dní medzi kontroami..</string>
+</resources>

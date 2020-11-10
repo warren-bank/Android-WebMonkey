@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Aktualizuj skrypty</string>
+  <string name="menu_settings">Ustawienia</string>
+  <string name="menu_exit">Wyjdź</string>
+  <string name="pref_settings_title">WebMonkey Ustawienia</string>
+  <string name="pref_homepage_array_names_1">Kontynuuj w miejscu, w którym opuściłeś</string>
+  <string name="pref_homepage_array_names_2">Pusta strona</string>
+  <string name="pref_homepage_array_names_3">Skrypty użytkownika według programisty</string>
+  <string name="pref_homepage_array_names_4">Skrypty użytkownika na rozwidleniu w stanie tłustym</string>
+  <string name="pref_homepage_title">Podczas uruchamiania</string>
+  <string name="pref_homepage_summary">wybierz stronę główną..</string>
+  <string name="pref_updateinterval_title">Przedział czasu aktualizacji skryptu</string>
+  <string name="pref_updateinterval_summary">dni między sprawdzeniami..</string>
+</resources>

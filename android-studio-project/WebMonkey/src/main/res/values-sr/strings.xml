@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Ажурирај скрипте</string>
+  <string name="menu_settings">Поставке</string>
+  <string name="menu_exit">Изађи</string>
+  <string name="pref_settings_title">WebMonkey Поставке</string>
+  <string name="pref_homepage_array_names_1">Настави где си стао</string>
+  <string name="pref_homepage_array_names_2">Празна страница</string>
+  <string name="pref_homepage_array_names_3">Корисничке скрипте програмера</string>
+  <string name="pref_homepage_array_names_4">Корисничке скрипте на Масној виљушци</string>
+  <string name="pref_homepage_title">При покретању</string>
+  <string name="pref_homepage_summary">изаберите почетну страницу..</string>
+  <string name="pref_updateinterval_title">Интервал ажурирања скрипте</string>
+  <string name="pref_updateinterval_summary">дана између чекова..</string>
+</resources>

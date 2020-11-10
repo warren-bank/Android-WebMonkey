@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">സ്ക്രിപ്റ്റുകള് പുതുക്കുക</string>
+  <string name="menu_settings">സജ്ജീകരണങ്ങള്</string>
+  <string name="menu_exit">പ്രദര്ശിപ്പിക്കുക</string>
+  <string name="pref_settings_title">WebMonkey സജ്ജീകരണങ്ങള്</string>
+  <string name="pref_homepage_array_names_1">നിങ്ങള് എങ്ങോട്ടാണ് പോയത് തുടരുക</string>
+  <string name="pref_homepage_array_names_2">ബ്ലാങ്ക് താള്</string>
+  <string name="pref_homepage_array_names_3">ഡെവലപ്പറിന്റെ ഉപാധി</string>
+  <string name="pref_homepage_array_names_4">ഗ്രാസി ഫോറിലെ Userscripts</string>
+  <string name="pref_homepage_title">തുടക്കത്തില്</string>
+  <string name="pref_homepage_summary">ഹോം പേജ് തെരഞ്ഞെടുക്കുക..</string>
+  <string name="pref_updateinterval_title">സ്ക്രിപ്റ്റ് പുതുക്കല് ഇന്റര്വല്</string>
+  <string name="pref_updateinterval_summary">പരിശോധനയ്ക്കിടയിലുള്ള ദിവസങ്ങള്..</string>
+</resources>

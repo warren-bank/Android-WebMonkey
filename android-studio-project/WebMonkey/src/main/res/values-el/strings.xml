@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Ενημέρωση σεναρίων</string>
+  <string name="menu_settings">Ρυθμίσεις:</string>
+  <string name="menu_exit">Έξοδος:</string>
+  <string name="pref_settings_title">WebMonkey Ρυθμίσεις:</string>
+  <string name="pref_homepage_array_names_1">Συνέχισε εκεί που άφησες.</string>
+  <string name="pref_homepage_array_names_2">Κενό σελίδα:</string>
+  <string name="pref_homepage_array_names_3">Userscripts από προγραμματιστή</string>
+  <string name="pref_homepage_array_names_4">Σενάρια χρήστη στο Greasy Fork</string>
+  <string name="pref_homepage_title">Στο Startup</string>
+  <string name="pref_homepage_summary">επιλογή αρχικής σελίδας..</string>
+  <string name="pref_updateinterval_title">Διάστημα ενημέρωσης σεναρίου</string>
+  <string name="pref_updateinterval_summary">ημέρες μεταξύ ελέγχων..</string>
+</resources>

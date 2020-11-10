@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Parancsfájlok frissítése</string>
+  <string name="menu_settings">Beállítások</string>
+  <string name="menu_exit">Kilép</string>
+  <string name="pref_settings_title">WebMonkey Beállítások</string>
+  <string name="pref_homepage_array_names_1">Folytasd, ahol abbahagytad.</string>
+  <string name="pref_homepage_array_names_2">Üres oldal</string>
+  <string name="pref_homepage_array_names_3">Felhasználói parancsfájlok fejlesztők szerint</string>
+  <string name="pref_homepage_array_names_4">Userparancsfájlok a Greasy Forkban</string>
+  <string name="pref_homepage_title">Indításkor</string>
+  <string name="pref_homepage_summary">Kezdőlap kiválasztása..</string>
+  <string name="pref_updateinterval_title">Parancsfájl frissítési időköz</string>
+  <string name="pref_updateinterval_summary">Ellenőrzések közötti napok..</string>
+</resources>

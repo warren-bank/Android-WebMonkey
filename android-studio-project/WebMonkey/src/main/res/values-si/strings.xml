@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">ස්ක්රිප්ට් යාවත්කාලීන කරන්න</string>
+  <string name="menu_settings">සැකසුම්</string>
+  <string name="menu_exit">Exit</string>
+  <string name="pref_settings_title">WebMonkey සැකසුම්</string>
+  <string name="pref_homepage_array_names_1">ඔයා ගිය තැන දිගටම යන්න.</string>
+  <string name="pref_homepage_array_names_2">හිස් පිටුව</string>
+  <string name="pref_homepage_array_names_3">සංවර්ධක විසින් Userscripts</string>
+  <string name="pref_homepage_array_names_4">Greasy Fork වල Userscripts</string>
+  <string name="pref_homepage_title">ආරම්භයේදී</string>
+  <string name="pref_homepage_summary">ගෙදර පිටුව තෝරන්න..</string>
+  <string name="pref_updateinterval_title">ස්ක්රිප්ට් යාවත්කාලීන කිරීම</string>
+  <string name="pref_updateinterval_summary">චෙක්පත් අතර දින..</string>
+</resources>

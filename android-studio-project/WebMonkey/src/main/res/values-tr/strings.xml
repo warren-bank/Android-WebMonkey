@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Komut Dosyaları Güncelle</string>
+  <string name="menu_settings">Ayarlar</string>
+  <string name="menu_exit">Çıkış</string>
+  <string name="pref_settings_title">WebMonkey Ayarlar</string>
+  <string name="pref_homepage_array_names_1">Bıraktığınız yerden devam et</string>
+  <string name="pref_homepage_array_names_2">Boş sayfa</string>
+  <string name="pref_homepage_array_names_3">Geliştirici temelinde kullanıcı komut dosyaları</string>
+  <string name="pref_homepage_array_names_4">Kullanıcı Komut Dosyaları Yağlı Çatalla</string>
+  <string name="pref_homepage_title">Başlatma Sırasında</string>
+  <string name="pref_homepage_summary">ana sayfa seç..</string>
+  <string name="pref_updateinterval_title">Komut Dosyası Güncelleme Aralığı</string>
+  <string name="pref_updateinterval_summary">denetimler arasındaki gün sayısı..</string>
+</resources>

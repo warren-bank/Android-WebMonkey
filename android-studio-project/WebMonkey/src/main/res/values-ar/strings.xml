@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">تعديل البرامج النصية</string>
+  <string name="menu_settings">المحددات</string>
+  <string name="menu_exit">خروج</string>
+  <string name="pref_settings_title">WebMonkey المحددات</string>
+  <string name="pref_homepage_array_names_1">استمر في المكان الذي تركته فيه</string>
+  <string name="pref_homepage_array_names_2">صفحة خالية</string>
+  <string name="pref_homepage_array_names_3">Userscripts حسب Developer</string>
+  <string name="pref_homepage_array_names_4">برامج Userscripts في Ghassy Fork</string>
+  <string name="pref_homepage_title">عند بدء التشغيل</string>
+  <string name="pref_homepage_summary">اختيار الصفحة الرئيسية..</string>
+  <string name="pref_updateinterval_title">فترة تحديث البرنامج النصي</string>
+  <string name="pref_updateinterval_summary">أيام بين عمليات التحقق..</string>
+</resources>

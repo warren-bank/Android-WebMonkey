@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">स्क्रिप्ट अद्यतन करें</string>
+  <string name="menu_settings">विन्यास</string>
+  <string name="menu_exit">बाहर निकलें</string>
+  <string name="pref_settings_title">WebMonkey विन्यास</string>
+  <string name="pref_homepage_array_names_1">जहाँ आप छोड़ दिया है जारी रखें</string>
+  <string name="pref_homepage_array_names_2">खाली पृष्ठ</string>
+  <string name="pref_homepage_array_names_3">डेवलपर द्वारा उपयोक्ता स्क्रिप्ट्स</string>
+  <string name="pref_homepage_array_names_4">ग्रीसी फॉर्क में यूज़रस्क्रिप्ट्स</string>
+  <string name="pref_homepage_title">स्टार्टअप पर</string>
+  <string name="pref_homepage_summary">घर पृष्ठ चुनें..</string>
+  <string name="pref_updateinterval_title">स्क्रिप्ट अद्यतन अंतराल</string>
+  <string name="pref_updateinterval_summary">जांच के दौरान..</string>
+</resources>

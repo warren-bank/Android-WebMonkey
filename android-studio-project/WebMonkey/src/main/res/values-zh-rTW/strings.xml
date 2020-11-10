@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">更新 Script</string>
+  <string name="menu_settings">設定</string>
+  <string name="menu_exit">出口</string>
+  <string name="pref_settings_title">WebMonkey 設定</string>
+  <string name="pref_homepage_array_names_1">繼續你離開的地方</string>
+  <string name="pref_homepage_array_names_2">空白頁面</string>
+  <string name="pref_homepage_array_names_3">依開發人員的使用者 Script</string>
+  <string name="pref_homepage_array_names_4">位於 Greasy Fork 的使用者 Script</string>
+  <string name="pref_homepage_title">在啟動時</string>
+  <string name="pref_homepage_summary">選擇首頁..</string>
+  <string name="pref_updateinterval_title">Script 更新間隔</string>
+  <string name="pref_updateinterval_summary">之間的檢查天數..</string>
+</resources>

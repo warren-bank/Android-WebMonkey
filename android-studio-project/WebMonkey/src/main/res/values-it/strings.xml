@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Script Aggiornamento</string>
+  <string name="menu_settings">Impostazioni</string>
+  <string name="menu_exit">Uscita</string>
+  <string name="pref_settings_title">WebMonkey Impostazioni</string>
+  <string name="pref_homepage_array_names_1">Continua dove hai lasciato</string>
+  <string name="pref_homepage_array_names_2">Pagina vuota</string>
+  <string name="pref_homepage_array_names_3">Userscripts per sviluppatore</string>
+  <string name="pref_homepage_array_names_4">Userscripts a Greasy Fork</string>
+  <string name="pref_homepage_title">Su Startup</string>
+  <string name="pref_homepage_summary">scegliere la home page..</string>
+  <string name="pref_updateinterval_title">Intervallo Aggiornamento Script</string>
+  <string name="pref_updateinterval_summary">giorni tra controlli..</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Ažuriranje skripti</string>
+  <string name="menu_settings">Jedna postavka.</string>
+  <string name="menu_exit">Jedan izlaz.</string>
+  <string name="pref_settings_title">WebMonkey Jedna postavka.</string>
+  <string name="pref_homepage_array_names_1">Nastavite tamo gdje ste stali.</string>
+  <string name="pref_homepage_array_names_2">Prazna stranica.</string>
+  <string name="pref_homepage_array_names_3">Jedan od korisnikovih scenarija.</string>
+  <string name="pref_homepage_array_names_4">\"Jedan od korisnika na svijetu.\"</string>
+  <string name="pref_homepage_title">Kod pokretanja.</string>
+  <string name="pref_homepage_summary">Izaberite kućnu stranicu...</string>
+  <string name="pref_updateinterval_title">Interval ažuriranja scenarija</string>
+  <string name="pref_updateinterval_summary">Dani između čekova..</string>
+</resources>

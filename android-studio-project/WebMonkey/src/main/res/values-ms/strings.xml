@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Kemaskini Skrip</string>
+  <string name="menu_settings">Tetapan</string>
+  <string name="menu_exit">Keluar</string>
+  <string name="pref_settings_title">WebMonkey Tetapan</string>
+  <string name="pref_homepage_array_names_1">Teruskan ke mana anda keluar</string>
+  <string name="pref_homepage_array_names_2">Halaman kosong</string>
+  <string name="pref_homepage_array_names_3">Pengguna pengguna mengikut pembangun</string>
+  <string name="pref_homepage_array_names_4">Skrip Pengguna di Greasy Fork</string>
+  <string name="pref_homepage_title">Semasa Permulaan</string>
+  <string name="pref_homepage_summary">pilih halaman rumah..</string>
+  <string name="pref_updateinterval_title">Sela Kemaskini Skrip</string>
+  <string name="pref_updateinterval_summary">hari diantara semakan..</string>
+</resources>

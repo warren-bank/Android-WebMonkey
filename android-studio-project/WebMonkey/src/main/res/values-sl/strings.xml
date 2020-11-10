@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Posodobi Skripte</string>
+  <string name="menu_settings">Nastavitve</string>
+  <string name="menu_exit">Izhod</string>
+  <string name="pref_settings_title">WebMonkey Nastavitve</string>
+  <string name="pref_homepage_array_names_1">Nadaljuj, kjer si odšel.</string>
+  <string name="pref_homepage_array_names_2">Prazna stran</string>
+  <string name="pref_homepage_array_names_3">Uporabniški skripti po razvijalcu</string>
+  <string name="pref_homepage_array_names_4">Uporabniški skripti v \"Greasy Fork\"</string>
+  <string name="pref_homepage_title">Ob zagonu</string>
+  <string name="pref_homepage_summary">izbira domače strani..</string>
+  <string name="pref_updateinterval_title">Interval Posodabljanja Skripta</string>
+  <string name="pref_updateinterval_summary">dni med pregledi..</string>
+</resources>

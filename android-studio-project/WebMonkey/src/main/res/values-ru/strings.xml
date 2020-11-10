@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Обновить сценарии</string>
+  <string name="menu_settings">Параметры</string>
+  <string name="menu_exit">Выход</string>
+  <string name="pref_settings_title">WebMonkey Параметры</string>
+  <string name="pref_homepage_array_names_1">Продолжить там, где вы ушли</string>
+  <string name="pref_homepage_array_names_2">Пустая страница</string>
+  <string name="pref_homepage_array_names_3">Пользовательские сценарии по разработчикам</string>
+  <string name="pref_homepage_array_names_4">Userscripts at Greasy Fork</string>
+  <string name="pref_homepage_title">При запуске</string>
+  <string name="pref_homepage_summary">выбрать домашнее страницу..</string>
+  <string name="pref_updateinterval_title">Интервал обновления сценария</string>
+  <string name="pref_updateinterval_summary">дней между проверками..</string>
+</resources>

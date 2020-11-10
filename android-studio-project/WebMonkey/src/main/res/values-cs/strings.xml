@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Aktualizační skripty</string>
+  <string name="menu_settings">NastaveníComment</string>
+  <string name="menu_exit">Ukončit</string>
+  <string name="pref_settings_title">WebMonkey NastaveníComment</string>
+  <string name="pref_homepage_array_names_1">Pokračujte tam, kde jste skončili</string>
+  <string name="pref_homepage_array_names_2">Prázdná stránka</string>
+  <string name="pref_homepage_array_names_3">Uživatelské skripty podle vývojáře</string>
+  <string name="pref_homepage_array_names_4">Uživatelské skripty v Greay Fork</string>
+  <string name="pref_homepage_title">Při spuštění</string>
+  <string name="pref_homepage_summary">zvolit domovskou stránku..</string>
+  <string name="pref_updateinterval_title">Interval aktualizace skriptu</string>
+  <string name="pref_updateinterval_summary">dnů mezi kontrolami..</string>
+</resources>

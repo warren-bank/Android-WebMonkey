@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Atjaunināt skriptus</string>
+  <string name="menu_settings">Iestatījumi</string>
+  <string name="menu_exit">Iziešana</string>
+  <string name="pref_settings_title">WebMonkey Iestatījumi</string>
+  <string name="pref_homepage_array_names_1">Turpināt, kur atstājāt</string>
+  <string name="pref_homepage_array_names_2">Tukšs lapa</string>
+  <string name="pref_homepage_array_names_3">Lietotāja skripti attīstītājs</string>
+  <string name="pref_homepage_array_names_4">Lietotāja skripti pie Glossy Fork</string>
+  <string name="pref_homepage_title">On Startup</string>
+  <string name="pref_homepage_summary">izvēlēties mājas lapu..</string>
+  <string name="pref_updateinterval_title">Skripta atjaunināšanas intervāls</string>
+  <string name="pref_updateinterval_summary">dienas starp pārbaudēm..</string>
+</resources>

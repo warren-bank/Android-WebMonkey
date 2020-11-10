@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">Aġġornament Skripts</string>
+  <string name="menu_settings">Settings</string>
+  <string name="menu_exit">Ħruġ</string>
+  <string name="pref_settings_title">WebMonkey Settings</string>
+  <string name="pref_homepage_array_names_1">Kompli fejn tlaqt \'</string>
+  <string name="pref_homepage_array_names_2">Paġna vojta</string>
+  <string name="pref_homepage_array_names_3">Userskripts minn żvilupp</string>
+  <string name="pref_homepage_array_names_4">Userskripts at Gregy furketta</string>
+  <string name="pref_homepage_title">Fuq L-istartjar</string>
+  <string name="pref_homepage_summary">jagħżlu dar paġna..</string>
+  <string name="pref_updateinterval_title">Kitba Aġġornament Intervall</string>
+  <string name="pref_updateinterval_summary">jiem bejn il-kontrolli..</string>
+</resources>

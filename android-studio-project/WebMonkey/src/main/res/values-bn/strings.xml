@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">স্ক্রিপ্ট আপডেট করো</string>
+  <string name="menu_settings">সেটিংস</string>
+  <string name="menu_exit">এক্সিট</string>
+  <string name="pref_settings_title">WebMonkey সেটিংস</string>
+  <string name="pref_homepage_array_names_1">চালিয়ে যাও যেখানে তুমি চলে যাও</string>
+  <string name="pref_homepage_array_names_2">ফাঁকা পাতা</string>
+  <string name="pref_homepage_array_names_3">ডেভেলপার দ্বারা ব্যবহারকারীName</string>
+  <string name="pref_homepage_array_names_4">Greasy Fork-এ Userscripts</string>
+  <string name="pref_homepage_title">স্টার্টআপ</string>
+  <string name="pref_homepage_summary">হোম পেজ বেছে নিন..</string>
+  <string name="pref_updateinterval_title">স্ক্রিপ্ট আপডেট বিরতি</string>
+  <string name="pref_updateinterval_summary">পরীক্ষার মধ্যবর্তী দিন..</string>
+</resources>

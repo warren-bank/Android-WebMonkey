@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">WebMonkey</string>
+  <string name="menu_update_scripts">עדכון קובצי Script</string>
+  <string name="menu_settings">הגדרות</string>
+  <string name="menu_exit">יציאה</string>
+  <string name="pref_settings_title">WebMonkey הגדרות</string>
+  <string name="pref_homepage_array_names_1">המשך מאיפה שהפרת את עצמך.</string>
+  <string name="pref_homepage_array_names_2">דף ריק</string>
+  <string name="pref_homepage_array_names_3">תסריטי משתמש לפי מפתח</string>
+  <string name="pref_homepage_array_names_4">תסריטי משתמש בGנוני Fork</string>
+  <string name="pref_homepage_title">ב-Startup</string>
+  <string name="pref_homepage_summary">לבחור דף הבית...</string>
+  <string name="pref_updateinterval_title">מרווח עדכון של קובץ Script</string>
+  <string name="pref_updateinterval_summary">ימים בין בדיקות..</string>
+</resources>
