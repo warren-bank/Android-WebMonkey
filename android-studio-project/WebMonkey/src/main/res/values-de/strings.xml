@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">WebMonkey</string>
-  <string name="menu_update_scripts">Scripts aktualisieren</string>
+  <string name="menu_update_scripts">Skripte aktualisieren</string>
   <string name="menu_settings">Einstellungen</string>
   <string name="menu_exit">Beenden</string>
   <string name="pref_settings_title">WebMonkey Einstellungen</string>
-  <string name="pref_homepage_array_names_1">Weiter, wo Sie sich abgelassen haben</string>
+  <string name="pref_homepage_array_names_1">Fortsetzen wo Du aufgehört hast</string>
   <string name="pref_homepage_array_names_2">Leere Seite</string>
-  <string name="pref_homepage_array_names_3">Userscripts von Entwickler</string>
+  <string name="pref_homepage_array_names_3">Userskripte von Entwickler</string>
   <string name="pref_homepage_array_names_4">Userskripte bei Greasy Fork</string>
-  <string name="pref_homepage_title">Beim Start</string>
-  <string name="pref_homepage_summary">Homepage auswählen..</string>
-  <string name="pref_updateinterval_title">Script-Aktualisierungsintervall</string>
-  <string name="pref_updateinterval_summary">Tage zwischen Prüfungen..</string>
+  <string name="pref_homepage_title">Beim starten</string>
+  <string name="pref_homepage_summary">Startseite festlegen..</string>
+  <string name="pref_updateinterval_title">Skript-Aktualisierungsintervall</string>
+  <string name="pref_updateinterval_summary">Tage zwischen Prüfung..</string>
 </resources>
