@@ -30,6 +30,15 @@
       div.heading > div.title
         {line-height: 100px; padding-left: 125px;}
     }
+
+    sup.reference
+      {font-size: 80%; padding-left: 0.25em;}
+    ol > li
+      {line-height: 1.25em;}
+    ol > li > div
+      {font-size: 90%;}
+    ol > li > ul > li
+      {font-size: 80%; line-height: 1.5em;}
   </style>
 </head>
 <body>
@@ -47,6 +56,7 @@
     <li>
       <h3 class="pre">ECMAScript 6+</h3><h5 class="post">(Android &gt;= 5.0)</h5>
       <ul>
+        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/webmonkey-userscript/es6/webmonkey-userscript/Pluto-TV.user.js">Pluto TV</a><sup class="reference">[1]</sup></li>
         <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es6/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a></li>
         <li><a href="https://github.com/warren-bank/crx-US-TV-Go/raw/webmonkey-userscript/es6/webmonkey-userscript/US-TV-Go.user.js">US TV Go</a></li>
         <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es6/webmonkey-userscript/123TV.user.js">123TV</a></li>
@@ -61,6 +71,7 @@
     <li>
       <h3 class="pre">ECMAScript 5</h3><h5 class="post">(Android &lt; 5.0)</h5>
       <ul>
+        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV</a><sup class="reference">[1]</sup></li>
         <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es5/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a></li>
         <li><a href="https://github.com/warren-bank/crx-US-TV-Go/raw/webmonkey-userscript/es5/webmonkey-userscript/US-TV-Go.user.js">US TV Go</a></li>
         <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es5/webmonkey-userscript/123TV.user.js">123TV</a></li>
@@ -69,6 +80,19 @@
       </ul>
     </li>
   </ul>
+
+  <hr />
+  <h3 class="pre">[Notes]:</h3>
+  <ol>
+    <li>
+      <div>ES6 and ES5 userscripts behave differently:</div>
+      <ul>
+        <li>ES6 userscript works with the existing webpage</li>
+        <li>ES5 userscript replaces the existing webpage with an entirely new interface, which does not require modern Javascript</li>
+        <li>devices running Android &gt;= 5.0 can run either version, and the user can choose which they prefer</li>
+      </ul>
+    </li>
+  </ol>
 
 </body>
 </html>
