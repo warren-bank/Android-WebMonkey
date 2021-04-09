@@ -50,4 +50,7 @@
   <string translatable="false" name="pref_updateinterval_default">1</string>
   <string name="pref_updateinterval_title">Script Update Interval</string>
   <string name="pref_updateinterval_summary">days between checks..</string>
+
+  <!-- Settings: Hard Coded -->
+  <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4710.39 Safari/537.36</string>
 </resources>

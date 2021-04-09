@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 
 public class BrowserActivity extends WebViewGmImpl {
 
@@ -29,6 +30,8 @@ public class BrowserActivity extends WebViewGmImpl {
 
     webViewGm.addJavascriptInterface(jsApi.getGlobalJsApi(), WmJsApi.GlobalJsApiNamespace);
     ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());
+
+    initWebView(webViewGm);
 
     processIntent(getIntent());
 
@@ -70,6 +73,36 @@ public class BrowserActivity extends WebViewGmImpl {
 
     if ((url != null) && (url.length() > 0))
       scriptBrowser.loadUrl(url);
+  }
+
+  // ---------------------------------------------------------------------------------------------
+  // WebView:
+  // ---------------------------------------------------------------------------------------------
+
+  private void initWebView(WebViewGm webView) {
+    WebSettings webSettings = webView.getSettings();
+    webSettings.setLoadWithOverviewMode(true);
+    webSettings.setSupportZoom(true);
+    webSettings.setBuiltInZoomControls(true);
+    webSettings.setDisplayZoomControls(true);
+    webSettings.setUseWideViewPort(false);
+    webSettings.setJavaScriptEnabled(true);
+    webSettings.setDomStorageEnabled(true);
+    webSettings.setUserAgentString(
+      getResources().getString(R.string.user_agent)
+    );
+    if (Build.VERSION.SDK_INT >= 17) {
+      webSettings.setMediaPlaybackRequiresUserGesture(false);
+    }
+    if (Build.VERSION.SDK_INT >= 21) {
+      webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+    }
+
+    webView.setInitialScale(0);
+    webView.setHorizontalScrollBarEnabled(false);
+    webView.setVerticalScrollBarEnabled(false);
+    webView.clearCache(true);
+    webView.clearHistory();
   }
 
 }
