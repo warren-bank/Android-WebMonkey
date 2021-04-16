@@ -80,6 +80,10 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
 #### Settings
 
 * default browser home page
+  - _Continue where you left off_
+  - [_Blank page_](about:blank)
+  - [_Userscripts by developer_](https://warren-bank.github.io/Android-WebMonkey/index.html)
+  - [_Userscripts at Greasy Fork_](https://greasyfork.org/)
 * script update interval
   - number of days to wait between checks
   - special case: `0` disables automatic script updates
