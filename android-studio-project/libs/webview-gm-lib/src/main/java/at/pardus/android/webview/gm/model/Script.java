@@ -129,7 +129,7 @@ public class Script extends ScriptMetadata {
 					} else if (propertyName.equals("installURL")) {
 						installurl = propertyValue;
 					} else if (propertyName.equals("icon")) {
-						icon = propertyValue;
+						icon = DownloadHelper.resolveUrl(propertyValue, url);
 					} else if (propertyName.equals("run-at")) {
 						if (propertyValue.equals(RUNATSTART)
 								|| propertyValue.equals(RUNATEND)) {
@@ -138,7 +138,9 @@ public class Script extends ScriptMetadata {
 					} else if (propertyName.equals("version")) {
 						version = propertyValue;
 					} else if (propertyName.equals("require")) {
-						ScriptRequire require = downloadRequire(propertyValue);
+						ScriptRequire require = downloadRequire(
+							DownloadHelper.resolveUrl(propertyValue, url)
+						);
 						if (require == null) {
 							return null;
 						}
@@ -152,8 +154,9 @@ public class Script extends ScriptMetadata {
 							return null;
 						}
 						ScriptResource resource = downloadResource(
-								resourceMatcher.group(1),
-								resourceMatcher.group(2));
+							resourceMatcher.group(1),
+							DownloadHelper.resolveUrl(resourceMatcher.group(2), url)
+						);
 						if (resource == null) {
 							return null;
 						}

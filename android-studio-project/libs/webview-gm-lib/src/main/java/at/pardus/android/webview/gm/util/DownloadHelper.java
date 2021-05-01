@@ -141,11 +141,24 @@ public class DownloadHelper {
 			buffer = byteArrayOutputStream.toByteArray();
 			inputStream.close();
 			return buffer;
-		} catch (IOException e) {
+		} catch (Exception e) {
+			Log.e(TAG, Log.getStackTraceString(e));
 			Log.e(TAG, "Exception downloading url: " + downloadUrl
 					+ " as file: " + e.getMessage());
 		}
 
 		return null;
+	}
+
+	public static String resolveUrl(String relativeUrl, String baseUrl) {
+		try {
+			URL base     = (baseUrl == null) ? null : new URL(baseUrl);
+			URL resolved = new URL(base, relativeUrl);
+
+			return resolved.toURI().toString();
+		}
+		catch(Exception e) {
+			return null;
+		}
 	}
 }
