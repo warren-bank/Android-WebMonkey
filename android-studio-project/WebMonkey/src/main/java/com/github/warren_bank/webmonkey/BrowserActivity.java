@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 
-public class BrowserActivity extends WebViewGmImpl {
+public class BrowserActivity extends WebViewGmImpl implements IBrowser {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class BrowserActivity extends WebViewGmImpl {
     WebViewGm webViewGm = scriptBrowser.getWebView();
     String secret = webViewGm.getWebViewClient().getSecret();
 
-    WmJsApi jsApi = new WmJsApi(secret, this, webViewGm);
+    WmJsApi jsApi = new WmJsApi(secret, /* Activity */ this, /* WebView */ webViewGm, /* IBrowser */ this);
 
     webViewGm.addJavascriptInterface(jsApi.getGlobalJsApi(), WmJsApi.GlobalJsApiNamespace);
     ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());
@@ -103,6 +103,14 @@ public class BrowserActivity extends WebViewGmImpl {
     webView.setVerticalScrollBarEnabled(false);
     webView.clearCache(true);
     webView.clearHistory();
+  }
+
+  // ---------------------------------------------------------------------------------------------
+  // IBrowser:
+  // ---------------------------------------------------------------------------------------------
+
+  public String getCurrentUrl() {
+    return scriptBrowser.getCurrentUrl();
   }
 
 }

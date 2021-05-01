@@ -51,6 +51,8 @@ public class ScriptBrowser {
 
 	private String startUrl;
 
+	private String currentUrl;
+
 	protected View browser;
 
 	protected WebViewGm webView;
@@ -106,7 +108,7 @@ public class ScriptBrowser {
 	 * address field EditText component.
 	 */
 	@SuppressLint("InflateParams")
-    private void init() {
+	private void init() {
 		browser = activity.getLayoutInflater().inflate(
 				R.layout.script_browser, null);
 		webView = (WebViewGm) browser.findViewById(R.id.webView);
@@ -119,7 +121,8 @@ public class ScriptBrowser {
 							KeyEvent event) {
 						if (actionId == EditorInfo.IME_ACTION_GO
 								|| actionId == EditorInfo.IME_NULL) {
-							webView.loadUrl(v.getText().toString());
+							currentUrl = v.getText().toString();
+							webView.loadUrl(currentUrl);
 							webView.requestFocus();
 							((InputMethodManager) activity
 									.getSystemService(Context.INPUT_METHOD_SERVICE))
@@ -138,6 +141,11 @@ public class ScriptBrowser {
 		loadUrl(startUrl);
 	}
 
+	public void changeAddressField(String url) {
+		currentUrl = url;
+		addressField.setText(url);
+	}
+
 	/**
 	 * Load the given URL.
 	 *
@@ -145,7 +153,7 @@ public class ScriptBrowser {
 	 *            the address to load
 	 */
 	public void loadUrl(String url) {
-		addressField.setText(url);
+		changeAddressField(url);
 		webView.loadUrl(url);
 	}
 
@@ -153,7 +161,17 @@ public class ScriptBrowser {
 	 * @return the browser's last loaded address
 	 */
 	public String getUrl() {
-		return webView.getUrl();
+		currentUrl = webView.getUrl();
+		return currentUrl;
+	}
+
+	/**
+	 * @return the browser's last loaded address
+	 *
+	 * Same as getUrl(), but can be called from a non-UI thread.
+	 */
+	public String getCurrentUrl() {
+		return currentUrl;
 	}
 
 	/**
@@ -265,13 +283,13 @@ public class ScriptBrowser {
 
 		@Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
-			scriptBrowser.addressField.setText(url);
+			scriptBrowser.changeAddressField(url);
 			scriptBrowser.checkDownload(url);
 			super.onPageStarted(view, url, favicon);
 		}
 
 		@SuppressWarnings("deprecation")
-        @Override
+		@Override
 		public void onReceivedError(WebView view, int errorCode,
 				String description, String failingUrl) {
 			Toast.makeText(

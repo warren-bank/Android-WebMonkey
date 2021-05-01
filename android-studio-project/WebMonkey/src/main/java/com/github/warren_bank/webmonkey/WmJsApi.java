@@ -1,5 +1,7 @@
 package com.github.warren_bank.webmonkey;
 
+import at.pardus.android.webview.gm.util.DownloadHelper;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,12 +20,14 @@ public class WmJsApi {
   public String   secret;
   public Activity activity;
   public WebView  webview;
+  public IBrowser browser;
   public boolean  useES6;
 
-  public WmJsApi(String secret, Activity activity, WebView webview) {
+  public WmJsApi(String secret, Activity activity, WebView webview, IBrowser browser) {
     this.secret   = secret;
     this.activity = activity;
     this.webview  = webview;
+    this.browser  = browser;
     this.useES6   = (Build.VERSION.SDK_INT >= 21);  // use ES5 in Android <= 4.4 because WebView is outdated and cannot be updated
   }
 
@@ -50,6 +54,27 @@ public class WmJsApi {
         catch(Exception e) {
           Log.e(WmJsApi.TAG, "Call to \"toast\" did not supply valid input and raised the following error", e);
         }
+      }
+
+      @JavascriptInterface
+      public String getUrl(String secret) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"getUrl\" did not supply correct secret");
+          return null;
+        }
+        return browser.getCurrentUrl();
+      }
+
+      @JavascriptInterface
+      public String resolveUrl(String secret, String urlRelative, String urlBase) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"resolveUrl\" did not supply correct secret");
+          return null;
+        }
+        if ((urlBase == null) || (urlBase.length() == 0)) {
+          urlBase = browser.getCurrentUrl();
+        }
+        return DownloadHelper.resolveUrl(urlRelative, urlBase);
       }
 
       @JavascriptInterface
@@ -196,6 +221,10 @@ public class WmJsApi {
 
     jsApi += "var GM_toastLong"   + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);"                          + " };\n";
     jsApi += "var GM_toastShort"  + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);"                          + " };\n";
+
+    jsApi += "var GM_getUrl"      + " = function() { return "                       + jsBridgeName + ".getUrl("      + defaultSignature + ");"                                                               + " };\n";
+    jsApi += "var GM_resolveUrl"  + " = function(urlRelative, urlBase) { return "   + jsBridgeName + ".resolveUrl("  + defaultSignature + ", urlRelative, urlBase);"                                         + " };\n";
+
     jsApi += (useES6)
           ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
           : ("var GM_startIntent" + " = function(action, data, type) { "            + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")

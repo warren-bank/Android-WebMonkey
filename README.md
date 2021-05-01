@@ -13,27 +13,43 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
 * an additional Javascript API interface to provide the following functions to user scripts:
   - `GM_toastLong(message)`
   - `GM_toastShort(message)`
+  - `GM_getUrl()`
+    * returns a String containing the URL that is currently loaded in the WebView
+    * use case:
+      - allows the userscript to detect whether the page has been redirected
+        * server response status codes: 301, 302
+    * example:
+      - `var is_redirect = (GM_getUrl() !== unsafeWindow.location.href)`
+  - `GM_resolveUrl(urlRelative, urlBase)`
+    * returns a String containing `urlRelative` resolved relative to `urlBase`
+    * where:
+      - [required] `urlRelative` is a String URL: relative path
+      - [optional] `urlBase`     is a String URL: absolute path
+        * default value: the URL that is currently loaded in the WebView
+    * examples:
+      - `('video.mp4', 'http://example.com/iframe_window.html')`
+      - `('video.mp4')`
   - `GM_startIntent(action, data, type, ...extras)`
     * starts an implicit [Intent](https://developer.android.com/training/basics/intents/sending)
     * where:
-      - `action` is a String
-      - `data`   is a String URL
-      - `type`   is a String mime-type for format of `data`
-      - `extras` is a list of String name/value pairs
+      - [required, can be empty] `action` is a String
+      - [required, can be empty] `data`   is a String URL
+      - [required, can be empty] `type`   is a String mime-type for format of `data`
+      - [optional] `extras` is a list of String name/value pairs
     * example:
       - `('android.intent.action.VIEW', 'http://example.com/video.mp4', 'video/mp4', 'referUrl', 'http://example.com/videos.html')`
   - `GM_loadUrl(url, ...headers)`
     * loads a URL into the WebView with additional HTTP request headers
     * where:
-      - `url`     is a String URL
-      - `headers` is a list of String name/value pairs
+      - [required] `url`     is a String URL
+      - [optional] `headers` is a list of String name/value pairs
     * example:
       - `('http://example.com/iframe_window.html', 'Referer', 'http://example.com/parent_window.html')`
   - `GM_loadFrame(urlFrame, urlParent)`
     * loads an iframe into the WebView
     * where:
-      - `urlFrame`  is a String URL: the page loaded into the iframe
-      - `urlParent` is a String URL: value for `window.top.location.href` and `window.parent.location.href` as observed from within the iframe
+      - [required] `urlFrame`  is a String URL: the page loaded into the iframe
+      - [required] `urlParent` is a String URL: value for `window.top.location.href` and `window.parent.location.href` as observed from within the iframe
     * example:
       - `('http://example.com/iframe_window.html', 'http://example.com/parent_window.html')`
     * use case:
