@@ -1,5 +1,5 @@
-apply from: '../constants.gradle'
-apply plugin: 'com.android.application'
+apply from: '../../constants.gradle'
+apply plugin: 'com.android.library'
 
 android {
   compileSdkVersion project.ext.compileSdkVersion
@@ -11,17 +11,12 @@ android {
   }
 
   defaultConfig {
-    minSdkVersion project.ext.minSdkVersion
+    minSdkVersion    project.ext.minSdkVersion
     targetSdkVersion project.ext.targetSdkVersion
-
-    applicationId "com.github.warren_bank.webmonkey"
-    versionName project.ext.releaseVersion
-    versionCode project.ext.releaseVersionCode
   }
 
   buildTypes {
     release {
-      shrinkResources true
       minifyEnabled   true
       proguardFiles = [
         "proguard-rules.txt",
@@ -29,7 +24,7 @@ android {
       ]
     }
     debug {
-      debuggable  true
+      debuggable    true
       jniDebuggable true
     }
   }
@@ -42,5 +37,4 @@ android {
 
 dependencies {
   implementation project(':webview-gm-lib')
-  implementation project(':webview-gm-ui')
 }

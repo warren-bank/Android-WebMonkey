@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="save_script">Skript speichern</string>
+    <string name="browse">Browse</string>
+    <string name="list_scripts">Skriptliste</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="delete">Löschen</string>
+    <string name="disable">Deaktivieren</string>
+    <string name="enable">Aktivieren</string>
+    <string name="deleted_script">Skript wurde gelöscht</string>
+    <string name="disabled_script">Skript wurde deaktiviert</string>
+    <string name="enabled_script">Skript wurde aktiviert</string>
+    <string name="edited_script">Skript wurde bearbeitet</string>
+    <string name="added_new_script">Neues Skript wurde erstellt</string>
+    <string name="error_saving_script">Fehler beim Speichern des Skripts</string>
+    <string name="syntax_or_dl_fail">Syntax Fehler oder Abhängigkeiten konnten nicht heruntergeladen werden</string>
+    <string name="new_script_id_exists">Name/Namespace des neuen Skripts existieren bereits</string>
+    <string name="error_while_loading">Fehler beim Laden</string>
+    <string name="starting_download_of">Download wird gestartet von</string>
+    <string name="error_downloading_from">Fehler beim Download von</string>
+    <string name="error_parsing_at">Fehler beim Analysieren des Skripts auf</string>
+
+</resources>

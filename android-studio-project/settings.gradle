@@ -1,1 +1,7 @@
 include ':WebMonkey'
+
+include ':webview-gm-lib'
+include ':webview-gm-ui'
+
+project(':webview-gm-lib').projectDir = new File(rootDir, 'libs/webview-gm-lib')
+project(':webview-gm-ui').projectDir  = new File(rootDir, 'libs/webview-gm-ui')
