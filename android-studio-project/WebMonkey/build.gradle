@@ -17,6 +17,8 @@ android {
     applicationId "com.github.warren_bank.webmonkey"
     versionName project.ext.releaseVersion
     versionCode project.ext.releaseVersionCode
+
+    archivesBaseName += "-$versionName"
   }
 
   buildTypes {
