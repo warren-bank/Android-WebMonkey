@@ -11,7 +11,9 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class WmJsApi {
 
@@ -105,8 +107,37 @@ public class WmJsApi {
               : (extras.length - 1)
             ;
 
+            HashMap<String, ArrayList<String>> extrasMap = new HashMap<String, ArrayList<String>>();
+            String key;
+            String val;
+            ArrayList<String> arrayList;
+            String[] vals;
+
             for (int i=0; i < length; i+=2) {
-              in.putExtra(extras[i], extras[i+1]);
+              key = extras[i];
+              val = extras[i+1];
+
+              if (!extrasMap.containsKey(key))
+                extrasMap.put(key, new ArrayList<String>());
+
+              arrayList = (ArrayList<String>) extrasMap.get(key);
+              arrayList.add(val);
+            }
+
+            for (Iterator<String> iterator = extrasMap.keySet().iterator(); iterator.hasNext();) {
+              key       = iterator.next();
+              arrayList = (ArrayList<String>) extrasMap.get(key);
+
+              if (arrayList.size() == 1) {
+                val = (String) arrayList.get(0);
+
+                in.putExtra(key, val);
+              }
+              else {
+                vals = arrayList.toArray(new String[arrayList.size()]);
+
+                in.putExtra(key, vals);
+              }
             }
           }
 
