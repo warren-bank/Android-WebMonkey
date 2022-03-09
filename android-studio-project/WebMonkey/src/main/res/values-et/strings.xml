@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Uuenda skripte</string>
   <string name="menu_settings">Seadistused</string>
+  <string name="menu_test_pattern">Katsemuster</string>
   <string name="menu_exit">Välju</string>
   <string name="pref_settings_title">WebMonkey Seadistused</string>
   <string name="pref_homepage_array_names_1">Jätka, kus sa lahkusid.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">vali kodulehekülg..</string>
   <string name="pref_updateinterval_title">Skripti uuendamise intervall</string>
   <string name="pref_updateinterval_summary">kontrollimiste vahelised päevad..</string>
+  <string name="testpatternactivity_description">Muster:\n  * Toetab: glob või regex\n  * mida kasutatakse: @include, @exclude, ning @match\n\nURL:\n  * katseaine\n\nKäivita Test:\n  * määrata, kas \"muster\" sobib "URL"\n  * kuvamise tulemus Toast</string>
+  <string name="testpatternactivity_label_pattern">Muster:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Käivita Test</string>
+  <string name="testpatternactivity_result_is_match">Õnnestus: Match</string>
+  <string name="testpatternactivity_result_no_match">Nurjumine: sobivus puudub</string>
 </resources>

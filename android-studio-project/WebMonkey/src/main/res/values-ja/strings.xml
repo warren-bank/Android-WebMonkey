@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">スクリプトの更新</string>
   <string name="menu_settings">設定</string>
+  <string name="menu_test_pattern">テスト・パターン</string>
   <string name="menu_exit">出口</string>
   <string name="pref_settings_title">WebMonkey 設定</string>
   <string name="pref_homepage_array_names_1">中止した場所を続行します</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ホームページの選択..</string>
   <string name="pref_updateinterval_title">スクリプト更新間隔</string>
   <string name="pref_updateinterval_summary">チェック間の日数..</string>
+  <string name="testpatternactivity_description">パターン:\n  * 支柱: glob 又は regex\n  * 使用者: @include, @exclude, 及び @match\n\nURL:\n  * テスト・サブジェクト\n\nテストの実行:\n  * 「パターン」が一致するかどうか "URL"\n  * 結果の表示 Toast</string>
+  <string name="testpatternactivity_label_pattern">パターン:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">テストの実行</string>
+  <string name="testpatternactivity_result_is_match">成功: 一致</string>
+  <string name="testpatternactivity_result_no_match">失敗: 一致なし</string>
 </resources>

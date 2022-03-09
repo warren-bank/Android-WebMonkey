@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Atnaujinti scenarijus</string>
   <string name="menu_settings">Nustatymai</string>
+  <string name="menu_test_pattern">Bandymo Modelis</string>
   <string name="menu_exit">Išvykimas</string>
   <string name="pref_settings_title">WebMonkey Nustatymai</string>
   <string name="pref_homepage_array_names_1">Tęsi, kur išėjai.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">pasirinkite pagrindinį puslapį..</string>
   <string name="pref_updateinterval_title">Scenarijaus atnaujinimo intervalas</string>
   <string name="pref_updateinterval_summary">dienų tarp patikrinimų..</string>
+  <string name="testpatternactivity_description">Modelis:\n  * atrama: glob arba regex\n  * Vartoti per: @include, @exclude, ir @match\n\nURL:\n  * Bandymo objektas\n\nAtlikti bandymą:\n  * nustatyti, ar \"Pattern\" atitinka "URL"\n  * Rodytuvas Toast</string>
+  <string name="testpatternactivity_label_pattern">Modelis:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Atlikti bandymą</string>
+  <string name="testpatternactivity_result_is_match">Sėkmė: rungtynės</string>
+  <string name="testpatternactivity_result_no_match">Nepavyksta: No Match</string>
 </resources>

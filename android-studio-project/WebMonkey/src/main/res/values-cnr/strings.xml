@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ažuriranje skripti</string>
   <string name="menu_settings">Jedna postavka.</string>
+  <string name="menu_test_pattern">Test uzorak</string>
   <string name="menu_exit">Jedan izlaz.</string>
   <string name="pref_settings_title">WebMonkey Jedna postavka.</string>
   <string name="pref_homepage_array_names_1">Nastavite tamo gdje ste stali.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">Izaberite kućnu stranicu...</string>
   <string name="pref_updateinterval_title">Interval ažuriranja scenarija</string>
   <string name="pref_updateinterval_summary">Dani između čekova..</string>
+  <string name="testpatternactivity_description">Uzili ...ak.:\n  * Da.: glob or regex\n  * Koristi ga.: @include, @exclude, I ... @match\n\nURL:\n  * Ispitanik.\n\nProvjeri.:\n  * Utvrdi da li se \"Uzorak\" poklapa. "URL"\n  * Prikaži sve Toast</string>
+  <string name="testpatternactivity_label_pattern">Uzorak.:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Provjeri.</string>
+  <string name="testpatternactivity_result_is_match">Uspjeh: Match</string>
+  <string name="testpatternactivity_result_no_match">Nema poklada.</string>
 </resources>

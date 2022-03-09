@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Оновити скрипти</string>
   <string name="menu_settings">ПараметриName</string>
+  <string name="menu_test_pattern">Шаблон перевірки</string>
   <string name="menu_exit">Вийти</string>
   <string name="pref_settings_title">WebMonkey ПараметриName</string>
   <string name="pref_homepage_array_names_1">Продовжити, куди ви залишили</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">Вибрати домашню сторінку..</string>
   <string name="pref_updateinterval_title">Інтервал оновлення скрипту</string>
   <string name="pref_updateinterval_summary">днів між перевірками..</string>
+  <string name="testpatternactivity_description">Шаблон:\n  * підтримує: glob або regex\n  * Використано: @include, @exclude, і @match\n\nURL:\n  * тестовий предмет\n\nВиконати перевірку:\n  * визначити, чи слід відповідати \"Шаблон\" "URL"\n  * показати результат Toast</string>
+  <string name="testpatternactivity_label_pattern">Шаблон:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Виконати перевірку</string>
+  <string name="testpatternactivity_result_is_match">Успіх: збіг</string>
+  <string name="testpatternactivity_result_no_match">Невдача: Немає відповідності</string>
 </resources>

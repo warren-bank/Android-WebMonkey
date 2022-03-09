@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">עדכון קובצי Script</string>
   <string name="menu_settings">הגדרות</string>
+  <string name="menu_test_pattern">תבנית בדיקה</string>
   <string name="menu_exit">יציאה</string>
   <string name="pref_settings_title">WebMonkey הגדרות</string>
   <string name="pref_homepage_array_names_1">המשך מאיפה שהפרת את עצמך.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">לבחור דף הבית...</string>
   <string name="pref_updateinterval_title">מרווח עדכון של קובץ Script</string>
   <string name="pref_updateinterval_summary">ימים בין בדיקות..</string>
+  <string name="testpatternactivity_description">תבנית:\n  * תומך: glob או regex\n  * בשימוש על-ידי: @include, @exclude, ו - @match\n\nURL:\n  * נתין נבדק\n\nהרצת בדיקה:\n  * לקבוע אם \"תבנית\" מתאימה "URL"\n  * הצגת תוצאות ב - Toast</string>
+  <string name="testpatternactivity_label_pattern">תבנית:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">הרצת בדיקה</string>
+  <string name="testpatternactivity_result_is_match">הצלחה: התאמה</string>
+  <string name="testpatternactivity_result_no_match">כשלון: אין התאמה</string>
 </resources>

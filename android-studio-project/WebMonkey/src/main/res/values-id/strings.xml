@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Mutakhirkan skrip</string>
   <string name="menu_settings">Pengaturan</string>
+  <string name="menu_test_pattern">Pola Uji</string>
   <string name="menu_exit">Keluar</string>
   <string name="pref_settings_title">WebMonkey Pengaturan</string>
   <string name="pref_homepage_array_names_1">Lanjutkan di mana Anda tinggalkan</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
   <string name="pref_updateinterval_title">Interval Pemutakhiran Skrip</string>
   <string name="pref_updateinterval_summary">hari antara pemeriksaan..</string>
+  <string name="testpatternactivity_description">Pola:\n  * mendukung: glob atau regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek tes\n\nJalankan Uji Coba:\n  * menentukan apakah cocok \"Pattern\" "URL"\n  * tampilkan hasil dalam Toast</string>
+  <string name="testpatternactivity_label_pattern">Pola:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Jalankan Uji Coba</string>
+  <string name="testpatternactivity_result_is_match">Sukses: Cocok</string>
+  <string name="testpatternactivity_result_no_match">Gagal: Tidak ada kecocokan</string>
 </resources>

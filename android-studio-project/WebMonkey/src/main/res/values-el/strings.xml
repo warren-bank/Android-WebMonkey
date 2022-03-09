@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ενημέρωση σεναρίων</string>
   <string name="menu_settings">Ρυθμίσεις:</string>
+  <string name="menu_test_pattern">Πρότυπο δοκιμής:</string>
   <string name="menu_exit">Έξοδος:</string>
   <string name="pref_settings_title">WebMonkey Ρυθμίσεις:</string>
   <string name="pref_homepage_array_names_1">Συνέχισε εκεί που άφησες.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">επιλογή αρχικής σελίδας..</string>
   <string name="pref_updateinterval_title">Διάστημα ενημέρωσης σεναρίου</string>
   <string name="pref_updateinterval_summary">ημέρες μεταξύ ελέγχων..</string>
+  <string name="testpatternactivity_description">Μοτίβο:\n  * υποστηρίζει:: glob ή regex\n  * χρησιμοποιείται από:: @include, @exclude, και @match\n\nURL:\n  * αντικειμε.\n\nΔοκιμή εκτέλεσης:\n  * καθορίζει αν τα αποτελέσματα \"Μοτίβο\" "URL"\n  * αποτέλεσμα εμφάνισης σε: Toast</string>
+  <string name="testpatternactivity_label_pattern">Μοτίβο:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Δοκιμή εκτέλεσης</string>
+  <string name="testpatternactivity_result_is_match">Επιτυχία: Αγώνας</string>
+  <string name="testpatternactivity_result_no_match">Αποτύχει: Χωρίς Αγώνα</string>
 </resources>

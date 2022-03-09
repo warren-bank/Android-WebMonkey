@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ажурирај скрипте</string>
   <string name="menu_settings">Поставке</string>
+  <string name="menu_test_pattern">Образац теста</string>
   <string name="menu_exit">Изађи</string>
   <string name="pref_settings_title">WebMonkey Поставке</string>
   <string name="pref_homepage_array_names_1">Настави где си стао</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">изаберите почетну страницу..</string>
   <string name="pref_updateinterval_title">Интервал ажурирања скрипте</string>
   <string name="pref_updateinterval_summary">дана између чекова..</string>
+  <string name="testpatternactivity_description">Образац:\n  * подржавање: glob или regex\n  * користи: @include, @exclude, и @match\n\nURL:\n  * тест субјекта\n\nПокрените тест:\n  * Одређује да ли се \"Шаблон\" поклапа "URL"\n  * приказ резултата у Toast</string>
+  <string name="testpatternactivity_label_pattern">Образац:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Покрените тест</string>
+  <string name="testpatternactivity_result_is_match">Успех: подударање</string>
+  <string name="testpatternactivity_result_no_match">Неуспех: нема поклапања</string>
 </resources>

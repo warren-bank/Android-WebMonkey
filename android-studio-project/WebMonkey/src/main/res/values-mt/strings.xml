@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aġġornament Skripts</string>
   <string name="menu_settings">Settings</string>
+  <string name="menu_test_pattern">Mudell tat-Test</string>
   <string name="menu_exit">Ħruġ</string>
   <string name="pref_settings_title">WebMonkey Settings</string>
   <string name="pref_homepage_array_names_1">Kompli fejn tlaqt \'</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">jagħżlu dar paġna..</string>
   <string name="pref_updateinterval_title">Kitba Aġġornament Intervall</string>
   <string name="pref_updateinterval_summary">jiem bejn il-kontrolli..</string>
+  <string name="testpatternactivity_description">Mudell:\n  * jappoġġja: glob jew regex\n  * użat minn: @include, @exclude, u @match\n\nURL:\n  * suġġett għall-ittestjar\n\nTest Run:\n  * jiddetermina jekk \"Pattern\" logħbiet "URL"\n  * riżultat tad-displej Toast</string>
+  <string name="testpatternactivity_label_pattern">Mudell:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Test Run</string>
+  <string name="testpatternactivity_result_is_match">Suċċess: Match</string>
+  <string name="testpatternactivity_result_no_match">Jonqsu: Ebda Match</string>
 </resources>

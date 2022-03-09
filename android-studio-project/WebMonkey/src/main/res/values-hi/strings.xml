@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">स्क्रिप्ट अद्यतन करें</string>
   <string name="menu_settings">विन्यास</string>
+  <string name="menu_test_pattern">परीक्षण पैटर्न</string>
   <string name="menu_exit">बाहर निकलें</string>
   <string name="pref_settings_title">WebMonkey विन्यास</string>
   <string name="pref_homepage_array_names_1">जहाँ आप छोड़ दिया है जारी रखें</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">घर पृष्ठ चुनें..</string>
   <string name="pref_updateinterval_title">स्क्रिप्ट अद्यतन अंतराल</string>
   <string name="pref_updateinterval_summary">जांच के दौरान..</string>
+  <string name="testpatternactivity_description">पैटर्न:\n  * सहारा देना: glob या regex\n  * द्वारा प्रयुक्त: @include, @exclude, और @match\n\nURL:\n  * परीक्षा विषय\n\nटेस्ट चलाएं:\n  * निर्धारित करें कि क्या \"पैटर्न\" मैच "URL"\n  * प्रदर्शन परिणाम Toast</string>
+  <string name="testpatternactivity_label_pattern">पैटर्न:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">टेस्ट चलाएं</string>
+  <string name="testpatternactivity_result_is_match">सफलता: मैच</string>
+  <string name="testpatternactivity_result_no_match">विफल: कोई मैच नहीं</string>
 </resources>

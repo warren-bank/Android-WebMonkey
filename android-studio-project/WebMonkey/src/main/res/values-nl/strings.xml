@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Scripts bijwerken</string>
   <string name="menu_settings">Instellingen</string>
+  <string name="menu_test_pattern">Testpatroon</string>
   <string name="menu_exit">Afsluiten</string>
   <string name="pref_settings_title">WebMonkey Instellingen</string>
   <string name="pref_homepage_array_names_1">Ga verder waar u bent vertrokken</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">homepage kiezen..</string>
   <string name="pref_updateinterval_title">Interval voor bijwerken van script</string>
   <string name="pref_updateinterval_summary">dagen tussen controles..</string>
+  <string name="testpatternactivity_description">Patroon:\n  * ondersteunt: glob of regex\n  * gebruikt door: @include, @exclude, en @match\n\nURL:\n  * testonderwerp\n\nTest uitvoeren:\n  * bepalen of \"Patroon\" overeenkomt "URL"\n  * resultaat afbeelden in Toast</string>
+  <string name="testpatternactivity_label_pattern">Patroon:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Test uitvoeren</string>
+  <string name="testpatternactivity_result_is_match">Geslaagd: Match</string>
+  <string name="testpatternactivity_result_no_match">Mislukt: Geen overeenkomst</string>
 </resources>

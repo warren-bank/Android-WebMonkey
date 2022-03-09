@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">स्क्रिप्ट अद्यावधिक गर्नुहोस्</string>
   <string name="menu_settings">सेटिङ</string>
+  <string name="menu_test_pattern">परीक्षण बाँन्की</string>
   <string name="menu_exit">निस्कदा</string>
   <string name="pref_settings_title">WebMonkey सेटिङ</string>
   <string name="pref_homepage_array_names_1">तपाईँले छोड्नु भएको ठाउँमा जारी राख्नुहोस्</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">गृह पृष्ठ रोज्नुहोस्..</string>
   <string name="pref_updateinterval_title">स्क्रिप्ट अद्यावधिक अन्तराल</string>
   <string name="pref_updateinterval_summary">चेक बीचको दिनहरू..</string>
+  <string name="testpatternactivity_description">बाँन्की:\n  * समर्थन गर्दछ: glob वा regex\n  * द्वारा प्रयोग गरिएको: @include, @exclude, र @match\n\nURL:\n  * परीक्षण विषय\n\nपरीक्षण चलाउनुहोस्:\n  * \"बाँन्की\" मिल्दछ कि छैन निर्धारण गर्नुहोस् "URL"\n  * मा परिणाम प्रदर्शन गर्नुहोस् Toast</string>
+  <string name="testpatternactivity_label_pattern">बाँन्की:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">परीक्षण चलाउनुहोस्</string>
+  <string name="testpatternactivity_result_is_match">सफलता: मिल्दो</string>
+  <string name="testpatternactivity_result_no_match">फेल: कुनै म्याच छैन</string>
 </resources>

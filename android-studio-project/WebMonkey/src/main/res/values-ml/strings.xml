@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">സ്ക്രിപ്റ്റുകള് പുതുക്കുക</string>
   <string name="menu_settings">സജ്ജീകരണങ്ങള്</string>
+  <string name="menu_test_pattern">ടെസ്റ്റ് പാറ്റേണ്</string>
   <string name="menu_exit">പ്രദര്ശിപ്പിക്കുക</string>
   <string name="pref_settings_title">WebMonkey സജ്ജീകരണങ്ങള്</string>
   <string name="pref_homepage_array_names_1">നിങ്ങള് എങ്ങോട്ടാണ് പോയത് തുടരുക</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ഹോം പേജ് തെരഞ്ഞെടുക്കുക..</string>
   <string name="pref_updateinterval_title">സ്ക്രിപ്റ്റ് പുതുക്കല് ഇന്റര്വല്</string>
   <string name="pref_updateinterval_summary">പരിശോധനയ്ക്കിടയിലുള്ള ദിവസങ്ങള്..</string>
+  <string name="testpatternactivity_description">പാറ്റേണ്:\n  * പിന്തുണ: glob അല്ലെങ്കില് regex\n  * ഉപയോഗിച്ചു്: @include, @exclude, ... @match\n\nURL:\n  * പരീക്ഷണ വിഷയം\n\nടെസ്റ്റ് പ്രവര്ത്തിപ്പിക്കുക:\n  * \" Patterns-action "URL"\n  * പ്രദര്ശന ഫലം Toast</string>
+  <string name="testpatternactivity_label_pattern">പാറ്റേണ്:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">ടെസ്റ്റ് പ്രവര്ത്തിപ്പിക്കുക</string>
+  <string name="testpatternactivity_result_is_match">വിജയകരം: ചേര്ക്കുക</string>
+  <string name="testpatternactivity_result_no_match">à \', à\' - à \' action</string>
 </resources>

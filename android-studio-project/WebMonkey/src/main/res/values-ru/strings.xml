@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Обновить сценарии</string>
   <string name="menu_settings">Параметры</string>
+  <string name="menu_test_pattern">Тестовый шаблон</string>
   <string name="menu_exit">Выход</string>
   <string name="pref_settings_title">WebMonkey Параметры</string>
   <string name="pref_homepage_array_names_1">Продолжить там, где вы ушли</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">выбрать домашнее страницу..</string>
   <string name="pref_updateinterval_title">Интервал обновления сценария</string>
   <string name="pref_updateinterval_summary">дней между проверками..</string>
+  <string name="testpatternactivity_description">Шаблон:\n  * поддержка: glob или regex\n  * используется в: @include, @exclude, и @match\n\nURL:\n  * тестовый объект\n\nВыполнить тест:\n  * определить, соответствует ли шаблон \"шаблону\" "URL"\n  * показать результат в Toast</string>
+  <string name="testpatternactivity_label_pattern">Шаблон:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Выполнить тест</string>
+  <string name="testpatternactivity_result_is_match">Успех: Совпадение</string>
+  <string name="testpatternactivity_result_no_match">Сбой: Нет совпадений</string>
 </resources>

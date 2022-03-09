@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Atualizar Scripts</string>
   <string name="menu_settings">Configurações</string>
+  <string name="menu_test_pattern">Padrão De Teste</string>
   <string name="menu_exit">Saída</string>
   <string name="pref_settings_title">WebMonkey Configurações</string>
   <string name="pref_homepage_array_names_1">Continue onde você deixou de fora</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">escolha página inicial..</string>
   <string name="pref_updateinterval_title">Intervalo De Atualização Do Script</string>
   <string name="pref_updateinterval_summary">dias entre cheques..</string>
+  <string name="testpatternactivity_description">Padrão:\n  * supoutes: glob or regex\n  * utilizado por: @include, @exclude, e @match\n\nURL:\n  * assunto de teste\n\nTeste de Execução:\n  * determinar se \"Pattern\" corresponde "URL"\n  * exibir resultado em Toast</string>
+  <string name="testpatternactivity_label_pattern">Padrão:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Teste de Execução</string>
+  <string name="testpatternactivity_result_is_match">Sucesso: Match</string>
+  <string name="testpatternactivity_result_no_match">Falha: Sem Match</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Hidlau Diweddaru</string>
   <string name="menu_settings">Gosodiadau</string>
+  <string name="menu_test_pattern">Patrwm Prawf</string>
   <string name="menu_exit">Gadael</string>
   <string name="pref_settings_title">WebMonkey Gosodiadau</string>
   <string name="pref_homepage_array_names_1">Parhau i ble rydych wedi gadael i ffwrdd</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">dewis tudalen cartref..</string>
   <string name="pref_updateinterval_title">Cyfnod Diweddaru sgript</string>
   <string name="pref_updateinterval_summary">diwrnodau rhwng gwiriadau..</string>
+  <string name="testpatternactivity_description">Patrwm:\n  * cefnogi: glob neu regex\n  * a ddefnyddir gan: @include, @exclude, a @match\n\nURL:\n  * pwnc prawf\n\nRhedeg Prawf:\n  * penderfynu a yw \"Patrwm\" yn cydweddu "URL"\n  * canlyniad dangosydd Toast</string>
+  <string name="testpatternactivity_label_pattern">Patrwm:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Rhedeg Prawf</string>
+  <string name="testpatternactivity_result_is_match">Llwyddiant: Cydweddu</string>
+  <string name="testpatternactivity_result_no_match">Methu: Dim cydweddiad</string>
 </resources>

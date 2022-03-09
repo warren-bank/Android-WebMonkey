@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Posodobi Skripte</string>
   <string name="menu_settings">Nastavitve</string>
+  <string name="menu_test_pattern">Preskusni Vzorec</string>
   <string name="menu_exit">Izhod</string>
   <string name="pref_settings_title">WebMonkey Nastavitve</string>
   <string name="pref_homepage_array_names_1">Nadaljuj, kjer si odšel.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">izbira domače strani..</string>
   <string name="pref_updateinterval_title">Interval Posodabljanja Skripta</string>
   <string name="pref_updateinterval_summary">dni med pregledi..</string>
+  <string name="testpatternactivity_description">Vzaliec:\n  * podpira: glob or regex\n  * v uporabi: @include, @exclude, in @match\n\nURL:\n  * preizkusi predmet\n\nZaženi preizkus:\n  * določi, ali se \"Vzorn\" ujema "URL"\n  * prikaži rezultat v Toast</string>
+  <string name="testpatternactivity_label_pattern">Vzorec:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Zaženi preizkus</string>
+  <string name="testpatternactivity_result_is_match">Uspeh: Match</string>
+  <string name="testpatternactivity_result_no_match">Neuspeh: Ni Ujemajte</string>
 </resources>

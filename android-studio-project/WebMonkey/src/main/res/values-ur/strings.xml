@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">اپ ڈیٹ سکرپٹ</string>
   <string name="menu_settings">سیٹنگز</string>
+  <string name="menu_test_pattern">ٹیسٹ پیٹرن</string>
   <string name="menu_exit">باہر نکلیں</string>
   <string name="pref_settings_title">WebMonkey سیٹنگز</string>
   <string name="pref_homepage_array_names_1">Continue reading about تم کہاں چھوڑ گئے</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ہوم پیج چنیں..</string>
   <string name="pref_updateinterval_title">اسکرپٹ اپ ڈیٹ Interval</string>
   <string name="pref_updateinterval_summary">چیک کے درمیان دن..</string>
+  <string name="testpatternactivity_description">پیٹرن):\n  * کی حمایت: glob یا regex\n  * کے ذریعے استعمال: @include, @exclude, اور @match\n\nURL:\n  * ٹیسٹ مشروط\n\nرن ٹیسٹ:\n  * تعین کریں کہ آیا \"پیٹرن\" میچ "URL"\n  * ظاہر ہے Toast</string>
+  <string name="testpatternactivity_label_pattern">پیٹرن):</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">رن ٹیسٹ</string>
+  <string name="testpatternactivity_result_is_match">کامیابی: میچ</string>
+  <string name="testpatternactivity_result_no_match">فضائل: کوئی میچ</string>
 </resources>

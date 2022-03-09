@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">ස්ක්රිප්ට් යාවත්කාලීන කරන්න</string>
   <string name="menu_settings">සැකසුම්</string>
+  <string name="menu_test_pattern">පටිගත කිරීම</string>
   <string name="menu_exit">Exit</string>
   <string name="pref_settings_title">WebMonkey සැකසුම්</string>
   <string name="pref_homepage_array_names_1">ඔයා ගිය තැන දිගටම යන්න.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ගෙදර පිටුව තෝරන්න..</string>
   <string name="pref_updateinterval_title">ස්ක්රිප්ට් යාවත්කාලීන කිරීම</string>
   <string name="pref_updateinterval_summary">චෙක්පත් අතර දින..</string>
+  <string name="testpatternactivity_description">පැටර්න්:\n  * සහය දක්වනවා: glob හෝ regex\n  * විසින් භාවිතා කරන: @include, @exclude, සහ @match\n\nURL:\n  * පරීක්ෂණ විෂයය\n\n\@ option: check:\n  * \" Patterns-action "URL"\n  * වල ප්රතිඵල පෙන්වන්න Toast</string>
+  <string name="testpatternactivity_label_pattern">පැටර්න්:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">\@ option: check</string>
+  <string name="testpatternactivity_result_is_match">සාර්ථකත්වය: ගැලවීම</string>
+  <string name="testpatternactivity_result_no_match">ගැලවීම: ගැලවීම නැත</string>
 </resources>

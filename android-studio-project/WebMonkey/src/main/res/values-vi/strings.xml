@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Cập nhật tập lệnh</string>
   <string name="menu_settings">Thiết lập</string>
+  <string name="menu_test_pattern">Mẫu thử nghiệm</string>
   <string name="menu_exit">Thoát</string>
   <string name="pref_settings_title">WebMonkey Thiết lập</string>
   <string name="pref_homepage_array_names_1">Tiếp tục ở chỗ anh bỏ đi.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">chọn trang chủ..</string>
   <string name="pref_updateinterval_title">Khoảng cập nhật tập lệnh</string>
   <string name="pref_updateinterval_summary">ngày giữa kiểm tra..</string>
+  <string name="testpatternactivity_description">Mô hình:\n  * hô ̃ trợ: glob  regex\n  * dùng bởi: @include, @exclude, và @match\n\nURL:\n  * mục kiểm tra\n\nChạy thử:\n  * xác định xem \"Pattern\" các trận đấu "URL"\n  * hiển thị kết quả Toast</string>
+  <string name="testpatternactivity_label_pattern">Mô hình:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Chạy thử</string>
+  <string name="testpatternactivity_result_is_match">Thành công: Trận đấu</string>
+  <string name="testpatternactivity_result_no_match">Thất bại: Không khớp</string>
 </resources>

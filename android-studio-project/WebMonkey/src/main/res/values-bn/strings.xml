@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">স্ক্রিপ্ট আপডেট করো</string>
   <string name="menu_settings">সেটিংস</string>
+  <string name="menu_test_pattern">টেস্ট প্যাটার্ন</string>
   <string name="menu_exit">এক্সিট</string>
   <string name="pref_settings_title">WebMonkey সেটিংস</string>
   <string name="pref_homepage_array_names_1">চালিয়ে যাও যেখানে তুমি চলে যাও</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">হোম পেজ বেছে নিন..</string>
   <string name="pref_updateinterval_title">স্ক্রিপ্ট আপডেট বিরতি</string>
   <string name="pref_updateinterval_summary">পরীক্ষার মধ্যবর্তী দিন..</string>
+  <string name="testpatternactivity_description">প্যাটার্ন:\n  * সমর্থন: glob অথবা regex\n  * ব্যবহৃত: @include, @exclude, এবং @match\n\nURL:\n  * পরীক্ষার বিষয়\n\nটেস্ট চালাও:\n  * \"প্যাটার্ন\" খেলাটি নির্ধারণ করে "URL"\n  * ডিসপ্লে ফলাফল Toast</string>
+  <string name="testpatternactivity_label_pattern">প্যাটার্ন:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">টেস্ট চালাও</string>
+  <string name="testpatternactivity_result_is_match">সাফল্য: মিল</string>
+  <string name="testpatternactivity_result_no_match">ফেইল: কোন মিল নেই</string>
 </resources>

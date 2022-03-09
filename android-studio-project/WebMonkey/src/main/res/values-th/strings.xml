@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">อัพเดตสคริปต์</string>
   <string name="menu_settings">การตั้งค่า</string>
+  <string name="menu_test_pattern">รูปแบบการทดสอบ</string>
   <string name="menu_exit">ออก</string>
   <string name="pref_settings_title">WebMonkey การตั้งค่า</string>
   <string name="pref_homepage_array_names_1">ไปต่อที่ที่คุณทิ้งไว้</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">เลือกโฮมเพจ..</string>
   <string name="pref_updateinterval_title">ช่วงเวลาการอัพเดตสคริปต์</string>
   <string name="pref_updateinterval_summary">วันระหว่างการตรวจสอบ..</string>
+  <string name="testpatternactivity_description">รูปแบบ:\n  * สนับสนุน: glob หรือ regex\n  * ใช้โดย: @include, @exclude, และ @match\n\nURL:\n  * หัวข้อการทดสอบ\n\nรันการทดสอบ:\n  * พิจารณาว่าตรงกับ \"รูปแบบ\" หรือไม่ "URL"\n  * แสดงผลลัพธ์ใน Toast</string>
+  <string name="testpatternactivity_label_pattern">รูปแบบ:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">รันการทดสอบ</string>
+  <string name="testpatternactivity_result_is_match">สำเร็จ: ตรงกัน</string>
+  <string name="testpatternactivity_result_no_match">ล้มเหลว: ไม่ตรงกับ</string>
 </resources>

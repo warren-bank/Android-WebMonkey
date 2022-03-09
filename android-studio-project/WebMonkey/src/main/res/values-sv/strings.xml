@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Uppdatera skript</string>
   <string name="menu_settings">Inställningar</string>
+  <string name="menu_test_pattern">Testmönster</string>
   <string name="menu_exit">Avsluta</string>
   <string name="pref_settings_title">WebMonkey Inställningar</string>
   <string name="pref_homepage_array_names_1">Fortsätt där du slutade.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">välja startsida..</string>
   <string name="pref_updateinterval_title">Skriptuppdatering</string>
   <string name="pref_updateinterval_summary">dagar mellan kontroller..</string>
+  <string name="testpatternactivity_description">Mönster:\n  * stöd: glob eller regex\n  * används av: @include, @exclude, och @match\n\nURL:\n  * försöksämne\n\nKör test:\n  * avgöra om \"Mönster\" matchar "URL"\n  * visa resultat i Toast</string>
+  <string name="testpatternactivity_label_pattern">Mönster:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Kör test</string>
+  <string name="testpatternactivity_result_is_match">Lyckades: Matcha</string>
+  <string name="testpatternactivity_result_no_match">Misslyckas: Ingen matchning</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">تعديل البرامج النصية</string>
   <string name="menu_settings">المحددات</string>
+  <string name="menu_test_pattern">نموذج الاختبار</string>
   <string name="menu_exit">خروج</string>
   <string name="pref_settings_title">WebMonkey المحددات</string>
   <string name="pref_homepage_array_names_1">استمر في المكان الذي تركته فيه</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">اختيار الصفحة الرئيسية..</string>
   <string name="pref_updateinterval_title">فترة تحديث البرنامج النصي</string>
   <string name="pref_updateinterval_summary">أيام بين عمليات التحقق..</string>
+  <string name="testpatternactivity_description">نموذج:\n  * دعم: glob أو regex\n  * مستخدم بواسطة: @include, @exclude, و /- @match\n\nURL:\n  * اختبار الموضوع\n\nتشغيل الاختبار:\n  * تحديد ما اذا كان \"نموذج\" يطابق "URL"\n  * عرض النتيجة في Toast</string>
+  <string name="testpatternactivity_label_pattern">نموذج:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">تشغيل الاختبار</string>
+  <string name="testpatternactivity_result_is_match">نجاح : ماتش</string>
+  <string name="testpatternactivity_result_no_match">فشل : لا يوجد تطابق</string>
 </resources>

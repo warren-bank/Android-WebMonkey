@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Komut Dosyaları Güncelle</string>
   <string name="menu_settings">Ayarlar</string>
+  <string name="menu_test_pattern">Test Kalıbı</string>
   <string name="menu_exit">Çıkış</string>
   <string name="pref_settings_title">WebMonkey Ayarlar</string>
   <string name="pref_homepage_array_names_1">Bıraktığınız yerden devam et</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ana sayfa seç..</string>
   <string name="pref_updateinterval_title">Komut Dosyası Güncelleme Aralığı</string>
   <string name="pref_updateinterval_summary">denetimler arasındaki gün sayısı..</string>
+  <string name="testpatternactivity_description">Kalıp:\n  * destekler: glob ya da regex\n  * tarafından kullanılan: @include, @exclude, ve @match\n\nURL:\n  * test konusu\n\nTesti Çalıştır:\n  * \"Kalıp\" eşleşmesinin olup olmadığını belirleme "URL"\n  * sonucu görüntüle Toast</string>
+  <string name="testpatternactivity_label_pattern">Kalıp:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Testi Çalıştır</string>
+  <string name="testpatternactivity_result_is_match">Başarı: Eşleştir</string>
+  <string name="testpatternactivity_result_no_match">Başarısız: Eşleştirme Yok</string>
 </resources>

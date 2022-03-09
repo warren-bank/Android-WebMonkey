@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Opdatér-scripts</string>
   <string name="menu_settings">Indstillinger</string>
+  <string name="menu_test_pattern">Testmønster</string>
   <string name="menu_exit">Afslut</string>
   <string name="pref_settings_title">WebMonkey Indstillinger</string>
   <string name="pref_homepage_array_names_1">Fortsæt, hvor du slap.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">vælg startside..</string>
   <string name="pref_updateinterval_title">Interval for scriptopdatering</string>
   <string name="pref_updateinterval_summary">dage mellem kontrol..</string>
+  <string name="testpatternactivity_description">Mønster:\n  * understøtter: glob eller regex\n  * bruges af: @include, @exclude, og @match\n\nURL:\n  * forsøgsperson\n\nUdfør test:\n  * afgør, om \"Mønster\" matcher "URL"\n  * fremvisningsresultat i Toast</string>
+  <string name="testpatternactivity_label_pattern">Mønster:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Udfør test</string>
+  <string name="testpatternactivity_result_is_match">Succes: Match</string>
+  <string name="testpatternactivity_result_no_match">Fejl: Ingen match</string>
 </resources>

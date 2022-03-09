@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aktualizační skripty</string>
   <string name="menu_settings">NastaveníComment</string>
+  <string name="menu_test_pattern">Testovací vzorek</string>
   <string name="menu_exit">Ukončit</string>
   <string name="pref_settings_title">WebMonkey NastaveníComment</string>
   <string name="pref_homepage_array_names_1">Pokračujte tam, kde jste skončili</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">zvolit domovskou stránku..</string>
   <string name="pref_updateinterval_title">Interval aktualizace skriptu</string>
   <string name="pref_updateinterval_summary">dnů mezi kontrolami..</string>
+  <string name="testpatternactivity_description">Vznebo:\n  * podporuje: glob or regex\n  * používaný: @include, @exclude, a @match\n\nURL:\n  * předmět testu\n\nSpustit test:\n  * určit, zda \"Pattern\" odpovídá "URL"\n  * zobrazit výsledek v Toast</string>
+  <string name="testpatternactivity_label_pattern">Vzor:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Spustit test</string>
+  <string name="testpatternactivity_result_is_match">Úspěch: Shoda</string>
+  <string name="testpatternactivity_result_no_match">Selhání: Žádná shoda</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">更新 Script</string>
   <string name="menu_settings">設定</string>
+  <string name="menu_test_pattern">測試型樣</string>
   <string name="menu_exit">出口</string>
   <string name="pref_settings_title">WebMonkey 設定</string>
   <string name="pref_homepage_array_names_1">繼續你離開的地方</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">選擇首頁..</string>
   <string name="pref_updateinterval_title">Script 更新間隔</string>
   <string name="pref_updateinterval_summary">之間的檢查天數..</string>
+  <string name="testpatternactivity_description">Pattern:\n  * 支援: glob 或 regex\n  * 由使用: @include, @exclude, 以及 @match\n\nURL:\n  * 試題\n\n執行測試:\n  * 判定「型樣」是否相符 "URL"\n  * 顯示的結果 Toast</string>
+  <string name="testpatternactivity_label_pattern">Pattern:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">執行測試</string>
+  <string name="testpatternactivity_result_is_match">成功：符合</string>
+  <string name="testpatternactivity_result_no_match">失敗：不相符</string>
 </resources>

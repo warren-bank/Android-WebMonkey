@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Обновяване на скриптове</string>
   <string name="menu_settings">Настройки:</string>
+  <string name="menu_test_pattern">Модел на изпитване:</string>
   <string name="menu_exit">Изход:</string>
   <string name="pref_settings_title">WebMonkey Настройки:</string>
   <string name="pref_homepage_array_names_1">Продължи, където си тръгна.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">Изберете начална страница..</string>
   <string name="pref_updateinterval_title">Интервал на обновяване на скрипт</string>
   <string name="pref_updateinterval_summary">дни между проверките..</string>
+  <string name="testpatternactivity_description">Образец::\n  * -: glob или ... regex\n  * използван от: @include, @exclude, и ... @match\n\nURL:\n  * изпитван обект\n\nТест за изпитване:\n  * определя дали \"Схемата\" съвпада "URL"\n  * показва резултата в Toast</string>
+  <string name="testpatternactivity_label_pattern">Образец::</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Тест за изпитване</string>
+  <string name="testpatternactivity_result_is_match">Успех: мач</string>
+  <string name="testpatternactivity_result_no_match">Неуспешно: Няма мач</string>
 </resources>

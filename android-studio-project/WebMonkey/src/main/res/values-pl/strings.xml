@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aktualizuj skrypty</string>
   <string name="menu_settings">Ustawienia</string>
+  <string name="menu_test_pattern">Wzorzec testu</string>
   <string name="menu_exit">Wyjdź</string>
   <string name="pref_settings_title">WebMonkey Ustawienia</string>
   <string name="pref_homepage_array_names_1">Kontynuuj w miejscu, w którym opuściłeś</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">wybierz stronę główną..</string>
   <string name="pref_updateinterval_title">Przedział czasu aktualizacji skryptu</string>
   <string name="pref_updateinterval_summary">dni między sprawdzeniami..</string>
+  <string name="testpatternactivity_description">Wzlubzec:\n  * obsługuje: glob or regex\n  * używane przez: @include, @exclude, oraz @match\n\nURL:\n  * temat testu\n\nUruchom test:\n  * określić, czy \"Wzorzec\" jest zgodny "URL"\n  * wyświetl wynik w Toast</string>
+  <string name="testpatternactivity_label_pattern">Wzorzec:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Uruchom test</string>
+  <string name="testpatternactivity_result_is_match">Sukces: zgodność</string>
+  <string name="testpatternactivity_result_no_match">Niepowodzenie: Brak zgodności</string>
 </resources>

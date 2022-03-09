@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">스크립트 업데이트</string>
   <string name="menu_settings">설정</string>
+  <string name="menu_test_pattern">테스트 패턴</string>
   <string name="menu_exit">종료</string>
   <string name="pref_settings_title">WebMonkey 설정</string>
   <string name="pref_homepage_array_names_1">남은 곳에서 계속해</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">홈 페이지 선택하기..</string>
   <string name="pref_updateinterval_title">스크립트 업데이트 간격</string>
   <string name="pref_updateinterval_summary">검사 간격..</string>
+  <string name="testpatternactivity_description">패턴:\n  * 지원하다: glob 또는 regex\n  * 사용되는: @include, @exclude, 및 @match\n\nURL:\n  * 테스트 대상\n\n테스트 실행:\n  * \"패턴\" 일치 여부 판별 "URL"\n  * 표시 결과 표시 Toast</string>
+  <string name="testpatternactivity_label_pattern">패턴:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">테스트 실행</string>
+  <string name="testpatternactivity_result_is_match">성공: 일치</string>
+  <string name="testpatternactivity_result_no_match">실패: 일치하지 않음</string>
 </resources>

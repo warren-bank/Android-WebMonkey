@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Atjaunināt skriptus</string>
   <string name="menu_settings">Iestatījumi</string>
+  <string name="menu_test_pattern">Testa paraugs</string>
   <string name="menu_exit">Iziešana</string>
   <string name="pref_settings_title">WebMonkey Iestatījumi</string>
   <string name="pref_homepage_array_names_1">Turpināt, kur atstājāt</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">izvēlēties mājas lapu..</string>
   <string name="pref_updateinterval_title">Skripta atjaunināšanas intervāls</string>
   <string name="pref_updateinterval_summary">dienas starp pārbaudēm..</string>
+  <string name="testpatternactivity_description">Raksts:\n  * atbalsta: glob , vai regex\n  * ko izmanto: @include, @exclude, , un @match\n\nURL:\n  * testa priekšmets\n\nPalaist Test:\n  * noteikt, vai \"Pattern\" spēlēs "URL"\n  * attēlot rezultātus Toast</string>
+  <string name="testpatternactivity_label_pattern">Raksts:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Palaist Test</string>
+  <string name="testpatternactivity_result_is_match">Panākumi: Match</string>
+  <string name="testpatternactivity_result_no_match">Neizdodas: nav Match</string>
 </resources>

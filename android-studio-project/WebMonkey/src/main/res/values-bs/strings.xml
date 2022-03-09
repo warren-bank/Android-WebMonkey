@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ažuriraj skripte</string>
   <string name="menu_settings">Postavke</string>
+  <string name="menu_test_pattern">Test uzorak</string>
   <string name="menu_exit">Izlaz</string>
   <string name="pref_settings_title">WebMonkey Postavke</string>
   <string name="pref_homepage_array_names_1">Nastavite tamo gdje ste stali.</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">izaberite početnu stranicu..</string>
   <string name="pref_updateinterval_title">Interval ažuriranja skripta</string>
   <string name="pref_updateinterval_summary">dana između čekova..</string>
+  <string name="testpatternactivity_description">Uziliak:\n  * podržava: glob or regex\n  * koristi od strane: @include, @exclude, i @match\n\nURL:\n  * ispitanik\n\nIzvedi test:\n  * Utvrdi da li \"Uzorak\" odgovara "URL"\n  * prikaz rezultata u Toast</string>
+  <string name="testpatternactivity_label_pattern">Uzorak:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Izvedi test</string>
+  <string name="testpatternactivity_result_is_match">Uspjeh: Match</string>
+  <string name="testpatternactivity_result_no_match">Neuspješan: Ne Match</string>
 </resources>

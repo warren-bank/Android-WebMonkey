@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">સ્ક્રિપ્ટો સુધારો</string>
   <string name="menu_settings">સુયોજનો</string>
+  <string name="menu_test_pattern">ચકાસણી ભાત</string>
   <string name="menu_exit">બહાર નીકળવો</string>
   <string name="pref_settings_title">WebMonkey સુયોજનો</string>
   <string name="pref_homepage_array_names_1">ચાલુ રાખો જ્યાં તમે છોડી દો</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">ઘર પાનું પસંદ કરો..</string>
   <string name="pref_updateinterval_title">સ્ક્રિપ્ટ સુધારો અંતરાલ</string>
   <string name="pref_updateinterval_summary">ચકાસણી વચ્ચેની દિવસો..</string>
+  <string name="testpatternactivity_description">ભાત:\n  * આધાર: glob અથવા regex\n  * દ્વારા વપરાયેલ: @include, @exclude, અને @match\n\nURL:\n  * ચકાસણી વિષય\n\nચકાસણી ચલાવો:\n  * નક્કી કરો કે શું \"ભાત\" બંધબેસતુ નથી "URL"\n  * તેમાં પરિણામ દર્શાવો Toast</string>
+  <string name="testpatternactivity_label_pattern">ભાત:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">ચકાસણી ચલાવો</string>
+  <string name="testpatternactivity_result_is_match">સફળ: સરળ</string>
+  <string name="testpatternactivity_result_no_match">નિષ્ફળ: બંધબેસતુ નથી</string>
 </resources>

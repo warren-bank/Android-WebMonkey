@@ -3,6 +3,7 @@
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">சிறுநிரலை புதுப்பி</string>
   <string name="menu_settings">அமைப்புகள்</string>
+  <string name="menu_test_pattern">பரிசோதனை</string>
   <string name="menu_exit">வெளியேறு</string>
   <string name="pref_settings_title">WebMonkey அமைப்புகள்</string>
   <string name="pref_homepage_array_names_1">நீங்கள் விட்டு எங்கே தொடர்ந்து</string>
@@ -13,4 +14,10 @@
   <string name="pref_homepage_summary">வீட்டு பக்கத்தை தேர்ந்தெடுக்கவும்..</string>
   <string name="pref_updateinterval_title">சிறுநிரல் புதுப்பி இடைவெளி</string>
   <string name="pref_updateinterval_summary">சோதனைகளுக்கு இடையிலான நாட்கள்..</string>
+  <string name="testpatternactivity_description">பாட்டர்ன்:\n  * ஆதரவு: glob அல்லது regex\n  * பயன்படுத்தப்பட்டது: @include, @exclude, மற்றும் @match\n\nURL:\n  * சோதனை\n\nசோதனை இயக்கு:\n  * \"Pattern\" பொருட்களை தீர்மானிக்கும் "URL"\n  * காட்சி முடிவு Toast</string>
+  <string name="testpatternactivity_label_pattern">பாட்டர்ன்:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">சோதனை இயக்கு</string>
+  <string name="testpatternactivity_result_is_match">வெற்றி: பொருத்தம்</string>
+  <string name="testpatternactivity_result_no_match">கோப்பு: பொருத்தம் இல்லை</string>
 </resources>
