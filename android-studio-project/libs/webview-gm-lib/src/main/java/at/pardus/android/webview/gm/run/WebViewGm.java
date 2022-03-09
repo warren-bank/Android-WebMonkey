@@ -34,117 +34,117 @@ import at.pardus.android.webview.gm.store.ScriptStore;
  */
 public class WebViewGm extends WebView {
 
-	private static final String JSBRIDGENAME = "WebViewGM";
+  private static final String JSBRIDGENAME = "WebViewGM";
 
-	private ScriptStore scriptStore;
+  private ScriptStore scriptStore;
 
-	private WebViewClientGm webViewClient;
+  private WebViewClientGm webViewClient;
 
-	/**
-	 * Constructs a new WebViewGm initializing it with a ScriptStore.
-	 * 
-	 * @param context
-	 *            the application's context
-	 * @param scriptStore
-	 *            the script database to use
-	 */
-	public WebViewGm(Context context, ScriptStore scriptStore) {
-		super(context);
-		init();
-		setScriptStore(scriptStore);
-	}
+  /**
+   * Constructs a new WebViewGm initializing it with a ScriptStore.
+   * 
+   * @param context
+   *            the application's context
+   * @param scriptStore
+   *            the script database to use
+   */
+  public WebViewGm(Context context, ScriptStore scriptStore) {
+    super(context);
+    init();
+    setScriptStore(scriptStore);
+  }
 
-	/**
-	 * Constructs a new WebViewGm with a Context object.
-	 * 
-	 * @param context
-	 *            the application's context
-	 */
-	public WebViewGm(Context context) {
-		super(context);
-		init();
-	}
+  /**
+   * Constructs a new WebViewGm with a Context object.
+   * 
+   * @param context
+   *            the application's context
+   */
+  public WebViewGm(Context context) {
+    super(context);
+    init();
+  }
 
-	/**
-	 * Constructs a new WebViewGm with layout parameters.
-	 * 
-	 * @param context
-	 *            the application's context
-	 * @param attrs
-	 *            layout parameters
-	 */
-	public WebViewGm(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		init();
-	}
+  /**
+   * Constructs a new WebViewGm with layout parameters.
+   * 
+   * @param context
+   *            the application's context
+   * @param attrs
+   *            layout parameters
+   */
+  public WebViewGm(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    init();
+  }
 
-	/**
-	 * Constructs a new WebViewGm with layout parameters and a default style.
-	 * 
-	 * @param context
-	 *            the application's context
-	 * @param attrs
-	 *            layout parameters
-	 * @param defStyle
-	 *            default style resource ID
-	 */
-	public WebViewGm(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init();
-	}
+  /**
+   * Constructs a new WebViewGm with layout parameters and a default style.
+   * 
+   * @param context
+   *            the application's context
+   * @param attrs
+   *            layout parameters
+   * @param defStyle
+   *            default style resource ID
+   */
+  public WebViewGm(Context context, AttributeSet attrs, int defStyle) {
+    super(context, attrs, defStyle);
+    init();
+  }
 
-	/**
-	 * Called by the constructors to set up the WebView to enable user scripts.
-	 */
-	@SuppressLint("SetJavaScriptEnabled")
-	private void init() {
-		WebSettings settings = getSettings();
-		settings.setJavaScriptEnabled(true);
-		webViewClient = new WebViewClientGm(scriptStore, JSBRIDGENAME,
-				generateSecret());
-		setWebViewClient(webViewClient);
-	}
+  /**
+   * Called by the constructors to set up the WebView to enable user scripts.
+   */
+  @SuppressLint("SetJavaScriptEnabled")
+  private void init() {
+    WebSettings settings = getSettings();
+    settings.setJavaScriptEnabled(true);
+    webViewClient = new WebViewClientGm(scriptStore, JSBRIDGENAME,
+        generateSecret());
+    setWebViewClient(webViewClient);
+  }
 
-	/**
-	 * @return the scriptStore
-	 */
-	public ScriptStore getScriptStore() {
-		return scriptStore;
-	}
+  /**
+   * @return the scriptStore
+   */
+  public ScriptStore getScriptStore() {
+    return scriptStore;
+  }
 
-	/**
-	 * @param scriptStore
-	 *            the scriptStore to set
-	 */
+  /**
+   * @param scriptStore
+   *            the scriptStore to set
+   */
     @SuppressLint("AddJavascriptInterface")
     public void setScriptStore(ScriptStore scriptStore) {
-		this.scriptStore = scriptStore;
-		addJavascriptInterface(new WebViewGmApi(this, scriptStore,
-				webViewClient.getSecret()), JSBRIDGENAME);
-		webViewClient.setScriptStore(scriptStore);
-	}
+    this.scriptStore = scriptStore;
+    addJavascriptInterface(new WebViewGmApi(this, scriptStore,
+        webViewClient.getSecret()), JSBRIDGENAME);
+    webViewClient.setScriptStore(scriptStore);
+  }
 
-	/**
-	 * @return the webViewClient
-	 */
-	public WebViewClientGm getWebViewClient() {
-		return webViewClient;
-	}
+  /**
+   * @return the webViewClient
+   */
+  public WebViewClientGm getWebViewClient() {
+    return webViewClient;
+  }
 
-	/**
-	 * @param webViewClient
-	 *            the WebViewClientGm to set as WebViewClient
-	 */
-	public void setWebViewClient(WebViewClientGm webViewClient) {
-		this.webViewClient = webViewClient;
-		super.setWebViewClient(webViewClient);
-	}
+  /**
+   * @param webViewClient
+   *            the WebViewClientGm to set as WebViewClient
+   */
+  public void setWebViewClient(WebViewClientGm webViewClient) {
+    this.webViewClient = webViewClient;
+    super.setWebViewClient(webViewClient);
+  }
 
-	/**
-	 * @return a random string to use in GM API calls
-	 */
-	private static String generateSecret() {
-		return UUID.randomUUID().toString();
-	}
+  /**
+   * @return a random string to use in GM API calls
+   */
+  private static String generateSecret() {
+    return UUID.randomUUID().toString();
+  }
 
 }

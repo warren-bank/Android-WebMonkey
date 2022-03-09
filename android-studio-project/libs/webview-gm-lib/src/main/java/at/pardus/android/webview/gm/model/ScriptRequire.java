@@ -23,19 +23,19 @@ package at.pardus.android.webview.gm.model;
  */
 public class ScriptRequire {
 
-	private String url;
-	private String content;
+  private String url;
+  private String content;
 
-	public ScriptRequire(String url, String content) {
-		this.url = url;
-		this.content = content;
-	}
+  public ScriptRequire(String url, String content) {
+    this.url = url;
+    this.content = content;
+  }
 
-	public String getUrl() {
-		return this.url;
-	}
+  public String getUrl() {
+    return this.url;
+  }
 
-	public String getContent() {
-		return this.content;
-	}
+  public String getContent() {
+    return this.content;
+  }
 }

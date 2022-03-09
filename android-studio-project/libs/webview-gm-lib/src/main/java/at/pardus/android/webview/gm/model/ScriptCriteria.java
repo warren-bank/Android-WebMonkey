@@ -25,68 +25,68 @@ import at.pardus.android.webview.gm.util.CriterionMatcher;
  */
 public class ScriptCriteria extends ScriptId {
 
-	private String[] exclude;
+  private String[] exclude;
 
-	private String[] include;
+  private String[] include;
 
-	private String[] match;
+  private String[] match;
 
-	public ScriptCriteria(String name, String namespace, String[] exclude,
-			String[] include, String[] match) {
-		super(name, namespace);
-		this.exclude = exclude;
-		this.include = include;
-		this.match = match;
-	}
+  public ScriptCriteria(String name, String namespace, String[] exclude,
+      String[] include, String[] match) {
+    super(name, namespace);
+    this.exclude = exclude;
+    this.include = include;
+    this.match = match;
+  }
 
-	/**
-	 * Checks if a URL matches the criteria of this object.
-	 * 
-	 * @param url
-	 *            the URL to test
-	 * @return true if the URL does not match any of the exclude patterns and
-	 *         does match one of the patterns in include or match (or include
-	 *         and match do not contain any patterns), false else
-	 */
-	public boolean testUrl(String url) {
-		if (exclude != null) {
-			for (String pattern : exclude) {
-				if (CriterionMatcher.test(pattern, url)) {
-					return false;
-				}
-			}
-		}
-		if ((include == null || include.length == 0)
-				&& (match == null || match.length == 0)) {
-			return true;
-		}
-		if (include != null) {
-			for (String pattern : include) {
-				if (CriterionMatcher.test(pattern, url)) {
-					return true;
-				}
-			}
-		}
-		if (match != null) {
-			for (String pattern : match) {
-				if (CriterionMatcher.test(pattern, url)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+  /**
+   * Checks if a URL matches the criteria of this object.
+   * 
+   * @param url
+   *            the URL to test
+   * @return true if the URL does not match any of the exclude patterns and
+   *         does match one of the patterns in include or match (or include
+   *         and match do not contain any patterns), false else
+   */
+  public boolean testUrl(String url) {
+    if (exclude != null) {
+      for (String pattern : exclude) {
+        if (CriterionMatcher.test(pattern, url)) {
+          return false;
+        }
+      }
+    }
+    if ((include == null || include.length == 0)
+        && (match == null || match.length == 0)) {
+      return true;
+    }
+    if (include != null) {
+      for (String pattern : include) {
+        if (CriterionMatcher.test(pattern, url)) {
+          return true;
+        }
+      }
+    }
+    if (match != null) {
+      for (String pattern : match) {
+        if (CriterionMatcher.test(pattern, url)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 
-	public String[] getExclude() {
-		return exclude;
-	}
+  public String[] getExclude() {
+    return exclude;
+  }
 
-	public String[] getInclude() {
-		return include;
-	}
+  public String[] getInclude() {
+    return include;
+  }
 
-	public String[] getMatch() {
-		return match;
-	}
+  public String[] getMatch() {
+    return match;
+  }
 
 }

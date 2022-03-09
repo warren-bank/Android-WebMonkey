@@ -32,67 +32,67 @@ import at.pardus.android.webview.gm.store.ScriptStore;
  */
 public class ScriptList {
 
-	protected ScriptManagerActivity activity;
+  protected ScriptManagerActivity activity;
 
-	protected ScriptStore scriptStore;
+  protected ScriptStore scriptStore;
 
-	protected ListView scriptList;
+  protected ListView scriptList;
 
-	/**
-	 * Returns the view listing all installed scripts.
-	 * 
-	 * @return the updated list view
-	 */
-	public View getScriptList() {
-		// TODO separate look (or list) for disabled scripts
-		Script[] scripts = scriptStore.getAll();
-		scriptList.setAdapter(new ArrayAdapter<Script>(activity,
-				R.layout.script_list_item, scripts));
-		scriptList.invalidate();
-		return scriptList;
-	}
+  /**
+   * Returns the view listing all installed scripts.
+   * 
+   * @return the updated list view
+   */
+  public View getScriptList() {
+    // TODO separate look (or list) for disabled scripts
+    Script[] scripts = scriptStore.getAll();
+    scriptList.setAdapter(new ArrayAdapter<Script>(activity,
+        R.layout.script_list_item, scripts));
+    scriptList.invalidate();
+    return scriptList;
+  }
 
-	/**
-	 * Returns the ScriptId object for a given position in the list.
-	 * 
-	 * @param position
-	 *            the selected position
-	 * @return the ScriptId object at that position
-	 */
-	public ScriptId getScriptId(int position) {
-		return (ScriptId) scriptList.getItemAtPosition(position);
-	}
+  /**
+   * Returns the ScriptId object for a given position in the list.
+   * 
+   * @param position
+   *            the selected position
+   * @return the ScriptId object at that position
+   */
+  public ScriptId getScriptId(int position) {
+    return (ScriptId) scriptList.getItemAtPosition(position);
+  }
 
-	/**
-	 * Inflates the ListView from XML and registers its OnItemClickListener and
-	 * context menu.
-	 */
-	@SuppressLint("InflateParams")
+  /**
+   * Inflates the ListView from XML and registers its OnItemClickListener and
+   * context menu.
+   */
+  @SuppressLint("InflateParams")
     private void init() {
-		scriptList = (ListView) activity.getLayoutInflater().inflate(
-				R.layout.script_list, null);
-		scriptList.setTextFilterEnabled(true);
-		scriptList.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				activity.openScriptEditor(getScriptId(position));
-			}
-		});
-		activity.registerForContextMenu(scriptList);
-	}
+    scriptList = (ListView) activity.getLayoutInflater().inflate(
+        R.layout.script_list, null);
+    scriptList.setTextFilterEnabled(true);
+    scriptList.setOnItemClickListener(new OnItemClickListener() {
+      public void onItemClick(AdapterView<?> parent, View view,
+          int position, long id) {
+        activity.openScriptEditor(getScriptId(position));
+      }
+    });
+    activity.registerForContextMenu(scriptList);
+  }
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param activity
-	 *            the application's activity
-	 * @param scriptStore
-	 *            the database to use
-	 */
-	public ScriptList(ScriptManagerActivity activity, ScriptStore scriptStore) {
-		this.activity = activity;
-		this.scriptStore = scriptStore;
-		init();
-	}
+  /**
+   * Constructor.
+   * 
+   * @param activity
+   *            the application's activity
+   * @param scriptStore
+   *            the database to use
+   */
+  public ScriptList(ScriptManagerActivity activity, ScriptStore scriptStore) {
+    this.activity = activity;
+    this.scriptStore = scriptStore;
+    init();
+  }
 
 }

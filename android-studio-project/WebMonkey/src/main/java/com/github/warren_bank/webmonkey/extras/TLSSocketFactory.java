@@ -33,7 +33,7 @@ public class TLSSocketFactory extends SSLSocketFactory {
   public String[] getSupportedCipherSuites() {
     return internalSSLSocketFactory.getSupportedCipherSuites();
   }
-  
+
   @Override
   public Socket createSocket() throws IOException {
     return enableTLSOnSocket(internalSSLSocketFactory.createSocket());

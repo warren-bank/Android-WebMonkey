@@ -41,128 +41,128 @@ import at.pardus.android.webview.gm.store.ui.ScriptManagerActivity;
  */
 public class WebViewGmImpl extends ScriptManagerActivity {
 
-	private Stack<Integer> placeHistory = new Stack<Integer>();
+  private Stack<Integer> placeHistory = new Stack<Integer>();
 
-	private static final Integer LIST = 1;
+  private static final Integer LIST = 1;
 
-	private static final Integer BROWSER = 2;
+  private static final Integer BROWSER = 2;
 
-	@Override
-	public void openScriptList() {
-		if (scriptList == null) {
-			if (scriptStore == null) {
-				scriptStore = new ScriptStoreSQLite(this);
-				scriptStore.open();
-			}
-			scriptList = new ScriptList(this, scriptStore);
-		}
-		setTitle(R.string.app_name);
-		setContentView(scriptList.getScriptList());
-		placeHistory.push(LIST);
-	}
+  @Override
+  public void openScriptList() {
+    if (scriptList == null) {
+      if (scriptStore == null) {
+        scriptStore = new ScriptStoreSQLite(this);
+        scriptStore.open();
+      }
+      scriptList = new ScriptList(this, scriptStore);
+    }
+    setTitle(R.string.app_name);
+    setContentView(scriptList.getScriptList());
+    placeHistory.push(LIST);
+  }
 
-	@Override
-	public void openScriptEditor(ScriptId scriptId) {
-		if (scriptEditor == null) {
-			if (scriptStore == null) {
-				scriptStore = new ScriptStoreSQLite(this);
-				scriptStore.open();
-			}
-			scriptEditor = new ScriptEditor(this, scriptStore);
-		}
-		setContentView(scriptEditor.getEditForm(scriptId));
-		placeHistory.push(null);
-	}
+  @Override
+  public void openScriptEditor(ScriptId scriptId) {
+    if (scriptEditor == null) {
+      if (scriptStore == null) {
+        scriptStore = new ScriptStoreSQLite(this);
+        scriptStore.open();
+      }
+      scriptEditor = new ScriptEditor(this, scriptStore);
+    }
+    setContentView(scriptEditor.getEditForm(scriptId));
+    placeHistory.push(null);
+  }
 
-	@Override
-	public void openScriptBrowser() {
-		if (scriptBrowser == null) {
-			if (scriptStore == null) {
-				scriptStore = new ScriptStoreSQLite(this);
-				scriptStore.open();
-			}
-			scriptBrowser = new ScriptBrowser(this, scriptStore,
-					SettingsUtils.getHomePage(this));
-		}
-		setContentView(scriptBrowser.getBrowser());
-		placeHistory.push(BROWSER);
-	}
+  @Override
+  public void openScriptBrowser() {
+    if (scriptBrowser == null) {
+      if (scriptStore == null) {
+        scriptStore = new ScriptStoreSQLite(this);
+        scriptStore.open();
+      }
+      scriptBrowser = new ScriptBrowser(this, scriptStore,
+          SettingsUtils.getHomePage(this));
+    }
+    setContentView(scriptBrowser.getBrowser());
+    placeHistory.push(BROWSER);
+  }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.impl_menu, menu);
-		return true;
-	}
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.impl_menu, menu);
+    return true;
+  }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == R.id.menu_browse) {
-			openScriptBrowser();
-			return true;
-		} else if (item.getItemId() == R.id.menu_list) {
-			openScriptList();
-			return true;
-		} else {
-			return super.onOptionsItemSelected(item);
-		}
-	}
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    if (item.getItemId() == R.id.menu_browse) {
+      openScriptBrowser();
+      return true;
+    } else if (item.getItemId() == R.id.menu_list) {
+      openScriptList();
+      return true;
+    } else {
+      return super.onOptionsItemSelected(item);
+    }
+  }
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_PROGRESS);
-		openScriptBrowser();
-	}
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_PROGRESS);
+    openScriptBrowser();
+  }
 
-	@Override
-	protected void onResume() {
-		if (scriptStore != null) {
-			scriptStore.open();
-		}
-		if (scriptBrowser != null) {
-			scriptBrowser.resume();
-		}
-		super.onResume();
-	}
+  @Override
+  protected void onResume() {
+    if (scriptStore != null) {
+      scriptStore.open();
+    }
+    if (scriptBrowser != null) {
+      scriptBrowser.resume();
+    }
+    super.onResume();
+  }
 
-	@Override
-	protected void onPause() {
-		if (scriptBrowser != null) {
-			SettingsUtils.setLastUrl(this, scriptBrowser.getUrl());
-			scriptBrowser.pause();
-		}
-		if (scriptStore != null) {
-			scriptStore.close();
-		}
-		super.onPause();
-	}
+  @Override
+  protected void onPause() {
+    if (scriptBrowser != null) {
+      SettingsUtils.setLastUrl(this, scriptBrowser.getUrl());
+      scriptBrowser.pause();
+    }
+    if (scriptStore != null) {
+      scriptStore.close();
+    }
+    super.onPause();
+  }
 
-	@Override
-	public void onBackPressed() {
-		try {
-			Integer thisPlace = placeHistory.pop();
-			if (BROWSER.equals(thisPlace) && scriptBrowser.back()) {
-				placeHistory.push(thisPlace);
-			} else {
-				while (true) {
-					Integer prevPlace = placeHistory.pop();
-					if (prevPlace == null || prevPlace.equals(thisPlace)) {
-						continue;
-					}
-					if (LIST.equals(prevPlace)) {
-						openScriptList();
-						return;
-					}
-					if (BROWSER.equals(prevPlace)) {
-						openScriptBrowser();
-						return;
-					}
-				}
-			}
-		} catch (EmptyStackException e) {
-			super.onBackPressed();
-		}
-	}
+  @Override
+  public void onBackPressed() {
+    try {
+      Integer thisPlace = placeHistory.pop();
+      if (BROWSER.equals(thisPlace) && scriptBrowser.back()) {
+        placeHistory.push(thisPlace);
+      } else {
+        while (true) {
+          Integer prevPlace = placeHistory.pop();
+          if (prevPlace == null || prevPlace.equals(thisPlace)) {
+            continue;
+          }
+          if (LIST.equals(prevPlace)) {
+            openScriptList();
+            return;
+          }
+          if (BROWSER.equals(prevPlace)) {
+            openScriptBrowser();
+            return;
+          }
+        }
+      }
+    } catch (EmptyStackException e) {
+      super.onBackPressed();
+    }
+  }
 
 }

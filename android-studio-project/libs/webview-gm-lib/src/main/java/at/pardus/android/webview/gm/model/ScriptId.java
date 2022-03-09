@@ -24,58 +24,58 @@ package at.pardus.android.webview.gm.model;
  */
 public class ScriptId {
 
-	private String name;
+  private String name;
 
-	private String namespace;
+  private String namespace;
 
-	public ScriptId(String name, String namespace) {
-		this.name = name;
-		this.namespace = namespace;
-	}
+  public ScriptId(String name, String namespace) {
+    this.name = name;
+    this.namespace = namespace;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public String getNamespace() {
-		return namespace;
-	}
+  public String getNamespace() {
+    return namespace;
+  }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result
-				+ ((namespace == null) ? 0 : namespace.hashCode());
-		return result;
-	}
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((name == null) ? 0 : name.hashCode());
+    result = prime * result
+        + ((namespace == null) ? 0 : namespace.hashCode());
+    return result;
+  }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ScriptId other = (ScriptId) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (namespace == null) {
-			if (other.namespace != null)
-				return false;
-		} else if (!namespace.equals(other.namespace))
-			return false;
-		return true;
-	}
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    ScriptId other = (ScriptId) obj;
+    if (name == null) {
+      if (other.name != null)
+        return false;
+    } else if (!name.equals(other.name))
+      return false;
+    if (namespace == null) {
+      if (other.namespace != null)
+        return false;
+    } else if (!namespace.equals(other.namespace))
+      return false;
+    return true;
+  }
 
-	@Override
-	public String toString() {
-		return name + ", " + namespace;
-	}
+  @Override
+  public String toString() {
+    return name + ", " + namespace;
+  }
 
 }

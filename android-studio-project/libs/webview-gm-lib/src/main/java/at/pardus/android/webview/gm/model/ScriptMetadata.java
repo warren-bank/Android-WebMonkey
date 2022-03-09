@@ -23,91 +23,91 @@ package at.pardus.android.webview.gm.model;
  */
 public class ScriptMetadata extends ScriptCriteria {
 
-	public static final String RUNATSTART = "document-start";
+  public static final String RUNATSTART = "document-start";
 
-	public static final String RUNATEND = "document-end";
+  public static final String RUNATEND = "document-end";
 
-	private String description;
+  private String description;
 
-	private String downloadurl;
+  private String downloadurl;
 
-	private String updateurl;
+  private String updateurl;
 
-	private String installurl;
+  private String installurl;
 
-	private String icon;
+  private String icon;
 
-	private String runAt;
+  private String runAt;
 
-	private ScriptRequire[] requires;
+  private ScriptRequire[] requires;
 
-	private ScriptResource[] resources;
+  private ScriptResource[] resources;
 
-	private boolean unwrap;
+  private boolean unwrap;
 
-	private String version;
+  private String version;
 
-	public ScriptMetadata(String name, String namespace, String[] exclude,
-			String[] include, String[] match, String description,
-			String downloadurl, String updateurl, String installurl,
-			String icon, String runAt, boolean unwrap, String version,
-			ScriptRequire[] requires, ScriptResource[] resources) {
-		super(name, namespace, exclude, include, match);
-		this.description = description;
-		this.downloadurl = downloadurl;
-		this.updateurl = updateurl;
-		this.installurl = installurl;
-		this.icon = icon;
-		this.runAt = runAt;
-		this.unwrap = unwrap;
-		this.version = version;
-		this.requires = requires;
-		this.resources = resources;
-	}
+  public ScriptMetadata(String name, String namespace, String[] exclude,
+      String[] include, String[] match, String description,
+      String downloadurl, String updateurl, String installurl,
+      String icon, String runAt, boolean unwrap, String version,
+      ScriptRequire[] requires, ScriptResource[] resources) {
+    super(name, namespace, exclude, include, match);
+    this.description = description;
+    this.downloadurl = downloadurl;
+    this.updateurl = updateurl;
+    this.installurl = installurl;
+    this.icon = icon;
+    this.runAt = runAt;
+    this.unwrap = unwrap;
+    this.version = version;
+    this.requires = requires;
+    this.resources = resources;
+  }
 
-	public String getDescription() {
-		return description;
-	}
+  public String getDescription() {
+    return description;
+  }
 
-	public String getDownloadurl() {
-		return downloadurl;
-	}
+  public String getDownloadurl() {
+    return downloadurl;
+  }
 
-	public String getUpdateurl() {
-		return updateurl;
-	}
+  public String getUpdateurl() {
+    return updateurl;
+  }
 
-	public String getInstallurl() {
-		return installurl;
-	}
+  public String getInstallurl() {
+    return installurl;
+  }
 
-	public String getIcon() {
-		return icon;
-	}
+  public String getIcon() {
+    return icon;
+  }
 
-	public String getRunAt() {
-		return runAt;
-	}
+  public String getRunAt() {
+    return runAt;
+  }
 
-	public ScriptRequire[] getRequires() {
-		return requires;
-	}
+  public ScriptRequire[] getRequires() {
+    return requires;
+  }
 
-	public ScriptResource[] getResources() {
-		return resources;
-	}
+  public ScriptResource[] getResources() {
+    return resources;
+  }
 
-	public boolean isUnwrap() {
-		return unwrap;
-	}
+  public boolean isUnwrap() {
+    return unwrap;
+  }
 
-	public String getVersion() {
-		return version;
-	}
+  public String getVersion() {
+    return version;
+  }
 
-	@Override
-	public String toString() {
-		return super.toString() + ": " + description;
-	}
+  @Override
+  public String toString() {
+    return super.toString() + ": " + description;
+  }
 
 }
