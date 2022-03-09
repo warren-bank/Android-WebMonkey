@@ -40,8 +40,9 @@ public class CriterionMatcher {
     }
     criterion = criterion.toLowerCase();
     url = url.toLowerCase();
-    if (isRegExp(url)) {
-      return url.matches(".*" + convertJsRegExp(criterion) + ".*");
+    if (isRegExp(criterion)) {
+      criterion = convertJsRegExp(criterion);
+      return url.matches(criterion);
     }
     return testGlob(criterion, url);
   }
@@ -125,7 +126,15 @@ public class CriterionMatcher {
    * @return the JS regular expression as Java-compatible string
    */
   private static String convertJsRegExp(String jsRegExp) {
-    return jsRegExp.substring(1, jsRegExp.length() - 1);
+    String pattern = jsRegExp.substring(1, jsRegExp.length() - 1);
+
+    if (!pattern.startsWith("^"))
+      pattern = "^.*" + pattern;
+
+    if (!pattern.endsWith("$"))
+      pattern = pattern + ".*$";
+
+    return pattern;
   }
 
   /**
