@@ -46,5 +46,10 @@
       android:theme="@android:style/Theme.NoTitleBar"
       android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
 
+    <activity
+      android:name=".TestPatternActivity"
+      android:label="@string/testpatternactivity_title"
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
+
   </application>
 </manifest>

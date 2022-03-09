@@ -53,6 +53,10 @@ public class BrowserActivity extends WebViewGmImpl implements IBrowser {
       Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
       startActivity(in);
       return true;
+    } else if (item.getItemId() == R.id.menu_test_pattern) {
+      Intent in = new Intent(BrowserActivity.this, TestPatternActivity.class);
+      startActivity(in);
+      return true;
     } else if (item.getItemId() == R.id.menu_exit) {
       exit();
       return true;

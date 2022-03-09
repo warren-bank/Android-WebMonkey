@@ -5,6 +5,7 @@
   <!-- menu/impl_menu -->
   <string name="menu_update_scripts">Update Scripts</string>
   <string name="menu_settings">Settings</string>
+  <string name="menu_test_pattern">Test Pattern</string>
   <string name="menu_exit">Exit</string>
 
   <!-- Preferences -->
@@ -53,4 +54,13 @@
 
   <!-- Settings: Hard Coded -->
   <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4710.39 Safari/537.36</string>
+
+  <!-- TestPatternActivity -->
+  <string name="testpatternactivity_title">@string/menu_test_pattern</string>
+  <string name="testpatternactivity_description">Pattern:\n  * supports: glob or regex\n  * used by: @include, @exclude, and @match\n\nURL:\n  * test subject\n\nRun Test:\n  * determine whether "Pattern" matches "URL"\n  * display result in Toast</string>
+  <string name="testpatternactivity_label_pattern">Pattern:</string>
+  <string name="testpatternactivity_label_url">URL:</string>
+  <string name="testpatternactivity_label_button">Run Test</string>
+  <string name="testpatternactivity_result_is_match">Success: Match</string>
+  <string name="testpatternactivity_result_no_match">Fail: No Match</string>
 </resources>

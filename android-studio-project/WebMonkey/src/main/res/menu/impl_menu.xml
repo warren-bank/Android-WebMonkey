@@ -18,6 +18,10 @@
         android:title="@string/menu_settings">
     </item>
     <item
+        android:id="@+id/menu_test_pattern"
+        android:title="@string/menu_test_pattern">
+    </item>
+    <item
         android:id="@+id/menu_exit"
         android:title="@string/menu_exit">
     </item>

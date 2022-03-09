@@ -3,9 +3,10 @@
   "private": true,
   "license": "GPL-2.0",
   "devDependencies": {
-    "@warren-bank/translate-android-strings": "^1.7.2"
+    "@warren-bank/translate-android-strings": "^1.8.1"
   },
   "scripts": {
-    "translate": "node_modules/.bin/translate-android-strings -i \"en\" -f \"android-studio-project/WebMonkey/src/main/res/values/strings.xml\" -d \"android-studio-project/WebMonkey/src/main/res\" -m --na --nc --nw -b \"WebMonkey\""
+    "translate":       "translate-android-strings -i \"en\" -f \"android-studio-project/WebMonkey/src/main/res/values/strings.xml\" -d \"android-studio-project/WebMonkey/src/main/res\" -m --na --nc --nw -b \"(?:WebMonkey|URL|Toast|glob|regex)\" -b \"@(?:include|exclude|match)\"",
+    "translate:debug": "npm run translate -- -o \"en\" --debug"
   }
 }
