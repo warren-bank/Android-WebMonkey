@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">اختيار الصفحة الرئيسية..</string>
   <string name="pref_updateinterval_title">فترة تحديث البرنامج النصي</string>
   <string name="pref_updateinterval_summary">أيام بين عمليات التحقق..</string>
+  <string name="pref_enableadblock_title">اتاحة مجموعة ad</string>
+  <string name="pref_enableadblock_summary_on" >اقفال الأنظمة الرئيسية التي تخدم : اعلانات ، ووحدات تتبع ، وبرامج خبيثة ، وغيرها</string>
+  <string name="pref_enableadblock_summary_off">السماح بالطلبات لكل الأنظمة الرئيسية</string>
   <string name="testpatternactivity_description">نموذج:\n  * دعم: glob أو regex\n  * مستخدم بواسطة: @include, @exclude, و /- @match\n\nURL:\n  * اختبار الموضوع\n\nتشغيل الاختبار:\n  * تحديد ما اذا كان \"نموذج\" يطابق "URL"\n  * عرض النتيجة في Toast</string>
   <string name="testpatternactivity_label_pattern">نموذج:</string>
   <string name="testpatternactivity_label_url">URL:</string>

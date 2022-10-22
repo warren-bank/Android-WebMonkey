@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
   <string name="pref_updateinterval_title">Interval Pemutakhiran Skrip</string>
   <string name="pref_updateinterval_summary">hari antara pemeriksaan..</string>
+  <string name="pref_enableadblock_title">Aktifkan blok iklan</string>
+  <string name="pref_enableadblock_summary_on" >Memblokir host yang melayani: ads, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Memungkinkan permintaan untuk semua host</string>
   <string name="testpatternactivity_description">Pola:\n  * mendukung: glob atau regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek tes\n\nJalankan Uji Coba:\n  * menentukan apakah cocok \"Pattern\" "URL"\n  * tampilkan hasil dalam Toast</string>
   <string name="testpatternactivity_label_pattern">Pola:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">হোম পেজ বেছে নিন..</string>
   <string name="pref_updateinterval_title">স্ক্রিপ্ট আপডেট বিরতি</string>
   <string name="pref_updateinterval_summary">পরীক্ষার মধ্যবর্তী দিন..</string>
+  <string name="pref_enableadblock_title">এড ব্লক সক্রিয় করো</string>
+  <string name="pref_enableadblock_summary_on" >Blocking এমন হোস্ট যা কাজ করে: বিজ্ঞাপন, ট্রাকার্স, ম্যালওয়্যার, স্প্যাম</string>
+  <string name="pref_enableadblock_summary_off">সকল হোস্টকে অনুরোধ করা হচ্ছে</string>
   <string name="testpatternactivity_description">প্যাটার্ন:\n  * সমর্থন: glob অথবা regex\n  * ব্যবহৃত: @include, @exclude, এবং @match\n\nURL:\n  * পরীক্ষার বিষয়\n\nটেস্ট চালাও:\n  * \"প্যাটার্ন\" খেলাটি নির্ধারণ করে "URL"\n  * ডিসপ্লে ফলাফল Toast</string>
   <string name="testpatternactivity_label_pattern">প্যাটার্ন:</string>
   <string name="testpatternactivity_label_url">URL:</string>

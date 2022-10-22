@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">选择主页..</string>
   <string name="pref_updateinterval_title">脚本更新间隔</string>
   <string name="pref_updateinterval_summary">检查之间相隔的天数..</string>
+  <string name="pref_enableadblock_title">启用广告块</string>
+  <string name="pref_enableadblock_summary_on" >阻止服务的主机 : 广告，跟踪程序，恶意软件，垃圾邮件</string>
+  <string name="pref_enableadblock_summary_off">允许对所有主机的请求</string>
   <string name="testpatternactivity_description">Pattern:\n  * 支持: glob 或 regex\n  * 用于: @include、@exclude 和 @match\n\nURL:\n  * 测试标题\n\n运行测试:\n  * 决定 "Pattern" 是否匹配 "URL"\n  * 在浮窗中展示结果</string>
   <string name="testpatternactivity_label_pattern">Pattern:</string>
   <string name="testpatternactivity_label_url">URL:</string>

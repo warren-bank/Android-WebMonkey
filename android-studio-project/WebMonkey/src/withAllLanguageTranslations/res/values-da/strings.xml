@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">vælg startside..</string>
   <string name="pref_updateinterval_title">Interval for scriptopdatering</string>
   <string name="pref_updateinterval_summary">dage mellem kontrol..</string>
+  <string name="pref_enableadblock_title">Aktivér reklameblok</string>
+  <string name="pref_enableadblock_summary_on" >Blokering af værter, der betjener: annoncer, sporingsenheder, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Tillad anmodninger til alle værter</string>
   <string name="testpatternactivity_description">Mønster:\n  * understøtter: glob eller regex\n  * bruges af: @include, @exclude, og @match\n\nURL:\n  * forsøgsperson\n\nUdfør test:\n  * afgør, om \"Mønster\" matcher "URL"\n  * fremvisningsresultat i Toast</string>
   <string name="testpatternactivity_label_pattern">Mønster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

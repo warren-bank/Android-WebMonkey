@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">choisir page d\'accueil..</string>
   <string name="pref_updateinterval_title">Intervalle de mise à jour</string>
   <string name="pref_updateinterval_summary">jours entre les vérifications..</string>
+  <string name="pref_enableadblock_title">Activer le bloc d\'annonces</string>
+  <string name="pref_enableadblock_summary_on" >Blocage des hôtes qui servent: ads, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Autoriser les demandes à tous les hôtes</string>
   <string name="testpatternactivity_description">Modèle:\n  * suppouts: glob or regex\n  * utilisé par: @include, @exclude, et @match\n\nURL:\n  * sujet de test\n\nExécuter le test:\n  * déterminer si les correspondances \"Pattern\" "URL"\n  * affichage du résultat dans Toast</string>
   <string name="testpatternactivity_label_pattern">Modèle:</string>
   <string name="testpatternactivity_label_url">URL:</string>

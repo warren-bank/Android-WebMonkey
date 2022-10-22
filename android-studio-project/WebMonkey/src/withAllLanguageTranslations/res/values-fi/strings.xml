@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">Valitse aloitussivu..</string>
   <string name="pref_updateinterval_title">Script Update -liittymä</string>
   <string name="pref_updateinterval_summary">Tarkastuspäivät..</string>
+  <string name="pref_enableadblock_title">Ota mainoskatkos</string>
+  <string name="pref_enableadblock_summary_on" >Isäntälaitteet, jotka palvelevat: mainoksia, jäljittimiä, haittaohjelmia, roskapostia</string>
+  <string name="pref_enableadblock_summary_off">Kaikkien koneiden pyyntöjen salliminen</string>
   <string name="testpatternactivity_description">Malli:\n  * Tukee: glob Tai regex\n  * Käyttää: @include, @exclude, Ja @match\n\nURL:\n  * Testikohde\n\nAja testi:\n  * Määritetään, ovatko \"Pattern\" - vastineet "URL"\n  * Näytön tulos Toast</string>
   <string name="testpatternactivity_label_pattern">Malli:</string>
   <string name="testpatternactivity_label_url">URL:</string>

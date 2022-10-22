@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">வீட்டு பக்கத்தை தேர்ந்தெடுக்கவும்..</string>
   <string name="pref_updateinterval_title">சிறுநிரல் புதுப்பி இடைவெளி</string>
   <string name="pref_updateinterval_summary">சோதனைகளுக்கு இடையிலான நாட்கள்..</string>
+  <string name="pref_enableadblock_title">அட்டை தொகுதி செயல்படுத்து</string>
+  <string name="pref_enableadblock_summary_on" >வலைப்பதிவொன்றின் சேவைகள்: ஆடைகள், டிராக்கர், மல்வார், ஸ்பம்</string>
+  <string name="pref_enableadblock_summary_off">அனைத்து புள்ளிகளையும் அனுமதிக்கிறது</string>
   <string name="testpatternactivity_description">பாட்டர்ன்:\n  * ஆதரவு: glob அல்லது regex\n  * பயன்படுத்தப்பட்டது: @include, @exclude, மற்றும் @match\n\nURL:\n  * சோதனை\n\nசோதனை இயக்கு:\n  * \"Pattern\" பொருட்களை தீர்மானிக்கும் "URL"\n  * காட்சி முடிவு Toast</string>
   <string name="testpatternactivity_label_pattern">பாட்டர்ன்:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">zvolit domovskou stránku..</string>
   <string name="pref_updateinterval_title">Interval aktualizace skriptu</string>
   <string name="pref_updateinterval_summary">dnů mezi kontrolami..</string>
+  <string name="pref_enableadblock_title">Povolit reklamní blok</string>
+  <string name="pref_enableadblock_summary_on" >Blocking hosts that serve: ads, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Povolení požadavků na všechny hostitele</string>
   <string name="testpatternactivity_description">Vznebo:\n  * podporuje: glob or regex\n  * používaný: @include, @exclude, a @match\n\nURL:\n  * předmět testu\n\nSpustit test:\n  * určit, zda \"Pattern\" odpovídá "URL"\n  * zobrazit výsledek v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzor:</string>
   <string name="testpatternactivity_label_url">URL:</string>

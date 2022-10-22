@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
   <string name="pref_updateinterval_title">Sela Kemaskini Skrip</string>
   <string name="pref_updateinterval_summary">hari diantara semakan..</string>
+  <string name="pref_enableadblock_title">Benarkan blok iklan</string>
+  <string name="pref_enableadblock_summary_on" >Menghalang hos yang berkhidmat: iklan, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Membenarkan permintaan kepada semua hos</string>
   <string name="testpatternactivity_description">Catauak:\n  * menyokong: glob or regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek ujian\n\nJalankan Ujian:\n  * menentukan sama ada padanan \"Pattern\" "URL"\n  * Hasil paparan dalam Toast</string>
   <string name="testpatternactivity_label_pattern">Corak:</string>
   <string name="testpatternactivity_label_url">URL:</string>

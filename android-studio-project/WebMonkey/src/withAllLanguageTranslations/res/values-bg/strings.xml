@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">Изберете начална страница..</string>
   <string name="pref_updateinterval_title">Интервал на обновяване на скрипт</string>
   <string name="pref_updateinterval_summary">дни между проверките..</string>
+  <string name="pref_enableadblock_title">Разрешаване на рекламен блок</string>
+  <string name="pref_enableadblock_summary_on" >Блокиране на хостове, които служат: реклами, тракери, зловреден софтуер, спам</string>
+  <string name="pref_enableadblock_summary_off">Разрешаване на заявки за всички хостове</string>
   <string name="testpatternactivity_description">Образец::\n  * -: glob или ... regex\n  * използван от: @include, @exclude, и ... @match\n\nURL:\n  * изпитван обект\n\nТест за изпитване:\n  * определя дали \"Схемата\" съвпада "URL"\n  * показва резултата в Toast</string>
   <string name="testpatternactivity_label_pattern">Образец::</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">ઘર પાનું પસંદ કરો..</string>
   <string name="pref_updateinterval_title">સ્ક્રિપ્ટ સુધારો અંતરાલ</string>
   <string name="pref_updateinterval_summary">ચકાસણી વચ્ચેની દિવસો..</string>
+  <string name="pref_enableadblock_title">એડ બ્લોક સક્રિય કરો</string>
+  <string name="pref_enableadblock_summary_on" >બ્લોકીંગ યજમાન કે જે સેવા આપે છે: એડ્સ, ટ્રેકર, મેલવેર, સ્પામ</string>
+  <string name="pref_enableadblock_summary_off">બધા યજમાનોને મંજૂરી આપે છે</string>
   <string name="testpatternactivity_description">ભાત:\n  * આધાર: glob અથવા regex\n  * દ્વારા વપરાયેલ: @include, @exclude, અને @match\n\nURL:\n  * ચકાસણી વિષય\n\nચકાસણી ચલાવો:\n  * નક્કી કરો કે શું \"ભાત\" બંધબેસતુ નથી "URL"\n  * તેમાં પરિણામ દર્શાવો Toast</string>
   <string name="testpatternactivity_label_pattern">ભાત:</string>
   <string name="testpatternactivity_label_url">URL:</string>

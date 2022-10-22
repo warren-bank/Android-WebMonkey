@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">ගෙදර පිටුව තෝරන්න..</string>
   <string name="pref_updateinterval_title">ස්ක්රිප්ට් යාවත්කාලීන කිරීම</string>
   <string name="pref_updateinterval_summary">චෙක්පත් අතර දින..</string>
+  <string name="pref_enableadblock_title">දැන්වීම් අවහිර සක්රීය කරන්න</string>
+  <string name="pref_enableadblock_summary_on" >සේවය කරන ධාරාවන්, දැන්වීම්, ට්රැක්, මැල්වෙයා, ස්පෑම්</string>
+  <string name="pref_enableadblock_summary_off">සියලු ධාරාවන් වෙත ඉල්ලීම්</string>
   <string name="testpatternactivity_description">පැටර්න්:\n  * සහය දක්වනවා: glob හෝ regex\n  * විසින් භාවිතා කරන: @include, @exclude, සහ @match\n\nURL:\n  * පරීක්ෂණ විෂයය\n\n\@ option: check:\n  * \" Patterns-action "URL"\n  * වල ප්රතිඵල පෙන්වන්න Toast</string>
   <string name="testpatternactivity_label_pattern">පැටර්න්:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">Startseite festlegen..</string>
   <string name="pref_updateinterval_title">Skript-Aktualisierungsintervall</string>
   <string name="pref_updateinterval_summary">Tage zwischen Prüfung..</string>
+  <string name="pref_enableadblock_title">Anzeigenblock aktivieren</string>
+  <string name="pref_enableadblock_summary_on" >Blockierende Hosts, die dienen: Anzeigen, Trackern, Malware, Spam</string>
+  <string name="pref_enableadblock_summary_off">Anforderungen an alle Hosts zulassen</string>
   <string name="testpatternactivity_description">Muster:\n  * Unterstützt: glob oder regex\n  * verwendet von: @include, @exclude, und @match\n\nURL:\n  * Testthema\n\nTest ausführen:\n  * Angabe, ob \"Muster\" Übereinstimmungen "URL"\n  * Ergebnis in Toast</string>
   <string name="testpatternactivity_label_pattern">Muster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">jagħżlu dar paġna..</string>
   <string name="pref_updateinterval_title">Kitba Aġġornament Intervall</string>
   <string name="pref_updateinterval_summary">jiem bejn il-kontrolli..</string>
+  <string name="pref_enableadblock_title">Jippermettu blokk ad</string>
+  <string name="pref_enableadblock_summary_on" >Imblukkar ospiti li jservu: ads, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Permess ta \' talbiet għall-ospiti kollha</string>
   <string name="testpatternactivity_description">Mudell:\n  * jappoġġja: glob jew regex\n  * użat minn: @include, @exclude, u @match\n\nURL:\n  * suġġett għall-ittestjar\n\nTest Run:\n  * jiddetermina jekk \"Pattern\" logħbiet "URL"\n  * riżultat tad-displej Toast</string>
   <string name="testpatternactivity_label_pattern">Mudell:</string>
   <string name="testpatternactivity_label_url">URL:</string>

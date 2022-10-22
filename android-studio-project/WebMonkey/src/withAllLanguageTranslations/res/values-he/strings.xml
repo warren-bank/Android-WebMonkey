@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">לבחור דף הבית...</string>
   <string name="pref_updateinterval_title">מרווח עדכון של קובץ Script</string>
   <string name="pref_updateinterval_summary">ימים בין בדיקות..</string>
+  <string name="pref_enableadblock_title">הפעלת חטיבת פרסום</string>
+  <string name="pref_enableadblock_summary_on" >חסימת מארח שמשרת: מודעות, עוקבים, תוכנות זדוניות, דואר זבל</string>
+  <string name="pref_enableadblock_summary_off">לאפשר בקשות לכל המארחים</string>
   <string name="testpatternactivity_description">תבנית:\n  * תומך: glob או regex\n  * בשימוש על-ידי: @include, @exclude, ו - @match\n\nURL:\n  * נתין נבדק\n\nהרצת בדיקה:\n  * לקבוע אם \"תבנית\" מתאימה "URL"\n  * הצגת תוצאות ב - Toast</string>
   <string name="testpatternactivity_label_pattern">תבנית:</string>
   <string name="testpatternactivity_label_url">URL:</string>

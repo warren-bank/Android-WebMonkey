@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">izbira domače strani..</string>
   <string name="pref_updateinterval_title">Interval Posodabljanja Skripta</string>
   <string name="pref_updateinterval_summary">dni med pregledi..</string>
+  <string name="pref_enableadblock_title">Omogoči blokiralnik</string>
+  <string name="pref_enableadblock_summary_on" >Blokiranje gostiteljev, ki služijo: oglasi, sledilci, zlonamerne programske opreme, spam</string>
+  <string name="pref_enableadblock_summary_off">Omogočanje zahtev vsem gostiteljem</string>
   <string name="testpatternactivity_description">Vzaliec:\n  * podpira: glob or regex\n  * v uporabi: @include, @exclude, in @match\n\nURL:\n  * preizkusi predmet\n\nZaženi preizkus:\n  * določi, ali se \"Vzorn\" ujema "URL"\n  * prikaži rezultat v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzorec:</string>
   <string name="testpatternactivity_label_url">URL:</string>

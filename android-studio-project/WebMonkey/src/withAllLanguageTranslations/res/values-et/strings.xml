@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">vali kodulehekülg..</string>
   <string name="pref_updateinterval_title">Skripti uuendamise intervall</string>
   <string name="pref_updateinterval_summary">kontrollimiste vahelised päevad..</string>
+  <string name="pref_enableadblock_title">Reklaamiploki lubamine</string>
+  <string name="pref_enableadblock_summary_on" >Blokeerivad hosts, mis teenivad: reklaamid, jälitajad, pahavara, rämpspost</string>
+  <string name="pref_enableadblock_summary_off">Kõigi masinate taotluste lubamine</string>
   <string name="testpatternactivity_description">Muster:\n  * Toetab: glob või regex\n  * mida kasutatakse: @include, @exclude, ning @match\n\nURL:\n  * katseaine\n\nKäivita Test:\n  * määrata, kas \"muster\" sobib "URL"\n  * kuvamise tulemus Toast</string>
   <string name="testpatternactivity_label_pattern">Muster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

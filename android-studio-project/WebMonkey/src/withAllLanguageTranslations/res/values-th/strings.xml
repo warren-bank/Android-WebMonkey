@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">เลือกโฮมเพจ..</string>
   <string name="pref_updateinterval_title">ช่วงเวลาการอัพเดตสคริปต์</string>
   <string name="pref_updateinterval_summary">วันระหว่างการตรวจสอบ..</string>
+  <string name="pref_enableadblock_title">เปิดใช้งานบล็อก ad</string>
+  <string name="pref_enableadblock_summary_on" >ปิดกั้นโฮสต์ที่ให้บริการ: โฆษณา, trackers, มัลแวร์, สแปม</string>
+  <string name="pref_enableadblock_summary_off">การอนุญาตให้คำร้องขอไปยังโฮสต์ทั้งหมด</string>
   <string name="testpatternactivity_description">รูปแบบ:\n  * สนับสนุน: glob หรือ regex\n  * ใช้โดย: @include, @exclude, และ @match\n\nURL:\n  * หัวข้อการทดสอบ\n\nรันการทดสอบ:\n  * พิจารณาว่าตรงกับ \"รูปแบบ\" หรือไม่ "URL"\n  * แสดงผลลัพธ์ใน Toast</string>
   <string name="testpatternactivity_label_pattern">รูปแบบ:</string>
   <string name="testpatternactivity_label_url">URL:</string>

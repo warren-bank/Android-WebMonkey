@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">выбрать домашнее страницу..</string>
   <string name="pref_updateinterval_title">Интервал обновления сценария</string>
   <string name="pref_updateinterval_summary">дней между проверками..</string>
+  <string name="pref_enableadblock_title">Включить блок рекламы</string>
+  <string name="pref_enableadblock_summary_on" >Блокирующие хосты, которые обслуживают: объявления, трекеры, вредоносные программы, спам</string>
+  <string name="pref_enableadblock_summary_off">Разрешение запросов всем хостам</string>
   <string name="testpatternactivity_description">Шаблон:\n  * поддержка: glob или regex\n  * используется в: @include, @exclude, и @match\n\nURL:\n  * тестовый объект\n\nВыполнить тест:\n  * определить, соответствует ли шаблон \"шаблону\" "URL"\n  * показать результат в Toast</string>
   <string name="testpatternactivity_label_pattern">Шаблон:</string>
   <string name="testpatternactivity_label_url">URL:</string>

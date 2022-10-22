@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">wybierz stronę główną..</string>
   <string name="pref_updateinterval_title">Przedział czasu aktualizacji skryptu</string>
   <string name="pref_updateinterval_summary">dni między sprawdzeniami..</string>
+  <string name="pref_enableadblock_title">Włącz blok ad</string>
+  <string name="pref_enableadblock_summary_on" >Blokowanie hostów, które służą: reklamy, trackery, złośliwe oprogramowanie, spam</string>
+  <string name="pref_enableadblock_summary_off">Zezwalanie na żądania do wszystkich hostów</string>
   <string name="testpatternactivity_description">Wzlubzec:\n  * obsługuje: glob or regex\n  * używane przez: @include, @exclude, oraz @match\n\nURL:\n  * temat testu\n\nUruchom test:\n  * określić, czy \"Wzorzec\" jest zgodny "URL"\n  * wyświetl wynik w Toast</string>
   <string name="testpatternactivity_label_pattern">Wzorzec:</string>
   <string name="testpatternactivity_label_url">URL:</string>

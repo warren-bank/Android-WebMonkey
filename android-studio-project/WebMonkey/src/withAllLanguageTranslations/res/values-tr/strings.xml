@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">ana sayfa seç..</string>
   <string name="pref_updateinterval_title">Komut Dosyası Güncelleme Aralığı</string>
   <string name="pref_updateinterval_summary">denetimler arasındaki gün sayısı..</string>
+  <string name="pref_enableadblock_title">Reklam bloğunu etkinleştir</string>
+  <string name="pref_enableadblock_summary_on" >Hizmet veren anasistemleri engelle: reklamlar, trackler, kötü niyetli yazılımlar, istenmeyen e-posta</string>
+  <string name="pref_enableadblock_summary_off">Tüm anasistemlere yönelik isteklere izin verilmesi</string>
   <string name="testpatternactivity_description">Kalıp:\n  * destekler: glob ya da regex\n  * tarafından kullanılan: @include, @exclude, ve @match\n\nURL:\n  * test konusu\n\nTesti Çalıştır:\n  * \"Kalıp\" eşleşmesinin olup olmadığını belirleme "URL"\n  * sonucu görüntüle Toast</string>
   <string name="testpatternactivity_label_pattern">Kalıp:</string>
   <string name="testpatternactivity_label_url">URL:</string>

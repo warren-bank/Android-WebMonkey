@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">scegliere la home page..</string>
   <string name="pref_updateinterval_title">Intervallo Aggiornamento Script</string>
   <string name="pref_updateinterval_summary">giorni tra controlli..</string>
+  <string name="pref_enableadblock_title">Abilitare blocco ad annuncio</string>
+  <string name="pref_enableadblock_summary_on" >Bloccare gli host che servono: pubblicità, tracker, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Consentire richieste a tutti gli host</string>
   <string name="testpatternactivity_description">Modello:\n  * suppota: glob or regex\n  * utilizzato da: @include, @exclude, e @match\n\nURL:\n  * soggetto di prova\n\nTest di esecuzione:\n  * determinare se le corrispondenze \"Pattern\" "URL"\n  * risultato del display in Toast</string>
   <string name="testpatternactivity_label_pattern">Modello:</string>
   <string name="testpatternactivity_label_url">URL:</string>

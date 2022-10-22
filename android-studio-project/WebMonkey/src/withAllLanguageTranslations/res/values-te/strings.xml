@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">హోమ్ పేజీ యెంపికచేయుము..</string>
   <string name="pref_updateinterval_title">స్క్రిప్ట్ నవీకరణ Interval</string>
   <string name="pref_updateinterval_summary">పరిశీలనల మధ్య రోజులు..</string>
+  <string name="pref_enableadblock_title">అడ్ బ్లాక్ ను చేతనము చేయుము</string>
+  <string name="pref_enableadblock_summary_on" >సేవించు బల్కింగ్ సైన్యం: అడ్డులు, ట్రాకర్లు, మల్వేర్, స్పామ్</string>
+  <string name="pref_enableadblock_summary_off">అన్ని సైన్సులకు అభ్యర్ధనలను అనుమతిస్తుంది</string>
   <string name="testpatternactivity_description">పాంటెన్:\n  * మద్దతును: glob లేదా regex\n  * వాడుకలో: @include, @exclude, మరియు @match\n\nURL:\n  * పరీక్ష విషయం\n\nపరీక్షను నడుపుము:\n  * \"Pattern\" మ్యాచ్లు లేదో నిర్ణయించుము "URL"\n  * ప్రదర్శన ఫలితము Toast</string>
   <string name="testpatternactivity_label_pattern">పాంటెన్:</string>
   <string name="testpatternactivity_label_url">URL:</string>

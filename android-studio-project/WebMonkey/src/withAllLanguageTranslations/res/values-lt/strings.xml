@@ -14,6 +14,9 @@
   <string name="pref_homepage_summary">pasirinkite pagrindinį puslapį..</string>
   <string name="pref_updateinterval_title">Scenarijaus atnaujinimo intervalas</string>
   <string name="pref_updateinterval_summary">dienų tarp patikrinimų..</string>
+  <string name="pref_enableadblock_title">Įjungti ad bloką</string>
+  <string name="pref_enableadblock_summary_on" >Blokuojantys šeimininkai, kurie tarnauja: skelbimai, trackers, kenkėjiškų programų,</string>
+  <string name="pref_enableadblock_summary_off">Leisti užklausas visiems šeimininkams</string>
   <string name="testpatternactivity_description">Modelis:\n  * atrama: glob arba regex\n  * Vartoti per: @include, @exclude, ir @match\n\nURL:\n  * Bandymo objektas\n\nAtlikti bandymą:\n  * nustatyti, ar \"Pattern\" atitinka "URL"\n  * Rodytuvas Toast</string>
   <string name="testpatternactivity_label_pattern">Modelis:</string>
   <string name="testpatternactivity_label_url">URL:</string>
