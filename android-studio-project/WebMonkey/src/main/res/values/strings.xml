@@ -41,6 +41,7 @@
     <item>@string/pref_homepage_array_values_4</item>
   </string-array>
 
+  <!-- Settings: Home Page on Startup -->
   <string translatable="false" name="pref_homepage_key">pref_homepage</string>
   <string translatable="false" name="pref_homepage_default">@string/pref_homepage_array_values_1</string>
   <string name="pref_homepage_title">On Startup</string>
@@ -51,6 +52,13 @@
   <string translatable="false" name="pref_updateinterval_default">1</string>
   <string name="pref_updateinterval_title">Script Update Interval</string>
   <string name="pref_updateinterval_summary">days between checks..</string>
+
+  <!-- SettingsActivity: Enable AdBlock -->
+  <string translatable="false" name="pref_enableadblock_key">pref_enableadblock</string>
+  <string translatable="false" name="pref_enableadblock_default">true</string>
+  <string name="pref_enableadblock_title">Enable AdBlock</string>
+  <string name="pref_enableadblock_summary_on" >Blocking hosts that serve: ads, trackers, malware, spam</string>
+  <string name="pref_enableadblock_summary_off">Allowing requests to all hosts</string>
 
   <!-- Settings: Hard Coded -->
   <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4710.39 Safari/537.36</string>

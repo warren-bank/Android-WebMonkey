@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 
-public class BrowserActivity extends WebViewGmImpl implements IBrowser {
+public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class BrowserActivity extends WebViewGmImpl implements IBrowser {
       WebViewGm.setWebContentsDebuggingEnabled(true);
 
     WebViewGm webViewGm = scriptBrowser.getWebView();
+    customizeWebView(webViewGm);
     String secret = webViewGm.getWebViewClient().getSecret();
 
     WmJsApi jsApi = new WmJsApi(secret, /* Activity */ this, /* WebView */ webViewGm, /* IBrowser */ this);
@@ -47,14 +48,14 @@ public class BrowserActivity extends WebViewGmImpl implements IBrowser {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.menu_update_scripts) {
-      WmScriptUpdateMgr.run_check_now(BrowserActivity.this, scriptStore);
+      WmScriptUpdateMgr.run_check_now(BrowserActivity_Base.this, scriptStore);
       return true;
     } else if (item.getItemId() == R.id.menu_settings) {
-      Intent in = new Intent(BrowserActivity.this, SettingsActivity.class);
+      Intent in = new Intent(BrowserActivity_Base.this, SettingsActivity.class);
       startActivity(in);
       return true;
     } else if (item.getItemId() == R.id.menu_test_pattern) {
-      Intent in = new Intent(BrowserActivity.this, TestPatternActivity.class);
+      Intent in = new Intent(BrowserActivity_Base.this, TestPatternActivity.class);
       startActivity(in);
       return true;
     } else if (item.getItemId() == R.id.menu_exit) {
@@ -63,6 +64,9 @@ public class BrowserActivity extends WebViewGmImpl implements IBrowser {
     } else {
       return super.onOptionsItemSelected(item);
     }
+  }
+
+  protected void customizeWebView(WebViewGm webViewGm) {
   }
 
   protected void exit() {

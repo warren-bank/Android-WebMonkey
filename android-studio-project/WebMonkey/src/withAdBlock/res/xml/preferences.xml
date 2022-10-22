@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+    android:key="@string/pref_settings_key"
+    android:title="@string/pref_settings_title">
+
+    <ListPreference
+      android:key="@string/pref_homepage_key"
+      android:title="@string/pref_homepage_title"
+      android:summary="@string/pref_homepage_summary"
+      android:entries="@array/pref_homepage_array_names"
+      android:entryValues="@array/pref_homepage_array_values"
+      android:defaultValue="@string/pref_homepage_default" />
+
+    <EditTextPreference
+      android:key="@string/pref_updateinterval_key"
+      android:title="@string/pref_updateinterval_title"
+      android:summary="@string/pref_updateinterval_summary"
+      android:numeric="integer"
+      android:maxLength="3"
+      android:defaultValue="@string/pref_updateinterval_default" />
+
+    <CheckBoxPreference
+      android:key="@string/pref_enableadblock_key"
+      android:title="@string/pref_enableadblock_title"
+      android:summaryOn="@string/pref_enableadblock_summary_on"
+      android:summaryOff="@string/pref_enableadblock_summary_off"
+      android:defaultValue="@string/pref_enableadblock_default" />
+
+  </PreferenceCategory>
+</PreferenceScreen>

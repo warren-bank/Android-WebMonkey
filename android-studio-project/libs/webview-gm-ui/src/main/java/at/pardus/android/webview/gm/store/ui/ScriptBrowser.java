@@ -276,6 +276,10 @@ public class ScriptBrowser {
       this.scriptBrowser = scriptBrowser;
     }
 
+    public ScriptBrowser getScriptBrowser() {
+      return scriptBrowser;
+    }
+
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, final String url) {
       return scriptBrowser.checkDownload(url);

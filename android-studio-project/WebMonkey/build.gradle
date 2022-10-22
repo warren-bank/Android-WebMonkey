@@ -21,7 +21,7 @@ android {
     archivesBaseName += "-$versionName"
   }
 
-  flavorDimensions "languageResources"
+  flavorDimensions "languageResources", "adBlock"
 
   productFlavors {
     withAllLanguageTranslations {
@@ -29,6 +29,14 @@ android {
     }
     english {
       dimension "languageResources"
+    }
+    withAdBlock {
+      dimension "adBlock"
+      buildConfigField "boolean", "ALLOW_ADBLOCK", "true"
+    }
+    noAdBlock {
+      dimension "adBlock"
+      buildConfigField "boolean", "ALLOW_ADBLOCK", "false"
     }
   }
 

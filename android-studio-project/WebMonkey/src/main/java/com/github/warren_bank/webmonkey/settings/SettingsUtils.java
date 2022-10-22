@@ -1,5 +1,6 @@
 package com.github.warren_bank.webmonkey.settings;
 
+import com.github.warren_bank.webmonkey.BuildConfig;
 import com.github.warren_bank.webmonkey.R;
 
 import android.content.Context;
@@ -86,6 +87,22 @@ public class SettingsUtils {
     String pref_value   = prefs.getString(pref_key, pref_default);
 
     return Integer.parseInt(pref_value, 10);
+  }
+
+  // --------------------
+
+  public static boolean getEnableAdBlockPreference(Context context) {
+    return getEnableAdBlockPreference(context, getPrefs(context));
+  }
+
+  private static boolean getEnableAdBlockPreference(Context context, SharedPreferences prefs) {
+    if (!BuildConfig.ALLOW_ADBLOCK) return false;
+
+    String pref_key         = context.getString(R.string.pref_enableadblock_key);
+    String pref_default     = context.getString(R.string.pref_enableadblock_default);
+    boolean val_default     = "true".equals(pref_default);
+
+    return prefs.getBoolean(pref_key, val_default);
   }
 
 }
