@@ -4,7 +4,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.3.0'    // https://mvnrepository.com/artifact/com.android.tools.build/gradle?repo=google
+    classpath 'com.android.tools.build:gradle:7.0.3'    // https://mvnrepository.com/artifact/com.android.tools.build/gradle?repo=google
   }
 }
 

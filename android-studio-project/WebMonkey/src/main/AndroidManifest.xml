@@ -19,7 +19,8 @@
       android:label="@string/app_name"
       android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
       android:windowSoftInputMode="stateHidden|adjustResize"
-      android:launchMode="standard">
+      android:launchMode="standard"
+      android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -44,12 +45,14 @@
     <activity
       android:name=".settings.SettingsActivity"
       android:theme="@android:style/Theme.NoTitleBar"
-      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+      android:exported="false" />
 
     <activity
       android:name=".TestPatternActivity"
       android:label="@string/testpatternactivity_title"
-      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+      android:exported="false" />
 
   </application>
 </manifest>
