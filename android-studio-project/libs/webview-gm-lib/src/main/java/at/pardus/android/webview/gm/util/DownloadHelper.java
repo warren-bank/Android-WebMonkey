@@ -18,13 +18,14 @@ package at.pardus.android.webview.gm.util;
 
 import android.util.Log;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
 
 /**
  * Class offering static functions to download data from a given URL either as a
@@ -34,100 +35,49 @@ public class DownloadHelper {
 
   private static final String TAG = DownloadHelper.class.getName();
 
-  /**
-   * Downloads and returns a file as String.
-   *
-   * Not to be run on the UI thread.
-   *
-   * @param url
-   *            the http address to get
-   * @return the downloaded file as String or null on any error
-   */
-  public static String downloadScript(String url) {
-    StringBuilder out = new StringBuilder();
-    Reader in = null;
-    HttpURLConnection con = null;
-    char[] buffer = new char[4096];
-    try {
-      URL u = new URL(url);
-      con = (HttpURLConnection) u.openConnection();
-      con.setReadTimeout(5000);
-      con.setRequestMethod("GET");
-      con.setUseCaches(false);
-      con.connect();
-      InputStream is = con.getInputStream();
-      in = new UnicodeReader(is, con.getContentEncoding());
-      int bytesRead;
-      while ((bytesRead = in.read(buffer, 0, 4096)) != -1) {
-        if (bytesRead > 0) {
-          out.append(buffer, 0, bytesRead);
-        }
-      }
-    } catch (MalformedURLException e) {
-      Log.e(TAG, Log.getStackTraceString(e));
-      return null;
-    } catch (IOException e) {
-      Log.e(TAG, Log.getStackTraceString(e));
-      try {
-        InputStream errorStream = con != null ? con.getErrorStream() : null;
-        if (errorStream != null) {
-          in = new UnicodeReader(errorStream, null);
-          int bytesRead;
-          StringBuilder errorStr = new StringBuilder();
-          while ((bytesRead = in.read(buffer, 0, 4096)) != -1) {
-            if (bytesRead > 0) {
-              errorStr.append(buffer, 0, bytesRead);
-            }
-          }
-          in.close();
-          Log.e(TAG, errorStr.toString());
-        }
-      } catch (Exception ignored) {
-      }
-      return null;
-    } catch (Exception e) {
-      Log.e(TAG, Log.getStackTraceString(e));
-      return null;
-    } finally {
-      try {
-                if (in != null) {
-                    in.close();
-                }
-            } catch (Exception ignored) {
-      }
-      if (con != null) {
-        con.disconnect();
-      }
+  private static final class DownloadData {
+    public byte[] buffer;
+    public String encoding;
+
+    public DownloadData(byte[] _buffer, String _encoding) {
+      buffer   = _buffer;
+      encoding = _encoding;
     }
-    return out.toString();
   }
 
   /**
-   * Downloads and returns a file as an array of bytes.
-   *
-   * Not to be run on the UI thread.
-   *
-   * @param downloadUrl
-   *            the http address to get
-   * @return the downloaded file as byte[] or null on any error
+   * Don't run on the UI thread!
    */
-  public static byte[] downloadBytes(String downloadUrl) {
+  private static DownloadData downloadData(String _url, Map<String, String> _headers) {
+    DownloadData response = null;
+    HttpURLConnection httpConn = null;
     try {
-      URL url = new URL(downloadUrl);
-      HttpURLConnection httpConn = (HttpURLConnection) url
-          .openConnection();
+      URL url = new URL(_url);
+      httpConn = (HttpURLConnection) url.openConnection();
 
-      if (httpConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-        Log.e(TAG, "Exception downloading url: " + downloadUrl
-            + " HTTP Response " + httpConn.getResponseCode());
-        httpConn.disconnect();
-        return null;
+      httpConn.setRequestMethod("GET");
+      httpConn.setDoOutput(false);
+      httpConn.setDoInput(true);
+      httpConn.setUseCaches(false);
+      httpConn.setReadTimeout(5000);
+
+      if ((_headers != null) && !_headers.isEmpty()) {
+        for (Map.Entry<String, String> header : _headers.entrySet()) {
+          httpConn.setRequestProperty(header.getKey(), header.getValue());
+        }
       }
+
+      httpConn.connect();
+      if (httpConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+        throw new Exception("HTTP Response: " + httpConn.getResponseCode());
+      }
+
+      byte[] buffer = null;
+      String encoding = httpConn.getContentEncoding();
 
       InputStream inputStream = httpConn.getInputStream();
       ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
       int bytesRead;
-      byte[] buffer;
       byte[] tempBuffer = new byte[4096];
 
       while (true) {
@@ -140,14 +90,98 @@ public class DownloadHelper {
 
       buffer = byteArrayOutputStream.toByteArray();
       inputStream.close();
-      return buffer;
-    } catch (Exception e) {
+
+      response = new DownloadData(buffer, encoding);
+    }
+    catch (Exception e) {
+      String message = e.getMessage();
+
+      if ((e instanceof IOException) && (httpConn != null)) {
+        try {
+          InputStream errorStream = httpConn.getErrorStream();
+          if (errorStream != null) {
+            Reader in = new UnicodeReader(errorStream, null);
+            int charsRead;
+            char[] charsBuffer = new char[4096];
+            StringBuilder errorStr = new StringBuilder();
+            while ((charsRead = in.read(charsBuffer, 0, 4096)) != -1) {
+              if (charsRead > 0) {
+                errorStr.append(charsBuffer, 0, charsRead);
+              }
+            }
+            in.close();
+            if (errorStr.length() > 0) {
+              message = errorStr.toString();
+            }
+          }
+        }
+        catch (Exception ignored) {
+        }
+      }
+
+      Log.e(TAG, "Exception downloading url: " + _url);
+      Log.e(TAG, message);
       Log.e(TAG, Log.getStackTraceString(e));
-      Log.e(TAG, "Exception downloading url: " + downloadUrl
-          + " as file: " + e.getMessage());
+    }
+    finally {
+      try {
+        if (httpConn != null) {
+          httpConn.disconnect();
+        }
+      }
+      catch (Exception ignored) {}
     }
 
-    return null;
+    return response;
+  }
+
+  public static String downloadUrl(String url, Map<String, String> headers) {
+    DownloadData response = downloadData(url, headers);
+
+    if ((response == null) || (response.buffer == null))
+      return null;
+
+    StringBuilder out = new StringBuilder();
+    Reader in = null;
+
+    try {
+      ByteArrayInputStream is = new ByteArrayInputStream(response.buffer);
+      in = new UnicodeReader(is, response.encoding);
+      int charsRead;
+      char[] charsBuffer = new char[4096];
+      while ((charsRead = in.read(charsBuffer, 0, 4096)) != -1) {
+        if (charsRead > 0) {
+          out.append(charsBuffer, 0, charsRead);
+        }
+      }
+    }
+    catch (Exception e) {
+      Log.e(TAG, "Exception downloading url: " + url);
+      Log.e(TAG, e.getMessage());
+      Log.e(TAG, Log.getStackTraceString(e));
+    }
+    finally {
+      try {
+        if (in != null) {
+          in.close();
+        }
+      }
+      catch (Exception ignored) {}
+    }
+
+    return (out.length() > 0) ? out.toString() : null;
+  }
+
+  public static String downloadScript(String url) {
+    Map<String, String> headers = null;
+    return downloadUrl(url, headers);
+  }
+
+  public static byte[] downloadBytes(String url) {
+    Map<String, String> headers = null;
+    DownloadData response = downloadData(url, headers);
+
+    return ((response == null) || (response.buffer == null)) ? null : response.buffer;
   }
 
   public static String resolveUrl(String relativeUrl, String baseUrl) {

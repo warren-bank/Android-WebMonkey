@@ -97,7 +97,7 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
     webSettings.setJavaScriptEnabled(true);
     webSettings.setDomStorageEnabled(true);
     webSettings.setUserAgentString(
-      getResources().getString(R.string.user_agent)
+      getString(R.string.user_agent)
     );
     if (Build.VERSION.SDK_INT >= 17) {
       webSettings.setMediaPlaybackRequiresUserGesture(false);
@@ -119,6 +119,10 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
   public String getCurrentUrl() {
     return scriptBrowser.getCurrentUrl();
+  }
+
+  public void setCurrentUrl(String url) {
+    scriptBrowser.changeAddressField(url);
   }
 
 }

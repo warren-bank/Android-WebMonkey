@@ -45,11 +45,19 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
       - [optional] `headers` is a list of String name/value pairs
     * example:
       - `('http://example.com/iframe_window.html', 'Referer', 'http://example.com/parent_window.html')`
-  - `GM_loadFrame(urlFrame, urlParent)`
+  - `GM_loadFrame(urlFrame, urlParent, proxyFrame)`
     * loads an iframe into the WebView
     * where:
-      - [required] `urlFrame`  is a String URL: the page loaded into the iframe
-      - [required] `urlParent` is a String URL: value for `window.top.location.href` and `window.parent.location.href` as observed from within the iframe
+      - [required] `urlFrame`   is a String URL: the page loaded into the iframe
+      - [required] `urlParent`  is a String URL: value for `window.top.location.href` and `window.parent.location.href` as observed from within the iframe
+      - [optional] `proxyFrame` is a boolean: a truthy value causes `urlFrame` to be downloaded in Java
+        * `urlParent` is sent in the _Referer_ header
+        * a successful (200-299) response is dynamically loaded into [_iframe.srcdoc_](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/srcdoc)
+        * the benefit:
+          - same-origin policy does not apply
+          - when `urlParent` and `urlFrame` belong to different domains, a userscript running in the top window can access the DOM within the iframe window
+        * special use case:
+          - when `urlFrame` only serves the desired web page content if `urlParent` is sent in the _Referer_ header
     * example:
       - `('http://example.com/iframe_window.html', 'http://example.com/parent_window.html')`
     * use case:

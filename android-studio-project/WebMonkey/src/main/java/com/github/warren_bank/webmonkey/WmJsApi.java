@@ -11,6 +11,8 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -176,6 +178,7 @@ public class WmJsApi {
               else {
                 webview.loadUrl(url);
               }
+              browser.setCurrentUrl(url);
             }
             catch(Exception e) {
               Log.e(WmJsApi.TAG, "Call to \"loadUrl\" did not supply valid input and raised the following error", e);
@@ -185,7 +188,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void loadFrame(String secret, String urlFrame, String urlParent) {
+      public void loadFrame(String secret, String urlFrame, String urlParent, boolean proxyFrame) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"loadFrame\" did not supply correct secret");
           return;
@@ -199,24 +202,88 @@ public class WmJsApi {
           Log.e(WmJsApi.TAG, "Call to \"loadFrame\" did not supply valid input");
           return;
         }
+        if (proxyFrame)
+          loadFrame_srcdoc(urlFrame, urlParent);
+        else
+          loadFrame_src(urlFrame, urlParent);
+      }
+
+      private void loadFrame_srcdoc(final String urlFrame, final String urlParent) {
+        HashMap<String, String> httpHeaders = new HashMap<String, String>();
+        httpHeaders.put("User-Agent", activity.getString(R.string.user_agent));
+        httpHeaders.put("Referer", urlParent);
+        String docFrame = DownloadHelper.downloadUrl(urlFrame, httpHeaders);
+        if (docFrame == null) return;
+
+        // add <base> tag to resolve relative URLs
+        // note: (iframe.contentWindow.location.href === 'about:srcdoc')
+        docFrame = docFrame.replaceFirst("(<\\s*head[^>]*>)", "$1<base href='" + urlFrame + "'/>");
+
+        // serialize and escape
+        final JSONObject jsonObject = new JSONObject();
+        try {
+          jsonObject.put("srcdoc", docFrame);
+        }
+        catch(Exception e) {
+          return;
+        }
+
         activity.runOnUiThread(new Runnable() {
           public void run() {
             try {
               String html = ""
-              + "<html>"
-              + "  <head>"
-              + "    <style>iframe {width:100%;}</style>"
-              + "  </head>"
-              + "  <body>"
-              + "    <iframe src='" + urlFrame + "' allowfullscreen='' scrolling='no' frameborder='0'></iframe>"
-              + "    <script>document.querySelector('iframe').style.height = window.innerHeight + 'px'</script>"
-              + "  </body>"
-              + "</html>";
+              +        "<html>"
+              + "\n" + "  <head>"
+              + "\n" + "    <style>iframe {width:100%;}</style>"
+              + "\n" + "  </head>"
+              + "\n" + "  <body>"
+              + "\n" + "    <iframe allowfullscreen='true' scrolling='no' frameborder='0'></iframe>"
+              + "\n" + "    <script>"
+              + "\n" + "     (function(){"
+              + "\n" + "        var json = " + jsonObject.toString() + ";"
+              + "\n" + "        var iframe = document.querySelector('iframe');"
+              + "\n" + "        iframe.style.height = window.innerHeight + 'px';"
+              + "\n" + "        iframe.srcdoc = json.srcdoc;"
+              + "\n" + "        iframe.setAttribute('src', '" + urlFrame + "');"
+              + "\n" + "     })()"
+              + "\n" + "    </script>"
+              + "\n" + "  </body>"
+              + "\n" + "</html>";
 
               String mimeType   = "text/html; charset=utf-8";
               String encoding   = "UTF-8";
               String historyUrl = null;
 
+              browser.setCurrentUrl(urlFrame);
+              webview.loadDataWithBaseURL(/* baseUrl= */ urlParent, /* data= */ html, mimeType, encoding, historyUrl);
+            }
+            catch(Exception e) {
+              Log.e(WmJsApi.TAG, "Call to \"loadFrame\" did not supply valid input and raised the following error", e);
+            }
+          }
+        });
+      }
+
+      private void loadFrame_src(final String urlFrame, final String urlParent) {
+        activity.runOnUiThread(new Runnable() {
+          public void run() {
+            try {
+              String html = ""
+              +        "<html>"
+              + "\n" + "  <head>"
+              + "\n" + "    <style>iframe {width:100%;}</style>"
+              + "\n" + "  </head>"
+              + "\n" + "  <body>"
+              + "\n" + "    <iframe src='" + urlFrame + "' allowfullscreen='true' scrolling='no' frameborder='0'></iframe>"
+              + "\n" + "    <script>document.querySelector('iframe').style.height = window.innerHeight + 'px'</script>"
+              + "\n" + "  </body>"
+              + "\n" + "</html>";
+
+              String mimeType   = "text/html; charset=utf-8";
+              String encoding   = "UTF-8";
+              String historyUrl = null;
+
+              browser.setCurrentUrl(urlFrame);
               webview.loadDataWithBaseURL(/* baseUrl= */ urlParent, /* data= */ html, mimeType, encoding, historyUrl);
             }
             catch(Exception e) {
@@ -250,22 +317,22 @@ public class WmJsApi {
     String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
     String jsApi = "";
 
-    jsApi += "var GM_toastLong"   + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);"                          + " };\n";
-    jsApi += "var GM_toastShort"  + " = function(message) { "                       + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);"                          + " };\n";
+    jsApi += "var GM_toastLong"   + " = function(message) { "                         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);"                          + " };\n";
+    jsApi += "var GM_toastShort"  + " = function(message) { "                         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);"                          + " };\n";
 
-    jsApi += "var GM_getUrl"      + " = function() { return "                       + jsBridgeName + ".getUrl("      + defaultSignature + ");"                                                               + " };\n";
-    jsApi += "var GM_resolveUrl"  + " = function(urlRelative, urlBase) { return "   + jsBridgeName + ".resolveUrl("  + defaultSignature + ", urlRelative, urlBase);"                                         + " };\n";
+    jsApi += "var GM_getUrl"      + " = function() { return "                         + jsBridgeName + ".getUrl("      + defaultSignature + ");"                                                               + " };\n";
+    jsApi += "var GM_resolveUrl"  + " = function(urlRelative, urlBase) { return "     + jsBridgeName + ".resolveUrl("  + defaultSignature + ", urlRelative, urlBase);"                                         + " };\n";
 
     jsApi += (useES6)
-          ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { " + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
-          : ("var GM_startIntent" + " = function(action, data, type) { "            + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")
+          ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { "   + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
+          : ("var GM_startIntent" + " = function(action, data, type) { "              + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")
     ;
     jsApi += (useES6)
-          ? ("var GM_loadUrl"     + " = function(url, ...headers) { "               + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, headers);"                                                 + " };\n")
-          : ("var GM_loadUrl"     + " = function(url) { "                           + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, Array.prototype.slice.call(arguments, 1));"                + " };\n")
+          ? ("var GM_loadUrl"     + " = function(url, ...headers) { "                 + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, headers);"                                                 + " };\n")
+          : ("var GM_loadUrl"     + " = function(url) { "                             + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, Array.prototype.slice.call(arguments, 1));"                + " };\n")
     ;
-    jsApi += "var GM_loadFrame"   + " = function(urlFrame, urlParent) { "           + jsBridgeName + ".loadFrame("   + defaultSignature + ", urlFrame, urlParent);"                                          + " };\n";
-    jsApi += "var GM_exit"        + " = function() { "                              + jsBridgeName + ".exit("        + defaultSignature + ");"                                                               + " };\n";
+    jsApi += "var GM_loadFrame"   + " = function(urlFrame, urlParent, proxyFrame) { " + jsBridgeName + ".loadFrame("   + defaultSignature + ", urlFrame, urlParent, !!proxyFrame);"                            + " };\n";
+    jsApi += "var GM_exit"        + " = function() { "                                + jsBridgeName + ".exit("        + defaultSignature + ");"                                                               + " };\n";
 
     return jsApi;
   }
