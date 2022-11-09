@@ -249,6 +249,34 @@ public class ScriptBrowser {
   }
 
   /**
+   * Detect whether a data URI is loaded in WebView.
+   *
+   * This occurs when:
+   * - GM_loadFrame() is called by userscript
+   *     reference: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L334
+   * - loadFrame() handles call, by deferring to either..
+   *     reference: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L191
+   * - loadFrame_srcdoc()
+   *     reference: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L211
+   *       - title: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L236
+   *       - mime:  https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L253
+   * - loadFrame_src()
+   *     reference: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L267
+   *       - title: https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L273
+   *       - mime:  https://github.com/warren-bank/Android-WebMonkey/blob/v01.00.23/android-studio-project/WebMonkey/src/main/java/com/github/warren_bank/webmonkey/WmJsApi.java#L282
+   *
+   * Summary:
+   * - HTML content does not include a <title> tag
+   * - MIME is: "text/html; charset=utf-8"
+   * - data URI will begin with: "data:text/html; charset=utf-8,<HTML content>"
+   * - WebView will report a truncated portion of the data URI for its title
+   */
+  protected static boolean didWebViewLoadData(WebView view) {
+    String title = view.getTitle();
+    return ((title != null) && title.startsWith("data:text/html"));
+  }
+
+  /**
    * WebViewClientGm component for the ScriptBrowser intercepting .user.js
    * downloads.
    */
@@ -282,13 +310,17 @@ public class ScriptBrowser {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, final String url) {
-      return scriptBrowser.checkDownload(url);
+      return (!ScriptBrowser.didWebViewLoadData(view))
+        ? scriptBrowser.checkDownload(url)
+        : false;
     }
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
-      scriptBrowser.changeAddressField(url);
-      scriptBrowser.checkDownload(url);
+      if (!ScriptBrowser.didWebViewLoadData(view)) {
+        scriptBrowser.changeAddressField(url);
+        scriptBrowser.checkDownload(url);
+      }
       super.onPageStarted(view, url, favicon);
     }
 
@@ -357,7 +389,9 @@ public class ScriptBrowser {
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-      scriptBrowser.activity.setTitle(title);
+      if (!ScriptBrowser.didWebViewLoadData(view)) {
+        scriptBrowser.activity.setTitle(title);
+      }
     }
 
   }
