@@ -13,10 +13,10 @@
   <string name="pref_homepage_title">在啟動時</string>
   <string name="pref_homepage_summary">選擇首頁..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">取消</string>
-  <string name="pref_pageloadbehavior_array_name_proceed">繼續</string>
-  <string name="pref_pageloadbehavior_array_name_ask">問</string>
-  <string name="pref_badssl_pageloadbehavior_title">安 HTTPS 憑證錯誤</string>
-  <string name="pref_badssl_pageloadbehavior_summary">選擇頁面載入行為..</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">继续</string>
+  <string name="pref_pageloadbehavior_array_name_ask">询问</string>
+  <string name="pref_badssl_pageloadbehavior_title">出现 HTTPS 证书错误时</string>
+  <string name="pref_badssl_pageloadbehavior_summary">选择页面加载行为..</string>
   <string name="pref_updateinterval_title">Script 更新間隔</string>
   <string name="pref_updateinterval_summary">之間的檢查天數..</string>
   <string name="pref_enableadblock_title">啟用廣告區塊</string>
@@ -28,12 +28,12 @@
   <string name="testpatternactivity_label_button">运行测试</string>
   <string name="testpatternactivity_result_is_match">成功:：匹配</string>
   <string name="testpatternactivity_result_no_match">失败：不匹配</string>
-  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 憑證錯誤</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">憑證的日期無效.</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">憑證已過期.</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">主機名稱不符.</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">發生一般錯誤.</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">憑證尚未有效.</string>
-  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">憑證管理中心不受信任.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 证书错误</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">证书日期无效。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">证书已过期。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">主机名不匹配。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">发生了一般错误。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">证书尚未生效。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">证书颁发机构不受信任。</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>
