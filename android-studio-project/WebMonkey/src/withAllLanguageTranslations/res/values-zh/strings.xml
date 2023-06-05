@@ -1,26 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">WebMonkey</string>
+
+  <!-- menu/impl_menu -->
   <string name="menu_update_scripts">更新脚本</string>
   <string name="menu_settings">设置</string>
   <string name="menu_test_pattern">测试 Pattern</string>
   <string name="menu_exit">退出</string>
+
+  <!-- Preferences -->
+  <string translatable="false" name="pref_lasturl">last_url</string>
+  <string translatable="false" name="pref_lastupdate">last_update_timestamp</string>
+
+  <!-- Settings -->
+  <string translatable="false" name="pref_settings_key">settings_key</string>
   <string name="pref_settings_title">WebMonkey 设置</string>
+
+  <!-- Settings: Home Page -->
   <string name="pref_homepage_array_names_1">从你离开的地方继续</string>
   <string name="pref_homepage_array_names_2">空白页</string>
   <string name="pref_homepage_array_names_3">开发者的 Userscripts</string>
   <string name="pref_homepage_array_names_4">Greasy Fork 上的 Userscripts</string>
+
+  <string translatable="false" name="pref_homepage_array_values_1">@string/pref_lasturl</string>
+  <string translatable="false" name="pref_homepage_array_values_2">about:blank</string>
+  <string translatable="false" name="pref_homepage_array_values_3">https://warren-bank.github.io/Android-WebMonkey/index.html</string>
+  <string translatable="false" name="pref_homepage_array_values_4">https://greasyfork.org/</string>
+
+  <string-array name="pref_homepage_array_names">
+    <item>@string/pref_homepage_array_names_1</item>
+    <item>@string/pref_homepage_array_names_2</item>
+    <item>@string/pref_homepage_array_names_3</item>
+    <item>@string/pref_homepage_array_names_4</item>
+  </string-array>
+
+  <string-array name="pref_homepage_array_values">
+    <item>@string/pref_homepage_array_values_1</item>
+    <item>@string/pref_homepage_array_values_2</item>
+    <item>@string/pref_homepage_array_values_3</item>
+    <item>@string/pref_homepage_array_values_4</item>
+  </string-array>
+  
+  <!-- Settings: Home Page on Startup -->
+  <string translatable="false" name="pref_homepage_key">pref_homepage</string>
+  <string translatable="false" name="pref_homepage_default">@string/pref_homepage_array_values_1</string>
   <string name="pref_homepage_title">启动时</string>
   <string name="pref_homepage_summary">选择主页..</string>
+  
+<!-- Settings: Page Load Behavior -->
+  <string name="pref_pageloadbehavior_array_name_cancel">取消</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">继续</string>
+  <string name="pref_pageloadbehavior_array_name_ask">询问</string>
+
+  <string translatable="false" name="pref_pageloadbehavior_array_value_cancel">cancel</string>
+  <string translatable="false" name="pref_pageloadbehavior_array_value_proceed">proceed</string>
+  <string translatable="false" name="pref_pageloadbehavior_array_value_ask">ask</string>
+
+  <string-array name="pref_pageloadbehavior_array_names">
+    <item>@string/pref_pageloadbehavior_array_name_cancel</item>
+    <item>@string/pref_pageloadbehavior_array_name_proceed</item>
+    <item>@string/pref_pageloadbehavior_array_name_ask</item>
+  </string-array>
+
+  <string-array name="pref_pageloadbehavior_array_values">
+    <item>@string/pref_pageloadbehavior_array_value_cancel</item>
+    <item>@string/pref_pageloadbehavior_array_value_proceed</item>
+    <item>@string/pref_pageloadbehavior_array_value_ask</item>
+  </string-array>
+
+  <!-- Settings: Page Load Behavior on HTTPS Certificate Error -->
+  <string translatable="false" name="pref_badssl_pageloadbehavior_key">pref_badssl_pageloadbehavior</string>
+  <string translatable="false" name="pref_badssl_pageloadbehavior_default">@string/pref_pageloadbehavior_array_value_cancel</string>
+  <string name="pref_badssl_pageloadbehavior_title">出现 HTTPS 证书错误时</string>
+  <string name="pref_badssl_pageloadbehavior_summary">选择页面加载行为..</string>
+
+  <!-- Settings: Script Update Interval -->
+  <string translatable="false" name="pref_updateinterval_key">pref_updateinterval</string>
+  <string translatable="false" name="pref_updateinterval_default">1</string>
   <string name="pref_updateinterval_title">脚本更新间隔</string>
   <string name="pref_updateinterval_summary">检查之间相隔的天数..</string>
+
+  <!-- SettingsActivity: Enable AdBlock -->
+  <string translatable="false" name="pref_enableadblock_key">pref_enableadblock</string>
+  <string translatable="false" name="pref_enableadblock_default">true</string>
   <string name="pref_enableadblock_title">开启广告拦截</string>
   <string name="pref_enableadblock_summary_on" >屏蔽广告、跟踪器、恶意软件、垃圾邮件主机</string>
   <string name="pref_enableadblock_summary_off">允许请求所有主机</string>
+		
+  <!-- Settings: Hard Coded -->
+  <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4710.39 Safari/537.36</string>
+
+  <!-- TestPatternActivity -->
+  <string name="testpatternactivity_title">@string/menu_test_pattern</string>
   <string name="testpatternactivity_description">Pattern:\n  * 支持: glob 或 regex\n  * 用于: @include、@exclude 和 @match\n\nURL:\n  * 测试标题\n\n运行测试:\n  * 确定 "Pattern" 是否匹配 "URL"\n  * 在浮窗中展示结果</string>
   <string name="testpatternactivity_label_pattern">Pattern:</string>
   <string name="testpatternactivity_label_url">URL:</string>
   <string name="testpatternactivity_label_button">运行测试</string>
   <string name="testpatternactivity_result_is_match">成功:：匹配</string>
   <string name="testpatternactivity_result_no_match">失败：不匹配</string>
+  
+<!-- AlertDialog: Page Load Behavior on HTTPS Certificate Error -->
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 证书错误</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">证书日期无效。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">证书已过期。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">主机名不匹配。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">发生了一般错误。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">证书尚未生效。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">证书颁发机构不受信任。</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_button_positive">@string/pref_pageloadbehavior_array_name_proceed</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_button_negative">@string/pref_pageloadbehavior_array_name_cancel</string>
+
 </resources>
