@@ -19,31 +19,24 @@ import android.webkit.WebView;
 public class WmScriptBrowserWebViewClient_Base extends ScriptBrowser.ScriptBrowserWebViewClientGm {
   protected Context context;
 
-  public static ScriptBrowser.ScriptBrowserWebViewClientGm getInstance(Context context, WebViewGm webView) throws Exception {
-    WebViewClientGm webViewClient = webView.getWebViewClient();
-
-    if (!(webViewClient instanceof ScriptBrowser.ScriptBrowserWebViewClientGm))
-      throw new Exception("WebViewClient of WebView is not ScriptBrowserWebViewClientGm");
-
-    return getInstance(context, (ScriptBrowser.ScriptBrowserWebViewClientGm) webViewClient);
+  public WmScriptBrowserWebViewClient_Base(Context context, WebViewGm webView) throws Exception {
+    this(
+      context,
+      (ScriptBrowser.ScriptBrowserWebViewClientGm) webView.getWebViewClient()
+    );
   }
 
-  public static ScriptBrowser.ScriptBrowserWebViewClientGm getInstance(Context context, ScriptBrowser.ScriptBrowserWebViewClientGm webViewClient) {
-    ScriptStore   scriptStore   = webViewClient.getScriptStore();
-    String        jsBridgeName  = webViewClient.getJsBridgeName();
-    String        secret        = webViewClient.getSecret();
-    ScriptBrowser scriptBrowser = webViewClient.getScriptBrowser();
-
-    return getInstance(context, scriptStore, jsBridgeName, secret, scriptBrowser);
+  public WmScriptBrowserWebViewClient_Base(Context context, ScriptBrowser.ScriptBrowserWebViewClientGm webViewClient) {
+    this(
+      context,
+      webViewClient.getScriptStore(),
+      webViewClient.getJsBridgeName(),
+      webViewClient.getSecret(),
+      webViewClient.getScriptBrowser()
+    );
   }
 
-  public static ScriptBrowser.ScriptBrowserWebViewClientGm getInstance(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
-    WmScriptBrowserWebViewClient_Base instance = new WmScriptBrowserWebViewClient_Base(context, scriptStore, jsBridgeName, secret, scriptBrowser);
-
-    return (ScriptBrowser.ScriptBrowserWebViewClientGm) instance;
-  }
-
-  protected WmScriptBrowserWebViewClient_Base(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
+  public WmScriptBrowserWebViewClient_Base(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
     super(scriptStore, jsBridgeName, secret, scriptBrowser);
 
     this.context = context;

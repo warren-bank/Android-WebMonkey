@@ -4,6 +4,7 @@ import com.github.warren_bank.webmonkey.R;
 import com.github.warren_bank.webmonkey.WmScriptBrowserWebViewClient_Base;
 import com.github.warren_bank.webmonkey.settings.SettingsUtils;
 
+import at.pardus.android.webview.gm.run.WebViewGm;
 import at.pardus.android.webview.gm.store.ScriptStore;
 import at.pardus.android.webview.gm.store.ui.ScriptBrowser;
 
@@ -23,6 +24,44 @@ import java.util.TreeMap;
 public class WmScriptBrowserWebViewClient_AdBlock extends WmScriptBrowserWebViewClient_Base {
   private boolean isPopulatingHosts;
   private TreeMap<String, Object> blockedHosts;
+
+  public WmScriptBrowserWebViewClient_AdBlock(Context context, WebViewGm webView) throws Exception {
+    this(
+      context,
+      (ScriptBrowser.ScriptBrowserWebViewClientGm) webView.getWebViewClient()
+    );
+  }
+
+  public WmScriptBrowserWebViewClient_AdBlock(Context context, ScriptBrowser.ScriptBrowserWebViewClientGm webViewClient) {
+    this(
+      context,
+      webViewClient.getScriptStore(),
+      webViewClient.getJsBridgeName(),
+      webViewClient.getSecret(),
+      webViewClient.getScriptBrowser()
+    );
+  }
+
+  public WmScriptBrowserWebViewClient_AdBlock(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
+    super(context, scriptStore, jsBridgeName, secret, scriptBrowser);
+
+    if (SettingsUtils.getEnableAdBlockPreference(context)) {
+      isPopulatingHosts = true;
+      populateBlockedHosts(context);
+    }
+    isPopulatingHosts = false;
+  }
+
+  @Override
+  public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+    return shouldBlockRequest(url);
+  }
+
+  @Override
+  public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+    String url = request.getUrl().toString();
+    return shouldBlockRequest(url);
+  }
 
   private void populateBlockedHosts(Context context) {
     InputStream is = context.getResources().openRawResource(R.raw.adblock_serverlist);
@@ -67,32 +106,5 @@ public class WmScriptBrowserWebViewClient_AdBlock extends WmScriptBrowserWebView
     else {
       return null;
     }
-  }
-
-  public static ScriptBrowser.ScriptBrowserWebViewClientGm getInstance(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
-    WmScriptBrowserWebViewClient_AdBlock instance = new WmScriptBrowserWebViewClient_AdBlock(context, scriptStore, jsBridgeName, secret, scriptBrowser);
-
-    return (ScriptBrowser.ScriptBrowserWebViewClientGm) instance;
-  }
-
-  protected WmScriptBrowserWebViewClient_AdBlock(Context context, ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
-    super(context, scriptStore, jsBridgeName, secret, scriptBrowser);
-
-    if (SettingsUtils.getEnableAdBlockPreference(context)) {
-      isPopulatingHosts = true;
-      populateBlockedHosts(context);
-    }
-    isPopulatingHosts = false;
-  }
-
-  @Override
-  public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-    return shouldBlockRequest(url);
-  }
-
-  @Override
-  public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-    String url = request.getUrl().toString();
-    return shouldBlockRequest(url);
   }
 }

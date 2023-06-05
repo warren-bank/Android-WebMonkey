@@ -69,7 +69,7 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
   protected void customizeWebView(WebViewGm webViewGm) {
     try {
-      WebViewClientGm webViewClient = (WebViewClientGm) WmScriptBrowserWebViewClient_Base.getInstance(BrowserActivity_Base.this, webViewGm);
+      WebViewClientGm webViewClient = (WebViewClientGm) new WmScriptBrowserWebViewClient_Base(BrowserActivity_Base.this, webViewGm);
 
       webViewGm.setWebViewClient(webViewClient);
     }
