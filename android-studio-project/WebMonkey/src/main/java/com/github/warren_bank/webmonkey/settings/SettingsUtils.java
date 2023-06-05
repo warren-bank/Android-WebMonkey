@@ -77,6 +77,20 @@ public class SettingsUtils {
 
   // --------------------
 
+  public static String getBadSslPageloadBehavior(Context context) {
+    return getBadSslPageloadBehavior(context, getPrefs(context));
+  }
+
+  private static String getBadSslPageloadBehavior(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_badssl_pageloadbehavior_key);
+    String pref_default = context.getString(R.string.pref_badssl_pageloadbehavior_default);
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return pref_value;
+  }
+
+  // --------------------
+
   public static int getUpdateIntervalDays(Context context) {
     return getUpdateIntervalDays(context, getPrefs(context));
   }

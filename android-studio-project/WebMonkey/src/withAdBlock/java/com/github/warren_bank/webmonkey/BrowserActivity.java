@@ -9,9 +9,9 @@ public class BrowserActivity extends BrowserActivity_Base {
   @Override
   protected void customizeWebView(WebViewGm webViewGm) {
     try {
-      WmScriptBrowserWebViewClient_AdBlock webViewClient = WmScriptBrowserWebViewClient_AdBlock.getInstance(BrowserActivity.this, webViewGm);
+      WebViewClientGm webViewClient = (WebViewClientGm) WmScriptBrowserWebViewClient_AdBlock.getInstance(BrowserActivity.this, webViewGm);
 
-      webViewGm.setWebViewClient((WebViewClientGm) webViewClient);
+      webViewGm.setWebViewClient(webViewClient);
     }
     catch(Exception e) {}
   }

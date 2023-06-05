@@ -12,6 +12,14 @@
       android:entryValues="@array/pref_homepage_array_values"
       android:defaultValue="@string/pref_homepage_default" />
 
+    <ListPreference
+      android:key="@string/pref_badssl_pageloadbehavior_key"
+      android:title="@string/pref_badssl_pageloadbehavior_title"
+      android:summary="@string/pref_badssl_pageloadbehavior_summary"
+      android:entries="@array/pref_pageloadbehavior_array_names"
+      android:entryValues="@array/pref_pageloadbehavior_array_values"
+      android:defaultValue="@string/pref_badssl_pageloadbehavior_default" />
+
     <EditTextPreference
       android:key="@string/pref_updateinterval_key"
       android:title="@string/pref_updateinterval_title"

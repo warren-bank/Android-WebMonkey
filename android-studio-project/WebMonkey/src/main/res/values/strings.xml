@@ -47,6 +47,33 @@
   <string name="pref_homepage_title">On Startup</string>
   <string name="pref_homepage_summary">choose home page..</string>
 
+  <!-- Settings: Page Load Behavior -->
+  <string name="pref_pageloadbehavior_array_name_cancel">Cancel</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Proceed</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Ask</string>
+
+  <string translatable="false" name="pref_pageloadbehavior_array_value_cancel">cancel</string>
+  <string translatable="false" name="pref_pageloadbehavior_array_value_proceed">proceed</string>
+  <string translatable="false" name="pref_pageloadbehavior_array_value_ask">ask</string>
+
+  <string-array name="pref_pageloadbehavior_array_names">
+    <item>@string/pref_pageloadbehavior_array_name_cancel</item>
+    <item>@string/pref_pageloadbehavior_array_name_proceed</item>
+    <item>@string/pref_pageloadbehavior_array_name_ask</item>
+  </string-array>
+
+  <string-array name="pref_pageloadbehavior_array_values">
+    <item>@string/pref_pageloadbehavior_array_value_cancel</item>
+    <item>@string/pref_pageloadbehavior_array_value_proceed</item>
+    <item>@string/pref_pageloadbehavior_array_value_ask</item>
+  </string-array>
+
+  <!-- Settings: Page Load Behavior on HTTPS Certificate Error -->
+  <string translatable="false" name="pref_badssl_pageloadbehavior_key">pref_badssl_pageloadbehavior</string>
+  <string translatable="false" name="pref_badssl_pageloadbehavior_default">@string/pref_pageloadbehavior_array_value_cancel</string>
+  <string name="pref_badssl_pageloadbehavior_title">On HTTPS Certificate Error</string>
+  <string name="pref_badssl_pageloadbehavior_summary">choose page load behavior..</string>
+
   <!-- Settings: Script Update Interval -->
   <string translatable="false" name="pref_updateinterval_key">pref_updateinterval</string>
   <string translatable="false" name="pref_updateinterval_default">1</string>
@@ -71,4 +98,17 @@
   <string name="testpatternactivity_label_button">Run Test</string>
   <string name="testpatternactivity_result_is_match">Success: Match</string>
   <string name="testpatternactivity_result_no_match">Fail: No Match</string>
+
+  <!-- AlertDialog: Page Load Behavior on HTTPS Certificate Error -->
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Certificate Error</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">The date of the certificate is invalid.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">The certificate has expired.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Hostname mismatch.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">A generic error occurred.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">The certificate is not yet valid.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">The certificate authority is not trusted.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_button_positive">@string/pref_pageloadbehavior_array_name_proceed</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_button_negative">@string/pref_pageloadbehavior_array_name_cancel</string>
+
 </resources>

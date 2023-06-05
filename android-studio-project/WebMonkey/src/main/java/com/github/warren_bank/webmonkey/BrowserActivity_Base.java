@@ -3,6 +3,7 @@ package com.github.warren_bank.webmonkey;
 import com.github.warren_bank.webmonkey.settings.SettingsActivity;
 
 import at.pardus.android.webview.gm.demo.WebViewGmImpl;
+import at.pardus.android.webview.gm.run.WebViewClientGm;
 import at.pardus.android.webview.gm.run.WebViewGm;
 
 import android.content.Intent;
@@ -67,6 +68,12 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
   }
 
   protected void customizeWebView(WebViewGm webViewGm) {
+    try {
+      WebViewClientGm webViewClient = (WebViewClientGm) WmScriptBrowserWebViewClient_Base.getInstance(BrowserActivity_Base.this, webViewGm);
+
+      webViewGm.setWebViewClient(webViewClient);
+    }
+    catch(Exception e) {}
   }
 
   protected void exit() {
