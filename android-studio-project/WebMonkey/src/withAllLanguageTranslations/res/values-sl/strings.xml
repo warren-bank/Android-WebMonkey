@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Uporabniški skripti v \"Greasy Fork\"</string>
   <string name="pref_homepage_title">Ob zagonu</string>
   <string name="pref_homepage_summary">izbira domače strani..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Preklici</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Nadaljuj.</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Vprašaj</string>
+  <string name="pref_badssl_pageloadbehavior_title">Na HTTPS Napaka digitala</string>
+  <string name="pref_badssl_pageloadbehavior_summary">izbira vedenja obremenitve strani..</string>
   <string name="pref_updateinterval_title">Interval Posodabljanja Skripta</string>
   <string name="pref_updateinterval_summary">dni med pregledi..</string>
   <string name="pref_enableadblock_title">Omogoči blokiralnik</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Zaženi preizkus</string>
   <string name="testpatternactivity_result_is_match">Uspeh: Match</string>
   <string name="testpatternactivity_result_no_match">Neuspeh: Ni Ujemajte</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Napaka digitala</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datum potrdila ni veljaven.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Potrdilo je poteklo.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Neujemanje imena gostitelja.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Prišlo je do splošne napake.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikat še ni veljaven.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Pooblastilo za potrdilo ni overjeno.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

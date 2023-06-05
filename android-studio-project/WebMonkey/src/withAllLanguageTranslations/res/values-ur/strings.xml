@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Greasy فورک میں Userسکرپٹ</string>
   <string name="pref_homepage_title">Startup پر</string>
   <string name="pref_homepage_summary">ہوم پیج چنیں..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">منسوخ</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">پراکتاد</string>
+  <string name="pref_pageloadbehavior_array_name_ask">پوچھیے</string>
+  <string name="pref_badssl_pageloadbehavior_title">پر HTTPS سند Error</string>
+  <string name="pref_badssl_pageloadbehavior_summary">صفحے لوڈ رویے کا انتخاب کریں..</string>
   <string name="pref_updateinterval_title">اسکرپٹ اپ ڈیٹ Interval</string>
   <string name="pref_updateinterval_summary">چیک کے درمیان دن..</string>
   <string name="pref_enableadblock_title">قابل دید اشتہار بلاک</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">رن ٹیسٹ</string>
   <string name="testpatternactivity_result_is_match">کامیابی: میچ</string>
   <string name="testpatternactivity_result_no_match">فضائل: کوئی میچ</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS سند Error</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">سند کی تاریخ باطل ہے.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">سرٹیفکیٹ کی میعاد ختم ہوگئی ہے.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ہاسٹل کا غلط میچ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">ایک کلی غلطی واقع ہوئی.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">سرٹیفکیٹ ابھی تک درست نہیں ہے.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">سرٹیفکیٹ اتھارٹی پر بھروسہ نہیں ہے.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

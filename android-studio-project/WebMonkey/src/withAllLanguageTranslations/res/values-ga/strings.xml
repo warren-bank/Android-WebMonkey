@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Scripteanna Úsáideora ag Forc Grey</string>
   <string name="pref_homepage_title">Ag am tosaithe</string>
   <string name="pref_homepage_summary">Roghnaigh leathanach baile..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Cealaigh</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Ar Aghaidh</string>
+  <string name="pref_pageloadbehavior_array_name_ask">\@ info</string>
+  <string name="pref_badssl_pageloadbehavior_title">Ar HTTPS Earráid Teastais</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Roghnaigh an t-ualach leathanaigh..</string>
   <string name="pref_updateinterval_title">Eatramh Nuashonraithe</string>
   <string name="pref_updateinterval_summary">laethanta idir seiceálacha..</string>
   <string name="pref_enableadblock_title">Cumasaigh bloc ad</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Rith Tástáil</string>
   <string name="testpatternactivity_result_is_match">Rath: Match</string>
   <string name="testpatternactivity_result_no_match">Teip: No Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Earráid Teastais</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tá dáta an deimhnithe neamhbhailí.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Tá an teastas imithe in éag.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Meaitseáil an t-óstainm.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Tharla earráid ghlúin.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Níl an teastas bailí fós.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Níl an t-údarás deimhniúcháin iontaofa.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

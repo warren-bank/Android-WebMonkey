@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Tên người dùng tại Greasy Fork</string>
   <string name="pref_homepage_title">Khi khởi động</string>
   <string name="pref_homepage_summary">chọn trang chủ..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Hủy</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Tiếp tục</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Yêu cầu</string>
+  <string name="pref_badssl_pageloadbehavior_title">Vào HTTPS Lỗi chứng nhận</string>
+  <string name="pref_badssl_pageloadbehavior_summary">chọn hành vi tải trang..</string>
   <string name="pref_updateinterval_title">Khoảng cập nhật tập lệnh</string>
   <string name="pref_updateinterval_summary">ngày giữa kiểm tra..</string>
   <string name="pref_enableadblock_title">Kích hoạt khối quảng cáo</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Chạy thử</string>
   <string name="testpatternactivity_result_is_match">Thành công: Trận đấu</string>
   <string name="testpatternactivity_result_no_match">Thất bại: Không khớp</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Lỗi chứng nhận</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Ngày của chứng nhận không hợp lệ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Chứng nhận đã hết hạn.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Không khớp tên máy.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Lỗi chung xảy ra.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Chứng nhận chưa hợp lệ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Cơ quan chứng nhận không được tin cậy.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

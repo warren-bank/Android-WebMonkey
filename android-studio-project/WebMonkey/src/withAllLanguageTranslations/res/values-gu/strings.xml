@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Greasy Fork પર Userscripts</string>
   <string name="pref_homepage_title">શરૂઆત પર</string>
   <string name="pref_homepage_summary">ઘર પાનું પસંદ કરો..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">રદ કરો</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">પ્રક્રિયા કરો</string>
+  <string name="pref_pageloadbehavior_array_name_ask">પૂછો</string>
+  <string name="pref_badssl_pageloadbehavior_title">ચાલુ HTTPS પ્રમાણપત્ર ભૂલ</string>
+  <string name="pref_badssl_pageloadbehavior_summary">પાનાં લોડ વર્તણૂક પસંદ કરો..</string>
   <string name="pref_updateinterval_title">સ્ક્રિપ્ટ સુધારો અંતરાલ</string>
   <string name="pref_updateinterval_summary">ચકાસણી વચ્ચેની દિવસો..</string>
   <string name="pref_enableadblock_title">એડ બ્લોક સક્રિય કરો</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">ચકાસણી ચલાવો</string>
   <string name="testpatternactivity_result_is_match">સફળ: સરળ</string>
   <string name="testpatternactivity_result_no_match">નિષ્ફળ: બંધબેસતુ નથી</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS પ્રમાણપત્ર ભૂલ</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">પ્રમાણપત્રની તારીખ અયોગ્ય છે.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">પ્રમાણપત્ર નિવૃત્ત થયેલ છે.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">યજમાન નામ બંધબેસતુ નથી.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">સામાન્ય ભૂલ ઉદ્ભવી.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">પ્રમાણપત્ર હજુ યોગ્ય નથી.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">પ્રમાણપત્ર સત્તા વિશ્ર્વાસપાત્ર નથી.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

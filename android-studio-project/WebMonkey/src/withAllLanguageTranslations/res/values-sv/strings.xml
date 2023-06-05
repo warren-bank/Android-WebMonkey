@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userskript på Greasy Fork</string>
   <string name="pref_homepage_title">Vid start</string>
   <string name="pref_homepage_summary">välja startsida..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Avbryt</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Fortsätt</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Fråga</string>
+  <string name="pref_badssl_pageloadbehavior_title">På HTTPS Intygets</string>
+  <string name="pref_badssl_pageloadbehavior_summary">välj sidinläsningsbeteende..</string>
   <string name="pref_updateinterval_title">Skriptuppdatering</string>
   <string name="pref_updateinterval_summary">dagar mellan kontroller..</string>
   <string name="pref_enableadblock_title">Aktivera ad blockering</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Kör test</string>
   <string name="testpatternactivity_result_is_match">Lyckades: Matcha</string>
   <string name="testpatternactivity_result_no_match">Misslyckas: Ingen matchning</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Intygets</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Certifikatets datum är ogiltigt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certifikatet har upphört.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Felmatchning för värdnamn.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Ett generiskt fel.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikatet är ännu inte giltigt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikatutfärden är inte tillförlitlig.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

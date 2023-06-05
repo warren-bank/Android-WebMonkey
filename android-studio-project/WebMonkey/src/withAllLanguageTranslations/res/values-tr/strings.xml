@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Kullanıcı Komut Dosyaları Yağlı Çatalla</string>
   <string name="pref_homepage_title">Başlatma Sırasında</string>
   <string name="pref_homepage_summary">ana sayfa seç..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">İptal</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Devam Et</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Sor</string>
+  <string name="pref_badssl_pageloadbehavior_title">Açık HTTPS Sertifika Hatası</string>
+  <string name="pref_badssl_pageloadbehavior_summary">sayfa yükleme davranışını seçme..</string>
   <string name="pref_updateinterval_title">Komut Dosyası Güncelleme Aralığı</string>
   <string name="pref_updateinterval_summary">denetimler arasındaki gün sayısı..</string>
   <string name="pref_enableadblock_title">Reklam bloğunu etkinleştir</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Testi Çalıştır</string>
   <string name="testpatternactivity_result_is_match">Başarı: Eşleştir</string>
   <string name="testpatternactivity_result_no_match">Başarısız: Eşleştirme Yok</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifika Hatası</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikana ilişkin tarih geçersiz.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikanda geçerlilik süresi doldu.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Anasistem adı eşleşmiyor.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Soysal bir hata oluştu.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifika henüz geçerli değil.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifika yetkilisi güvenilir değil.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

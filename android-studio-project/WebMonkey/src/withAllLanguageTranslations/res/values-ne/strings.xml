@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">ग्रेसी फोर्क मा प्रयोगकर्ता स्क्रिप्टहरू</string>
   <string name="pref_homepage_title">सुरुआतमा</string>
   <string name="pref_homepage_summary">गृह पृष्ठ रोज्नुहोस्..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">रद्द गर्नुहोस्</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">प्रोसेड</string>
+  <string name="pref_pageloadbehavior_array_name_ask">सोध्नुहोस्</string>
+  <string name="pref_badssl_pageloadbehavior_title">माथि HTTPS प्रमाणपत्र त्रुटि</string>
+  <string name="pref_badssl_pageloadbehavior_summary">पृष्ठ लोड व्यवहार रोज्नुहोस्..</string>
   <string name="pref_updateinterval_title">स्क्रिप्ट अद्यावधिक अन्तराल</string>
   <string name="pref_updateinterval_summary">चेक बीचको दिनहरू..</string>
   <string name="pref_enableadblock_title">विज्ञापन खण्ड सक्षम पार्नुहोस्</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">परीक्षण चलाउनुहोस्</string>
   <string name="testpatternactivity_result_is_match">सफलता: मिल्दो</string>
   <string name="testpatternactivity_result_no_match">फेल: कुनै म्याच छैन</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS प्रमाणपत्र त्रुटि</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">प्रमाणपत्रको मिति अवैध छ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">प्रमाणपत्र समाप्त भएको छ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">होस्टनाम बेमेल.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">जेनेरिक त्रुटि उत्पन्न भयो.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">प्रमाणपत्र अधिकार विश्वस्त छैन.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

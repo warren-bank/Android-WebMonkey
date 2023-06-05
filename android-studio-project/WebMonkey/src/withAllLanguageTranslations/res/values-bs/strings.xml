@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Korisnikskripti na Masnu vilicu</string>
   <string name="pref_homepage_title">Kod pokretanja</string>
   <string name="pref_homepage_summary">izaberite početnu stranicu..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Otkaži</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Nastavi</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Traži</string>
+  <string name="pref_badssl_pageloadbehavior_title">Na HTTPS Greška certifikata</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Izaberi ponašanje učitavanja stranice..</string>
   <string name="pref_updateinterval_title">Interval ažuriranja skripta</string>
   <string name="pref_updateinterval_summary">dana između čekova..</string>
   <string name="pref_enableadblock_title">Omogući blok reklama</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Izvedi test</string>
   <string name="testpatternactivity_result_is_match">Uspjeh: Match</string>
   <string name="testpatternactivity_result_no_match">Neuspješan: Ne Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Greška certifikata</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datum kada certifikat nije valjan.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certifikat je istekao.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nepodudaranje imena.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Dogodila se generička greška.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikat još nije valjan.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Izdavač certifikata nije pouzdan.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

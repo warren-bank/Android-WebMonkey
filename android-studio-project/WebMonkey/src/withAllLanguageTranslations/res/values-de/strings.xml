@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userskripte bei Greasy Fork</string>
   <string name="pref_homepage_title">Beim starten</string>
   <string name="pref_homepage_summary">Startseite festlegen..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Abbrechen</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Fortfahren</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Fragen</string>
+  <string name="pref_badssl_pageloadbehavior_title">Auf HTTPS Zertifikatsfehler</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Seitenlastverhalten auswählen..</string>
   <string name="pref_updateinterval_title">Skript-Aktualisierungsintervall</string>
   <string name="pref_updateinterval_summary">Tage zwischen Prüfung..</string>
   <string name="pref_enableadblock_title">Anzeigenblock aktivieren</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Test ausführen</string>
   <string name="testpatternactivity_result_is_match">Erfolg: Übereinstimmung</string>
   <string name="testpatternactivity_result_no_match">Fehlgeschlagen: Kein Abgleich</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Zertifikatsfehler</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Das Datum des Zertifikats ist ungültig.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Das Zertifikat ist abgelaufen..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Abweichung bei Hostname.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Ein generischer Fehler ist aufgetreten.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Das Zertifikat ist noch nicht gültig..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Die Zertifizierungsstelle ist nicht vertrauenswürdig..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

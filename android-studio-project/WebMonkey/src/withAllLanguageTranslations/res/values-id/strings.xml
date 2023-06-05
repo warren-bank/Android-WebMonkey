@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscript di Greasy Fork</string>
   <string name="pref_homepage_title">Pada Startup</string>
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Batalkan</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Lanjutkan</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Tanyakan pada</string>
+  <string name="pref_badssl_pageloadbehavior_title">Pada HTTPS Kesalahan Sertifikat</string>
+  <string name="pref_badssl_pageloadbehavior_summary">pilih perilaku beban halaman..</string>
   <string name="pref_updateinterval_title">Interval Pemutakhiran Skrip</string>
   <string name="pref_updateinterval_summary">hari antara pemeriksaan..</string>
   <string name="pref_enableadblock_title">Aktifkan blok iklan</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Jalankan Uji Coba</string>
   <string name="testpatternactivity_result_is_match">Sukses: Cocok</string>
   <string name="testpatternactivity_result_no_match">Gagal: Tidak ada kecocokan</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Kesalahan Sertifikat</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tanggal sertifikat tidak valid.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikat telah kadaluarsa.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nama host tidak cocok.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Terjadi galat generik.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikat belum valid.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Otoritas sertifikat tidak dipercaya.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

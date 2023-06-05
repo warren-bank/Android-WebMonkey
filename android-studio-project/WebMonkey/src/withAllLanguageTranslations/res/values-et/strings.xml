@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscrits at Grasy Fork</string>
   <string name="pref_homepage_title">Käivitamisel</string>
   <string name="pref_homepage_summary">vali kodulehekülg..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Loobu</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Jätka</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Küsitakse</string>
+  <string name="pref_badssl_pageloadbehavior_title">Sees HTTPS Sertifikaadi viga</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Vali lehekülje koormuse käitumine..</string>
   <string name="pref_updateinterval_title">Skripti uuendamise intervall</string>
   <string name="pref_updateinterval_summary">kontrollimiste vahelised päevad..</string>
   <string name="pref_enableadblock_title">Reklaamiploki lubamine</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Käivita Test</string>
   <string name="testpatternactivity_result_is_match">Õnnestus: Match</string>
   <string name="testpatternactivity_result_no_match">Nurjumine: sobivus puudub</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikaadi viga</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikaadi kuupäev on vigane.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikaat on aegunud.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Masinanime sobivus.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Esines üldine viga.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikaat ei ole veel kehtiv.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikaadiasutus ei ole usaldusväärne.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscripts ne Gerey Fork</string>
   <string name="pref_homepage_title">Paleidimo metu</string>
   <string name="pref_homepage_summary">pasirinkite pagrindinį puslapį..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Atšaukti</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Tęsti</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Klausti</string>
+  <string name="pref_badssl_pageloadbehavior_title">Dėl HTTPS Sertifikato klaida</string>
+  <string name="pref_badssl_pageloadbehavior_summary">pasirinkti puslapio apkrovos elgesį..</string>
   <string name="pref_updateinterval_title">Scenarijaus atnaujinimo intervalas</string>
   <string name="pref_updateinterval_summary">dienų tarp patikrinimų..</string>
   <string name="pref_enableadblock_title">Įjungti ad bloką</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Atlikti bandymą</string>
   <string name="testpatternactivity_result_is_match">Sėkmė: rungtynės</string>
   <string name="testpatternactivity_result_no_match">Nepavyksta: No Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikato klaida</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikato išdavimo data yra negaliojanti.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikato galiojimo laikas pasibaigęs.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Mazgo pavadinimo nesutapimas.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Įvyko bendroji klaida.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikatas dar neišduotas.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikavimo institucija nėra patikima.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

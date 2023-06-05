@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Greasy Fork වල Userscripts</string>
   <string name="pref_homepage_title">ආරම්භයේදී</string>
   <string name="pref_homepage_summary">ගෙදර පිටුව තෝරන්න..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">අවලංගු කරන්න</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">සැකසීම</string>
+  <string name="pref_pageloadbehavior_array_name_ask">අහන්න</string>
+  <string name="pref_badssl_pageloadbehavior_title">මත HTTPS සහතික කිරීමේ දෝෂය</string>
+  <string name="pref_badssl_pageloadbehavior_summary">පිටු පූරණය හැසිරීම තෝරන්න..</string>
   <string name="pref_updateinterval_title">ස්ක්රිප්ට් යාවත්කාලීන කිරීම</string>
   <string name="pref_updateinterval_summary">චෙක්පත් අතර දින..</string>
   <string name="pref_enableadblock_title">දැන්වීම් අවහිර සක්රීය කරන්න</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">\@ option: check</string>
   <string name="testpatternactivity_result_is_match">සාර්ථකත්වය: ගැලවීම</string>
   <string name="testpatternactivity_result_no_match">ගැලවීම: ගැලවීම නැත</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS සහතික කිරීමේ දෝෂය</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">සහතිකයේ දිනය වලංගු වේ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">SSL error.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Hostname mismatch.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">සාමාන්ය දෝෂයක් ඇතිවෙලා.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL error.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

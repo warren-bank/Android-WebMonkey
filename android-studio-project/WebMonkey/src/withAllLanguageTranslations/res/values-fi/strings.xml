@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Käsikirjoitukset Greasy Forkissa</string>
   <string name="pref_homepage_title">Käynnistä</string>
   <string name="pref_homepage_summary">Valitse aloitussivu..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Peruuta</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Jatka.</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Kysy</string>
+  <string name="pref_badssl_pageloadbehavior_title">On HTTPS Todistuksen virhe</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Valitse sivun lataustoiminto..</string>
   <string name="pref_updateinterval_title">Script Update -liittymä</string>
   <string name="pref_updateinterval_summary">Tarkastuspäivät..</string>
   <string name="pref_enableadblock_title">Ota mainoskatkos</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Aja testi</string>
   <string name="testpatternactivity_result_is_match">Menestys: Match</string>
   <string name="testpatternactivity_result_no_match">Takuu: Ei Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Todistuksen virhe</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Todistuksen päivämäärä ei kelpaa..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Todistus on vanhentunut..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Pääkoneen nimi:.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">On ilmennyt yleinen virhe.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Todistus ei ole vielä voimassa.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Todistuksen myöntävä viranomainen ei ole luotettava.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

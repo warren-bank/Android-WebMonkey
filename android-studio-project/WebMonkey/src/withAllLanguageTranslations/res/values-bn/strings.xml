@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Greasy Fork-এ Userscripts</string>
   <string name="pref_homepage_title">স্টার্টআপ</string>
   <string name="pref_homepage_summary">হোম পেজ বেছে নিন..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">বাতিল করো</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">প্রসেস</string>
+  <string name="pref_pageloadbehavior_array_name_ask">জিজ্ঞাসা</string>
+  <string name="pref_badssl_pageloadbehavior_title">অন HTTPS সার্টিফিকেট</string>
+  <string name="pref_badssl_pageloadbehavior_summary">পৃষ্ঠা লোড আচরণ নির্বাচন করুন..</string>
   <string name="pref_updateinterval_title">স্ক্রিপ্ট আপডেট বিরতি</string>
   <string name="pref_updateinterval_summary">পরীক্ষার মধ্যবর্তী দিন..</string>
   <string name="pref_enableadblock_title">এড ব্লক সক্রিয় করো</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">টেস্ট চালাও</string>
   <string name="testpatternactivity_result_is_match">সাফল্য: মিল</string>
   <string name="testpatternactivity_result_no_match">ফেইল: কোন মিল নেই</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS সার্টিফিকেট</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">সার্টিফিকেটের তারিখ অকার্যকর.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">সার্টিফিকেটের মেয়াদ শেষ হয়েছে.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">হোস্টনেম অমিল.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">একটি সাধারণ ত্রুটি দেখা দিয়েছে.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">সার্টিফিকেট এখনো বৈধ নয়.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">সার্টিফিকেটের কর্তৃত্ব বিশ্বস্ত নয়.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

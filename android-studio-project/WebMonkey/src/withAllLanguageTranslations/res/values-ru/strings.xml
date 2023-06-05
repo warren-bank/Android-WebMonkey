@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscripts at Greasy Fork</string>
   <string name="pref_homepage_title">При запуске</string>
   <string name="pref_homepage_summary">выбрать домашнее страницу..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Отмена</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Продолжить</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Спросите</string>
+  <string name="pref_badssl_pageloadbehavior_title">Вс HTTPS Ошибка сертификата</string>
+  <string name="pref_badssl_pageloadbehavior_summary">выбор режима загрузки страницы..</string>
   <string name="pref_updateinterval_title">Интервал обновления сценария</string>
   <string name="pref_updateinterval_summary">дней между проверками..</string>
   <string name="pref_enableadblock_title">Включить блок рекламы</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Выполнить тест</string>
   <string name="testpatternactivity_result_is_match">Успех: Совпадение</string>
   <string name="testpatternactivity_result_no_match">Сбой: Нет совпадений</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Ошибка сертификата</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Недопустимая дата сертификата.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Срок действия сертификата истек.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Несовпадение имен.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Возникла общая ошибка.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертификат еще не действителен.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Сертификатный орган не является доверенным.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

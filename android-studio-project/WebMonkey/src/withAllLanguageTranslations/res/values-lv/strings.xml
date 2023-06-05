@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Lietotāja skripti pie Glossy Fork</string>
   <string name="pref_homepage_title">On Startup</string>
   <string name="pref_homepage_summary">izvēlēties mājas lapu..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Atcelt</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Turpināt</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Vaicā</string>
+  <string name="pref_badssl_pageloadbehavior_title">Par HTTPS Sertifikāta kļūda</string>
+  <string name="pref_badssl_pageloadbehavior_summary">izvēlēties lapu slodzes uzvedību..</string>
   <string name="pref_updateinterval_title">Skripta atjaunināšanas intervāls</string>
   <string name="pref_updateinterval_summary">dienas starp pārbaudēm..</string>
   <string name="pref_enableadblock_title">Ieslēgt sludinājumu bloku</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Palaist Test</string>
   <string name="testpatternactivity_result_is_match">Panākumi: Match</string>
   <string name="testpatternactivity_result_no_match">Neizdodas: nav Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Sertifikāta kļūda</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Sertifikāta datums nav derīgs.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sertifikāts ir beidzies.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Resursdatora nosaukums.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Gadījās vispārēja kļūda.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikāts vēl nav derīgs.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikāta autoritāte nav uzticama.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

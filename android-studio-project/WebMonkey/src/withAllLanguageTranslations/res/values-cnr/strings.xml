@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">\"Jedan od korisnika na svijetu.\"</string>
   <string name="pref_homepage_title">Kod pokretanja.</string>
   <string name="pref_homepage_summary">Izaberite kućnu stranicu...</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Otkaži.</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Nastavite.</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Pitaj.</string>
+  <string name="pref_badssl_pageloadbehavior_title">U redu. HTTPS Greška u certifikatu</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Izaberite ponašanje učitavanja stranice...</string>
   <string name="pref_updateinterval_title">Interval ažuriranja scenarija</string>
   <string name="pref_updateinterval_summary">Dani između čekova..</string>
   <string name="pref_enableadblock_title">Omogući oglase.</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Provjeri.</string>
   <string name="testpatternactivity_result_is_match">Uspjeh: Match</string>
   <string name="testpatternactivity_result_no_match">Nema poklada.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Greška u certifikatu</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datum potvrde nije valjan..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Potvrda je istekla..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nepodudarnost imena..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Došlo je do generičke greške.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Potvrda još nije važeća..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Izdavač certifikata nije pouzdan..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

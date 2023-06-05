@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Скрипти користувача у Greasy Fork</string>
   <string name="pref_homepage_title">Після запуску</string>
   <string name="pref_homepage_summary">Вибрати домашню сторінку..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Скасувати</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Продовжити</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Запитувати</string>
+  <string name="pref_badssl_pageloadbehavior_title">На HTTPS Помилка сертифіката</string>
+  <string name="pref_badssl_pageloadbehavior_summary">обрати поведінку завантаження сторінки..</string>
   <string name="pref_updateinterval_title">Інтервал оновлення скрипту</string>
   <string name="pref_updateinterval_summary">днів між перевірками..</string>
   <string name="pref_enableadblock_title">Увімкнути блокування реклами</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Виконати перевірку</string>
   <string name="testpatternactivity_result_is_match">Успіх: збіг</string>
   <string name="testpatternactivity_result_no_match">Невдача: Немає відповідності</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Помилка сертифіката</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Дата неправильного сертифіката.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Сертифікат застарілий.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Невідповідність вузла.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Сталася загальна помилка.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертифікат ще не дійсний.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Авторитет сертифіката не є надійним.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

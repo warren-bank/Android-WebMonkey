@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscripts a Greasy Fork</string>
   <string name="pref_homepage_title">Su Startup</string>
   <string name="pref_homepage_summary">scegliere la home page..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Annulla</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Procedi</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Chiedi</string>
+  <string name="pref_badssl_pageloadbehavior_title">Su HTTPS Errore certificato</string>
+  <string name="pref_badssl_pageloadbehavior_summary">scegliere il funzionamento del carico pagina..</string>
   <string name="pref_updateinterval_title">Intervallo Aggiornamento Script</string>
   <string name="pref_updateinterval_summary">giorni tra controlli..</string>
   <string name="pref_enableadblock_title">Abilitare blocco ad annuncio</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Test di esecuzione</string>
   <string name="testpatternactivity_result_is_match">Successo: Match</string>
   <string name="testpatternactivity_result_no_match">Fail: No Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Errore certificato</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La data del certificato non è valida.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Il certificato è scaduto.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Mismatch hostname.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Si è verificato un errore generico.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Il certificato non è ancora valido.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L\'autorità del certificato non è attendibile.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

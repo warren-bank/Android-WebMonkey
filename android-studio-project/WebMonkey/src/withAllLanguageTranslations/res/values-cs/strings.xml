@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Uživatelské skripty v Greay Fork</string>
   <string name="pref_homepage_title">Při spuštění</string>
   <string name="pref_homepage_summary">zvolit domovskou stránku..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Storno</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Pokračovat</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Ptát se</string>
+  <string name="pref_badssl_pageloadbehavior_title">Zap. HTTPS Chyba certifikátu</string>
+  <string name="pref_badssl_pageloadbehavior_summary">zvolte chování načítání stránky..</string>
   <string name="pref_updateinterval_title">Interval aktualizace skriptu</string>
   <string name="pref_updateinterval_summary">dnů mezi kontrolami..</string>
   <string name="pref_enableadblock_title">Povolit reklamní blok</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Spustit test</string>
   <string name="testpatternactivity_result_is_match">Úspěch: Shoda</string>
   <string name="testpatternactivity_result_no_match">Selhání: Žádná shoda</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Chyba certifikátu</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datum certifikátu je neplatné.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Platnost certifikátu vypršela.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Neshoda názvu hostitele.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Vyskytla se generická chyba.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikát ještě není platný.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikační autorita není důvěryhodná..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

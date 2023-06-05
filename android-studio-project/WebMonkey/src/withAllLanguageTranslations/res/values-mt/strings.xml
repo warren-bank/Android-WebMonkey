@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userskripts at Gregy furketta</string>
   <string name="pref_homepage_title">Fuq L-istartjar</string>
   <string name="pref_homepage_summary">jagħżlu dar paġna..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Tħassir</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Kompli</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Staqsi</string>
+  <string name="pref_badssl_pageloadbehavior_title">Fuq HTTPS Żball taċ-ċertifikat</string>
+  <string name="pref_badssl_pageloadbehavior_summary">tagħżel imġieba tagħbija paġna..</string>
   <string name="pref_updateinterval_title">Kitba Aġġornament Intervall</string>
   <string name="pref_updateinterval_summary">jiem bejn il-kontrolli..</string>
   <string name="pref_enableadblock_title">Jippermettu blokk ad</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Test Run</string>
   <string name="testpatternactivity_result_is_match">Suċċess: Match</string>
   <string name="testpatternactivity_result_no_match">Jonqsu: Ebda Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Żball taċ-ċertifikat</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Id-data taċ-ċertifikat hija invalida.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Iċ-ċertifikat skada.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nuqqas ta \' diskrepanza.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Seħħ żball ġeneriku.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Iċ-ċertifikat għadu mhux validu.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L-awtorità taċ-ċertifikat ma tkunx fdata.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

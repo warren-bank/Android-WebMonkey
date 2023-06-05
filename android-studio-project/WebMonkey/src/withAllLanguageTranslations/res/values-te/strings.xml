@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Greasy Fork వద్ద Userscripts</string>
   <string name="pref_homepage_title">ప్రారంభంలో</string>
   <string name="pref_homepage_summary">హోమ్ పేజీ యెంపికచేయుము..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">రద్దు</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">ప్రాసెస్</string>
+  <string name="pref_pageloadbehavior_array_name_ask">అడిగి</string>
+  <string name="pref_badssl_pageloadbehavior_title">ఆన్ HTTPS సర్టిఫికేట్ దోషము</string>
+  <string name="pref_badssl_pageloadbehavior_summary">పేజీ లోడ్ ప్రవర్తన యెంచుకొనుము..</string>
   <string name="pref_updateinterval_title">స్క్రిప్ట్ నవీకరణ Interval</string>
   <string name="pref_updateinterval_summary">పరిశీలనల మధ్య రోజులు..</string>
   <string name="pref_enableadblock_title">అడ్ బ్లాక్ ను చేతనము చేయుము</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">పరీక్షను నడుపుము</string>
   <string name="testpatternactivity_result_is_match">విజయం: మ్యాచ్</string>
   <string name="testpatternactivity_result_no_match">ఫేల్: ఏ మ్యాచ్</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS సర్టిఫికేట్ దోషము</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">సర్టిఫికేట్ యొక్క తేదీ చెల్లనిది.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">సర్టిఫికేట్ ముగించబడింది.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">హోస్టెం పేరు మ్యాచ్.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">A generic error occurred.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">సర్టిఫికేట్ ఇంకా చెల్లునది కాదు.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL నమ్మకం.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

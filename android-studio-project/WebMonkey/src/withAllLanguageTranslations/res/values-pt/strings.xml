@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userscripts em Greasy Fork</string>
   <string name="pref_homepage_title">Na Inicialização</string>
   <string name="pref_homepage_summary">escolha página inicial..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Cancelar</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Prosseguir</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Pergunte</string>
+  <string name="pref_badssl_pageloadbehavior_title">Em HTTPS Erro de certificado</string>
+  <string name="pref_badssl_pageloadbehavior_summary">escolher comportamento de carregamento de página..</string>
   <string name="pref_updateinterval_title">Intervalo De Atualização Do Script</string>
   <string name="pref_updateinterval_summary">dias entre cheques..</string>
   <string name="pref_enableadblock_title">Ativar bloco de anúncios</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Teste de Execução</string>
   <string name="testpatternactivity_result_is_match">Sucesso: Match</string>
   <string name="testpatternactivity_result_no_match">Falha: Sem Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Erro de certificado</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">A data do certificado é inválida.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">O certificado expirou.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Incompatibilidade do hostname.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Ocorreu um erro genérico.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">O certificado ainda não é válido.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">A autoridade de certificação não é confiável.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

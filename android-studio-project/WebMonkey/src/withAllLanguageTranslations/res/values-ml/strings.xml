@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">ഗ്രാസി ഫോറിലെ Userscripts</string>
   <string name="pref_homepage_title">തുടക്കത്തില്</string>
   <string name="pref_homepage_summary">ഹോം പേജ് തെരഞ്ഞെടുക്കുക..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">റദ്ദാക്കുക</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">പ്രോസീഡ്</string>
+  <string name="pref_pageloadbehavior_array_name_ask">ചോദിയ്ക്കുക</string>
+  <string name="pref_badssl_pageloadbehavior_title">ഓണ് HTTPS സാക്ഷ്യപത്രം പിശക്</string>
+  <string name="pref_badssl_pageloadbehavior_summary">താള് ലോഡ് സ്വഭാവം തെരഞ്ഞെടുക്കുക..</string>
   <string name="pref_updateinterval_title">സ്ക്രിപ്റ്റ് പുതുക്കല് ഇന്റര്വല്</string>
   <string name="pref_updateinterval_summary">പരിശോധനയ്ക്കിടയിലുള്ള ദിവസങ്ങള്..</string>
   <string name="pref_enableadblock_title">ആഡ് ബ്ലോക്ക് സജ്ജമാക്കുക</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">ടെസ്റ്റ് പ്രവര്ത്തിപ്പിക്കുക</string>
   <string name="testpatternactivity_result_is_match">വിജയകരം: ചേര്ക്കുക</string>
   <string name="testpatternactivity_result_no_match">à \', à\' - à \' action</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS സാക്ഷ്യപത്രം പിശക്</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">സാക്ഷ്യപത്രത്തിന്റെ തീയതി അസാധുവാണ്.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">സാക്ഷ്യപത്രം കാലാവധി.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ഹോസ്റ്റ്നാമിന്റെ പൊരുത്തം.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">ഒരു ജെനറിക് പിശക് സംഭവിച്ചിരിക്കുന്നു.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">സാക്ഷ്യപത്രം ഇതുവരെ സാധിച്ചിട്ടില്ല.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">സര്ട്ടിഫിക്കേറ്റ് അധികാരം വിശ്വസിക്കില്ല.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

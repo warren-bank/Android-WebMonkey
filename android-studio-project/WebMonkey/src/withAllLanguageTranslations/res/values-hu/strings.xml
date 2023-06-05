@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Userparancsfájlok a Greasy Forkban</string>
   <string name="pref_homepage_title">Indításkor</string>
   <string name="pref_homepage_summary">Kezdőlap kiválasztása..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Mégse</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Folytatás</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Kérdés</string>
+  <string name="pref_badssl_pageloadbehavior_title">Be HTTPS Igazolás hiba</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Oldalbetöltési viselkedés kiválasztása..</string>
   <string name="pref_updateinterval_title">Parancsfájl frissítési időköz</string>
   <string name="pref_updateinterval_summary">Ellenőrzések közötti napok..</string>
   <string name="pref_enableadblock_title">Reklámblokk engedélyezése</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Teszt futtatása</string>
   <string name="testpatternactivity_result_is_match">Siker: Match</string>
   <string name="testpatternactivity_result_no_match">Hiba: Nincs egyezés</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Igazolás hiba</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">A tanúsítvány dátuma érvénytelen.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">A tanúsítvány lejárt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Hosztnév eltérés.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Általános hiba történt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">A tanúsítvány még nem érvényes.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">A tanúsítványhatóság nem megbízható.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

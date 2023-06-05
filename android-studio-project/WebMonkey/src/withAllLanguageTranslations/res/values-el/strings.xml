@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Σενάρια χρήστη στο Greasy Fork</string>
   <string name="pref_homepage_title">Στο Startup</string>
   <string name="pref_homepage_summary">επιλογή αρχικής σελίδας..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Ακύρωση.</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Συνεχίστε.</string>
+  <string name="pref_pageloadbehavior_array_name_ask">-Ρώτα.</string>
+  <string name="pref_badssl_pageloadbehavior_title">- HTTPS Σφάλμα πιστοποιητικού</string>
+  <string name="pref_badssl_pageloadbehavior_summary">επιλογή συμπεριφοράς φόρτωσης σελίδας..</string>
   <string name="pref_updateinterval_title">Διάστημα ενημέρωσης σεναρίου</string>
   <string name="pref_updateinterval_summary">ημέρες μεταξύ ελέγχων..</string>
   <string name="pref_enableadblock_title">Ενεργοποίηση ενότητας ad</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Δοκιμή εκτέλεσης</string>
   <string name="testpatternactivity_result_is_match">Επιτυχία: Αγώνας</string>
   <string name="testpatternactivity_result_no_match">Αποτύχει: Χωρίς Αγώνα</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Σφάλμα πιστοποιητικού</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Η ημερομηνία του πιστοποιητικού δεν είναι έγκυρη..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Το πιστοποιητικό έχει λήξει..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Ασυμφωνία ονόματος υπολογιστή.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Προέκυψε γενικό σφάλμα..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Το πιστοποιητικό δεν είναι ακόμα έγκυρο..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Η αρχή έκδοσης πιστοποιητικών δεν είναι έμπιστη.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Skrypty użytkownika na rozwidleniu w stanie tłustym</string>
   <string name="pref_homepage_title">Podczas uruchamiania</string>
   <string name="pref_homepage_summary">wybierz stronę główną..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Anuluj</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Kontynuuj</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Pytaj</string>
+  <string name="pref_badssl_pageloadbehavior_title">W dniu HTTPS Błąd certyfikatu</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Wybierz zachowanie ładowania strony..</string>
   <string name="pref_updateinterval_title">Przedział czasu aktualizacji skryptu</string>
   <string name="pref_updateinterval_summary">dni między sprawdzeniami..</string>
   <string name="pref_enableadblock_title">Włącz blok ad</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Uruchom test</string>
   <string name="testpatternactivity_result_is_match">Sukces: zgodność</string>
   <string name="testpatternactivity_result_no_match">Niepowodzenie: Brak zgodności</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Błąd certyfikatu</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Data certyfikatu jest niepoprawna.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certyfikat utracił ważność.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Niezgodność nazwy hosta.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Wystąpił błąd ogólny..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certyfikat nie jest jeszcze ważny.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Ośrodek certyfikacji nie jest zaufany.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

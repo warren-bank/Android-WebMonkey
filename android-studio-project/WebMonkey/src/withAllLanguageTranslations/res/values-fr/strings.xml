@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Scripts d\'utilisateur à Greasy Fork</string>
   <string name="pref_homepage_title">Au démarrage</string>
   <string name="pref_homepage_summary">Choisir la page d\'accueil..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Annuler</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Proceed</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Demander</string>
+  <string name="pref_badssl_pageloadbehavior_title">Sur HTTPS Erreur de certificat</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Choix du comportement de chargement de page..</string>
   <string name="pref_updateinterval_title">Intervalle entre les mises à jour</string>
   <string name="pref_updateinterval_summary">Jours entre les vérifications..</string>
   <string name="pref_enableadblock_title">Activer le bloc d\'annonces</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Exécuter le test</string>
   <string name="testpatternactivity_result_is_match">Succès: Correspondance</string>
   <string name="testpatternactivity_result_no_match">Echec: aucune correspondance</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Erreur de certificat</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La date du certificat n\'est pas valide.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Le certificat a expiré.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Non concordance du nom d\'hôte.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Une erreur générique s\'est produite.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Le certificat n\'est pas encore valide.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">L\'autorité de certification n\'est pas digne de confiance.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

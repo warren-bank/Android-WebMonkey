@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Scripturi de utilizator la furcă unsuros</string>
   <string name="pref_homepage_title">La pornire</string>
   <string name="pref_homepage_summary">alegere pagină Acasă..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Anulează</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Continuă.</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Întreabă</string>
+  <string name="pref_badssl_pageloadbehavior_title">Pe HTTPS Eroare de certificat</string>
+  <string name="pref_badssl_pageloadbehavior_summary">alege comportamentul de încărcare a paginii..</string>
   <string name="pref_updateinterval_title">Interval actualizare script</string>
   <string name="pref_updateinterval_summary">zile între verificări..</string>
   <string name="pref_enableadblock_title">Activează blocul de anunțuri</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Test de încercare</string>
   <string name="testpatternactivity_result_is_match">Succes: Meci</string>
   <string name="testpatternactivity_result_no_match">Fail: No Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Eroare de certificat</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Data certificatului este invalidă..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certificatul a expirat.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Neconcordanță cu numele.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">A apărut o eroare generică.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certificatul nu este încă valabil.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Autoritatea de certificare nu este de încredere.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

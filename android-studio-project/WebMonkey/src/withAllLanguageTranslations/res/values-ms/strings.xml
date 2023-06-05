@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Skrip Pengguna di Greasy Fork</string>
   <string name="pref_homepage_title">Semasa Permulaan</string>
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Batal</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Teruskan</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Tanya</string>
+  <string name="pref_badssl_pageloadbehavior_title">Atas HTTPS Ralat Sijil</string>
+  <string name="pref_badssl_pageloadbehavior_summary">pilih kelakuan muat halaman..</string>
   <string name="pref_updateinterval_title">Sela Kemaskini Skrip</string>
   <string name="pref_updateinterval_summary">hari diantara semakan..</string>
   <string name="pref_enableadblock_title">Benarkan blok iklan</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Jalankan Ujian</string>
   <string name="testpatternactivity_result_is_match">Kejayaan: Perlawanan</string>
   <string name="testpatternactivity_result_no_match">Gagal: Tiada Perlawanan</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Ralat Sijil</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Tarikh sijil tidak sah.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Sijil telah luput.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nama hos tidak sepadan.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Ralat generik berlaku.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sijil belum lagi sah.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Kuasa sijil tidak dipercayai.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

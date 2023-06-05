@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Používateľské skripty v Greasy Fork</string>
   <string name="pref_homepage_title">Pri štarte</string>
   <string name="pref_homepage_summary">vybrať domovskú stránku..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Zrušiť</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Pokračovať</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Opýtať sa</string>
+  <string name="pref_badssl_pageloadbehavior_title">Zapnuté HTTPS Chyba certifikátu</string>
+  <string name="pref_badssl_pageloadbehavior_summary">vybrať správanie zaťaženia stránky..</string>
   <string name="pref_updateinterval_title">Interval aktualizácie skriptu</string>
   <string name="pref_updateinterval_summary">dní medzi kontroami..</string>
   <string name="pref_enableadblock_title">Povoliť blok reklamy</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Spustiť test</string>
   <string name="testpatternactivity_result_is_match">Úspech: Zápas</string>
   <string name="testpatternactivity_result_no_match">Zlyhanie: Žiadna zhoda</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Chyba certifikátu</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Dátum certifikátu je neplatný.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Platnosť certifikátu vypršala.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Nezhoda hostiteľa.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Nastala generická chyba.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikát ešte nie je platný.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikačný orgán nie je dôveryhodný.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

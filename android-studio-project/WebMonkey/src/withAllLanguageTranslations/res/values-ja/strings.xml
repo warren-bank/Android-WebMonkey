@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">グリシー・フォークのユーザースクリプト</string>
   <string name="pref_homepage_title">開始時</string>
   <string name="pref_homepage_summary">ホームページの選択..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">キャンセル</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">プロシード</string>
+  <string name="pref_pageloadbehavior_array_name_ask">訊問</string>
+  <string name="pref_badssl_pageloadbehavior_title">オン HTTPS 証明書エラー</string>
+  <string name="pref_badssl_pageloadbehavior_summary">ページ・ロード動作の選択..</string>
   <string name="pref_updateinterval_title">スクリプト更新間隔</string>
   <string name="pref_updateinterval_summary">チェック間の日数..</string>
   <string name="pref_enableadblock_title">広告ブロックの使用</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">テストの実行</string>
   <string name="testpatternactivity_result_is_match">成功: 一致</string>
   <string name="testpatternactivity_result_no_match">失敗: 一致なし</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS 証明書エラー</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">証明書の日付が無効です.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">証明書は期限切れです.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">ホスト名不一致.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">一般エラーが発生しました.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">証明書はまだ有効ではありません.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">認証局は信頼されていません.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

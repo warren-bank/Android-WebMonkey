@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Потребителски скриптове в Greйси Разклонение</string>
   <string name="pref_homepage_title">При стартиране:</string>
   <string name="pref_homepage_summary">Изберете начална страница..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Отмяна\?</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Давайте!</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Питай!</string>
+  <string name="pref_badssl_pageloadbehavior_title">На ... HTTPS Грешка в сертификата</string>
+  <string name="pref_badssl_pageloadbehavior_summary">изберете поведение за зареждане на страница..</string>
   <string name="pref_updateinterval_title">Интервал на обновяване на скрипт</string>
   <string name="pref_updateinterval_summary">дни между проверките..</string>
   <string name="pref_enableadblock_title">Разрешаване на рекламен блок</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Тест за изпитване</string>
   <string name="testpatternactivity_result_is_match">Успех: мач</string>
   <string name="testpatternactivity_result_no_match">Неуспешно: Няма мач</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Грешка в сертификата</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Датата на сертификата е невалидна.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Сертификатът е изтекъл..</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Несъответствие на име на хост.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Възникна обща грешка.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертификатът все още не е валиден.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Не се доверява на органа на сертификата.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

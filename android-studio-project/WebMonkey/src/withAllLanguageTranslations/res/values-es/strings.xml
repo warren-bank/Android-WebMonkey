@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Scripts de usuario en greasy fork</string>
   <string name="pref_homepage_title">Al inicio</string>
   <string name="pref_homepage_summary">elegir página de inicio..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Cancelar</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Proceda</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Preguntar</string>
+  <string name="pref_badssl_pageloadbehavior_title">En HTTPS Error de certificado</string>
+  <string name="pref_badssl_pageloadbehavior_summary">elegir comportamiento de carga de página..</string>
   <string name="pref_updateinterval_title">Intervalo de actualización de script</string>
   <string name="pref_updateinterval_summary">días entre controles..</string>
   <string name="pref_enableadblock_title">Habilitar bloque de anuncios</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Ejecutar prueba</string>
   <string name="testpatternactivity_result_is_match">Éxito: Match</string>
   <string name="testpatternactivity_result_no_match">Error: No Match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Error de certificado</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">La fecha del certificado no es válida.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">El certificado ha caducado.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Discrepancia de nombre.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Se ha producido un error genérico.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">El certificado aún no es válido.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">La entidad emisora de certificados no es de confianza.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">Brugerscripts i Greasy Fork</string>
   <string name="pref_homepage_title">Ved start</string>
   <string name="pref_homepage_summary">vælg startside..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">Annullér</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">Fortsæt</string>
+  <string name="pref_pageloadbehavior_array_name_ask">Spørg</string>
+  <string name="pref_badssl_pageloadbehavior_title">På HTTPS Certifikatfejl</string>
+  <string name="pref_badssl_pageloadbehavior_summary">Vælg sideindlæsningsadfærd..</string>
   <string name="pref_updateinterval_title">Interval for scriptopdatering</string>
   <string name="pref_updateinterval_summary">dage mellem kontrol..</string>
   <string name="pref_enableadblock_title">Aktivér reklameblok</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">Udfør test</string>
   <string name="testpatternactivity_result_is_match">Succes: Match</string>
   <string name="testpatternactivity_result_no_match">Fejl: Ingen match</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS Certifikatfejl</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">Datoen for certifikatet er ugyldigt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">Certifikatet er udløbet.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">Værtsnavn stemmer ikke overens.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">Der er opstået en generel fejl.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikatet er endnu ikke gyldigt.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikatautoriteten er ikke betroet.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>

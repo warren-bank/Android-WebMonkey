@@ -12,6 +12,11 @@
   <string name="pref_homepage_array_names_4">ผู้ใช้สคริปต์ที่ Greasy Fork</string>
   <string name="pref_homepage_title">เมื่อเริ่มทำงาน</string>
   <string name="pref_homepage_summary">เลือกโฮมเพจ..</string>
+  <string name="pref_pageloadbehavior_array_name_cancel">ยกเลิก</string>
+  <string name="pref_pageloadbehavior_array_name_proceed">ดำเนินการต่อ</string>
+  <string name="pref_pageloadbehavior_array_name_ask">ถาม</string>
+  <string name="pref_badssl_pageloadbehavior_title">เปิด HTTPS ใบรับรองมีข้อผิดพลาด</string>
+  <string name="pref_badssl_pageloadbehavior_summary">เลือกลักษณะการทำงานของโหลดของเพจ..</string>
   <string name="pref_updateinterval_title">ช่วงเวลาการอัพเดตสคริปต์</string>
   <string name="pref_updateinterval_summary">วันระหว่างการตรวจสอบ..</string>
   <string name="pref_enableadblock_title">เปิดใช้งานบล็อก ad</string>
@@ -23,4 +28,12 @@
   <string name="testpatternactivity_label_button">รันการทดสอบ</string>
   <string name="testpatternactivity_result_is_match">สำเร็จ: ตรงกัน</string>
   <string name="testpatternactivity_result_no_match">ล้มเหลว: ไม่ตรงกับ</string>
+  <string name="alertdialog_badssl_pageloadbehavior_title">HTTPS ใบรับรองมีข้อผิดพลาด</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_date_invalid">วันที่ที่ออกใบรับรองไม่ถูกต้อง.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_expired">ใบรับรองหมดอายุแล้ว.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_idmismatch">โฮสต์ไม่ตรงกัน.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_invalid">เกิดข้อผิดพลาดทั่วไป.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">ใบรับรองยังไม่สามารถใช้ได้.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certificate authority ไม่ได้รับการไว้วางใจ.</string>
+  <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
 </resources>
