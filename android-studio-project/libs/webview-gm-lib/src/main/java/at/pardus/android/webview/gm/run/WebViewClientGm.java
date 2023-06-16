@@ -39,14 +39,15 @@ public class WebViewClientGm extends WebViewClient {
 
   private static final String JSCONTAINEREND = "\n})()";
 
-  private static final String JSUNSAFEWINDOW = "unsafeWindow = (function() { var el = document.createElement('p'); el.setAttribute('onclick', 'return window;'); return el.onclick(); }()); window.wrappedJSObject = unsafeWindow;\n";
+  private static final String JSUNSAFEWINDOW = "var unsafeWindow = (function() { var el = document.createElement('p'); el.setAttribute('onclick', 'return window;'); return el.onclick(); }()); window.wrappedJSObject = unsafeWindow;\n";
 
   private static final String JSMISSINGFUNCTION = "function() { GM_log(\"Called function not yet implemented\"); };\n";
 
-  private static final String JSMISSINGFUNCTIONS = "var GM_info = "
-      + JSMISSINGFUNCTION + "var GM_openInTab = " + JSMISSINGFUNCTION
+  private static final String JSMISSINGFUNCTIONS =
+        "var GM_info = "                + JSMISSINGFUNCTION
+      + "var GM_openInTab = "           + JSMISSINGFUNCTION
       + "var GM_registerMenuCommand = " + JSMISSINGFUNCTION
-      + "var GM_setClipboard = " + JSMISSINGFUNCTION;
+      + "var GM_setClipboard = "        + JSMISSINGFUNCTION;
 
   private ScriptStore scriptStore;
 
@@ -95,16 +96,29 @@ public class WebViewClientGm extends WebViewClient {
    *            JavaScript code to add after the end of the user script code
    *            (may be null)
    */
-  protected void runMatchingScripts(WebView view, String url,
-      boolean pageFinished, String jsBeforeScript, String jsAfterScript) {
+  protected void runMatchingScripts(WebView view, String url, boolean pageFinished, String jsBeforeScript, String jsAfterScript) {
+    String jsCode = getMatchingScripts(url, pageFinished, jsBeforeScript, jsAfterScript);
+
+    if ((jsCode == null) || jsCode.isEmpty())
+      return;
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+      view.evaluateJavascript(jsCode, null);
+    else
+      view.loadUrl("javascript:\n" + jsCode);
+  }
+
+  public String getMatchingScripts(String url, boolean pageFinished, String jsBeforeScript, String jsAfterScript) {
     if (scriptStore == null) {
       Log.w(TAG, "Property scriptStore is null - not running any scripts");
-      return;
+      return null;
     }
     Script[] matchingScripts = scriptStore.get(url);
     if (matchingScripts == null) {
-      return;
+      return null;
     }
+
+    String jsCode = "";
     if (jsBeforeScript == null) {
       jsBeforeScript = "";
     }
@@ -112,9 +126,10 @@ public class WebViewClientGm extends WebViewClient {
       jsAfterScript = "";
     }
     for (Script script : matchingScripts) {
-      if ((!pageFinished && Script.RUNATSTART.equals(script.getRunAt()))
-          || (pageFinished && (script.getRunAt() == null || Script.RUNATEND
-              .equals(script.getRunAt())))) {
+      if (
+        (!pageFinished && Script.RUNATSTART.equals(script.getRunAt())) ||
+        (pageFinished && (script.getRunAt() == null || Script.RUNATEND.equals(script.getRunAt())))
+      ) {
         Log.i(TAG, "Running script \"" + script + "\" on " + url);
         String defaultSignature = "\""
             + script.getName().replace("\"", "\\\"") + "\", \""
@@ -236,18 +251,10 @@ public class WebViewClientGm extends WebViewClient {
           }
         }
 
-                String jsCode = jsApi + jsAllRequires + jsBeforeScript + script
-                        .getContent() + jsAfterScript;
-                if (!script.isUnwrap()) {
-                    jsCode = JSCONTAINERSTART + jsCode + JSCONTAINEREND;
-                }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    view.evaluateJavascript(jsCode, null);
-                } else {
-                    view.loadUrl("javascript:\n" + jsCode);
-                }
+        jsCode += (script.isUnwrap() ? "" : JSCONTAINERSTART) + jsApi + jsAllRequires + jsBeforeScript + script.getContent() + jsAfterScript + (script.isUnwrap() ? "" : JSCONTAINEREND);
       }
     }
+    return jsCode;
   }
 
   @Override

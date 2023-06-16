@@ -24,6 +24,7 @@
       android:key="@string/pref_updateinterval_key"
       android:title="@string/pref_updateinterval_title"
       android:summary="@string/pref_updateinterval_summary"
+      android:inputType="number"
       android:numeric="integer"
       android:maxLength="3"
       android:defaultValue="@string/pref_updateinterval_default" />
@@ -34,6 +35,13 @@
       android:summaryOn="@string/pref_enableadblock_summary_on"
       android:summaryOff="@string/pref_enableadblock_summary_off"
       android:defaultValue="@string/pref_enableadblock_default" />
+
+    <EditTextPreference
+      android:key="@string/pref_sharedsecret_key"
+      android:title="@string/pref_sharedsecret_title"
+      android:summary="@string/pref_sharedsecret_summary"
+      android:inputType="text"
+      android:defaultValue="" />
 
   </PreferenceCategory>
 </PreferenceScreen>

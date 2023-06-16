@@ -119,4 +119,18 @@ public class SettingsUtils {
     return prefs.getBoolean(pref_key, val_default);
   }
 
+  // --------------------
+
+  public static String getSharedSecretPreference(Context context) {
+    return getSharedSecretPreference(context, getPrefs(context));
+  }
+
+  private static String getSharedSecretPreference(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_sharedsecret_key);
+    String pref_default = "";
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return pref_value;
+  }
+
 }

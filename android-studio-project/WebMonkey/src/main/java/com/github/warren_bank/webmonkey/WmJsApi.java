@@ -1,5 +1,8 @@
 package com.github.warren_bank.webmonkey;
 
+import com.github.warren_bank.webmonkey.settings.SettingsUtils;
+
+import at.pardus.android.webview.gm.run.WebViewClientGm;
 import at.pardus.android.webview.gm.util.DownloadHelper;
 
 import android.app.Activity;
@@ -307,6 +310,33 @@ public class WmJsApi {
         }
         catch(Exception e) {
         }
+      }
+
+      @JavascriptInterface
+      public String getUserscriptJS(String shared_secret_assertion, String url) {
+        String shared_secret_value = SettingsUtils.getSharedSecretPreference(activity);
+        if (
+          (shared_secret_value     == null) || shared_secret_value.isEmpty()     ||
+          (shared_secret_assertion == null) || shared_secret_assertion.isEmpty() ||
+          !shared_secret_value.equals(shared_secret_assertion)
+        ) {
+          Log.e(WmJsApi.TAG, "Call to \"getUserscriptJS\" did not supply correct shared secret");
+          return null;
+        }
+
+        String jsCode = null;
+        try {
+          WebViewClientGm webViewClient = (WebViewClientGm) webview.getWebViewClient();
+          jsCode = (
+            webViewClient.getMatchingScripts(url, false, null, null) + "\n" +
+            "window.addEventListener('DOMContentLoaded', function(event) {" + "\n" +
+            webViewClient.getMatchingScripts(url, true,  null, null) + "\n" +
+            "})" + "\n"
+          );
+        }
+        catch(Exception e) {
+        }
+        return jsCode;
       }
 
     };

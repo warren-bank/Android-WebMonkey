@@ -115,7 +115,7 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
 #### Caveats
 
 * userscripts only run in the top window
-  - they are __not__ loaded into iframes
+  - they are __not__ loaded into [iframes](./IFRAMES.md)
 
 #### Legal:
 
