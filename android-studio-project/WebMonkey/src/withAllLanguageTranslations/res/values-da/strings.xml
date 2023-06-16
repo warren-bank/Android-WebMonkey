@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Aktivér reklameblok</string>
   <string name="pref_enableadblock_summary_on" >Blokering af værter, der betjener: annoncer, sporingsenheder, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Tillad anmodninger til alle værter</string>
+  <string name="pref_sharedsecret_title">Delt hemmelighed</string>
+  <string name="pref_sharedsecret_summary">den første parameter til API metode: \"window.WebViewWM.getUserscriptJS(hemmelighed, url)\". Primært bestemt til brug for JS kode injiceret af en \"mitmproxy\" script .. for at tillade brugerscripts at køre i iframe vinduer.</string>
   <string name="testpatternactivity_description">Mønster:\n  * understøtter: glob eller regex\n  * bruges af: @include, @exclude, og @match\n\nURL:\n  * forsøgsperson\n\nUdfør test:\n  * afgør, om \"Mønster\" matcher "URL"\n  * fremvisningsresultat i Toast</string>
   <string name="testpatternactivity_label_pattern">Mønster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

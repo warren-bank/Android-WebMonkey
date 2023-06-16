@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">এড ব্লক সক্রিয় করো</string>
   <string name="pref_enableadblock_summary_on" >Blocking এমন হোস্ট যা কাজ করে: বিজ্ঞাপন, ট্রাকার্স, ম্যালওয়্যার, স্প্যাম</string>
   <string name="pref_enableadblock_summary_off">সকল হোস্টকে অনুরোধ করা হচ্ছে</string>
+  <string name="pref_sharedsecret_title">শেয়ার করা সিক্রেট</string>
+  <string name="pref_sharedsecret_summary">প্রথম পরামিতি API পদ্ধতি: \"window.WebViewWM.getUserscriptJS(গোপন, url)\". প্রাথমিকভাবে ব্যবহার করার উদ্দেশ্যে JS কোড ইনজেকশন \"mitmproxy\" স্ক্রিপ্ট ... ব্যবহারকারীর স্ক্রিপ্ট চালানোর অনুমতি দেবার জন্য iframe উইন্ডোজ.</string>
   <string name="testpatternactivity_description">প্যাটার্ন:\n  * সমর্থন: glob অথবা regex\n  * ব্যবহৃত: @include, @exclude, এবং @match\n\nURL:\n  * পরীক্ষার বিষয়\n\nটেস্ট চালাও:\n  * \"প্যাটার্ন\" খেলাটি নির্ধারণ করে "URL"\n  * ডিসপ্লে ফলাফল Toast</string>
   <string name="testpatternactivity_label_pattern">প্যাটার্ন:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Aktifkan blok iklan</string>
   <string name="pref_enableadblock_summary_on" >Memblokir host yang melayani: ads, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Memungkinkan permintaan untuk semua host</string>
+  <string name="pref_sharedsecret_title">Rahasia Bersama</string>
+  <string name="pref_sharedsecret_summary">parameter pertama ke API metode: \"window.WebViewWM.getUserscriptJS(rahasia, url)\". Terutama dimaksudkan untuk digunakan oleh JS kode disuntikkan oleh sebuah \"mitmproxy\" script .. untuk memungkinkan pengguna skrip untuk berjalan di iframe jendela.</string>
   <string name="testpatternactivity_description">Pola:\n  * mendukung: glob atau regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek tes\n\nJalankan Uji Coba:\n  * menentukan apakah cocok \"Pattern\" "URL"\n  * tampilkan hasil dalam Toast</string>
   <string name="testpatternactivity_label_pattern">Pola:</string>
   <string name="testpatternactivity_label_url">URL:</string>

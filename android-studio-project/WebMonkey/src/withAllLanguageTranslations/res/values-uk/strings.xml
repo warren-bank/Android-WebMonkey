@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Увімкнути блокування реклами</string>
   <string name="pref_enableadblock_summary_on" >Блокування вузлів, які служать: ads, trackers, malware, спам</string>
   <string name="pref_enableadblock_summary_off">Дозволяти запити на всі вузли</string>
+  <string name="pref_sharedsecret_title">Спільна таємна</string>
+  <string name="pref_sharedsecret_summary">перший параметр до API метод: \"window.WebViewWM.getUserscriptJS(таємна, url)\". Здебільшого призначений для використання JS ін\'єкції коду \"mitmproxy\" скрипт ... для того, щоб скрипт користувача виконуватися iframe windows.</string>
   <string name="testpatternactivity_description">Шаблон:\n  * підтримує: glob або regex\n  * Використано: @include, @exclude, і @match\n\nURL:\n  * тестовий предмет\n\nВиконати перевірку:\n  * визначити, чи слід відповідати \"Шаблон\" "URL"\n  * показати результат Toast</string>
   <string name="testpatternactivity_label_pattern">Шаблон:</string>
   <string name="testpatternactivity_label_url">URL:</string>

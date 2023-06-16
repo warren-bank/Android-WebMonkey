@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">विज्ञापन ब्लॉक सक्षम करें</string>
   <string name="pref_enableadblock_summary_on" >होस्ट करता है कि सेवा बंद करें: विज्ञापन, ट्रेकर्स, मैलवेयर, स्पैम</string>
   <string name="pref_enableadblock_summary_off">सभी होस्ट को अनुरोध की अनुमति देता है</string>
+  <string name="pref_sharedsecret_title">साझा गुप्त</string>
+  <string name="pref_sharedsecret_summary">पहला पैरामीटर करने के लिए API विधि: \"window.WebViewWM.getUserscriptJS(गुप्त, url)\". प्राथमिक रूप से उपयोग के लिए JS द्वारा इंजेक्शन दिया गया कोड \"mitmproxy\" स्क्रिप्ट .. उन उपयोगकर्ता स्क्रिप्ट में चलाने की अनुमति देने के लिए iframe विंडोज़.</string>
   <string name="testpatternactivity_description">पैटर्न:\n  * सहारा देना: glob या regex\n  * द्वारा प्रयुक्त: @include, @exclude, और @match\n\nURL:\n  * परीक्षा विषय\n\nटेस्ट चलाएं:\n  * निर्धारित करें कि क्या \"पैटर्न\" मैच "URL"\n  * प्रदर्शन परिणाम Toast</string>
   <string name="testpatternactivity_label_pattern">पैटर्न:</string>
   <string name="testpatternactivity_label_url">URL:</string>

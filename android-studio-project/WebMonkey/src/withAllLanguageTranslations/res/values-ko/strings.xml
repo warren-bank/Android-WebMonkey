@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">광고 블록 사용</string>
   <string name="pref_enableadblock_summary_on" >서비스를 제공하는 차단 호스트: 광고, 추적 프로그램, 멀웨어, 스팸</string>
   <string name="pref_enableadblock_summary_off">모든 호스트에 대한 요청 허용</string>
+  <string name="pref_sharedsecret_title">공유 시크릿</string>
+  <string name="pref_sharedsecret_summary">첫 번째 매개변수를 사용하여 API 메소드: \"window.WebViewWM.getUserscriptJS(비밀의, url)\". 기본적으로 사용하기 위해 의도된 JS 에 의해 주입되는 코드 \"mitmproxy\" 스크립트를 사용하여 사용자 스크립트를 실행할 수 있습니다. iframe 창.</string>
   <string name="testpatternactivity_description">패턴:\n  * 지원하다: glob 또는 regex\n  * 사용되는: @include, @exclude, 및 @match\n\nURL:\n  * 테스트 대상\n\n테스트 실행:\n  * \"패턴\" 일치 여부 판별 "URL"\n  * 표시 결과 표시 Toast</string>
   <string name="testpatternactivity_label_pattern">패턴:</string>
   <string name="testpatternactivity_label_url">URL:</string>

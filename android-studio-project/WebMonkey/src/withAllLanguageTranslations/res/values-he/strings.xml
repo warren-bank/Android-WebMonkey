@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">הפעלת חטיבת פרסום</string>
   <string name="pref_enableadblock_summary_on" >חסימת מארח שמשרת: מודעות, עוקבים, תוכנות זדוניות, דואר זבל</string>
   <string name="pref_enableadblock_summary_off">לאפשר בקשות לכל המארחים</string>
+  <string name="pref_sharedsecret_title">סוד משותף</string>
+  <string name="pref_sharedsecret_summary">הפרמטר הראשון ל - API שיטה: \"window.WebViewWM.getUserscriptJS(סוד, url)\". מיועד בעיקר לשימוש על ידי JS קוד מוזרק על ידי \"mitmproxy\" קובץ Script ... כדי לאפשר הרצה של קובצי Script iframe חלונות.</string>
   <string name="testpatternactivity_description">תבנית:\n  * תומך: glob או regex\n  * בשימוש על-ידי: @include, @exclude, ו - @match\n\nURL:\n  * נתין נבדק\n\nהרצת בדיקה:\n  * לקבוע אם \"תבנית\" מתאימה "URL"\n  * הצגת תוצאות ב - Toast</string>
   <string name="testpatternactivity_label_pattern">תבנית:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Омогући блок ад</string>
   <string name="pref_enableadblock_summary_on" >Блокирање домаћина који служе: рекламе, уређаји за праћење, малвер, spam</string>
   <string name="pref_enableadblock_summary_off">Омогућавање захтева свим домаћинима</string>
+  <string name="pref_sharedsecret_title">Дељена тајна</string>
+  <string name="pref_sharedsecret_summary">први параметар за API метода: \"window.WebViewWM.getUserscriptJS(тајни, url)\". Првенствено намењен за коришћење од стране JS шифра убризгана од стране \"mitmproxy\" скрипта ... да дозволи userскрипти да се кандид iframe прозори.</string>
   <string name="testpatternactivity_description">Образац:\n  * подржавање: glob или regex\n  * користи: @include, @exclude, и @match\n\nURL:\n  * тест субјекта\n\nПокрените тест:\n  * Одређује да ли се \"Шаблон\" поклапа "URL"\n  * приказ резултата у Toast</string>
   <string name="testpatternactivity_label_pattern">Образац:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Включить блок рекламы</string>
   <string name="pref_enableadblock_summary_on" >Блокирующие хосты, которые обслуживают: объявления, трекеры, вредоносные программы, спам</string>
   <string name="pref_enableadblock_summary_off">Разрешение запросов всем хостам</string>
+  <string name="pref_sharedsecret_title">Общий секретный</string>
+  <string name="pref_sharedsecret_summary">первый параметр для API метод: \"window.WebViewWM.getUserscriptJS(секретный, url)\". В первую очередь предназначен для использования JS код, введенный \"mitmproxy\" сценарий .. чтобы разрешить запуск сценариев userscripts iframe окна.</string>
   <string name="testpatternactivity_description">Шаблон:\n  * поддержка: glob или regex\n  * используется в: @include, @exclude, и @match\n\nURL:\n  * тестовый объект\n\nВыполнить тест:\n  * определить, соответствует ли шаблон \"шаблону\" "URL"\n  * показать результат в Toast</string>
   <string name="testpatternactivity_label_pattern">Шаблон:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">அட்டை தொகுதி செயல்படுத்து</string>
   <string name="pref_enableadblock_summary_on" >வலைப்பதிவொன்றின் சேவைகள்: ஆடைகள், டிராக்கர், மல்வார், ஸ்பம்</string>
   <string name="pref_enableadblock_summary_off">அனைத்து புள்ளிகளையும் அனுமதிக்கிறது</string>
+  <string name="pref_sharedsecret_title">பகிரப்பட்ட இரகசியம்</string>
+  <string name="pref_sharedsecret_summary">முதல் அளவுரு API முறைமை: \"window.WebViewWM.getUserscriptJS(இரகசியம், url)\". முதன்மையாகத் தேவையான பயன்பாடு JS குறியீடு \"mitmproxy\" ஸ்கிரிப்ட் .. iframe சாளரங்கள்.</string>
   <string name="testpatternactivity_description">பாட்டர்ன்:\n  * ஆதரவு: glob அல்லது regex\n  * பயன்படுத்தப்பட்டது: @include, @exclude, மற்றும் @match\n\nURL:\n  * சோதனை\n\nசோதனை இயக்கு:\n  * \"Pattern\" பொருட்களை தீர்மானிக்கும் "URL"\n  * காட்சி முடிவு Toast</string>
   <string name="testpatternactivity_label_pattern">பாட்டர்ன்:</string>
   <string name="testpatternactivity_label_url">URL:</string>

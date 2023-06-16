@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">అడ్ బ్లాక్ ను చేతనము చేయుము</string>
   <string name="pref_enableadblock_summary_on" >సేవించు బల్కింగ్ సైన్యం: అడ్డులు, ట్రాకర్లు, మల్వేర్, స్పామ్</string>
   <string name="pref_enableadblock_summary_off">అన్ని సైన్సులకు అభ్యర్ధనలను అనుమతిస్తుంది</string>
+  <string name="pref_sharedsecret_title">షేర్డ్ సీక్రెట్</string>
+  <string name="pref_sharedsecret_summary">మొదటి పారామీటర్లు API పద్ధతి: \"window.WebViewWM.getUserscriptJS(రహస్యం, url)\". ఉపయోగం కోసం ప్రీమార్లీ ఉద్దేశించింది. JS కోడ్ ఇన్జెక్ట్ \"mitmproxy\" లిపి .. స్క్రిప్ట్స్క్రిప్ట్లను అమలు చేయడానికి అనుమతిస్తుంది iframe విండోలు.</string>
   <string name="testpatternactivity_description">పాంటెన్:\n  * మద్దతును: glob లేదా regex\n  * వాడుకలో: @include, @exclude, మరియు @match\n\nURL:\n  * పరీక్ష విషయం\n\nపరీక్షను నడుపుము:\n  * \"Pattern\" మ్యాచ్లు లేదో నిర్ణయించుము "URL"\n  * ప్రదర్శన ఫలితము Toast</string>
   <string name="testpatternactivity_label_pattern">పాంటెన్:</string>
   <string name="testpatternactivity_label_url">URL:</string>

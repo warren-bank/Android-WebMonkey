@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">قابل دید اشتہار بلاک</string>
   <string name="pref_enableadblock_summary_on" >Blocking کے میزبانوں کہ خدمت: اشتھارات, ٹریکرز, میلویئر, سپیم</string>
   <string name="pref_enableadblock_summary_off">تمام میزبانوں کو Allowing کی درخواستوں</string>
+  <string name="pref_sharedsecret_title">شارڈ سیکریٹ</string>
+  <string name="pref_sharedsecret_summary">پہلا پیرامیٹر API طریقہ: \"window.WebViewWM.getUserscriptJS(راز, url)\". اصل میں استعمال کے لئے Primarily کا ارادہ JS ایک کی طرف سے کوڈ انجکشن \"mitmproxy\" تحریر .. یوزر سکرپٹ کی اجازت دینے کے لیے iframe کھڑکیاں.</string>
   <string name="testpatternactivity_description">پیٹرن):\n  * کی حمایت: glob یا regex\n  * کے ذریعے استعمال: @include, @exclude, اور @match\n\nURL:\n  * ٹیسٹ مشروط\n\nرن ٹیسٹ:\n  * تعین کریں کہ آیا \"پیٹرن\" میچ "URL"\n  * ظاہر ہے Toast</string>
   <string name="testpatternactivity_label_pattern">پیٹرن):</string>
   <string name="testpatternactivity_label_url">URL:</string>

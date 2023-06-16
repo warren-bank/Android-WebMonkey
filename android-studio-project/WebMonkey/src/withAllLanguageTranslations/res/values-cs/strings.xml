@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Povolit reklamní blok</string>
   <string name="pref_enableadblock_summary_on" >Blocking hosts that serve: ads, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Povolení požadavků na všechny hostitele</string>
+  <string name="pref_sharedsecret_title">Sdílený tajný klíč</string>
+  <string name="pref_sharedsecret_summary">první parametr pro API metoda: \"window.WebViewWM.getUserscriptJS(tajný, url)\". Primárně určeno pro použití JS kód injected by \"mitmproxy\" skript .. pro povolení spouštění uživatelských skriptů v iframe okna.</string>
   <string name="testpatternactivity_description">Vznebo:\n  * podporuje: glob or regex\n  * používaný: @include, @exclude, a @match\n\nURL:\n  * předmět testu\n\nSpustit test:\n  * určit, zda \"Pattern\" odpovídá "URL"\n  * zobrazit výsledek v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzor:</string>
   <string name="testpatternactivity_label_url">URL:</string>

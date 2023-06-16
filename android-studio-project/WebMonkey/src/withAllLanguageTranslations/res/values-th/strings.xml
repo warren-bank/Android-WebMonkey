@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">เปิดใช้งานบล็อก ad</string>
   <string name="pref_enableadblock_summary_on" >ปิดกั้นโฮสต์ที่ให้บริการ: โฆษณา, trackers, มัลแวร์, สแปม</string>
   <string name="pref_enableadblock_summary_off">การอนุญาตให้คำร้องขอไปยังโฮสต์ทั้งหมด</string>
+  <string name="pref_sharedsecret_title">ความลับที่แบ่งใช้</string>
+  <string name="pref_sharedsecret_summary">พารามิเตอร์แรกใน API เมธอด: \"window.WebViewWM.getUserscriptJS(Secret, url)\". แรกเริ่มที่ตั้งใจใช้โดย JS โค้ดที่แทรกโดย \"mitmproxy\" สคริปต์.. เพื่ออนุญาตให้สคริปต์ผู้ใช้รันใน iframe หน้าต่าง.</string>
   <string name="testpatternactivity_description">รูปแบบ:\n  * สนับสนุน: glob หรือ regex\n  * ใช้โดย: @include, @exclude, และ @match\n\nURL:\n  * หัวข้อการทดสอบ\n\nรันการทดสอบ:\n  * พิจารณาว่าตรงกับ \"รูปแบบ\" หรือไม่ "URL"\n  * แสดงผลลัพธ์ใน Toast</string>
   <string name="testpatternactivity_label_pattern">รูปแบบ:</string>
   <string name="testpatternactivity_label_url">URL:</string>

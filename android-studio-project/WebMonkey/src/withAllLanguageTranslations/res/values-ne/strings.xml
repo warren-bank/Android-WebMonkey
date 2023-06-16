@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">विज्ञापन खण्ड सक्षम पार्नुहोस्</string>
   <string name="pref_enableadblock_summary_on" >सेवा गर्ने होस्टहरू: विज्ञापन, ट्रकर्स, मालवेयर, स्पाम</string>
   <string name="pref_enableadblock_summary_off">सबै होस्टमा अनुरोधहरू अनुमति</string>
+  <string name="pref_sharedsecret_title">साझेदार गरिएको गोप्य</string>
+  <string name="pref_sharedsecret_summary">पहिलो परिमिति API विधि: \"window.WebViewWM.getUserscriptJS(गुप्त, url)\". द्वारा प्रयोग गर्नका लागि प्रथमतः JS द्वारा कोड इन्जेक्ट गरिएको छ \"mitmproxy\" स्क्रिप्ट .. प्रयोगकर्ता स्क्रिप्टलाई चलाउन अनुमति दिने iframe सञ्झ्याल.</string>
   <string name="testpatternactivity_description">बाँन्की:\n  * समर्थन गर्दछ: glob वा regex\n  * द्वारा प्रयोग गरिएको: @include, @exclude, र @match\n\nURL:\n  * परीक्षण विषय\n\nपरीक्षण चलाउनुहोस्:\n  * \"बाँन्की\" मिल्दछ कि छैन निर्धारण गर्नुहोस् "URL"\n  * मा परिणाम प्रदर्शन गर्नुहोस् Toast</string>
   <string name="testpatternactivity_label_pattern">बाँन्की:</string>
   <string name="testpatternactivity_label_url">URL:</string>

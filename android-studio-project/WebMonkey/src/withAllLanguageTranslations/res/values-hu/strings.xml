@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Reklámblokk engedélyezése</string>
   <string name="pref_enableadblock_summary_on" >Szolgáltatók: hirdetések, nyomkövetők, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Kérések engedélyezése az összes hoszthoz</string>
+  <string name="pref_sharedsecret_title">Megosztott titok</string>
+  <string name="pref_sharedsecret_summary">Az első paraméter API Módszer: \"window.WebViewWM.getUserscriptJS(Titok, url)\". Elsősorban arra szánták, hogy JS A kód beszúrása \"mitmproxy\" Parancsfájl .. a userparancsfájlok futtatására iframe Ablakok.</string>
   <string name="testpatternactivity_description">Minta:\n  * Támogatja: glob Vagy regex\n  * által használt: @include, @exclude, és @match\n\nURL:\n  * Vizsgált tárgy\n\nTeszt futtatása:\n  * Meghatározza, hogy a \"minta\" egyezik-e "URL"\n  * Eredmény megjelenítése Toast</string>
   <string name="testpatternactivity_label_pattern">Minta:</string>
   <string name="testpatternactivity_label_url">URL:</string>

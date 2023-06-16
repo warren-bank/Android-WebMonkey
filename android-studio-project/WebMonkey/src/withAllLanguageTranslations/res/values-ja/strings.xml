@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">広告ブロックの使用</string>
   <string name="pref_enableadblock_summary_on" >サーブするホストのブロック : 広告、トラッカー、マルウェア、スパム</string>
   <string name="pref_enableadblock_summary_off">すべてのホストへの要求の許可</string>
+  <string name="pref_sharedsecret_title">共有秘密鍵</string>
+  <string name="pref_sharedsecret_summary">最初のパラメータ API 方法: \"window.WebViewWM.getUserscriptJS(秘密, url)\". 主として使用されることを意図したもの JS 注入されたコード \"mitmproxy\" スクリプト.. ユーザー・スクリプトの実行を許可する iframe ウィンドウ.</string>
   <string name="testpatternactivity_description">パターン:\n  * 支柱: glob 又は regex\n  * 使用者: @include, @exclude, 及び @match\n\nURL:\n  * テスト・サブジェクト\n\nテストの実行:\n  * 「パターン」が一致するかどうか "URL"\n  * 結果の表示 Toast</string>
   <string name="testpatternactivity_label_pattern">パターン:</string>
   <string name="testpatternactivity_label_url">URL:</string>

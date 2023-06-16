@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Galluogi bloc</string>
   <string name="pref_enableadblock_summary_on" >Rhwystro gwesteiwyr sy\'n gwasanaethu: tadau, tracwyr, malwyr, sbam</string>
   <string name="pref_enableadblock_summary_off">Caniatáu ceisiadau i bob gwesteiwr</string>
+  <string name="pref_sharedsecret_title">Cyfrinachol wedi\'i rannu</string>
+  <string name="pref_sharedsecret_summary">y paramedr cyntaf i API dull: \"window.WebViewWM.getUserscriptJS(cyfrinach, url)\". Y bwriad yn bennaf i\'w ddefnyddio gan JS cod a chwistrellwyd \"mitmproxy\" sgript ... i ganiatáu i sgriptiau defnyddiwr redeg yn iframe ffenestri.</string>
   <string name="testpatternactivity_description">Patrwm:\n  * cefnogi: glob neu regex\n  * a ddefnyddir gan: @include, @exclude, a @match\n\nURL:\n  * pwnc prawf\n\nRhedeg Prawf:\n  * penderfynu a yw \"Patrwm\" yn cydweddu "URL"\n  * canlyniad dangosydd Toast</string>
   <string name="testpatternactivity_label_pattern">Patrwm:</string>
   <string name="testpatternactivity_label_url">URL:</string>

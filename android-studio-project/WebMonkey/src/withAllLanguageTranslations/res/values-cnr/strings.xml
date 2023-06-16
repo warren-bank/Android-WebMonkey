@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Omogući oglase.</string>
   <string name="pref_enableadblock_summary_on" >Blokiraju domaćine koji služe: oglase, tražilice, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Dopuštam zahtjeve svim domaćinima.</string>
+  <string name="pref_sharedsecret_title">Zajednička tajna</string>
+  <string name="pref_sharedsecret_summary">Prvi parametar za API metoda.: \"window.WebViewWM.getUserscriptJS(Tajna., url)\". Primarno namijenjeno za upotrebu. JS šifra koju je ubrizgao \"mitmproxy\" Da bi se omogućilo da se korisničke skripte pokrenu. iframe windows.</string>
   <string name="testpatternactivity_description">Uzili ...ak.:\n  * Da.: glob or regex\n  * Koristi ga.: @include, @exclude, I ... @match\n\nURL:\n  * Ispitanik.\n\nProvjeri.:\n  * Utvrdi da li se \"Uzorak\" poklapa. "URL"\n  * Prikaži sve Toast</string>
   <string name="testpatternactivity_label_pattern">Uzorak.:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Ad-blok inschakelen</string>
   <string name="pref_enableadblock_summary_on" >Blokkeren van hosts die dienen: advertenties, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Aanvragen voor alle hosts toestaan</string>
+  <string name="pref_sharedsecret_title">Gedeeld geheim</string>
+  <string name="pref_sharedsecret_summary">de eerste parameter voor API methode: \"window.WebViewWM.getUserscriptJS(Geheim, url)\". Hoofdzakelijk bedoeld voor gebruik door JS code geïnjecteerd door een \"mitmproxy\" script .. om toe te staan dat userscripts worden uitgevoerd iframe vensters.</string>
   <string name="testpatternactivity_description">Patroon:\n  * ondersteunt: glob of regex\n  * gebruikt door: @include, @exclude, en @match\n\nURL:\n  * testonderwerp\n\nTest uitvoeren:\n  * bepalen of \"Patroon\" overeenkomt "URL"\n  * resultaat afbeelden in Toast</string>
   <string name="testpatternactivity_label_pattern">Patroon:</string>
   <string name="testpatternactivity_label_url">URL:</string>

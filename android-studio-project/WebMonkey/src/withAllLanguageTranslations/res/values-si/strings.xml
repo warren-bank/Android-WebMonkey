@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">දැන්වීම් අවහිර සක්රීය කරන්න</string>
   <string name="pref_enableadblock_summary_on" >සේවය කරන ධාරාවන්, දැන්වීම්, ට්රැක්, මැල්වෙයා, ස්පෑම්</string>
   <string name="pref_enableadblock_summary_off">සියලු ධාරාවන් වෙත ඉල්ලීම්</string>
+  <string name="pref_sharedsecret_title">රහසිගත රහස්ය</string>
+  <string name="pref_sharedsecret_summary">පළමු पैराමිතිය API ක්රමය: \"window.WebViewWM.getUserscriptJS(රහසිගත, url)\". විසින් භාවිතා කිරීම සඳහා අභිමානයෙන් අදහස් කරන JS කේතය මගින් එන්නත් කර ඇත \"mitmproxy\" ස්ක්රිප්ට් .. iframe කවුළු.</string>
   <string name="testpatternactivity_description">පැටර්න්:\n  * සහය දක්වනවා: glob හෝ regex\n  * විසින් භාවිතා කරන: @include, @exclude, සහ @match\n\nURL:\n  * පරීක්ෂණ විෂයය\n\n\@ option: check:\n  * \" Patterns-action "URL"\n  * වල ප්රතිඵල පෙන්වන්න Toast</string>
   <string name="testpatternactivity_label_pattern">පැටර්න්:</string>
   <string name="testpatternactivity_label_url">URL:</string>

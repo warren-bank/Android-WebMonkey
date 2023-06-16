@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Ieslēgt sludinājumu bloku</string>
   <string name="pref_enableadblock_summary_on" >Bloķēšana saimniekiem, kas apkalpo: reklāmas, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Atļaut pieprasījumus visiem saimniekiem</string>
+  <string name="pref_sharedsecret_title">Kopīgs noslēpums</string>
+  <string name="pref_sharedsecret_summary">pirmais parametrs, kas API metode: \"window.WebViewWM.getUserscriptJS(aizklāts, url)\". Galvenokārt paredzēts lietošanai JS Kods, ko injicē \"mitmproxy\" skripts .. ļaut userscripts palaist in iframe logi.</string>
   <string name="testpatternactivity_description">Raksts:\n  * atbalsta: glob , vai regex\n  * ko izmanto: @include, @exclude, , un @match\n\nURL:\n  * testa priekšmets\n\nPalaist Test:\n  * noteikt, vai \"Pattern\" spēlēs "URL"\n  * attēlot rezultātus Toast</string>
   <string name="testpatternactivity_label_pattern">Raksts:</string>
   <string name="testpatternactivity_label_url">URL:</string>

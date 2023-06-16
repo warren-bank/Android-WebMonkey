@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Povoliť blok reklamy</string>
   <string name="pref_enableadblock_summary_on" >Blokovanie hostiteľov, ktorí slúžia: reklamy, trackery, malware, nevyžiadaná pošta</string>
   <string name="pref_enableadblock_summary_off">Povolenie požiadaviek pre všetkých hostiteľov</string>
+  <string name="pref_sharedsecret_title">Zdieľané tajomstvo</string>
+  <string name="pref_sharedsecret_summary">prvý parameter na API Metóda: \"window.WebViewWM.getUserscriptJS(tajný, url)\". Primárne určené na použitie JS F812: Kód \"mitmproxy\" script .. na povolenie spúšťania userskriptov v iframe Windows.</string>
   <string name="testpatternactivity_description">Vzalebo:\n  * podpery: glob or regex\n  * používaný: @include, @exclude, a @match\n\nURL:\n  * predmet skúšky\n\nSpustiť test:\n  * určuje, či sa zhoduje s \"vzorom\" "URL"\n  * zobraziť výsledok v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzor:</string>
   <string name="testpatternactivity_label_url">URL:</string>

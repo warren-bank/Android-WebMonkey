@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Activează blocul de anunțuri</string>
   <string name="pref_enableadblock_summary_on" >Blocarea gazdelor care servesc: reclame, trackere, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Permiterea solicitărilor tuturor gazdelor</string>
+  <string name="pref_sharedsecret_title">Secret comun</string>
+  <string name="pref_sharedsecret_summary">primul parametru la API Metodă: \"window.WebViewWM.getUserscriptJS(secret, url)\". Destinate în principal utilizării de către JS cod injectat de o \"mitmproxy\" script .. pentru a permite utilizatorilor să ruleze în iframe ferestre.</string>
   <string name="testpatternactivity_description">Model:\n  * supsauturi: glob or regex\n  * utilizate de: @include, @exclude, și @match\n\nURL:\n  * subiect de încercare\n\nTest de încercare:\n  * se determină dacă \"model\" se potrivește "URL"\n  * Rezultatul afişării Toast</string>
   <string name="testpatternactivity_label_pattern">Model:</string>
   <string name="testpatternactivity_label_url">URL:</string>

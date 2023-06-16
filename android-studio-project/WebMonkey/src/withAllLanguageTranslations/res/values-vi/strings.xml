@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Kích hoạt khối quảng cáo</string>
   <string name="pref_enableadblock_summary_on" >Chặn chủ nhà phục vụ: quảng cáo, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Cho phép yêu cầu tất cả máy chủ</string>
+  <string name="pref_sharedsecret_title">Secret</string>
+  <string name="pref_sharedsecret_summary">tham sô ́ đầu tiên API phương thức: \"window.WebViewWM.getUserscriptJS(Bí mật, url)\". Chủ yếu dành cho mục đích sử dụng JS được tiêm bởi một \"mitmproxy\" Để cho phép người dùng chạy trong iframe cửa sổ.</string>
   <string name="testpatternactivity_description">Mô hình:\n  * hô ̃ trợ: glob  regex\n  * dùng bởi: @include, @exclude, và @match\n\nURL:\n  * mục kiểm tra\n\nChạy thử:\n  * xác định xem \"Pattern\" các trận đấu "URL"\n  * hiển thị kết quả Toast</string>
   <string name="testpatternactivity_label_pattern">Mô hình:</string>
   <string name="testpatternactivity_label_url">URL:</string>

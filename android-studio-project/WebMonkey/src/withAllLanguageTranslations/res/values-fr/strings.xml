@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Activer le bloc d\'annonces</string>
   <string name="pref_enableadblock_summary_on" >Blocage des hôtes qui servent: annonces, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Autorisation des demandes à tous les hôtes</string>
+  <string name="pref_sharedsecret_title">Secret partagé</string>
+  <string name="pref_sharedsecret_summary">Le premier paramètre à API Méthode: \"window.WebViewWM.getUserscriptJS(Secret, url)\". Principalement destinée à être utilisée par JS Code injecté par un \"mitmproxy\" Script .. pour permettre l\'exécution des scripts userscripts dans iframe Fenêtres.</string>
   <string name="testpatternactivity_description">Modèle:\n  * SuppOuts: glob or regex\n  * Utilisé par: @include, @exclude, Et @match\n\nURL:\n  * Sujet de test\n\nExécuter le test:\n  * Déterminer si les correspondances \"Pattern\" "URL"\n  * Affichage du résultat dans Toast</string>
   <string name="testpatternactivity_label_pattern">Modèle:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Jippermettu blokk ad</string>
   <string name="pref_enableadblock_summary_on" >Imblukkar ospiti li jservu: ads, trackers, malware, spam</string>
   <string name="pref_enableadblock_summary_off">Permess ta \' talbiet għall-ospiti kollha</string>
+  <string name="pref_sharedsecret_title">Sigriet Sigriet</string>
+  <string name="pref_sharedsecret_summary">l-ewwel parametru li API metodu: \"window.WebViewWM.getUserscriptJS(sigriet, url)\". Primarjament maħsub għall-użu minn JS kodiċi injettat minn \"mitmproxy\" kitba .. biex jippermettu uerskripts jiddekorri fil iframe twieqi.</string>
   <string name="testpatternactivity_description">Mudell:\n  * jappoġġja: glob jew regex\n  * użat minn: @include, @exclude, u @match\n\nURL:\n  * suġġett għall-ittestjar\n\nTest Run:\n  * jiddetermina jekk \"Pattern\" logħbiet "URL"\n  * riżultat tad-displej Toast</string>
   <string name="testpatternactivity_label_pattern">Mudell:</string>
   <string name="testpatternactivity_label_url">URL:</string>

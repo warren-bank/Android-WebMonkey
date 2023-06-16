@@ -22,6 +22,8 @@
   <string name="pref_enableadblock_title">Ota mainoskatkos</string>
   <string name="pref_enableadblock_summary_on" >Isäntälaitteet, jotka palvelevat: mainoksia, jäljittimiä, haittaohjelmia, roskapostia</string>
   <string name="pref_enableadblock_summary_off">Kaikkien koneiden pyyntöjen salliminen</string>
+  <string name="pref_sharedsecret_title">Jaettu salaisuus</string>
+  <string name="pref_sharedsecret_summary">Ensimmäinen parametri API Menetelmä: \"window.WebViewWM.getUserscriptJS(Salaisuus, url)\". Ensisijaisesti tarkoitettu käytettäväksi JS Injektoitava koodi \"mitmproxy\" Komentosarja ... antaa käyttäjäkomentosarjojen ajaa iframe Ikkunat.</string>
   <string name="testpatternactivity_description">Malli:\n  * Tukee: glob Tai regex\n  * Käyttää: @include, @exclude, Ja @match\n\nURL:\n  * Testikohde\n\nAja testi:\n  * Määritetään, ovatko \"Pattern\" - vastineet "URL"\n  * Näytön tulos Toast</string>
   <string name="testpatternactivity_label_pattern">Malli:</string>
   <string name="testpatternactivity_label_url">URL:</string>
