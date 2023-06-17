@@ -22,8 +22,8 @@
   <string name="pref_enableadblock_title">开启广告拦截</string>
   <string name="pref_enableadblock_summary_on" >屏蔽广告、跟踪器、恶意软件、垃圾邮件主机</string>
   <string name="pref_enableadblock_summary_off">允许请求所有主机</string>
-  <string name="pref_sharedsecret_title">共享密钥</string>
-  <string name="pref_sharedsecret_summary">API 方法的第一个参数: \"window.WebViewWM.getUserscriptJS(祕密, url)\" 。主要供 \"mitmproxy\" 脚本插入的 JS 代码使用.. 以允许userscripts 在 iframe 窗口中运行。</string>
+  <string name="pref_sharedsecret_title">共享的 Secret</string>
+  <string name="pref_sharedsecret_summary">API 方法的第一个参数: \"window.WebViewWM.getUserscriptJS(secret, url)\" 。主要供 \"mitmproxy\" 脚本插入的 JS 代码使用.... 以允许userscripts 在 iframe 窗口中运行。</string>
   <string name="testpatternactivity_description">Pattern:\n  * 支持: glob 或 regex\n  * 用于: @include、@exclude 和 @match\n\nURL:\n  * 测试标题\n\n运行测试:\n  * 确定 "Pattern" 是否匹配 "URL"\n  * 在浮窗中展示结果</string>
   <string name="testpatternactivity_label_pattern">Pattern:</string>
   <string name="testpatternactivity_label_url">URL:</string>
