@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>test: window.WebViewWM.getUserscriptJS</title>
+  <style>
+    html, body {
+      white-space: pre;
+      font-family: monospace;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', function(event) {
+      var output = []
+
+      output.push( "typeof window.WebViewWM = " + typeof window.WebViewWM )
+
+      if (window.WebViewWM) {
+        output.push( "typeof window.WebViewWM.getUserscriptJS = " + typeof window.WebViewWM.getUserscriptJS )
+      }
+
+      if (window.WebViewWM && window.WebViewWM.getUserscriptJS) {
+        var secret = "1234"
+        var url    = "https://example.com/detect_media_files.html"
+        var jsCode = window.WebViewWM.getUserscriptJS(secret, url)
+
+        var encodeHtmlEntities = function(raw_html_string) {
+          return raw_html_string.replace(/[\u00A0-\u9999<>\&]/g, function(i) {
+            return ('&#' + i.charCodeAt(0) + ';')
+          })
+        }
+
+        // encode HTML entities
+        jsCode = !!jsCode
+          ? encodeHtmlEntities(jsCode)
+          : 'null'
+
+        output.push("jsCode = <code><pre>" + jsCode + "</pre></code>")
+      }
+
+      document.body.innerHTML = "<div>" + output.join("</div><br /><hr /><br /><div>") + "</div>"
+    })
+  </script>
+</head>
+<body>
+</body>
+</html>
