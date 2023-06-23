@@ -41,13 +41,28 @@ public class WebViewClientGm extends WebViewClient {
 
   private static final String JSUNSAFEWINDOW = "var unsafeWindow = (function() { var el = document.createElement('p'); el.setAttribute('onclick', 'return window;'); return el.onclick(); }()); window.wrappedJSObject = unsafeWindow;\n";
 
-  private static final String JSMISSINGFUNCTION = "function() { GM_log(\"Called function not yet implemented\"); };\n";
-
   private static final String JSMISSINGFUNCTIONS =
-        "var GM_info = "                + JSMISSINGFUNCTION
-      + "var GM_openInTab = "           + JSMISSINGFUNCTION
-      + "var GM_registerMenuCommand = " + JSMISSINGFUNCTION
-      + "var GM_setClipboard = "        + JSMISSINGFUNCTION;
+        "var GM_notImplemented = "            + "function(method_name) { GM_log((method_name ? method_name : 'Called') + ' function not yet implemented'); };\n"
+
+      + "var GM_addValueChangeListener = "    + "GM_notImplemented.bind(null, 'GM_addValueChangeListener');\n"
+      + "var GM_download = "                  + "GM_notImplemented.bind(null, 'GM_download');\n"
+      + "var GM_getTab = "                    + "GM_notImplemented.bind(null, 'GM_getTab');\n"
+      + "var GM_getTabs = "                   + "GM_notImplemented.bind(null, 'GM_getTabs');\n"
+      + "var GM_info = "                      + "GM_notImplemented.bind(null, 'GM_info');\n"
+      + "var GM_notification = "              + "GM_notImplemented.bind(null, 'GM_notification');\n"
+      + "var GM_openInTab = "                 + "GM_notImplemented.bind(null, 'GM_openInTab');\n"
+      + "var GM_registerMenuCommand = "       + "GM_notImplemented.bind(null, 'GM_registerMenuCommand');\n"
+      + "var GM_removeValueChangeListener = " + "GM_notImplemented.bind(null, 'GM_removeValueChangeListener');\n"
+      + "var GM_saveTab = "                   + "GM_notImplemented.bind(null, 'GM_saveTab');\n"
+      + "var GM_setClipboard = "              + "GM_notImplemented.bind(null, 'GM_setClipboard');\n"
+      + "var GM_unregisterMenuCommand = "     + "GM_notImplemented.bind(null, 'GM_unregisterMenuCommand');\n"
+      + "var GM_webRequest = "                + "GM_notImplemented.bind(null, 'GM_webRequest');\n"
+
+      + "var GM_cookie = {\n"
+      + "  \"list\":   "                      + "GM_notImplemented.bind(null, 'GM_cookie.list'),\n"
+      + "  \"set\":    "                      + "GM_notImplemented.bind(null, 'GM_cookie.set'),\n"
+      + "  \"delete\": "                      + "GM_notImplemented.bind(null, 'GM_cookie.delete')\n"
+      + "};\n";
 
   private ScriptStore scriptStore;
 
@@ -145,9 +160,7 @@ public class WebViewClientGm extends WebViewClient {
             + jsBridgeName + ".listValues(" + defaultSignature
             + ").split(\",\"); };\n";
         jsApi += "var GM_getValue = function(name, defaultValue) { return "
-            + jsBridgeName
-            + ".getValue("
-            + defaultSignature
+            + jsBridgeName + ".getValue(" + defaultSignature
             + ", name, defaultValue); };\n";
         jsApi += "var GM_setValue = function(name, value) { "
             + jsBridgeName + ".setValue(" + defaultSignature
@@ -155,21 +168,14 @@ public class WebViewClientGm extends WebViewClient {
         jsApi += "var GM_deleteValue = function(name) { "
             + jsBridgeName + ".deleteValue(" + defaultSignature
             + ", name); };\n";
-        jsApi += "var GM_addStyle = function(css) { "
-            + "var style = document.createElement(\"style\"); "
-            + "style.type = \"text/css\"; style.innerHTML = css; "
-            + "document.getElementsByTagName('head')[0].appendChild(style); };\n";
-        jsApi += "var GM_log = function(message) { " + jsBridgeName
-            + ".log(" + defaultSignature + ", message); };\n";
+        jsApi += "var GM_log = function(message) { "
+            + jsBridgeName + ".log(" + defaultSignature
+            + ", message); };\n";
         jsApi += "var GM_getResourceURL = function(resourceName) { return "
-            + jsBridgeName
-            + ".getResourceURL("
-            + defaultSignature
+            + jsBridgeName + ".getResourceURL(" + defaultSignature
             + ", resourceName); };\n";
         jsApi += "var GM_getResourceText = function(resourceName) { return "
-            + jsBridgeName
-            + ".getResourceText("
-            + defaultSignature
+            + jsBridgeName + ".getResourceText(" + defaultSignature
             + ", resourceName); };\n";
         jsApi += "var GM_xmlhttpRequest = function(details) { \n"
             + "if (details.onabort) { unsafeWindow."
@@ -235,10 +241,54 @@ public class WebViewClientGm extends WebViewClient {
             + "GM_uploadOnProgressCallback'; }\n"
             + "}\n"
             + "return JSON.parse("
-            + jsBridgeName
-            + ".xmlHttpRequest("
-            + defaultSignature
+            + jsBridgeName + ".xmlHttpRequest(" + defaultSignature
             + ", JSON.stringify(details))); };\n";
+
+        jsApi += "var GM_addElement = function() {\n"
+               + "  try {\n"
+               + "    var args = Array.prototype.slice.call(arguments);\n"
+               + "    var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];\n"
+               + "    var parent_node, tag_name, attributes;\n"
+               + "    if (args.length === 1) {\n"
+               + "      tag_name = args[0];\n"
+               + "    }\n"
+               + "    else if (args.length === 2) {\n"
+               + "      tag_name = args[0];\n"
+               + "      attributes = args[1];\n"
+               + "    }\n"
+               + "    else {\n"
+               + "      parent_node = args[0];\n"
+               + "      tag_name = args[1];\n"
+               + "      attributes = args[2];\n"
+               + "    }\n"
+               + "    if (!tag_name || (typeof tag_name !== 'string')) {\n"
+               + "      throw new Error('missing tag name');\n"
+               + "    }\n"
+               + "    if (!attributes || (typeof attributes !== 'object')) {\n"
+               + "      attributes = {};\n"
+               + "    }\n"
+               + "    if (!parent_node || !(parent_node instanceof HTMLElement)) {\n"
+               + "      parent_node = (head_elements.indexOf(tag_name.toLowerCase()) >= 0) ? document.head : document.body;\n"
+               + "    }\n"
+               + "    var element = document.createElement(tag_name);\n"
+               + "    var attr_keys = Object.keys(attributes);\n"
+               + "    var attr_key, attr_val;\n"
+               + "    for (var i=0; i < attr_keys.length; i++) {\n"
+               + "      attr_key = attr_keys[i];\n"
+               + "      attr_val = attributes[attr_key];\n"
+               + "      element.setAttribute(attr_key, attr_val);\n"
+               + "    }\n"
+               + "    parent_node.appendChild(element);\n"
+               + "  }\n"
+               + "  catch(e) {}\n"
+               + "};\n";
+
+        jsApi += "var GM_addStyle = function(css) {\n"
+               + "  var style = document.createElement(\"style\");\n"
+               + "  style.type = \"text/css\"; style.innerHTML = css;\n"
+               + "  document.getElementsByTagName('head')[0].appendChild(style);\n"
+               + "};\n";
+
         // TODO implement missing functions
         jsApi += JSMISSINGFUNCTIONS;
 
