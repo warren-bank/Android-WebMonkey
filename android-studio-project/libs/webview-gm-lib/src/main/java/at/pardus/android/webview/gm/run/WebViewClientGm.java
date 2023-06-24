@@ -39,7 +39,7 @@ public class WebViewClientGm extends WebViewClient {
 
   private static final String JSCONTAINEREND = "\n})()";
 
-  private static final String JSUNSAFEWINDOW = "var unsafeWindow = (function() { var el = document.createElement('p'); el.setAttribute('onclick', 'return window;'); return el.onclick(); }()); window.wrappedJSObject = unsafeWindow;\n";
+  private static final String JSUNSAFEWINDOW = "var unsafeWindow = window.window; window.wrappedJSObject = window.wrappedJSObject || unsafeWindow || {};\n";
 
   private static final String JSMISSINGFUNCTIONS =
         "var GM_notImplemented = "            + "function(method_name) { GM_log((method_name ? method_name : 'Called') + ' function not yet implemented'); };\n"
@@ -186,62 +186,62 @@ public class WebViewClientGm extends WebViewClient {
             + jsBridgeName + ".getResourceText(" + defaultSignature
             + ", resourceName); };\n";
         jsApi += "var GM_xmlhttpRequest = function(details) { \n"
-            + "if (details.onabort) { unsafeWindow."
+            + "if (details.onabort) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onAbortCallback = details.onabort;\n"
             + "details.onabort = '"
             + callbackPrefix
             + "GM_onAbortCallback'; }\n"
-            + "if (details.onerror) { unsafeWindow."
+            + "if (details.onerror) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onErrorCallback = details.onerror;\n"
             + "details.onerror = '"
             + callbackPrefix
             + "GM_onErrorCallback'; }\n"
-            + "if (details.onload) { unsafeWindow."
+            + "if (details.onload) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onLoadCallback = details.onload;\n"
             + "details.onload = '"
             + callbackPrefix
             + "GM_onLoadCallback'; }\n"
-            + "if (details.onprogress) { unsafeWindow."
+            + "if (details.onprogress) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onProgressCallback = details.onprogress;\n"
             + "details.onprogress = '"
             + callbackPrefix
             + "GM_onProgressCallback'; }\n"
-            + "if (details.onreadystatechange) { unsafeWindow."
+            + "if (details.onreadystatechange) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onReadyStateChange = details.onreadystatechange;\n"
             + "details.onreadystatechange = '"
             + callbackPrefix
             + "GM_onReadyStateChange'; }\n"
-            + "if (details.ontimeout) { unsafeWindow."
+            + "if (details.ontimeout) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_onTimeoutCallback = details.ontimeout;\n"
             + "details.ontimeout = '"
             + callbackPrefix
             + "GM_onTimeoutCallback'; }\n"
             + "if (details.upload) {\n"
-            + "if (details.upload.onabort) { unsafeWindow."
+            + "if (details.upload.onabort) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_uploadOnAbortCallback = details.upload.onabort;\n"
             + "details.upload.onabort = '"
             + callbackPrefix
             + "GM_uploadOnAbortCallback'; }\n"
-            + "if (details.upload.onerror) { unsafeWindow."
+            + "if (details.upload.onerror) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_uploadOnErrorCallback = details.upload.onerror;\n"
             + "details.upload.onerror = '"
             + callbackPrefix
             + "GM_uploadOnErrorCallback'; }\n"
-            + "if (details.upload.onload) { unsafeWindow."
+            + "if (details.upload.onload) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_uploadOnLoadCallback = details.upload.onload;\n"
             + "details.upload.onload = '"
             + callbackPrefix
             + "GM_uploadOnLoadCallback'; }\n"
-            + "if (details.upload.onprogress) { unsafeWindow."
+            + "if (details.upload.onprogress) { window.wrappedJSObject."
             + callbackPrefix
             + "GM_uploadOnProgressCallback = details.upload.onprogress;\n"
             + "details.upload.onprogress = '"

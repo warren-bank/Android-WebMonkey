@@ -352,7 +352,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + this.onError + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -362,7 +362,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + this.onLoad + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -372,7 +372,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + this.onProgress + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -383,7 +383,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + this.onReadyStateChange + "(JSON.parse("
         + response.toJSONString() + ")); })()");
   }
@@ -393,7 +393,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + this.onTimeout + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -403,7 +403,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + getUploadOnError() + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -413,7 +413,7 @@ public class WebViewXmlHttpRequest {
             return;
         }
 
-    loadUrlOnUiThread("javascript: (function() { unsafeWindow."
+    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
         + getUploadOnLoad() + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
