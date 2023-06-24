@@ -229,8 +229,7 @@ public class WebViewGmApi {
   }
 
   /**
-   * Equivalent of GM_getResourceText. Retrieve @resource'd data. as UTF-8
-   * encoded text.
+   * Equivalent of GM_getResourceText. Retrieve @resource'd data. as UTF-8 encoded text.
    *
    * @param scriptName
    *            the name of the calling script
@@ -266,8 +265,7 @@ public class WebViewGmApi {
   }
 
   /**
-   * Equivalent of GM_getResourceText. Retrieve @resource'd data. as UTF-8
-   * encoded text.
+   * Equivalent of GM_xmlhttpRequest.
    *
    * @param scriptName
    *            the name of the calling script
@@ -288,8 +286,7 @@ public class WebViewGmApi {
       return "";
     }
 
-    WebViewXmlHttpRequest request = new WebViewXmlHttpRequest(this.view,
-        jsonRequestString);
+    WebViewXmlHttpRequest  request  = new WebViewXmlHttpRequest(this.view, jsonRequestString);
     WebViewXmlHttpResponse response = request.execute();
 
     if (response != null) {

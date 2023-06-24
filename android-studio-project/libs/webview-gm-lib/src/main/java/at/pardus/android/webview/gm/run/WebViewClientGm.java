@@ -51,11 +51,9 @@ public class WebViewClientGm extends WebViewClient {
       + "var GM_info = "                      + "GM_notImplemented.bind(null, 'GM_info');\n"
       + "var GM_notification = "              + "GM_notImplemented.bind(null, 'GM_notification');\n"
       + "var GM_openInTab = "                 + "GM_notImplemented.bind(null, 'GM_openInTab');\n"
-      + "var GM_registerMenuCommand = "       + "GM_notImplemented.bind(null, 'GM_registerMenuCommand');\n"
       + "var GM_removeValueChangeListener = " + "GM_notImplemented.bind(null, 'GM_removeValueChangeListener');\n"
       + "var GM_saveTab = "                   + "GM_notImplemented.bind(null, 'GM_saveTab');\n"
       + "var GM_setClipboard = "              + "GM_notImplemented.bind(null, 'GM_setClipboard');\n"
-      + "var GM_unregisterMenuCommand = "     + "GM_notImplemented.bind(null, 'GM_unregisterMenuCommand');\n"
       + "var GM_webRequest = "                + "GM_notImplemented.bind(null, 'GM_webRequest');\n"
 
       + "var GM_cookie = {\n"
@@ -156,6 +154,16 @@ public class WebViewClientGm extends WebViewClient {
             + UUID.randomUUID().toString())
             .replaceAll("[^0-9a-zA-Z_]", "");
         String jsApi = JSUNSAFEWINDOW;
+
+        // --------------------------------
+        // TODO implement missing functions
+        // --------------------------------
+        jsApi += JSMISSINGFUNCTIONS;
+
+        // -------------------------
+        // Greasemonkey API (legacy)
+        // -------------------------
+
         jsApi += "var GM_listValues = function() { return "
             + jsBridgeName + ".listValues(" + defaultSignature
             + ").split(\",\"); };\n";
@@ -279,18 +287,138 @@ public class WebViewClientGm extends WebViewClient {
                + "      element.setAttribute(attr_key, attr_val);\n"
                + "    }\n"
                + "    parent_node.appendChild(element);\n"
+               + "    return element;\n"
                + "  }\n"
-               + "  catch(e) {}\n"
+               + "  catch(e) {\n"
+               + "    return null;\n"
+               + "  }\n"
                + "};\n";
 
-        jsApi += "var GM_addStyle = function(css) {\n"
-               + "  var style = document.createElement(\"style\");\n"
-               + "  style.type = \"text/css\"; style.innerHTML = css;\n"
-               + "  document.getElementsByTagName('head')[0].appendChild(style);\n"
+        jsApi += "var GM_addStyle = function(aCss) {\n"
+               + "  var head, style;\n"
+               + "  head = document.getElementsByTagName('head')[0];\n"
+               + "  if (head) {\n"
+               + "    style = document.createElement('style');\n"
+               + "    style.setAttribute('type', 'text/css');\n"
+               + "    style.textContent = aCss;\n"
+               + "    head.appendChild(style);\n"
+               + "    return style;\n"
+               + "  }\n"
+               + "  return null;\n"
                + "};\n";
 
-        // TODO implement missing functions
-        jsApi += JSMISSINGFUNCTIONS;
+        jsApi += "var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {\n"
+               + "  if (!document.body) {\n"
+               + "    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {\n"
+               + "      new MutationObserver(function(mutations, observer) {\n"
+               + "        if (document.body) {\n"
+               + "          observer.disconnect();\n"
+               + "          GM_registerMenuCommand(caption, commandFunc, accessKey);\n"
+               + "        }\n"
+               + "      }).observe(document.documentElement, {childList: true});\n"
+               + "    }\n"
+               + "    else {\n"
+               + "      GM_notImplemented.bind(null, 'GM_registerMenuCommand');\n"
+               + "    }\n"
+               + "    return null;\n"
+               + "  }\n"
+               + "  var contextMenu = document.body.getAttribute('contextmenu');\n"
+               + "  var menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null);\n"
+               + "  if (!menu) {\n"
+               + "    menu = document.createElement('menu');\n"
+               + "    menu.setAttribute('id', 'gm-registered-menu');\n"
+               + "    menu.setAttribute('type', 'context');\n"
+               + "    menu.setAttribute('last-menu-command-index', '0');\n"
+               + "    if (document.body.childNodes.length) {\n"
+               + "      document.body.insertBefore(menu, document.body.childNodes[0]);\n"
+               + "    }\n"
+               + "    else {\n"
+               + "      document.body.appendChild(menu);\n"
+               + "    }\n"
+               + "    document.body.setAttribute('contextmenu', 'gm-registered-menu');\n"
+               + "  }\n"
+               + "  var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;\n"
+               + "  var menuCmdId = 'menu_command_id_' + next_menu_command_index;\n"
+               + "  var menuItem = document.createElement('menuitem');\n"
+               + "  menuItem.setAttribute('id', menuCmdId);\n"
+               + "  menuItem.textContent = caption;\n"
+               + "  menuItem.addEventListener('click', commandFunc, true);\n"
+               + "  menu.appendChild(menuItem);\n"
+               + "  menu.setAttribute('last-menu-command-index', ('' + next_menu_command_index));\n"
+               + "  return menuCmdId;\n"
+               + "};\n";
+
+        jsApi += "var GM_unregisterMenuCommand = function(menuCmdId) {\n"
+               + "  var contextMenu = document.body.getAttribute('contextmenu');\n"
+               + "  var menuItem = (contextMenu ? document.querySelector('menu#' + contextMenu + ' > menuitem#' + menuCmdId) : null);\n"
+               + "  if (menuItem) {\n"
+               + "    menuItem.parentNode.removeChild(menuItem);\n"
+               + "    return menuItem;\n"
+               + "  }\n"
+               + "  return null;\n"
+               + "};\n";
+
+        // ---------------------------------------------
+        // Greasemonkey API (polyfill for v4 and higher)
+        // ---------------------------------------------
+
+        jsApi += "var GM = {};\n";
+
+        jsApi += "// synchronous\n"
+               + "(function(entries) {\n"
+               + "  var keys = Object.keys(entries);\n"
+               + "  var key, val;\n"
+               + "  for (var i=0; i < keys.length; i++) {\n"
+               + "    key = keys[i];\n"
+               + "    val = entries[key];\n"
+               + "    GM[key] = val;\n"
+               + "  }\n"
+               + "})({\n"
+               + "  'log':  GM_log,\n"
+               + "  'info': GM_info\n"
+               + "});\n";
+
+        jsApi += "// asynchronous, returns a Promise\n"
+               + "(function(entries) {\n"
+               + "  var async_handler = function() {\n"
+               + "    var args, sync_method;\n"
+               + "    args = Array.prototype.slice.call(arguments);\n"
+               + "    if (args.length && (typeof args[0] === 'function')) {\n"
+               + "      sync_method = args.shift();\n"
+               + "    }\n"
+               + "    return new Promise(function(resolve, reject) {\n"
+               + "      try {\n"
+               + "        if (!sync_method) {\n"
+               + "          throw new Error('bad params to GM 4 polyfill');\n"
+               + "        }\n"
+               + "        resolve(sync_method.apply(null, args));\n"
+               + "      }\n"
+               + "      catch (e) {\n"
+               + "        reject(e);\n"
+               + "      }\n"
+               + "    });\n"
+               + "  };\n"
+               + "  var keys = Object.keys(entries);\n"
+               + "  var key, val;\n"
+               + "  for (var i=0; i < keys.length; i++) {\n"
+               + "    key = keys[i];\n"
+               + "    val = entries[key];\n"
+               + "    GM[key] = async_handler.bind(null, val);\n"
+               + "  }\n"
+               + "})({\n"
+               + "  'addStyle':            GM_addStyle,\n"
+               + "  'deleteValue':         GM_deleteValue,\n"
+               + "  'getResourceUrl':      GM_getResourceURL,\n"
+               + "  'getValue':            GM_getValue,\n"
+               + "  'listValues':          GM_listValues,\n"
+               + "  'notification':        GM_notification,\n"
+               + "  'openInTab':           GM_openInTab,\n"
+               + "  'registerMenuCommand': GM_registerMenuCommand,\n"
+               + "  'setClipboard':        GM_setClipboard,\n"
+               + "  'setValue':            GM_setValue,\n"
+               + "  'xmlHttpRequest':      GM_xmlhttpRequest,\n"
+               + "  'getResourceText':     GM_getResourceText\n"
+               + "});\n";
 
         // Get @require'd scripts to inject for this script.
         String jsAllRequires = "";
