@@ -16,6 +16,7 @@
 
 package at.pardus.android.webview.gm.run;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
@@ -24,9 +25,11 @@ import android.webkit.WebViewClient;
 
 import java.util.UUID;
 
+import at.pardus.android.webview.gm.R;
 import at.pardus.android.webview.gm.model.Script;
 import at.pardus.android.webview.gm.model.ScriptRequire;
 import at.pardus.android.webview.gm.store.ScriptStore;
+import at.pardus.android.webview.gm.util.ResourceHelper;
 
 /**
  * A user script enabled WebViewClient to be used by WebViewGm.
@@ -61,6 +64,17 @@ public class WebViewClientGm extends WebViewClient {
       + "  \"set\":    "                      + "GM_notImplemented.bind(null, 'GM_cookie.set'),\n"
       + "  \"delete\": "                      + "GM_notImplemented.bind(null, 'GM_cookie.delete')\n"
       + "};\n";
+
+  private static String JSAPIHELPERFUNCTIONS = "";
+
+  protected static void setJsApiHelperFunctions(Context context) {
+    if ((JSAPIHELPERFUNCTIONS == null) || JSAPIHELPERFUNCTIONS.isEmpty()) {
+      try {
+        JSAPIHELPERFUNCTIONS = ResourceHelper.getRawStringResource(context, R.raw.js_api_helper_functions);
+      }
+      catch(Exception e) {}
+    }
+  }
 
   private ScriptStore scriptStore;
 
@@ -252,173 +266,10 @@ public class WebViewClientGm extends WebViewClient {
             + jsBridgeName + ".xmlHttpRequest(" + defaultSignature
             + ", JSON.stringify(details))); };\n";
 
-        jsApi += "var GM_addElement = function() {\n"
-               + "  try {\n"
-               + "    var args = Array.prototype.slice.call(arguments);\n"
-               + "    var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];\n"
-               + "    var parent_node, tag_name, attributes;\n"
-               + "    if (args.length === 1) {\n"
-               + "      tag_name = args[0];\n"
-               + "    }\n"
-               + "    else if (args.length === 2) {\n"
-               + "      tag_name = args[0];\n"
-               + "      attributes = args[1];\n"
-               + "    }\n"
-               + "    else {\n"
-               + "      parent_node = args[0];\n"
-               + "      tag_name = args[1];\n"
-               + "      attributes = args[2];\n"
-               + "    }\n"
-               + "    if (!tag_name || (typeof tag_name !== 'string')) {\n"
-               + "      throw new Error('missing tag name');\n"
-               + "    }\n"
-               + "    if (!attributes || (typeof attributes !== 'object')) {\n"
-               + "      attributes = {};\n"
-               + "    }\n"
-               + "    if (!parent_node || !(parent_node instanceof HTMLElement)) {\n"
-               + "      parent_node = (head_elements.indexOf(tag_name.toLowerCase()) >= 0) ? document.head : document.body;\n"
-               + "    }\n"
-               + "    var element = document.createElement(tag_name);\n"
-               + "    var attr_keys = Object.keys(attributes);\n"
-               + "    var attr_key, attr_val;\n"
-               + "    for (var i=0; i < attr_keys.length; i++) {\n"
-               + "      attr_key = attr_keys[i];\n"
-               + "      attr_val = attributes[attr_key];\n"
-               + "      element.setAttribute(attr_key, attr_val);\n"
-               + "    }\n"
-               + "    parent_node.appendChild(element);\n"
-               + "    return element;\n"
-               + "  }\n"
-               + "  catch(e) {\n"
-               + "    return null;\n"
-               + "  }\n"
-               + "};\n";
-
-        jsApi += "var GM_addStyle = function(aCss) {\n"
-               + "  var head, style;\n"
-               + "  head = document.getElementsByTagName('head')[0];\n"
-               + "  if (head) {\n"
-               + "    style = document.createElement('style');\n"
-               + "    style.setAttribute('type', 'text/css');\n"
-               + "    style.textContent = aCss;\n"
-               + "    head.appendChild(style);\n"
-               + "    return style;\n"
-               + "  }\n"
-               + "  return null;\n"
-               + "};\n";
-
-        jsApi += "var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {\n"
-               + "  if (!document.body) {\n"
-               + "    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {\n"
-               + "      new MutationObserver(function(mutations, observer) {\n"
-               + "        if (document.body) {\n"
-               + "          observer.disconnect();\n"
-               + "          GM_registerMenuCommand(caption, commandFunc, accessKey);\n"
-               + "        }\n"
-               + "      }).observe(document.documentElement, {childList: true});\n"
-               + "    }\n"
-               + "    else {\n"
-               + "      GM_notImplemented.bind(null, 'GM_registerMenuCommand');\n"
-               + "    }\n"
-               + "    return null;\n"
-               + "  }\n"
-               + "  var contextMenu = document.body.getAttribute('contextmenu');\n"
-               + "  var menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null);\n"
-               + "  if (!menu) {\n"
-               + "    menu = document.createElement('menu');\n"
-               + "    menu.setAttribute('id', 'gm-registered-menu');\n"
-               + "    menu.setAttribute('type', 'context');\n"
-               + "    menu.setAttribute('last-menu-command-index', '0');\n"
-               + "    if (document.body.childNodes.length) {\n"
-               + "      document.body.insertBefore(menu, document.body.childNodes[0]);\n"
-               + "    }\n"
-               + "    else {\n"
-               + "      document.body.appendChild(menu);\n"
-               + "    }\n"
-               + "    document.body.setAttribute('contextmenu', 'gm-registered-menu');\n"
-               + "  }\n"
-               + "  var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;\n"
-               + "  var menuCmdId = 'menu_command_id_' + next_menu_command_index;\n"
-               + "  var menuItem = document.createElement('menuitem');\n"
-               + "  menuItem.setAttribute('id', menuCmdId);\n"
-               + "  menuItem.textContent = caption;\n"
-               + "  menuItem.addEventListener('click', commandFunc, true);\n"
-               + "  menu.appendChild(menuItem);\n"
-               + "  menu.setAttribute('last-menu-command-index', ('' + next_menu_command_index));\n"
-               + "  return menuCmdId;\n"
-               + "};\n";
-
-        jsApi += "var GM_unregisterMenuCommand = function(menuCmdId) {\n"
-               + "  var contextMenu = document.body.getAttribute('contextmenu');\n"
-               + "  var menuItem = (contextMenu ? document.querySelector('menu#' + contextMenu + ' > menuitem#' + menuCmdId) : null);\n"
-               + "  if (menuItem) {\n"
-               + "    menuItem.parentNode.removeChild(menuItem);\n"
-               + "    return menuItem;\n"
-               + "  }\n"
-               + "  return null;\n"
-               + "};\n";
-
-        // ---------------------------------------------
-        // Greasemonkey API (polyfill for v4 and higher)
-        // ---------------------------------------------
-
-        jsApi += "var GM = {};\n";
-
-        jsApi += "// synchronous\n"
-               + "(function(entries) {\n"
-               + "  var keys = Object.keys(entries);\n"
-               + "  var key, val;\n"
-               + "  for (var i=0; i < keys.length; i++) {\n"
-               + "    key = keys[i];\n"
-               + "    val = entries[key];\n"
-               + "    GM[key] = val;\n"
-               + "  }\n"
-               + "})({\n"
-               + "  'log':  GM_log,\n"
-               + "  'info': GM_info\n"
-               + "});\n";
-
-        jsApi += "// asynchronous, returns a Promise\n"
-               + "(function(entries) {\n"
-               + "  var async_handler = function() {\n"
-               + "    var args, sync_method;\n"
-               + "    args = Array.prototype.slice.call(arguments);\n"
-               + "    if (args.length && (typeof args[0] === 'function')) {\n"
-               + "      sync_method = args.shift();\n"
-               + "    }\n"
-               + "    return new Promise(function(resolve, reject) {\n"
-               + "      try {\n"
-               + "        if (!sync_method) {\n"
-               + "          throw new Error('bad params to GM 4 polyfill');\n"
-               + "        }\n"
-               + "        resolve(sync_method.apply(null, args));\n"
-               + "      }\n"
-               + "      catch (e) {\n"
-               + "        reject(e);\n"
-               + "      }\n"
-               + "    });\n"
-               + "  };\n"
-               + "  var keys = Object.keys(entries);\n"
-               + "  var key, val;\n"
-               + "  for (var i=0; i < keys.length; i++) {\n"
-               + "    key = keys[i];\n"
-               + "    val = entries[key];\n"
-               + "    GM[key] = async_handler.bind(null, val);\n"
-               + "  }\n"
-               + "})({\n"
-               + "  'addStyle':            GM_addStyle,\n"
-               + "  'deleteValue':         GM_deleteValue,\n"
-               + "  'getResourceUrl':      GM_getResourceURL,\n"
-               + "  'getValue':            GM_getValue,\n"
-               + "  'listValues':          GM_listValues,\n"
-               + "  'notification':        GM_notification,\n"
-               + "  'openInTab':           GM_openInTab,\n"
-               + "  'registerMenuCommand': GM_registerMenuCommand,\n"
-               + "  'setClipboard':        GM_setClipboard,\n"
-               + "  'setValue':            GM_setValue,\n"
-               + "  'xmlHttpRequest':      GM_xmlhttpRequest,\n"
-               + "  'getResourceText':     GM_getResourceText\n"
-               + "});\n";
+        // -----------------------
+        // static helper functions
+        // -----------------------
+        jsApi += JSAPIHELPERFUNCTIONS;
 
         // Get @require'd scripts to inject for this script.
         String jsAllRequires = "";

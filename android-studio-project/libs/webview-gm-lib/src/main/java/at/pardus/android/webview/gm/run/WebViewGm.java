@@ -50,7 +50,7 @@ public class WebViewGm extends WebView {
    */
   public WebViewGm(Context context, ScriptStore scriptStore) {
     super(context);
-    init();
+    init(context);
     setScriptStore(scriptStore);
   }
 
@@ -62,7 +62,7 @@ public class WebViewGm extends WebView {
    */
   public WebViewGm(Context context) {
     super(context);
-    init();
+    init(context);
   }
 
   /**
@@ -75,7 +75,7 @@ public class WebViewGm extends WebView {
    */
   public WebViewGm(Context context, AttributeSet attrs) {
     super(context, attrs);
-    init();
+    init(context);
   }
 
   /**
@@ -90,18 +90,19 @@ public class WebViewGm extends WebView {
    */
   public WebViewGm(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
-    init();
+    init(context);
   }
 
   /**
    * Called by the constructors to set up the WebView to enable user scripts.
    */
   @SuppressLint("SetJavaScriptEnabled")
-  private void init() {
+  private void init(Context context) {
     WebSettings settings = getSettings();
     settings.setJavaScriptEnabled(true);
-    webViewClient = new WebViewClientGm(scriptStore, JSBRIDGENAME,
-        generateSecret());
+
+    WebViewClientGm.setJsApiHelperFunctions(context);
+    webViewClient = new WebViewClientGm(scriptStore, JSBRIDGENAME, generateSecret());
     setWebViewClient(webViewClient);
   }
 

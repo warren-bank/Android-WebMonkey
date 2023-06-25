@@ -1,0 +1,167 @@
+var GM_addElement = function() {
+  try {
+    var args = Array.prototype.slice.call(arguments);
+    var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];
+    var parent_node, tag_name, attributes;
+    if (args.length === 1) {
+      tag_name = args[0];
+    }
+    else if (args.length === 2) {
+      tag_name = args[0];
+      attributes = args[1];
+    }
+    else {
+      parent_node = args[0];
+      tag_name = args[1];
+      attributes = args[2];
+    }
+    if (!tag_name || (typeof tag_name !== 'string')) {
+      throw new Error('missing tag name');
+    }
+    if (!attributes || (typeof attributes !== 'object')) {
+      attributes = {};
+    }
+    if (!parent_node || !(parent_node instanceof HTMLElement)) {
+      parent_node = (head_elements.indexOf(tag_name.toLowerCase()) >= 0) ? document.head : document.body;
+    }
+    var element = document.createElement(tag_name);
+    var attr_keys = Object.keys(attributes);
+    var attr_key, attr_val;
+    for (var i=0; i < attr_keys.length; i++) {
+      attr_key = attr_keys[i];
+      attr_val = attributes[attr_key];
+      element.setAttribute(attr_key, attr_val);
+    }
+    parent_node.appendChild(element);
+    return element;
+  }
+  catch(e) {
+    return null;
+  }
+};
+
+var GM_addStyle = function(aCss) {
+  var head, style;
+  head = document.getElementsByTagName('head')[0];
+  if (head) {
+    style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
+    style.textContent = aCss;
+    head.appendChild(style);
+    return style;
+  }
+  return null;
+};
+
+var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
+  if (!document.body) {
+    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {
+      new MutationObserver(function(mutations, observer) {
+        if (document.body) {
+          observer.disconnect();
+          GM_registerMenuCommand(caption, commandFunc, accessKey);
+        }
+      }).observe(document.documentElement, {childList: true});
+    }
+    else {
+      GM_notImplemented.bind(null, 'GM_registerMenuCommand');
+    }
+    return null;
+  }
+  var contextMenu = document.body.getAttribute('contextmenu');
+  var menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null);
+  if (!menu) {
+    menu = document.createElement('menu');
+    menu.setAttribute('id', 'gm-registered-menu');
+    menu.setAttribute('type', 'context');
+    menu.setAttribute('last-menu-command-index', '0');
+    if (document.body.childNodes.length) {
+      document.body.insertBefore(menu, document.body.childNodes[0]);
+    }
+    else {
+      document.body.appendChild(menu);
+    }
+    document.body.setAttribute('contextmenu', 'gm-registered-menu');
+  }
+  var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;
+  var menuCmdId = 'menu_command_id_' + next_menu_command_index;
+  var menuItem = document.createElement('menuitem');
+  menuItem.setAttribute('id', menuCmdId);
+  menuItem.textContent = caption;
+  menuItem.addEventListener('click', commandFunc, true);
+  menu.appendChild(menuItem);
+  menu.setAttribute('last-menu-command-index', ('' + next_menu_command_index));
+  return menuCmdId;
+};
+
+var GM_unregisterMenuCommand = function(menuCmdId) {
+  var contextMenu = document.body.getAttribute('contextmenu');
+  var menuItem = (contextMenu ? document.querySelector('menu#' + contextMenu + ' > menuitem#' + menuCmdId) : null);
+  if (menuItem) {
+    menuItem.parentNode.removeChild(menuItem);
+    return menuItem;
+  }
+  return null;
+};
+
+// ---------------------------------------------
+// Greasemonkey API (polyfill for v4 and higher)
+// ---------------------------------------------
+
+var GM = {};
+
+// synchronous
+(function(entries) {
+  var keys = Object.keys(entries);
+  var key, val;
+  for (var i=0; i < keys.length; i++) {
+    key = keys[i];
+    val = entries[key];
+    GM[key] = val;
+  }
+})({
+  'log':  GM_log,
+  'info': GM_info
+});
+
+// asynchronous, returns a Promise
+(function(entries) {
+  var async_handler = function() {
+    var args, sync_method;
+    args = Array.prototype.slice.call(arguments);
+    if (args.length && (typeof args[0] === 'function')) {
+      sync_method = args.shift();
+    }
+    return new Promise(function(resolve, reject) {
+      try {
+        if (!sync_method) {
+          throw new Error('bad params to GM 4 polyfill');
+        }
+        resolve(sync_method.apply(null, args));
+      }
+      catch (e) {
+        reject(e);
+      }
+    });
+  };
+  var keys = Object.keys(entries);
+  var key, val;
+  for (var i=0; i < keys.length; i++) {
+    key = keys[i];
+    val = entries[key];
+    GM[key] = async_handler.bind(null, val);
+  }
+})({
+  'addStyle':            GM_addStyle,
+  'deleteValue':         GM_deleteValue,
+  'getResourceUrl':      GM_getResourceURL,
+  'getValue':            GM_getValue,
+  'listValues':          GM_listValues,
+  'notification':        GM_notification,
+  'openInTab':           GM_openInTab,
+  'registerMenuCommand': GM_registerMenuCommand,
+  'setClipboard':        GM_setClipboard,
+  'setValue':            GM_setValue,
+  'xmlHttpRequest':      GM_xmlhttpRequest,
+  'getResourceText':     GM_getResourceText
+});
