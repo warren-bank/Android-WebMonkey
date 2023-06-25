@@ -139,6 +139,77 @@ var GM_unregisterMenuCommand = function(menuCmdId) {
   return null;
 };
 
+var GM_fetch = function(input, init) {
+  var request, theFinalBody;
+  return init || (typeof input == "string" ? init = {} : input = init.url), window.Request && window.Request.prototype && window.Request.prototype.isPrototypeOf && window.Request.prototype.isPrototypeOf(init) ? request = init : (init.body && (theFinalBody = init.body), request = new window.Request(input, init)), new Promise(function(resolve, reject) {
+    var xhr_details = {};
+    init && init.extra && (xhr_details = init.extra);
+    var _parsedRespHeaders;
+    function get_headers(responseHeaders) {
+      var head = new Headers();
+      if (typeof responseHeaders == "string") {
+        var pairs = responseHeaders.trim().split("\n");
+        pairs.forEach(function(header) {
+          var split = header.trim().split(":"), key2 = split.shift().trim(), value = split.join(":").trim();
+          head.append(key2, value);
+        });
+      } else if (typeof responseHeaders == "object")
+        for (var key in responseHeaders)
+          Array.isArray(responseHeaders[key]) && responseHeaders[key].forEach(function(value) {
+            head.append(key, value);
+          });
+      return head;
+    }
+    function get_response_url(finalUrl, respHeaders) {
+      if (finalUrl)
+        return finalUrl;
+      if (respHeaders.get("X-Request-URL"))
+        return respHeaders.get("X-Request-URL");
+    }
+    xhr_details.method = request.method || "GET";
+    xhr_details.timeout = 6e4;
+    request.timeout && (xhr_details.timeout = request.timeout);
+    xhr_details.url = request.url;
+    xhr_details.synchronous = !1;
+    xhr_details.onload = function(resp) {
+      var status = resp.status;
+      if (status < 100 || status > 599) {
+        reject(new Error("Network request failed"));
+        return;
+      }
+      var rawRespHeaders = resp.responseHeaders;
+      _parsedRespHeaders = get_headers(rawRespHeaders);
+      var finalUrl = get_response_url(
+        resp.finalUrl || resp.responseURL,
+        _parsedRespHeaders
+      );
+      _parsedRespHeaders.set("X-Final-URL", finalUrl);
+      var options = {
+        status,
+        statusText: resp.statusText,
+        headers: _parsedRespHeaders,
+        url: finalUrl
+      }, body = resp.responseText;
+      var finalResponse = new window.Response(body, options);
+      resolve(finalResponse);
+    };
+    xhr_details.onerror = function(err) {
+      console.error("fetch error", err), reject(new Error("Network request failed"));
+    };
+    xhr_details.ontimeout = function(err) {
+      console.error("fetch timeout", err), reject(new Error("Network request timeout"));
+    };
+    xhr_details.onabort = function(err) {
+      console.error("fetch abort", err), reject(new Error("Network request abort"));
+    };
+    xhr_details.headers = {}, request.headers.forEach(function(value, name) {
+      xhr_details.headers[name] = value;
+    });
+    theFinalBody && (xhr_details.data = theFinalBody);
+    GM_xmlhttpRequest(xhr_details);
+  });
+};
+
 // ---------------------------------------------
 // Greasemonkey API (polyfill for v4 and higher)
 // ---------------------------------------------
@@ -155,8 +226,9 @@ var GM = {};
     GM[key] = val;
   }
 })({
-  'log':  GM_log,
-  'info': GM_info
+  'fetch': GM_fetch,
+  'info':  GM_info,
+  'log':   GM_log
 });
 
 // asynchronous, returns a Promise
@@ -189,6 +261,7 @@ var GM = {};
 })({
   'addStyle':            GM_addStyle,
   'deleteValue':         GM_deleteValue,
+  'getResourceText':     GM_getResourceText,
   'getResourceUrl':      GM_getResourceURL,
   'getValue':            GM_getValue,
   'listValues':          GM_listValues,
@@ -197,6 +270,5 @@ var GM = {};
   'registerMenuCommand': GM_registerMenuCommand,
   'setClipboard':        GM_setClipboard,
   'setValue':            GM_setValue,
-  'xmlHttpRequest':      GM_xmlhttpRequest,
-  'getResourceText':     GM_getResourceText
+  'xmlHttpRequest':      GM_xmlhttpRequest
 });
