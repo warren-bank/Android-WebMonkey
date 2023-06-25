@@ -343,26 +343,95 @@ public class WmJsApi {
   }
 
   public String getWrappedJsApi() {
-    String jsBridgeName = WmJsApi.GlobalJsApiNamespace;
+    String jsBridgeName     = WmJsApi.GlobalJsApiNamespace;
     String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
-    String jsApi = "";
+    StringBuilder sb;
 
-    jsApi += "var GM_toastLong"   + " = function(message) { "                         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_LONG  + ", message);"                          + " };\n";
-    jsApi += "var GM_toastShort"  + " = function(message) { "                         + jsBridgeName + ".toast("       + defaultSignature + ", " + Toast.LENGTH_SHORT + ", message);"                          + " };\n";
+    // jsApi
+    sb = new StringBuilder(4 * 1024);
 
-    jsApi += "var GM_getUrl"      + " = function() { return "                         + jsBridgeName + ".getUrl("      + defaultSignature + ");"                                                               + " };\n";
-    jsApi += "var GM_resolveUrl"  + " = function(urlRelative, urlBase) { return "     + jsBridgeName + ".resolveUrl("  + defaultSignature + ", urlRelative, urlBase);"                                         + " };\n";
+    sb.append("var GM_toastLong = function(message) { ");
+    sb.append(jsBridgeName);
+    sb.append(".toast(");
+    sb.append(defaultSignature);
+    sb.append(", ");
+    sb.append(Toast.LENGTH_LONG);
+    sb.append(", message); };");
+    sb.append("\n");
 
-    jsApi += (useES6)
-          ? ("var GM_startIntent" + " = function(action, data, type, ...extras) { "   + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, extras);"                                   + " };\n")
-          : ("var GM_startIntent" + " = function(action, data, type) { "              + jsBridgeName + ".startIntent(" + defaultSignature + ", action, data, type, Array.prototype.slice.call(arguments, 3));" + " };\n")
-    ;
-    jsApi += (useES6)
-          ? ("var GM_loadUrl"     + " = function(url, ...headers) { "                 + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, headers);"                                                 + " };\n")
-          : ("var GM_loadUrl"     + " = function(url) { "                             + jsBridgeName + ".loadUrl("     + defaultSignature + ", url, Array.prototype.slice.call(arguments, 1));"                + " };\n")
-    ;
-    jsApi += "var GM_loadFrame"   + " = function(urlFrame, urlParent, proxyFrame) { " + jsBridgeName + ".loadFrame("   + defaultSignature + ", urlFrame, urlParent, !!proxyFrame);"                            + " };\n";
-    jsApi += "var GM_exit"        + " = function() { "                                + jsBridgeName + ".exit("        + defaultSignature + ");"                                                               + " };\n";
+    sb.append("var GM_toastShort = function(message) { ");
+    sb.append(jsBridgeName);
+    sb.append(".toast(");
+    sb.append(defaultSignature);
+    sb.append(", ");
+    sb.append(Toast.LENGTH_SHORT);
+    sb.append(", message); };");
+    sb.append("\n");
+
+    sb.append("var GM_getUrl = function() { return ");
+    sb.append(jsBridgeName);
+    sb.append(".getUrl(");
+    sb.append(defaultSignature);
+    sb.append("); };");
+    sb.append("\n");
+
+    sb.append("var GM_resolveUrl = function(urlRelative, urlBase) { return ");
+    sb.append(jsBridgeName);
+    sb.append(".resolveUrl(");
+    sb.append(defaultSignature);
+    sb.append(", urlRelative, urlBase); };");
+    sb.append("\n");
+
+    if (useES6) {
+      sb.append("var GM_startIntent = function(action, data, type, ...extras) { ");
+      sb.append(jsBridgeName);
+      sb.append(".startIntent(");
+      sb.append(defaultSignature);
+      sb.append(", action, data, type, extras); };");
+      sb.append("\n");
+    }
+    else {
+      sb.append("var GM_startIntent = function(action, data, type) { ");
+      sb.append(jsBridgeName);
+      sb.append(".startIntent(");
+      sb.append(defaultSignature);
+      sb.append(", action, data, type, Array.prototype.slice.call(arguments, 3)); };");
+      sb.append("\n");
+    }
+
+    if (useES6) {
+      sb.append("var GM_loadUrl = function(url, ...headers) { ");
+      sb.append(jsBridgeName);
+      sb.append(".loadUrl(");
+      sb.append(defaultSignature);
+      sb.append(", url, headers); };");
+      sb.append("\n");
+    }
+    else {
+      sb.append("var GM_loadUrl = function(url) { ");
+      sb.append(jsBridgeName);
+      sb.append(".loadUrl(");
+      sb.append(defaultSignature);
+      sb.append(", url, Array.prototype.slice.call(arguments, 1)); };");
+      sb.append("\n");
+    }
+
+    sb.append("var GM_loadFrame = function(urlFrame, urlParent, proxyFrame) { ");
+    sb.append(jsBridgeName);
+    sb.append(".loadFrame(");
+    sb.append(defaultSignature);
+    sb.append(", urlFrame, urlParent, !!proxyFrame); };");
+    sb.append("\n");
+
+    sb.append("var GM_exit = function() { ");
+    sb.append(jsBridgeName);
+    sb.append(".exit(");
+    sb.append(defaultSignature);
+    sb.append("); };");
+    sb.append("\n");
+
+    String jsApi = sb.toString();
+    sb = null;
 
     return jsApi;
   }
