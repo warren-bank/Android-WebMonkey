@@ -40,13 +40,13 @@ var GM_addElement = function() {
   }
 };
 
-var GM_addStyle = function(aCss) {
+var GM_addStyle = function(css) {
   var head, style;
   head = document.getElementsByTagName('head')[0];
   if (head) {
     style = document.createElement('style');
     style.setAttribute('type', 'text/css');
-    style.textContent = aCss;
+    style.textContent = css;
     head.appendChild(style);
     return style;
   }
@@ -68,12 +68,11 @@ var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
     }
     return null;
   }
-  var contextMenu = document.body.getAttribute('contextmenu');
-  var menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null);
+  var menu_container_id = 'gm-registered-menu';
+  var menu = document.getElementById(menu_container_id);
   if (!menu) {
-    menu = document.createElement('menu');
-    menu.setAttribute('id', 'gm-registered-menu');
-    menu.setAttribute('type', 'context');
+    menu = document.createElement('ul');
+    menu.setAttribute('id', menu_container_id);
     menu.setAttribute('last-menu-command-index', '0');
     if (document.body.childNodes.length) {
       document.body.insertBefore(menu, document.body.childNodes[0]);
@@ -81,11 +80,47 @@ var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
     else {
       document.body.appendChild(menu);
     }
-    document.body.setAttribute('contextmenu', 'gm-registered-menu');
+
+    // ---
+    // CSS
+    // ---
+
+    var css = [
+      'body > ul#' + menu_container_id + '{',
+      '  display: block;',
+      '  position: sticky;',
+      '  top: 0px;',
+      '  width: 100%;',
+      '  margin: 0px;',
+      '  padding: 0px;',
+      '  border: 1px solid #e7e7e7;',
+      '  border-collapse: collapse;',
+      '  background-color: #f3f3f3;',
+      '  list-style-type: none;',
+      '}',
+      'body > ul#' + menu_container_id + ' > li {',
+      '  display: inline-block;',
+      '  color: #666666;',
+      '  border: 1px solid #e7e7e7;',
+      '  border-collapse: collapse;',
+      '  margin: 0px;',
+      '  padding: 1em;',
+      '  font-family: sans-serif;',
+      '  font-size: 16px;',
+      '  cursor: pointer;',
+      '}',
+      'body > ul#' + menu_container_id + ' > li:hover {',
+      '  background-color: #e3e3e3;',
+      '}'
+    ];
+
+    css = css.join("\n");
+    GM_addStyle(css);
+    css = null;
   }
   var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;
   var menuCmdId = 'menu_command_id_' + next_menu_command_index;
-  var menuItem = document.createElement('menuitem');
+  var menuItem = document.createElement('li');
   menuItem.setAttribute('id', menuCmdId);
   menuItem.textContent = caption;
   menuItem.addEventListener('click', commandFunc, true);
@@ -95,8 +130,8 @@ var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
 };
 
 var GM_unregisterMenuCommand = function(menuCmdId) {
-  var contextMenu = document.body.getAttribute('contextmenu');
-  var menuItem = (contextMenu ? document.querySelector('menu#' + contextMenu + ' > menuitem#' + menuCmdId) : null);
+  var menu_container_id = 'gm-registered-menu';
+  var menuItem = document.querySelector('body > #' + menu_container_id + ' > #' + menuCmdId);
   if (menuItem) {
     menuItem.parentNode.removeChild(menuItem);
     return menuItem;
