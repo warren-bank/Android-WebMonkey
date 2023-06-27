@@ -255,7 +255,6 @@ var GM = {};
   }
 })({
   'fetch': GM_fetch,
-  'info':  GM_info,
   'log':   GM_log
 });
 
@@ -287,16 +286,30 @@ var GM = {};
     GM[key] = async_handler.bind(null, val);
   }
 })({
-  'addStyle':            GM_addStyle,
-  'deleteValue':         GM_deleteValue,
-  'getResourceText':     GM_getResourceText,
-  'getResourceUrl':      GM_getResourceURL,
-  'getValue':            GM_getValue,
-  'listValues':          GM_listValues,
-  'notification':        GM_notification,
-  'openInTab':           GM_openInTab,
-  'registerMenuCommand': GM_registerMenuCommand,
-  'setClipboard':        GM_setClipboard,
-  'setValue':            GM_setValue,
-  'xmlHttpRequest':      GM_xmlhttpRequest
+  'addElement':            GM_addElement,
+  'addStyle':              GM_addStyle,
+  'deleteValue':           GM_deleteValue,
+  'getResourceText':       GM_getResourceText,
+  'getResourceUrl':        GM_getResourceURL,
+  'getValue':              GM_getValue,
+  'listValues':            GM_listValues,
+  'registerMenuCommand':   GM_registerMenuCommand,
+  'setValue':              GM_setValue,
+  'unregisterMenuCommand': GM_unregisterMenuCommand,
+  'xmlHttpRequest':        GM_xmlhttpRequest,
+
+  // ------------------
+  // JSMISSINGFUNCTIONS
+  // ------------------
+  'addValueChangeListener':    GM_addValueChangeListener,
+  'download':                  GM_download,
+  'getTab':                    GM_getTab,
+  'getTabs':                   GM_getTabs,
+  'info':                      GM_info,
+  'notification':              GM_notification,
+  'openInTab':                 GM_openInTab,
+  'removeValueChangeListener': GM_removeValueChangeListener,
+  'saveTab':                   GM_saveTab,
+  'setClipboard':              GM_setClipboard,
+  'webRequest':                GM_webRequest
 });

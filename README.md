@@ -1,16 +1,53 @@
 ### [WebMonkey](https://github.com/warren-bank/Android-WebMonkey)
 
-No-frills light-weight Android web browser with support for Greasemonkey user scripts.
+No-frills light-weight Android web browser with support for Greasemonkey userscripts.
 
-Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-gm) demo application.
+Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo application.
 
 #### Background
 
-* the [WebView GM library](https://github.com/wbayer/webview-gm) enhances the native Android System [WebView](https://developer.chrome.com/multidevice/webview/overview) with support for Greasemonkey functions and the management of user scripts
+* the [WebView GM library](https://github.com/wbayer/webview-gm) enhances the native Android System [WebView](https://developer.chrome.com/multidevice/webview/overview)
+  - with userscript management:
+    * detecting and downloading `*.user.js` URLs
+    * parsing and saving to a DB
+    * automatic updates
+  - with userscript injection:
+    * on top-level HTML pages that match URL patterns
+  - with support for Greasemonkey API ( [1](https://wiki.greasespot.net/Greasemonkey_Manual:API), [2](https://www.tampermonkey.net/documentation.php), [3](https://violentmonkey.github.io/api/gm/) ) functions:
+    * `GM_addStyle`
+    * `GM_deleteValue`
+    * `GM_getResourceText`
+    * `GM_getResourceURL`
+    * `GM_getValue`
+    * `GM_listValues`
+    * `GM_log`
+    * `GM_setValue`
+    * `GM_xmlhttpRequest`
 
 #### Improvements
 
-* an additional Javascript API interface to provide the following functions to user scripts:
+* supplements the list of supported Greasemonkey API functions:
+  - legacy:
+    * `GM_addElement`
+    * `GM_fetch`
+      - drop-in replacement for `window.fetch` that uses `GM_xmlhttpRequest` to make network requests
+    * `GM_registerMenuCommand`
+    * `GM_unregisterMenuCommand`
+  - [GM 4](https://www.greasespot.net/2017/09/greasemonkey-4-for-script-authors.html):
+    * `GM.addElement`
+    * `GM.addStyle`
+    * `GM.deleteValue`
+    * `GM.fetch`
+    * `GM.getResourceText`
+    * `GM.getResourceUrl`
+    * `GM.getValue`
+    * `GM.listValues`
+    * `GM.log`
+    * `GM.registerMenuCommand`
+    * `GM.setValue`
+    * `GM.unregisterMenuCommand`
+    * `GM.xmlHttpRequest`
+* adds an additional Javascript API interface to expose Android-specific capabilities:
   - `GM_toastLong(message)`
   - `GM_toastShort(message)`
   - `GM_getUrl()`
@@ -108,14 +145,23 @@ Minor improvement to the [WebView GM library](https://github.com/wbayer/webview-
   - [_Blank page_](about:blank)
   - [_Userscripts by developer_](https://warren-bank.github.io/Android-WebMonkey/index.html)
   - [_Userscripts at Greasy Fork_](https://greasyfork.org/)
+* page load behavior on HTTPS certificate error
+  - cancel
+  - proceed
+  - ask
 * script update interval
   - number of days to wait between checks
   - special case: `0` disables automatic script updates
+* shared secret for JS to access low-level API method:
+  ```javascript
+    window.WebViewWM.getUserscriptJS(secret, url)
+  ```
+  - specific use case: _mitmproxy_ script to inject JS code to bootstrap userscripts in [iframes](./IFRAMES.md)
 
 #### Caveats
 
 * userscripts only run in the top window
-  - they are __not__ loaded into [iframes](./IFRAMES.md)
+  - a _mitmproxy_ script is required to load userscripts into [iframes](./IFRAMES.md)
 
 #### Legal:
 
