@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Додат нови скрипт</string>
+    <string name="browse">Прегледај</string>
+    <string name="delete">Избриши</string>
+    <string name="deleted_script">Избрисани текст</string>
+    <string name="disable">Онемогући</string>
+    <string name="disabled">онемогућено</string>
+    <string name="disabled_script">Неискључени</string>
+    <string name="edit">Уреди</string>
+    <string name="edited_script">Уређени текст</string>
+    <string name="enable">Омогући</string>
+    <string name="enabled">омогућено</string>
+    <string name="enabled_script">Омогућени текст</string>
+    <string name="error_downloading_from">Грешка при преузимању скрипте</string>
+    <string name="error_parsing_at">Грешка при рашчлањивању скрипте</string>
+    <string name="error_saving_script">Грешка при уписивању</string>
+    <string name="error_while_loading">Грешка при учитавању</string>
+    <string name="list_scripts">Списак скрипти</string>
+    <string name="new_script_id_exists">Ново име скрипте и именски простор већ постоји</string>
+    <string name="save_script">Сачувај скрипту</string>
+    <string name="starting_download_of">Започињање преузимања</string>
+    <string name="syntax_or_dl_fail">Грешка синтаксе или преузимање зависности није успело</string>
+</resources>

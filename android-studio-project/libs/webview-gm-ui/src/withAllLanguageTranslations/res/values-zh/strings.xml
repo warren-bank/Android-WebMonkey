@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">已添加新脚本</string>
+    <string name="browse">浏览</string>
+    <string name="delete">删除</string>
+    <string name="deleted_script">已删除脚本</string>
+    <string name="disable">禁用</string>
+    <string name="disabled">残废</string>
+    <string name="disabled_script">已禁用脚本</string>
+    <string name="edit">编辑</string>
+    <string name="edited_script">已编辑的脚本</string>
+    <string name="enable">启用</string>
+    <string name="enabled">启用</string>
+    <string name="enabled_script">已启用脚本</string>
+    <string name="error_downloading_from">下载脚本时出错</string>
+    <string name="error_parsing_at">解析脚本时出错</string>
+    <string name="error_saving_script">保存脚本时出错</string>
+    <string name="error_while_loading">装入时出错</string>
+    <string name="list_scripts">列表脚本</string>
+    <string name="new_script_id_exists">新脚本名称和名称空间已存在</string>
+    <string name="save_script">保存脚本</string>
+    <string name="starting_download_of">开始下载</string>
+    <string name="syntax_or_dl_fail">语法错误或依赖关系下载失败</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Uue skripti lisamine</string>
+    <string name="browse">Sirvi</string>
+    <string name="delete">Kustuta</string>
+    <string name="deleted_script">Kustutatud skript</string>
+    <string name="disable">Keela</string>
+    <string name="disabled">Keelatud</string>
+    <string name="disabled_script">Keelatud skript</string>
+    <string name="edit">Muuda</string>
+    <string name="edited_script">Redigeeritava skrip</string>
+    <string name="enable">Luba</string>
+    <string name="enabled">Lubatud</string>
+    <string name="enabled_script">Lubatud skript</string>
+    <string name="error_downloading_from">Viga skripti allalaadimisel</string>
+    <string name="error_parsing_at">Viga skripti parsimisel</string>
+    <string name="error_saving_script">Viga skripti salvestamisel</string>
+    <string name="error_while_loading">Viga laadimisel</string>
+    <string name="list_scripts">Nimekirjade nimekiri</string>
+    <string name="new_script_id_exists">Uus skripti nimi ja nimeruum on juba olemas</string>
+    <string name="save_script">Salvesta skript</string>
+    <string name="starting_download_of">Allalaadimise alustamine</string>
+    <string name="syntax_or_dl_fail">Süntaksi viga või sõltuvuse allalaadimine nurjus</string>
+</resources>

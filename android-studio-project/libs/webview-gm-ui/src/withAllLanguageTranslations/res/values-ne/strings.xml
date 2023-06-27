@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">नयाँ स्क्रिप्ट थप्दै</string>
+    <string name="browse">ब्राउज गर्नुहोस्</string>
+    <string name="delete">मेट्नुहोस्</string>
+    <string name="deleted_script">मेटिएको स्क्रिप्ट</string>
+    <string name="disable">अक्षम पार्नुहोस्</string>
+    <string name="disabled">अक्षम पारिएको</string>
+    <string name="disabled_script">अक्षम स्क्रिप्ट</string>
+    <string name="edit">सम्पादन गर्नुहोस्</string>
+    <string name="edited_script">सम्पादन गरिएको स्क्रिप्ट</string>
+    <string name="enable">सक्षम पार्नुहोस्</string>
+    <string name="enabled">सक्षम पारिएको</string>
+    <string name="enabled_script">सक्षम स्क्रिप्ट</string>
+    <string name="error_downloading_from">यसबाट स्क्रिप्ट डाउनलोड गर्दा त्रुटि</string>
+    <string name="error_parsing_at">मा स्क्रिप्ट पद वर्णन गर्दा त्रुटि</string>
+    <string name="error_saving_script">स्क्रिप्ट बचत गर्दा त्रुटि</string>
+    <string name="error_while_loading">लोड गर्दा त्रुटि</string>
+    <string name="list_scripts">स्क्रिप्टहरू</string>
+    <string name="new_script_id_exists">नयाँ स्क्रिप्ट नाम र नेमस्पेस पहिल्यै अवस्थित छ</string>
+    <string name="save_script">स्क्रिप्ट बचत गर्नुहोस्</string>
+    <string name="starting_download_of">को डाउनलोड सुरु गर्दै</string>
+    <string name="syntax_or_dl_fail">वाक्य संरचना त्रुटि वा निर्भरता डाउनलोड असफल भयो</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">새 스크립트 추가</string>
+    <string name="browse">찾아보기</string>
+    <string name="delete">삭제</string>
+    <string name="deleted_script">삭제된 스크립트</string>
+    <string name="disable">사용 불가능</string>
+    <string name="disabled">사용 불가능</string>
+    <string name="disabled_script">사용 불가능한 스크립트</string>
+    <string name="edit">편집</string>
+    <string name="edited_script">편집된 스크립트</string>
+    <string name="enable">작동 가능</string>
+    <string name="enabled">사용 가능</string>
+    <string name="enabled_script">사용 가능 스크립트</string>
+    <string name="error_downloading_from">스크립트 다운로드 중에 오류 발생</string>
+    <string name="error_parsing_at">스크립트 구문 분석 중에 오류 발생</string>
+    <string name="error_saving_script">스크립트 저장 중에 오류 발생</string>
+    <string name="error_while_loading">로드 중에 오류 발생</string>
+    <string name="list_scripts">스크립트 나열</string>
+    <string name="new_script_id_exists">새 스크립트 이름 및 이름 공간이 이미 있습니다.</string>
+    <string name="save_script">스크립트 저장</string>
+    <string name="starting_download_of">다운로드 시작하기</string>
+    <string name="syntax_or_dl_fail">구문 오류 또는 종속성 다운로드에 실패했습니다.</string>
+</resources>

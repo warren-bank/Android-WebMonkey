@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Yeni komut dosyası eklendi</string>
+    <string name="browse">Göz At</string>
+    <string name="delete">Sil</string>
+    <string name="deleted_script">Komut dosyası silindi</string>
+    <string name="disable">Geçersiz Kıl</string>
+    <string name="disabled">geçersiz kılındı</string>
+    <string name="disabled_script">Devre dışı bırakıldı</string>
+    <string name="edit">Düzenle</string>
+    <string name="edited_script">Düzenlenen komut dosyası</string>
+    <string name="enable">Etkinleştir</string>
+    <string name="enabled">etkin</string>
+    <string name="enabled_script">Etkin komut dosyası</string>
+    <string name="error_downloading_from">Komut dosyası karşıdan yüklenirken hata oluştu</string>
+    <string name="error_parsing_at">Komut dosyası ayrıştırılırken hata oluştu</string>
+    <string name="error_saving_script">Komut dosyası kaydedilirken hata oluştu</string>
+    <string name="error_while_loading">Yükleme sırasında hata oluştu</string>
+    <string name="list_scripts">Komut Dosyaları Listesi</string>
+    <string name="new_script_id_exists">Yeni komut dosyası adı ve ad alanı zaten var</string>
+    <string name="save_script">Komut Dosyasını Kaydet</string>
+    <string name="starting_download_of">Aşağı yükleme başlatılıyor</string>
+    <string name="syntax_or_dl_fail">Sözdizimi hatası ya da bağımlılık yüklemesi başarısız oldu</string>
+</resources>

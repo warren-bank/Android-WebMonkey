@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">نئے رسم الخط میں شامل</string>
+    <string name="browse">براز</string>
+    <string name="delete">حذف</string>
+    <string name="deleted_script">رسم الخط</string>
+    <string name="disable">ڈس ایبل کرنا</string>
+    <string name="disabled">معذور</string>
+    <string name="disabled_script">معذور سکرپٹ</string>
+    <string name="edit">تصیح</string>
+    <string name="edited_script">تدوین شدہ تحریر</string>
+    <string name="enable">Enable</string>
+    <string name="enabled">فعال</string>
+    <string name="enabled_script">زیر تحریر تحریر</string>
+    <string name="error_downloading_from">سے Error ڈاؤنلوڈ سکرپٹ</string>
+    <string name="error_parsing_at">Error parsing رسم الخط</string>
+    <string name="error_saving_script">غلطی سے بچانے والے سکرپٹ</string>
+    <string name="error_while_loading">ڈاؤن لوڈنگ کرتے ہوئے</string>
+    <string name="list_scripts">فہرست صحائف</string>
+    <string name="new_script_id_exists">نئے رسم الخط کا نام اور نام پہلے سے موجود ہے۔</string>
+    <string name="save_script">لپینترن</string>
+    <string name="starting_download_of">کا ڈاؤن لوڈ کریں</string>
+    <string name="syntax_or_dl_fail">Syntax خرابی یا انحصار ڈاؤن لوڈ, اتارنا ناکام</string>
+</resources>

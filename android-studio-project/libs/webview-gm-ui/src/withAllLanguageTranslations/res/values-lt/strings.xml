@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Pridėtas naujas scenarijus</string>
+    <string name="browse">Naršyti</string>
+    <string name="delete">Ištrinti</string>
+    <string name="deleted_script">Ištrinti scenarijų</string>
+    <string name="disable">Išjungti</string>
+    <string name="disabled">išjungtas</string>
+    <string name="disabled_script">Išjungtas scenarijus</string>
+    <string name="edit">Redaguoti</string>
+    <string name="edited_script">Redaguoti scenarijų</string>
+    <string name="enable">Įgalinti</string>
+    <string name="enabled">Įjungta</string>
+    <string name="enabled_script">Įgalinti scenarijų</string>
+    <string name="error_downloading_from">Klaida atsiunčia scenarijų iš</string>
+    <string name="error_parsing_at">Klaida apdorojant scenarijų</string>
+    <string name="error_saving_script">Klaida įrašant scenarijų</string>
+    <string name="error_while_loading">Klaida įkeliant</string>
+    <string name="list_scripts">Sąrašas raštaiComment</string>
+    <string name="new_script_id_exists">Naujas scenarijaus pavadinimas ir vardų jau egzistuoja</string>
+    <string name="save_script">Įrašyti scenarijų</string>
+    <string name="starting_download_of">Iš pradžių parsisiųsti</string>
+    <string name="syntax_or_dl_fail">Nepavyko atsisiųsti sintaksės klaidos arba priklausomybės</string>
+</resources>

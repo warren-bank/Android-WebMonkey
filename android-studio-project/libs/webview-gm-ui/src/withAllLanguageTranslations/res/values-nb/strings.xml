@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Lagt til nytt skript</string>
+    <string name="browse">Bla gjennom</string>
+    <string name="delete">Slett</string>
+    <string name="deleted_script">Slettet skript</string>
+    <string name="disable">Deaktiver</string>
+    <string name="disabled">deaktivert</string>
+    <string name="disabled_script">Deaktivert skript</string>
+    <string name="edit">Rediger</string>
+    <string name="edited_script">Redigert skript</string>
+    <string name="enable">Aktiver</string>
+    <string name="enabled">aktivert</string>
+    <string name="enabled_script">Aktivert skript</string>
+    <string name="error_downloading_from">Feil ved nedlasting av skript fra</string>
+    <string name="error_parsing_at">Feil ved analyse av skript ved</string>
+    <string name="error_saving_script">Feil lagring av skript</string>
+    <string name="error_while_loading">Feil ved lasting</string>
+    <string name="list_scripts">Vis skript</string>
+    <string name="new_script_id_exists">Nytt skriptnavn og navneområde finnes allerede</string>
+    <string name="save_script">Lagre skript</string>
+    <string name="starting_download_of">Starter nedlasting av</string>
+    <string name="syntax_or_dl_fail">Syntaksfeil eller avhengighetsnedlasting mislyktes</string>
+</resources>

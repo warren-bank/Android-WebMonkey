@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Új parancsfájl hozzáadása</string>
+    <string name="browse">Tallózás</string>
+    <string name="delete">Törlés</string>
+    <string name="deleted_script">Törölt parancsfájl</string>
+    <string name="disable">Letiltás</string>
+    <string name="disabled">Tiltott</string>
+    <string name="disabled_script">Tiltott parancsfájl</string>
+    <string name="edit">Szerkesztés</string>
+    <string name="edited_script">Szerkesztett parancsfájl</string>
+    <string name="enable">Engedélyezés</string>
+    <string name="enabled">Engedélyezett</string>
+    <string name="enabled_script">Engedélyezett parancsfájl</string>
+    <string name="error_downloading_from">Hiba a parancsfájl letöltése közben</string>
+    <string name="error_parsing_at">Hiba a parancsfájl értelmezésekor:</string>
+    <string name="error_saving_script">Hibás parancsfájl mentése</string>
+    <string name="error_while_loading">Hiba a betöltéskor</string>
+    <string name="list_scripts">Scripts lista</string>
+    <string name="new_script_id_exists">Az új parancsfájlnév és névtér már létezik</string>
+    <string name="save_script">Parancsfájl mentése</string>
+    <string name="starting_download_of">Letöltés indítása</string>
+    <string name="syntax_or_dl_fail">Szintaktikai hiba vagy függőség letöltése meghiúsult</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Adăugat script nou</string>
+    <string name="browse">Navigați</string>
+    <string name="delete">Șterge</string>
+    <string name="deleted_script">Script șters</string>
+    <string name="disable">Dezactivează</string>
+    <string name="disabled">dezactivat</string>
+    <string name="disabled_script">Script dezactivat</string>
+    <string name="edit">Editează</string>
+    <string name="edited_script">Script editat</string>
+    <string name="enable">Activează</string>
+    <string name="enabled">activat</string>
+    <string name="enabled_script">Script activat</string>
+    <string name="error_downloading_from">Eroare la descărcarea script-ului</string>
+    <string name="error_parsing_at">Eroare de parsare script la</string>
+    <string name="error_saving_script">Eroare de salvare script</string>
+    <string name="error_while_loading">Eroare în timpul încărcării</string>
+    <string name="list_scripts">Scripturi listă</string>
+    <string name="new_script_id_exists">Nume nou script și namespace există deja</string>
+    <string name="save_script">Salvează script</string>
+    <string name="starting_download_of">Descărcare de pornire</string>
+    <string name="syntax_or_dl_fail">Eroare de sintaxă sau descărcare de dependență a eșuat</string>
+</resources>

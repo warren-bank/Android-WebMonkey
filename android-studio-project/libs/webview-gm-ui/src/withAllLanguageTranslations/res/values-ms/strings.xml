@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Tambah skrip baru</string>
+    <string name="browse">Lungsur</string>
+    <string name="delete">&amp; Hapuskan</string>
+    <string name="deleted_script">Skrip dipadam</string>
+    <string name="disable">Lumpuhkan</string>
+    <string name="disabled">dilumpuhkan</string>
+    <string name="disabled_script">Skrip dilumpuhkan</string>
+    <string name="edit">Edit</string>
+    <string name="edited_script">Skrip yang disunting</string>
+    <string name="enable">&amp; Aktifkan</string>
+    <string name="enabled">dibenarkan</string>
+    <string name="enabled_script">Skrip dibenarkan</string>
+    <string name="error_downloading_from">Ralat memuat turun skrip dari</string>
+    <string name="error_parsing_at">Ralat menghurai skrip pada</string>
+    <string name="error_saving_script">Ralat menyimpan skrip</string>
+    <string name="error_while_loading">Ralat semasa memuatkan</string>
+    <string name="list_scripts">Skrip Senarai</string>
+    <string name="new_script_id_exists">Nama skrip baru dan ruang nama sudah wujud</string>
+    <string name="save_script">Simpan Skrip</string>
+    <string name="starting_download_of">Memulakan muat turun</string>
+    <string name="syntax_or_dl_fail">Ralat sintaks atau muat turun dependensi gagal</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Dodan nov skript</string>
+    <string name="browse">Brskanje</string>
+    <string name="delete">Izbriši</string>
+    <string name="deleted_script">Izbrisni skript</string>
+    <string name="disable">Onemogoci</string>
+    <string name="disabled">onemogoče</string>
+    <string name="disabled_script">Onemogoče skript</string>
+    <string name="edit">Uredi</string>
+    <string name="edited_script">Urejen skript</string>
+    <string name="enable">Omogoči</string>
+    <string name="enabled">omogočali</string>
+    <string name="enabled_script">Omogočen skript</string>
+    <string name="error_downloading_from">Napaka pri prenašanje skripta iz</string>
+    <string name="error_parsing_at">Napaka pri razčlenjevanju skripta ob</string>
+    <string name="error_saving_script">Napaka pri shranjevanju skripta</string>
+    <string name="error_while_loading">Napaka pri nalaganju</string>
+    <string name="list_scripts">Seznam Skriptov</string>
+    <string name="new_script_id_exists">Novo ime skripta in imenski prostor že obstajata</string>
+    <string name="save_script">Shrani skript</string>
+    <string name="starting_download_of">Začetek prenosa</string>
+    <string name="syntax_or_dl_fail">Skladenjska napaka ali prenos odvisnosti ni uspel</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Добавен нов скрипт</string>
+    <string name="browse">Преглед:</string>
+    <string name="delete">Изтриване.</string>
+    <string name="deleted_script">Изтрит скрипт</string>
+    <string name="disable">Изключване:</string>
+    <string name="disabled">е деактивиран</string>
+    <string name="disabled_script">Сценарий с увреждане</string>
+    <string name="edit">Редакция:</string>
+    <string name="edited_script">Редакция:</string>
+    <string name="enable">Активиране:</string>
+    <string name="enabled">:</string>
+    <string name="enabled_script">Активиран скрипт</string>
+    <string name="error_downloading_from">Грешка при изтеглянето на скрипт</string>
+    <string name="error_parsing_at">Грешка при анализиране на скрипт в</string>
+    <string name="error_saving_script">Запис за грешка при запис</string>
+    <string name="error_while_loading">Грешка при зареждане</string>
+    <string name="list_scripts">Скриптове на списък</string>
+    <string name="new_script_id_exists">Вече съществува ново име на скрипт и пространство за имена</string>
+    <string name="save_script">Запис на сценария</string>
+    <string name="starting_download_of">Стартиране на изтегляне</string>
+    <string name="syntax_or_dl_fail">Неуспешна синтактична грешка или сваляне на зависимост</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">പുതിയ സ്ക്രിപ്റ്റ് കൂട്ടിച്ചേര്ക്കുക</string>
+    <string name="browse">ബ്രൌസ് ചെയ്യുക</string>
+    <string name="delete">നീക്കം ചെയ്യുക</string>
+    <string name="deleted_script">സ്ക്രിപ്റ്റ് നീക്കം ചെയ്യുകName</string>
+    <string name="disable">പ്രാവര്ത്തികമാക്കുക</string>
+    <string name="disabled">പ്രവര്ത്തനം</string>
+    <string name="disabled_script">പ്രവര്ത്തനരഹിതമായ തിരക്കഥ</string>
+    <string name="edit">ചിട്ടപ്പെടുത്തുക</string>
+    <string name="edited_script">എഡിറ്റഡ് സ്ക്രിപ്റ്റ്</string>
+    <string name="enable">പ്രാവര്ത്തികമാക്കുക</string>
+    <string name="enabled">പ്രാവര്ത്തികമാക്കിയിരിക്കുന്നു</string>
+    <string name="enabled_script">പ്രവര്ത്തന രഹിതം</string>
+    <string name="error_downloading_from">സ്ക്രിപ്റ്റ് ലഭ്യമാക്കുന്നതില് പിശക്</string>
+    <string name="error_parsing_at">സ്ക്രിപ്റ്റ് പാഴ്സ് ചെയ്യുന്നതില് പിശക്</string>
+    <string name="error_saving_script">സ്ക്രിപ്റ്റ് സൂക്ഷിക്കുന്നതില് പിശക്</string>
+    <string name="error_while_loading">ലോഡ് ചെയ്യുമ്പോള് പിശക്</string>
+    <string name="list_scripts">ലിസ്റ്റ് സ്ക്രിപ്റ്റ്</string>
+    <string name="new_script_id_exists">പുതിയ സ്ക്രിപ്റ്റ് നാമവും നാമസ്പേസ് നിലവിലുണ്ടു്</string>
+    <string name="save_script">സ്ക്രിപ്റ്റ് സൂക്ഷിക്കുക</string>
+    <string name="starting_download_of">ഡൌണ്ലോഡ് തുടങ്ങുന്നു</string>
+    <string name="syntax_or_dl_fail">സിന്റാക്സ് പിശക് അല്ലെങ്കില് ആശ്രയത്വം ഡൌണ്ലോഡ് പരാജയ</string>
+</resources>

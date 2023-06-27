@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Tập lệnh mới thêm</string>
+    <string name="browse">Duyệt</string>
+    <string name="delete">&amp;amp; Xoá</string>
+    <string name="deleted_script">Tập lệnh xóa</string>
+    <string name="disable">Tắt</string>
+    <string name="disabled">đã tắt</string>
+    <string name="disabled_script">Tập lệnh tắt</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="edited_script">Tập lệnh sửa</string>
+    <string name="enable">Kích hoạt</string>
+    <string name="enabled">đã kích hoạt</string>
+    <string name="enabled_script">Tập lệnh bật</string>
+    <string name="error_downloading_from">Lỗi khi tải tập lệnh khỏi</string>
+    <string name="error_parsing_at">Lỗi phân tích tập lệnh tại</string>
+    <string name="error_saving_script">Lỗi khi lưu tập lệnh</string>
+    <string name="error_while_loading">Lỗi khi tải</string>
+    <string name="list_scripts">Liệt kê tập lệnh</string>
+    <string name="new_script_id_exists">Tên tập lệnh và vùng tên mới đã tồn tại</string>
+    <string name="save_script">Lưu tập lệnh</string>
+    <string name="starting_download_of">Đang bắt đầu tải về</string>
+    <string name="syntax_or_dl_fail">Lỗi cú pháp hoặc tải phụ thuộc không thành</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">已新增新的 Script</string>
+    <string name="browse">瀏覽</string>
+    <string name="delete">刪除</string>
+    <string name="deleted_script">已刪除 Script</string>
+    <string name="disable">停用</string>
+    <string name="disabled">殘</string>
+    <string name="disabled_script">已停用 Script</string>
+    <string name="edit">編輯</string>
+    <string name="edited_script">已編輯 Script</string>
+    <string name="enable">啟用</string>
+    <string name="enabled">已啟用</string>
+    <string name="enabled_script">已啟用 Script</string>
+    <string name="error_downloading_from">從下載 Script 時發生錯誤</string>
+    <string name="error_parsing_at">在剖析 Script 時發生錯誤</string>
+    <string name="error_saving_script">儲存 Script 發生錯誤</string>
+    <string name="error_while_loading">載入時發生錯誤</string>
+    <string name="list_scripts">列出 Script</string>
+    <string name="new_script_id_exists">新的 Script 名稱和名稱空間已存在</string>
+    <string name="save_script">儲存 Script</string>
+    <string name="starting_download_of">開始下載</string>
+    <string name="syntax_or_dl_fail">語法錯誤或相依關係下載失敗</string>
+</resources>

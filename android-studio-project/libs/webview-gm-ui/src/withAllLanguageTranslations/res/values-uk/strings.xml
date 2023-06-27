@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Додати новий скрипт</string>
+    <string name="browse">Навігація</string>
+    <string name="delete">Вилучити</string>
+    <string name="deleted_script">Вилучена скрипт</string>
+    <string name="disable">Вимкнути</string>
+    <string name="disabled">вимкнено</string>
+    <string name="disabled_script">Вимкнений скрипт</string>
+    <string name="edit">Змінити</string>
+    <string name="edited_script">Скрипт для редагування</string>
+    <string name="enable">Увімкнути</string>
+    <string name="enabled">увімкнено</string>
+    <string name="enabled_script">Скрипт увімкнено</string>
+    <string name="error_downloading_from">Помилка під час звантаження скрипту з</string>
+    <string name="error_parsing_at">Помилка під час обробки скрипту</string>
+    <string name="error_saving_script">Помилка під час збереження скрипту</string>
+    <string name="error_while_loading">Помилка під час завантаження</string>
+    <string name="list_scripts">Скрипти списку</string>
+    <string name="new_script_id_exists">Нове ім \' я скрипту і простір назв вже існує</string>
+    <string name="save_script">Зберегти скрипт</string>
+    <string name="starting_download_of">Запуск звантаження</string>
+    <string name="syntax_or_dl_fail">Помилка синтаксису або звантаження залежностей</string>
+</resources>

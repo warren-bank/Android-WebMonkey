@@ -15,8 +15,22 @@ android {
     targetSdkVersion project.ext.targetSdkVersion
   }
 
+  flavorDimensions "languageResources"
+
+  productFlavors {
+    withAllLanguageTranslations {
+      dimension "languageResources"
+    }
+    english {
+      dimension "languageResources"
+    }
+  }
+
   buildTypes {
     release {
+      debuggable      false
+      jniDebuggable   false
+      shrinkResources false
       minifyEnabled   true
       proguardFiles = [
         "proguard-rules.txt",
@@ -24,8 +38,10 @@ android {
       ]
     }
     debug {
-      debuggable    true
-      jniDebuggable true
+      debuggable      true
+      jniDebuggable   true
+      shrinkResources false
+      minifyEnabled   false
     }
   }
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">নতুন স্ক্রিপ্ট যোগ করা হয়েছে</string>
+    <string name="browse">ব্রাউজ</string>
+    <string name="delete">মুছে ফেলো</string>
+    <string name="deleted_script">মুছে ফেলা স্ক্রিপ্ট</string>
+    <string name="disable">নিষ্ক্রিয় করো</string>
+    <string name="disabled">নিষ্ক্রিয়</string>
+    <string name="disabled_script">নিষ্ক্রিয় স্ক্রিপ্ট</string>
+    <string name="edit">সম্পাদনা</string>
+    <string name="edited_script">সম্পাদনা করা স্ক্রিপ্ট</string>
+    <string name="enable">সক্রিয় করো</string>
+    <string name="enabled">সক্রিয়</string>
+    <string name="enabled_script">সক্রিয় স্ক্রিপ্ট</string>
+    <string name="error_downloading_from">স্ক্রিপ্ট ডাউনলোড করার সময় ত্রুটি</string>
+    <string name="error_parsing_at">স্ক্রিপ্ট পার্স করার সময় ত্রুটি</string>
+    <string name="error_saving_script">স্ক্রিপ্ট সংরক্ষণের সময় ত্রুটি</string>
+    <string name="error_while_loading">লোড করার সময় ত্রুটি</string>
+    <string name="list_scripts">স্ক্রিপ্ট তালিকা</string>
+    <string name="new_script_id_exists">নতুন স্ক্রিপ্ট নাম এবং নেম-স্পেস ইতোমধ্যে বিদ্যমান</string>
+    <string name="save_script">স্ক্রিপ্ট সংরক্ষণ করো</string>
+    <string name="starting_download_of">ডাউনলোড আরম্ভ করা হচ্ছে</string>
+    <string name="syntax_or_dl_fail">সিনট্যাক্সের সমস্যা অথবা নির্ভরতা ডাউনলোড করতে ব্যর্থ</string>
+</resources>

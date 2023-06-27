@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">නව ලිස්ට් එක ඇඩ් කරන්න</string>
+    <string name="browse">ගවේශනය</string>
+    <string name="delete">මකන්න</string>
+    <string name="deleted_script">ලිස්ට් ලිස්ට් එක</string>
+    <string name="disable">අක්රීය කරන්න</string>
+    <string name="disabled">අක්රීය</string>
+    <string name="disabled_script">අක්රීය ස්ක්රිප්ට්</string>
+    <string name="edit">සකසන්න</string>
+    <string name="edited_script">Edited script</string>
+    <string name="enable">සක්රීය කරන්න</string>
+    <string name="enabled">සක්රීය කරන්න</string>
+    <string name="enabled_script">සක්රීය කළ ලිපි</string>
+    <string name="error_downloading_from">වලින් පිටපත බාගත කිරීමේ දෝෂයක්</string>
+    <string name="error_parsing_at">ස්ක්රිප්ට් පැරදවීමේ වරදක්</string>
+    <string name="error_saving_script">පිටපත සුරැකීම දෝෂ සහිතයි</string>
+    <string name="error_while_loading">පූරණය කිරීමේ වරදක්</string>
+    <string name="list_scripts">ලැයිස්තුව</string>
+    <string name="new_script_id_exists">නව ස්ක්රිප්ට් නාමය හා නාමාවලි දැනටමත් පවතී</string>
+    <string name="save_script">ස්ක්රිප්ට් සුරකින්න</string>
+    <string name="starting_download_of">බාගත කිරීම ආරම්භ කිරීම</string>
+    <string name="syntax_or_dl_fail">Syntax error or dependency download failed</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">కొత్త స్క్రిప్ట్ను చేర్చారు</string>
+    <string name="browse">బ్రౌజ్</string>
+    <string name="delete">తొలగించు</string>
+    <string name="deleted_script">డెలిట్ స్క్రిప్ట్</string>
+    <string name="disable">అచేతనము</string>
+    <string name="disabled">అచేతనము</string>
+    <string name="disabled_script">అచేతనమైన స్క్రిప్టు</string>
+    <string name="edit">సరికూర్చు</string>
+    <string name="edited_script">ఎడిట్ చేయబడిన లిపి</string>
+    <string name="enable">చేతనము చేయుము</string>
+    <string name="enabled">క్రియాచేయబడినది</string>
+    <string name="enabled_script">అచేతనమైన స్క్రిప్టు</string>
+    <string name="error_downloading_from">స్క్రిప్ట్ డౌన్ లోడ్ చేయుటలో దోషము</string>
+    <string name="error_parsing_at">స్క్రిప్ట్ ను స్క్రిప్ట్ చేయుటలో దోషము</string>
+    <string name="error_saving_script">స్క్రిప్ట్ ను రక్షించు దోషం</string>
+    <string name="error_while_loading">లోడ్ చేయుటలో దోషము</string>
+    <string name="list_scripts">జాబితా స్క్రిప్ట్స్</string>
+    <string name="new_script_id_exists">కొత్త స్క్రిప్ట్ పేరు మరియు నమస్పేస్ ఇప్పటికే వుంది</string>
+    <string name="save_script">స్క్రిప్ట్ను దాచు</string>
+    <string name="starting_download_of">డౌన్లోడ్ ను ప్రారంభించడం</string>
+    <string name="syntax_or_dl_fail">సింటసన్ను దోషం లేదా ఆధారిత డౌన్లోడ్ విఫలమైంది</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Nieuw script toegevoegd</string>
+    <string name="browse">Bladeren</string>
+    <string name="delete">Wissen</string>
+    <string name="deleted_script">Gewist script</string>
+    <string name="disable">Uitschakelen</string>
+    <string name="disabled">uitgeschakeld</string>
+    <string name="disabled_script">Uitgeschakeld script</string>
+    <string name="edit">Bewerken</string>
+    <string name="edited_script">Bewerkt script</string>
+    <string name="enable">Inschakelen</string>
+    <string name="enabled">ingeschakeld</string>
+    <string name="enabled_script">Ingeschakelde script</string>
+    <string name="error_downloading_from">Fout bij downloaden van script van</string>
+    <string name="error_parsing_at">Fout bij ontleden van script op</string>
+    <string name="error_saving_script">Fout bij opslaan van script</string>
+    <string name="error_while_loading">Fout tijdens laden</string>
+    <string name="list_scripts">Lijstscripts</string>
+    <string name="new_script_id_exists">Nieuwe scriptnaam en naamruimte bestaat al</string>
+    <string name="save_script">Script opslaan</string>
+    <string name="starting_download_of">Downloaden van</string>
+    <string name="syntax_or_dl_fail">Syntaxisfout of downloaden van dependency is mislukt</string>
+</resources>

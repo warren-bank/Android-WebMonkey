@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Tillagt nytt skript</string>
+    <string name="browse">Bläddra</string>
+    <string name="delete">Radera</string>
+    <string name="deleted_script">Borttaget skript</string>
+    <string name="disable">Inaktivera</string>
+    <string name="disabled">avaktiverad</string>
+    <string name="disabled_script">Avaktiverat skript</string>
+    <string name="edit">Redigera</string>
+    <string name="edited_script">Redigerat skript</string>
+    <string name="enable">Aktivera</string>
+    <string name="enabled">aktiverad</string>
+    <string name="enabled_script">Aktiverat skript</string>
+    <string name="error_downloading_from">Fel vid nedladdning av skript från</string>
+    <string name="error_parsing_at">Fel vid tolkning av skript på</string>
+    <string name="error_saving_script">Fel vid sparande</string>
+    <string name="error_while_loading">Fel vid inläsning</string>
+    <string name="list_scripts">Listskript</string>
+    <string name="new_script_id_exists">Nytt skriptnamn och namnrymd finns redan</string>
+    <string name="save_script">Spara skript</string>
+    <string name="starting_download_of">Startar hämtning av</string>
+    <string name="syntax_or_dl_fail">Syntaxfel eller beroendenedladdning misslyckades</string>
+</resources>

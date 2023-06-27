@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">નવી સ્ક્રિપ્ટ ઉમેરી</string>
+    <string name="browse">બ્રાઉઝ</string>
+    <string name="delete">કાઢી નાંખો</string>
+    <string name="deleted_script">કાઢી નંખાયેલ સ્ક્રિપ્ટ</string>
+    <string name="disable">નિષ્ક્રિય કરો</string>
+    <string name="disabled">નિષ્ક્રિય થયેલ</string>
+    <string name="disabled_script">નિષ્ક્રિય થયેલ સ્ક્રિપ્ટ</string>
+    <string name="edit">ફેરફાર કરો</string>
+    <string name="edited_script">ફેરફાર થયેલ સ્ક્રિપ્ટ</string>
+    <string name="enable">સક્રિય કરો</string>
+    <string name="enabled">સક્રિય થયેલ છે</string>
+    <string name="enabled_script">સક્રિય થયેલ સ્ક્રિપ્ટ</string>
+    <string name="error_downloading_from">માંથી સ્ક્રિપ્ટ ડાઉનલોડ કરતી વખતે ભૂલ</string>
+    <string name="error_parsing_at">સ્ક્રિપ્ટ પર પદચ્છેદન કરતી વખતે ભૂલ</string>
+    <string name="error_saving_script">સ્ક્રિપ્ટ સંગ્રહ કરતી વખતે ભૂલ</string>
+    <string name="error_while_loading">જ્યારે લોડ કરી રહ્યા હોય ત્યારે ભૂલ</string>
+    <string name="list_scripts">યાદી સ્ક્રિપ્ટો</string>
+    <string name="new_script_id_exists">નવું સ્ક્રિપ્ટ નામ અને નામજગ્યા પહેલેથી અસ્તિત્વ ધરાવે છે</string>
+    <string name="save_script">સ્ક્રિપ્ટ સંગ્રહો</string>
+    <string name="starting_download_of">ડાઉનલોડ કરવાનું શરૂ કરી રહ્યા છે</string>
+    <string name="syntax_or_dl_fail">સિન્ટેક્ષ ભૂલ અથવા આધારિત ડાઉનલોડ નિષ્ફળ</string>
+</resources>

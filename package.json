@@ -6,7 +6,13 @@
     "@warren-bank/translate-android-strings": "^1.8.1"
   },
   "scripts": {
-    "translate":       "translate-android-strings -i \"en\" -f \"android-studio-project/WebMonkey/src/main/res/values/strings.xml\" -d \"android-studio-project/WebMonkey/src/withAllLanguageTranslations/res\" -m --na --nc --nw -b \"(?:WebMonkey|URL|url|HTTPS|Toast|glob|regex|API|window\\.WebViewWM\\.getUserscriptJS|JS|mitmproxy|iframe)\" -b \"@(?:include|exclude|match)\"",
-    "translate:debug": "npm run translate -- -o \"en\" --debug"
+    "translate:app":       "translate-android-strings -i \"en\" -f \"android-studio-project/WebMonkey/src/main/res/values/strings.xml\" -d \"android-studio-project/WebMonkey/src/withAllLanguageTranslations/res\" -m --na --nc --nw -b \"(?:WebMonkey|URL|url|HTTPS|Toast|glob|regex|API|window\\.WebViewWM\\.getUserscriptJS|JS|mitmproxy|iframe)\" -b \"@(?:include|exclude|match)\"",
+    "translate:app:debug": "npm run translate:app -- -o \"en\" --debug",
+
+    "translate:lib":       "translate-android-strings -i \"en\" -f \"android-studio-project/libs/webview-gm-ui/src/main/res/values/strings.xml\" -d \"android-studio-project/libs/webview-gm-ui/src/withAllLanguageTranslations/res\" -m --na --nc --nw",
+    "translate:lib:debug": "npm run translate:lib -- -o \"en\" --debug",
+
+    "translate":           "npm run translate:lib       && npm run translate:app",
+    "translate:debug":     "npm run translate:lib:debug && npm run translate:app:debug"
   }
 }

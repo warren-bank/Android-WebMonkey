@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">新規スクリプトの追加</string>
+    <string name="browse">参照</string>
+    <string name="delete">削除</string>
+    <string name="deleted_script">削除済みスクリプト</string>
+    <string name="disable">無効化</string>
+    <string name="disabled">無効</string>
+    <string name="disabled_script">使用不可スクリプト</string>
+    <string name="edit">編集</string>
+    <string name="edited_script">編集済みスクリプト</string>
+    <string name="enable">有効</string>
+    <string name="enabled">有効</string>
+    <string name="enabled_script">使用可能スクリプト</string>
+    <string name="error_downloading_from">スクリプトのダウンロード中のエラー</string>
+    <string name="error_parsing_at">スクリプトの構文解析エラー :</string>
+    <string name="error_saving_script">スクリプトの保存エラー</string>
+    <string name="error_while_loading">ロード中のエラー</string>
+    <string name="list_scripts">リスト・スクリプト</string>
+    <string name="new_script_id_exists">新規スクリプト名とネーム・スペースが既に存在</string>
+    <string name="save_script">スクリプトの保存</string>
+    <string name="starting_download_of">ダウンロードの開始中</string>
+    <string name="syntax_or_dl_fail">構文エラーまたは依存関係のダウンロードが失敗</string>
+</resources>

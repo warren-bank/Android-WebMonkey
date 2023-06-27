@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">เพิ่มสคริปต์ใหม่</string>
+    <string name="browse">เรียกดู</string>
+    <string name="delete">ลบ</string>
+    <string name="deleted_script">สคริปต์ที่ลบ</string>
+    <string name="disable">ปิดใช้งาน</string>
+    <string name="disabled">ถูกปิดใช้งาน</string>
+    <string name="disabled_script">สคริปต์ที่ปิดใช้งาน</string>
+    <string name="edit">แก้ไข</string>
+    <string name="edited_script">สคริปต์ที่แก้ไข</string>
+    <string name="enable">เปิดใช้งาน</string>
+    <string name="enabled">ถูกเปิดใช้งาน</string>
+    <string name="enabled_script">สคริปต์ที่เปิดใช้งาน</string>
+    <string name="error_downloading_from">เกิดข้อผิดพลาดขณะดาวน์โหลดสคริปต์จาก</string>
+    <string name="error_parsing_at">ข้อผิดพลาดในการวิเคราะห์คำสคริปต์ที่</string>
+    <string name="error_saving_script">ข้อผิดพลาดในการบันทึกสคริปต์</string>
+    <string name="error_while_loading">ข้อผิดพลาดขณะโหลด</string>
+    <string name="list_scripts">รายการสคริปต์</string>
+    <string name="new_script_id_exists">ชื่อสคริปต์และเนมสเปซใหม่มีอยู่แล้ว</string>
+    <string name="save_script">บันทึกสคริปต์</string>
+    <string name="starting_download_of">กำลังเริ่มต้นการดาวน์โหลด</string>
+    <string name="syntax_or_dl_fail">ข้อผิดพลาดทางไวยากรณ์หรือการดาวน์โหลดการขึ้นต่อกันล้มเหลว</string>
+</resources>

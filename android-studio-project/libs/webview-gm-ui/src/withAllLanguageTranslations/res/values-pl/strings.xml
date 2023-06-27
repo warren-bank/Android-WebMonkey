@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Dodano nowy skrypt</string>
+    <string name="browse">Przeglądaj</string>
+    <string name="delete">Usuń</string>
+    <string name="deleted_script">Usunięty skrypt</string>
+    <string name="disable">Wyłącz</string>
+    <string name="disabled">wyłączony</string>
+    <string name="disabled_script">Skrypt wyłączony</string>
+    <string name="edit">Edytuj</string>
+    <string name="edited_script">Edytowany skrypt</string>
+    <string name="enable">Włącz</string>
+    <string name="enabled">włączony</string>
+    <string name="enabled_script">Włączony skrypt</string>
+    <string name="error_downloading_from">Błąd podczas pobierania skryptu z</string>
+    <string name="error_parsing_at">Błąd podczas analizowania skryptu w</string>
+    <string name="error_saving_script">Błąd podczas zapisywania skryptu</string>
+    <string name="error_while_loading">Błąd podczas ładowania</string>
+    <string name="list_scripts">Lista skryptów</string>
+    <string name="new_script_id_exists">Już istnieje nowa nazwa skryptu i przestrzeń nazw</string>
+    <string name="save_script">Zapisz skrypt</string>
+    <string name="starting_download_of">Rozpoczynanie pobierania</string>
+    <string name="syntax_or_dl_fail">Błąd składniowy lub pobieranie zależności nie powiodło się</string>
+</resources>

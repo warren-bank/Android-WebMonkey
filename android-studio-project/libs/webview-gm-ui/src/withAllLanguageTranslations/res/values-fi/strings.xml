@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Lisätty komentosarja</string>
+    <string name="browse">Selaa</string>
+    <string name="delete">Poista</string>
+    <string name="deleted_script">Poistettu komentotiedosto</string>
+    <string name="disable">Poista</string>
+    <string name="disabled">Vammaiset</string>
+    <string name="disabled_script">Vammainen komentotiedosto</string>
+    <string name="edit">Muokkaa</string>
+    <string name="edited_script">Edioitu komentotiedosto</string>
+    <string name="enable">Enable</string>
+    <string name="enabled">Käytössä</string>
+    <string name="enabled_script">Ota komentotiedosto käyttöön</string>
+    <string name="error_downloading_from">Virhe ladattaessa komentotiedostoa</string>
+    <string name="error_parsing_at">Virhe jäsennystoiminnon aikana</string>
+    <string name="error_saving_script">Virhe tallennettaessa</string>
+    <string name="error_while_loading">Virhe ladattaessa</string>
+    <string name="list_scripts">Luettelon komentosarjat</string>
+    <string name="new_script_id_exists">Uusi komentosarjan nimi ja nimitila on jo käytössä</string>
+    <string name="save_script">Tallenna</string>
+    <string name="starting_download_of">Aloituslataus on meneillään</string>
+    <string name="syntax_or_dl_fail">Syntaksivirhe tai alisteinen lataus epäonnistui</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Incluído novo script</string>
+    <string name="browse">Navegar</string>
+    <string name="delete">Excluir</string>
+    <string name="deleted_script">Script excluído</string>
+    <string name="disable">Desativar</string>
+    <string name="disabled">desativado</string>
+    <string name="disabled_script">Script desativado</string>
+    <string name="edit">Editar</string>
+    <string name="edited_script">Script editado</string>
+    <string name="enable">Ativar</string>
+    <string name="enabled">habilitado</string>
+    <string name="enabled_script">Script ativado</string>
+    <string name="error_downloading_from">Erro ao baixar script de</string>
+    <string name="error_parsing_at">Erro ao analisar script em</string>
+    <string name="error_saving_script">Erro ao salvar script</string>
+    <string name="error_while_loading">Erro ao carregar</string>
+    <string name="list_scripts">Lista Scripts</string>
+    <string name="new_script_id_exists">Novo nome de script e espaço de nomes já existe</string>
+    <string name="save_script">Salvar Script</string>
+    <string name="starting_download_of">Iniciando o download de</string>
+    <string name="syntax_or_dl_fail">Falha de sintaxe ou download de dependência</string>
+</resources>

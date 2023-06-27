@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Ychwanegu sgript newydd</string>
+    <string name="browse">Pori</string>
+    <string name="delete">Dileu</string>
+    <string name="deleted_script">Sgript</string>
+    <string name="disable">Analluogi</string>
+    <string name="disabled">anabl</string>
+    <string name="disabled_script">Sgript i\'r anabl</string>
+    <string name="edit">Golygu</string>
+    <string name="edited_script">Sgript</string>
+    <string name="enable">Galluogi</string>
+    <string name="enabled">wedi ei alluogi</string>
+    <string name="enabled_script">Sgript wedi\'i alluogi</string>
+    <string name="error_downloading_from">Gwall wrth lwytho sgript i lawr</string>
+    <string name="error_parsing_at">Gwall wrth ramadegu sgript</string>
+    <string name="error_saving_script">Gwall wrth gadw sgript</string>
+    <string name="error_while_loading">Gwall wrth lwytho</string>
+    <string name="list_scripts">Sgriptiau Rhestr</string>
+    <string name="new_script_id_exists">Mae enw a gofod sgript newydd yn bodoli eisoes</string>
+    <string name="save_script">Cadw Sgript</string>
+    <string name="starting_download_of">Dechrau llwytho i lawr</string>
+    <string name="syntax_or_dl_fail">Methwyd llwytho gwall cystrawen neu lwytho i lawr</string>
+</resources>

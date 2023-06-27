@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Добавлен новый сценарий</string>
+    <string name="browse">Обзор</string>
+    <string name="delete">Удалить</string>
+    <string name="deleted_script">Удаленный сценарий</string>
+    <string name="disable">Выключить</string>
+    <string name="disabled">выключено</string>
+    <string name="disabled_script">Отключенный сценарий</string>
+    <string name="edit">Изменить</string>
+    <string name="edited_script">Измененный сценарий</string>
+    <string name="enable">Включить</string>
+    <string name="enabled">включен</string>
+    <string name="enabled_script">Сценарий с поддержкой</string>
+    <string name="error_downloading_from">Ошибка при загрузке сценария из</string>
+    <string name="error_parsing_at">Ошибка при анализе сценария в</string>
+    <string name="error_saving_script">Ошибка при сохранении сценария</string>
+    <string name="error_while_loading">Ошибка при загрузке</string>
+    <string name="list_scripts">Список сценариев</string>
+    <string name="new_script_id_exists">Новое имя сценария и пространство имен уже существуют</string>
+    <string name="save_script">Сохранить сценарий</string>
+    <string name="starting_download_of">Начало загрузки</string>
+    <string name="syntax_or_dl_fail">Ошибка синтаксиса или ошибка загрузки зависимости</string>
+</resources>

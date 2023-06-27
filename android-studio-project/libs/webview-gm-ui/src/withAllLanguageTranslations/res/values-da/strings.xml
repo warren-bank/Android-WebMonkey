@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Tilføjet nyt script</string>
+    <string name="browse">Gennemse</string>
+    <string name="delete">Slet</string>
+    <string name="deleted_script">Slettet script</string>
+    <string name="disable">Deaktivér</string>
+    <string name="disabled">deaktiveret</string>
+    <string name="disabled_script">Deaktiveret script</string>
+    <string name="edit">Redigér</string>
+    <string name="edited_script">Redigeret script</string>
+    <string name="enable">Aktivér</string>
+    <string name="enabled">aktiveret</string>
+    <string name="enabled_script">Aktiveret script</string>
+    <string name="error_downloading_from">Fejl under download af script fra</string>
+    <string name="error_parsing_at">Fejl under analyse af script ved</string>
+    <string name="error_saving_script">Fejl under gem script</string>
+    <string name="error_while_loading">Fejl under indlæsning</string>
+    <string name="list_scripts">Vis scriptfiler</string>
+    <string name="new_script_id_exists">Nyt script-navn og navneområde findes allerede</string>
+    <string name="save_script">Gem script</string>
+    <string name="starting_download_of">Starter downloadning af</string>
+    <string name="syntax_or_dl_fail">Syntaksfejl eller downloadning af afhængighed mislykkedes</string>
+</resources>

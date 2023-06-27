@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Cuir script nua leis</string>
+    <string name="browse">Brabhsáil</string>
+    <string name="delete">&amp; Scrios</string>
+    <string name="deleted_script">Scrios script</string>
+    <string name="disable">Díchumasaigh</string>
+    <string name="disabled">díchumasaithe</string>
+    <string name="disabled_script">Script faoi mhíchumas</string>
+    <string name="edit">Eagar</string>
+    <string name="edited_script">Script fhonaithe</string>
+    <string name="enable">Cumasaigh</string>
+    <string name="enabled">cumasaithe</string>
+    <string name="enabled_script">Cruthaigh script</string>
+    <string name="error_downloading_from">Earráid agus script á íosluchtú ó</string>
+    <string name="error_parsing_at">Earráid agus script á pharsáil ag</string>
+    <string name="error_saving_script">Earráid agus script á shábháil</string>
+    <string name="error_while_loading">Earráid agus á luchtú</string>
+    <string name="list_scripts">Scripteanna Liosta</string>
+    <string name="new_script_id_exists">Tá ainm nua na scripte agus an spás á n-ainmniú cheana</string>
+    <string name="save_script">Sábháil Script</string>
+    <string name="starting_download_of">Íosluchtaigh á íosluchtú</string>
+    <string name="syntax_or_dl_fail">\@ info: inverName</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Tambahkan skrip baru</string>
+    <string name="browse">Telusuri</string>
+    <string name="delete">Hapus</string>
+    <string name="deleted_script">Skrip yang dihapus</string>
+    <string name="disable">Nonaktifkan</string>
+    <string name="disabled">$dinonaktifkan</string>
+    <string name="disabled_script">Skrip dinonaktifkan</string>
+    <string name="edit">Sunting</string>
+    <string name="edited_script">Skrip yang diedit</string>
+    <string name="enable">Fungsikan</string>
+    <string name="enabled">Diaktifkan</string>
+    <string name="enabled_script">Skrip yang diaktifkan</string>
+    <string name="error_downloading_from">Kesalahan mengunduh skrip dari</string>
+    <string name="error_parsing_at">Galat saat mengurai skrip di</string>
+    <string name="error_saving_script">Galat saat menyimpan skrip</string>
+    <string name="error_while_loading">Kesalahan saat memuat</string>
+    <string name="list_scripts">Daftar skrip</string>
+    <string name="new_script_id_exists">Nama skrip baru dan ruang-nama sudah ada</string>
+    <string name="save_script">Simpan skrip</string>
+    <string name="starting_download_of">Mulai mengunduh</string>
+    <string name="syntax_or_dl_fail">Kesalahan sintaks atau unduhan ketergantungan gagal</string>
+</resources>

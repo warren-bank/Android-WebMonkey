@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Pridaný nový skript</string>
+    <string name="browse">Prehľadávať</string>
+    <string name="delete">Vymazať</string>
+    <string name="deleted_script">Vymazaný skript</string>
+    <string name="disable">Zakázať</string>
+    <string name="disabled">zakázané</string>
+    <string name="disabled_script">Zakázaný skript</string>
+    <string name="edit">Upraviť</string>
+    <string name="edited_script">Upravený skript</string>
+    <string name="enable">Povoliť</string>
+    <string name="enabled">povolené</string>
+    <string name="enabled_script">Povolený skript</string>
+    <string name="error_downloading_from">Chyba pri sťahovaní skriptu z</string>
+    <string name="error_parsing_at">Nastala chyba pri analyzovaní skriptu</string>
+    <string name="error_saving_script">Chyba pri ukladaní skriptu</string>
+    <string name="error_while_loading">Chyba počas načítavania</string>
+    <string name="list_scripts">Vypísať zoznam skriptov</string>
+    <string name="new_script_id_exists">Nový názov skriptu a názvový priestor už existuje</string>
+    <string name="save_script">Uložiť skript</string>
+    <string name="starting_download_of">Spúšťa sa preberanie</string>
+    <string name="syntax_or_dl_fail">Zlyhala syntaktická chyba alebo sťahovanie závislostí</string>
+</resources>

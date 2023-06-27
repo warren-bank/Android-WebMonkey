@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Dodana nova skripta</string>
+    <string name="browse">Pregled</string>
+    <string name="delete">Izbriši</string>
+    <string name="deleted_script">Izbrisani skript</string>
+    <string name="disable">Onemogući</string>
+    <string name="disabled">onemogućeno</string>
+    <string name="disabled_script">Onemogućeno</string>
+    <string name="edit">Uredi</string>
+    <string name="edited_script">Uređivana skripta</string>
+    <string name="enable">Omogući</string>
+    <string name="enabled">omogućen</string>
+    <string name="enabled_script">Omogućen skript</string>
+    <string name="error_downloading_from">Greška kod preuzimanja skripta iz</string>
+    <string name="error_parsing_at">Greška pri analizi skripta</string>
+    <string name="error_saving_script">Greška u spremanju skripte</string>
+    <string name="error_while_loading">Greška kod učitavanja</string>
+    <string name="list_scripts">Skripti Liste</string>
+    <string name="new_script_id_exists">Novo ime skripta i imenski prostor već postoji</string>
+    <string name="save_script">Spremi skriptu</string>
+    <string name="starting_download_of">Pokretanje preuzimanja</string>
+    <string name="syntax_or_dl_fail">Greška sintakse ili preuzimanje zavisnosti nije uspjelo</string>
+</resources>

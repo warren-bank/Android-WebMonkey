@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">تم اضافة نص جديد</string>
+    <string name="browse">تصفح</string>
+    <string name="delete">حذف</string>
+    <string name="deleted_script">Script الذي تم حذفه</string>
+    <string name="disable">الغاء اتاحة</string>
+    <string name="disabled">غير متاح</string>
+    <string name="disabled_script">البرنامج النصي غير المتاح</string>
+    <string name="edit">تحرير</string>
+    <string name="edited_script">نص تم تحريره</string>
+    <string name="enable">اتاحة</string>
+    <string name="enabled">متاح</string>
+    <string name="enabled_script">البرنامج النصي المتاح</string>
+    <string name="error_downloading_from">خطأ في تحميل البرنامج النصي من</string>
+    <string name="error_parsing_at">خطأ في تحليل البرنامج النصي لغويا في</string>
+    <string name="error_saving_script">خطأ في حفظ البرنامج النصي</string>
+    <string name="error_while_loading">حدث خطأ أثناء التحميل</string>
+    <string name="list_scripts">عرض البرامج النصية</string>
+    <string name="new_script_id_exists">اسم النص المنسق الجديد وعنوان الصفحة موجود بالفعل</string>
+    <string name="save_script">حفظ البرنامج النصى</string>
+    <string name="starting_download_of">بدء التحميل لأسفل</string>
+    <string name="syntax_or_dl_fail">خطأ في الصيغة أو فشل في تحميل الاعتمادية</string>
+</resources>

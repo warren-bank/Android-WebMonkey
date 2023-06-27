@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Προσθήκη νέου σεναρίου</string>
+    <string name="browse">Αναζήτηση.</string>
+    <string name="delete">Διαγραφή:</string>
+    <string name="deleted_script">Διαγραμμένο σενάριο</string>
+    <string name="disable">Απενεργοποίηση:</string>
+    <string name="disabled">\' Ατομα</string>
+    <string name="disabled_script">Απενεργοποιημένο σενάριο</string>
+    <string name="edit">Τροποποίηση:</string>
+    <string name="edited_script">Τροποποιημένο σενάριο</string>
+    <string name="enable">\' Ενεργοποίηση</string>
+    <string name="enabled">ενεργοποίηση:</string>
+    <string name="enabled_script">Ενεργοποίηση σεναρίου</string>
+    <string name="error_downloading_from">Σφάλμα λήψης σεναρίου από το</string>
+    <string name="error_parsing_at">Σφάλμα ανάλυσης σεναρίου στο</string>
+    <string name="error_saving_script">Σφάλμα αποθήκευσης σεναρίου</string>
+    <string name="error_while_loading">Σφάλμα κατά τη φόρτωση</string>
+    <string name="list_scripts">Σενάρια λίστας</string>
+    <string name="new_script_id_exists">Υπάρχει ήδη νέο όνομα σεναρίου και χώρος ονομάτων.</string>
+    <string name="save_script">Σενάριο αποθήκευσης</string>
+    <string name="starting_download_of">Έναρξη μεταφόρτωσης του:</string>
+    <string name="syntax_or_dl_fail">Απέτυχε η σύνταξη ή η μεταφόρτωση εξαρτήσεων</string>
+</resources>

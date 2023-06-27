@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Miżjuda kitba ġdida</string>
+    <string name="browse">Fittex</string>
+    <string name="delete">Ħassar</string>
+    <string name="deleted_script">Kitba mħassra</string>
+    <string name="disable">Jiskonnettja</string>
+    <string name="disabled">persuni b\'diżabilità</string>
+    <string name="disabled_script">Kitba diżabbli</string>
+    <string name="edit">Editja</string>
+    <string name="edited_script">Kitba editjat</string>
+    <string name="enable">Jippermettu</string>
+    <string name="enabled">wassal</string>
+    <string name="enabled_script">Kitba attivata</string>
+    <string name="error_downloading_from">Żball tniżżil iskrittura minn</string>
+    <string name="error_parsing_at">Żball parsing iskrittura fil</string>
+    <string name="error_saving_script">Żball li jiffranka l-iskrittura</string>
+    <string name="error_while_loading">Żball waqt it-tagħbija</string>
+    <string name="list_scripts">Lista Skripts</string>
+    <string name="new_script_id_exists">Isem l-iskript ġdid u namespace diġà jeżisti</string>
+    <string name="save_script">Save scripting</string>
+    <string name="starting_download_of">Tibda tniżżel ta \'</string>
+    <string name="syntax_or_dl_fail">Żball sintassi jew dipendenza download fallew</string>
+</resources>

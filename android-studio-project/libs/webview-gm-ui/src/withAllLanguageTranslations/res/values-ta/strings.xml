@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">புதிய குறுநிரலை சேர்</string>
+    <string name="browse">உலாவி</string>
+    <string name="delete">நீக்கு</string>
+    <string name="deleted_script">அழிக்கப்பட்ட குறுநிரல்</string>
+    <string name="disable">செயல் நீக்கு</string>
+    <string name="disabled">முடக்கப்பட்டதுName</string>
+    <string name="disabled_script">முடங்கிய குறுநிரல்</string>
+    <string name="edit">திருத்து</string>
+    <string name="edited_script">திருத்தப்பட்ட குறுநிரல்</string>
+    <string name="enable">செயல்படுத்து</string>
+    <string name="enabled">செயல்படுத்தப்பட்டது</string>
+    <string name="enabled_script">செயல்படுத்தப்பட்ட குறுநிரல்</string>
+    <string name="error_downloading_from">ஸ்கிரிப்டை ஏற்றுவதில் பிழை</string>
+    <string name="error_parsing_at">ஸ்கிரிப்ட் பாராட்டில் பிழை</string>
+    <string name="error_saving_script">ஸ்கிரிப்ட் சேமிக்கும் பிழை</string>
+    <string name="error_while_loading">ஏற்றும் போது பிழை</string>
+    <string name="list_scripts">பட்டியல் சிறுநிரல்</string>
+    <string name="new_script_id_exists">புதிய குறுநிரல் பெயர் மற்றும் பெயர் இடம் ஏற்கனவே உள்ளது</string>
+    <string name="save_script">சிறுநிரலை சேமி</string>
+    <string name="starting_download_of">பதிவிறக்கம்</string>
+    <string name="syntax_or_dl_fail">ஒத்திசைவு பிழை அல்லது சார்பு பதிவிறக்கம் தோல்வியடைந்தது</string>
+</resources>

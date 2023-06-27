@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Neues Script hinzugefügt</string>
+    <string name="browse">Durchsuchen</string>
+    <string name="delete">Löschen</string>
+    <string name="deleted_script">Löschtes Script</string>
+    <string name="disable">Inaktivieren</string>
+    <string name="disabled">Inaktiviert</string>
+    <string name="disabled_script">Inaktivierte Scripts</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="edited_script">Bearbeitetes Script</string>
+    <string name="enable">Aktivieren</string>
+    <string name="enabled">Aktiviert</string>
+    <string name="enabled_script">Aktiviertes Script</string>
+    <string name="error_downloading_from">Fehler beim Herunterladen des Scripts von</string>
+    <string name="error_parsing_at">Fehler beim Parsing des Scripts unter</string>
+    <string name="error_saving_script">Fehler beim Speichern des Scripts</string>
+    <string name="error_while_loading">Fehler beim Laden</string>
+    <string name="list_scripts">Scripts auflisten</string>
+    <string name="new_script_id_exists">Der neue Scriptname und der Namensbereich sind bereits vorhanden.</string>
+    <string name="save_script">Script speichern</string>
+    <string name="starting_download_of">Download von</string>
+    <string name="syntax_or_dl_fail">Syntaxfehler oder Abhängigkeitdownload fehlgeschlagen</string>
+</resources>

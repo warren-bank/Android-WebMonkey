@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">קובץ Script חדש נוסף</string>
+    <string name="browse">עיון</string>
+    <string name="delete">מחיקה</string>
+    <string name="deleted_script">קובץ Script שנמחק</string>
+    <string name="disable">השבתה</string>
+    <string name="disabled">מושבת</string>
+    <string name="disabled_script">קובץ Script מושבת</string>
+    <string name="edit">עריכה</string>
+    <string name="edited_script">קובץ Script נערך</string>
+    <string name="enable">הפעלה</string>
+    <string name="enabled">מופעל</string>
+    <string name="enabled_script">קובץ Script מופעל</string>
+    <string name="error_downloading_from">שגיאה בהורדת קובץ Script מתוך</string>
+    <string name="error_parsing_at">שגיאה בניתוח קובץ Script</string>
+    <string name="error_saving_script">שגיאה בשמירת קובץ Script</string>
+    <string name="error_while_loading">שגיאה במהלך טעינת</string>
+    <string name="list_scripts">רשימת קובצי Script</string>
+    <string name="new_script_id_exists">שם קובץ Script חדש ומרחב שמות כבר קיים</string>
+    <string name="save_script">שמירת קובץ Script</string>
+    <string name="starting_download_of">מתחיל הורדה של</string>
+    <string name="syntax_or_dl_fail">שגיאת תחביר או הורדת תלות נכשלה.</string>
+</resources>

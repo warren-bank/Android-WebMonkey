@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added_new_script">Pievienot jaunu skriptu</string>
+    <string name="browse">Pārlūkot</string>
+    <string name="delete">Dzēst</string>
+    <string name="deleted_script">Dzēst skriptu</string>
+    <string name="disable">Atslēgt</string>
+    <string name="disabled">invalīds</string>
+    <string name="disabled_script">Skripts</string>
+    <string name="edit">Rediģēt</string>
+    <string name="edited_script">Rediģētā skrip</string>
+    <string name="enable">Ieslēgt</string>
+    <string name="enabled">ieslēgts</string>
+    <string name="enabled_script">Ieslēgta skrip</string>
+    <string name="error_downloading_from">Kļūda lejupielādējot skriptu no</string>
+    <string name="error_parsing_at">Kļūda analizējot skriptu</string>
+    <string name="error_saving_script">Kļūda saglabājot skriptu</string>
+    <string name="error_while_loading">Kļūda ielādējot</string>
+    <string name="list_scripts">Uzskaitīt skriptus</string>
+    <string name="new_script_id_exists">Jauns skriptu nosaukums un vārdtelpa jau eksistē</string>
+    <string name="save_script">Saglabāt skriptu</string>
+    <string name="starting_download_of">Sākuma lejupielāde</string>
+    <string name="syntax_or_dl_fail">Sintakses kļūda vai atkarības lejupielāde neizdevās</string>
+</resources>
