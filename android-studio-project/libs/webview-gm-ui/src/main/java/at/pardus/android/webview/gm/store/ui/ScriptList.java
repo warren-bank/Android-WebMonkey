@@ -38,17 +38,21 @@ public class ScriptList {
 
   protected ListView scriptList;
 
+  public View getScriptList() {
+    return getScriptList(/* refresh= */ false);
+  }
+
   /**
    * Returns the view listing all installed scripts.
    * 
    * @return the updated list view
    */
-  public View getScriptList() {
-    // TODO separate look (or list) for disabled scripts
-    Script[] scripts = scriptStore.getAll();
-    scriptList.setAdapter(new ArrayAdapter<Script>(activity,
-        R.layout.script_list_item, scripts));
-    scriptList.invalidate();
+  public View getScriptList(boolean refresh) {
+    if (refresh) {
+      Script[] scripts = scriptStore.getAll();
+      scriptList.setAdapter(new ArrayAdapter<Script>(activity, R.layout.script_list_item, scripts));
+      scriptList.invalidate();
+    }
     return scriptList;
   }
 
@@ -63,18 +67,21 @@ public class ScriptList {
     return (ScriptId) scriptList.getItemAtPosition(position);
   }
 
+  public boolean isScriptEnabled(int position) {
+    Script script = (Script) scriptList.getItemAtPosition(position);
+    return ((script != null) && script.isEnabled());
+  }
+
   /**
    * Inflates the ListView from XML and registers its OnItemClickListener and
    * context menu.
    */
   @SuppressLint("InflateParams")
-    private void init() {
-    scriptList = (ListView) activity.getLayoutInflater().inflate(
-        R.layout.script_list, null);
+  private void init() {
+    scriptList = (ListView) activity.getLayoutInflater().inflate(R.layout.script_list, null);
     scriptList.setTextFilterEnabled(true);
     scriptList.setOnItemClickListener(new OnItemClickListener() {
-      public void onItemClick(AdapterView<?> parent, View view,
-          int position, long id) {
+      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         activity.openScriptEditor(getScriptId(position));
       }
     });

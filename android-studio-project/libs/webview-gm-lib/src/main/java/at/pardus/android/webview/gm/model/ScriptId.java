@@ -75,7 +75,15 @@ public class ScriptId {
 
   @Override
   public String toString() {
-    return name + ", " + namespace;
+    StringBuilder sb = new StringBuilder();
+    sb.append(name);
+
+    if ((namespace != null) && !namespace.isEmpty()) {
+      sb.append(", ");
+      sb.append(namespace);
+    }
+
+    return sb.toString();
   }
 
 }

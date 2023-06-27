@@ -57,7 +57,7 @@ public class WebViewGmImpl extends ScriptManagerActivity {
       scriptList = new ScriptList(this, scriptStore);
     }
     setTitle(R.string.app_name);
-    setContentView(scriptList.getScriptList());
+    setContentView(scriptList.getScriptList(/* refresh= */ true));
     placeHistory.push(LIST);
   }
 

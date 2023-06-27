@@ -60,19 +60,25 @@ public abstract class ScriptManagerActivity extends Activity {
   public abstract void openScriptBrowser();
 
   @Override
-  public void onCreateContextMenu(ContextMenu menu, View v,
-      ContextMenuInfo menuInfo) {
+  public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     super.onCreateContextMenu(menu, v, menuInfo);
     if (scriptList != null && v.equals(scriptList.getScriptList())) {
       MenuInflater inflater = getMenuInflater();
       inflater.inflate(R.menu.script_list_menu, menu);
+
+      AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
+      MenuItem hiddenItem = scriptList.isScriptEnabled(info.position)
+        ? menu.findItem(R.id.menu_enable)
+        : menu.findItem(R.id.menu_disable);
+
+      hiddenItem.setEnabled(false);
+      hiddenItem.setVisible(false);
     }
   }
 
   @Override
   public boolean onContextItemSelected(MenuItem item) {
-    AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
-        .getMenuInfo();
+    AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
     ScriptId scriptId = scriptList.getScriptId(info.position);
     if (item.getItemId() == R.id.menu_edit) {
       openScriptEditor(scriptId);

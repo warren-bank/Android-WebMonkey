@@ -36,10 +36,10 @@ public class Script extends ScriptMetadata {
       String[] include, String[] match, String description,
       String downloadurl, String updateurl, String installurl,
       String icon, String runAt, boolean unwrap, String version,
-      ScriptRequire[] requires, ScriptResource[] resources, String content) {
+      ScriptRequire[] requires, ScriptResource[] resources, boolean enabled, String content) {
     super(name, namespace, exclude, include, match, description,
         downloadurl, updateurl, installurl, icon, runAt, unwrap,
-        version, requires, resources);
+        version, requires, resources, enabled);
     this.content = content;
   }
 
@@ -201,7 +201,7 @@ public class Script extends ScriptMetadata {
     }
     return new Script(name, namespace, excludeArr, includeArr, matchArr,
         description, downloadurl, updateurl, installurl, icon, runAt,
-        unwrap, version, requireArr, resourceArr, scriptStr);
+        unwrap, version, requireArr, resourceArr, /* enabled= */ true, scriptStr);
   }
 
   /**
@@ -239,8 +239,7 @@ public class Script extends ScriptMetadata {
    *         successful for all @resource entries.
    * @see <tt><a href="http://wiki.greasespot.net/Metadata_Block">Metadata Block</a></tt>
    */
-  public static ScriptResource downloadResource(String resourceName,
-      String resourceUrl) {
+  public static ScriptResource downloadResource(String resourceName, String resourceUrl) {
     byte[] resourceData = DownloadHelper.downloadBytes(resourceUrl);
 
     if (resourceData == null) {

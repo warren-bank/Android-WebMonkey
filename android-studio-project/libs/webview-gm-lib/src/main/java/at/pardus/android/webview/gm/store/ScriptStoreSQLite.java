@@ -405,16 +405,16 @@ public class ScriptStoreSQLite implements ScriptStore {
      * @param ids
      *            the script IDs to match; an empty array to match none;
      *            null to get all
-     * @param enabled
+     * @param whereEnabled
      *            true to only get enabled scripts; false to only get
      *            disabled scripts; null to get all
      * @return an array of matching script objects; an empty array if none
      *         found
      */
-    public Script[] selectScripts(ScriptId[] ids, Boolean enabled) {
+    public Script[] selectScripts(ScriptId[] ids, Boolean whereEnabled) {
       String selectionStr = null, selectionIdStr = null;
       String[] selectionArgsArr = null, selectionIdArgsArr = null;
-      if (ids != null || enabled != null) {
+      if (ids != null || whereEnabled != null) {
         StringBuilder selection = new StringBuilder();
         List<String> selectionArgs = new ArrayList<String>();
         if (ids != null) {
@@ -426,12 +426,12 @@ public class ScriptStoreSQLite implements ScriptStore {
           selectionIdArgsArr = selectionArgs
               .toArray(new String[selectionArgs.size()]);
         }
-        if (enabled != null) {
+        if (whereEnabled != null) {
           if (ids != null) {
             selection.insert(0, "(").append(")").append(" AND ");
           }
           selection.append(COL_ENABLED).append(" = ?");
-          selectionArgs.add((enabled) ? "1" : "0");
+          selectionArgs.add((whereEnabled) ? "1" : "0");
         }
         selectionStr = selection.toString();
         selectionArgsArr = selectionArgs
@@ -447,8 +447,8 @@ public class ScriptStoreSQLite implements ScriptStore {
           TBL_REQUIRE, selectionIdStr, selectionIdArgsArr);
       Map<ScriptId, List<ScriptResource>> resources = selectResources(
           TBL_RESOURCE, selectionIdStr, selectionIdArgsArr);
-      Cursor cursor = db.query(TBL_SCRIPT, COLS_SCRIPT, selectionStr,
-          selectionArgsArr, null, null, null);
+      String orderBy = COL_ENABLED + " DESC, " + COL_NAME + " ASC";
+      Cursor cursor = db.query(TBL_SCRIPT, COLS_SCRIPT, selectionStr, selectionArgsArr, /* groupBy= */ null, /* having= */ null, orderBy);
       Script[] scriptsArr = new Script[cursor.getCount()];
       int i = 0;
       while (cursor.moveToNext()) {
@@ -473,16 +473,19 @@ public class ScriptStoreSQLite implements ScriptStore {
         int unwrap = cursor.getInt(8);
         String version = cursor.getString(9);
         List<ScriptRequire> require = requires.get(id);
-        ScriptRequire[] requireArr = (require == null) ? null : require
-            .toArray(new ScriptRequire[require.size()]);
+        ScriptRequire[] requireArr = (require == null)
+            ? null
+            : require.toArray(new ScriptRequire[require.size()]);
         List<ScriptResource> resource = resources.get(id);
-        ScriptResource[] resourceArr = (resource == null) ? null
+        ScriptResource[] resourceArr = (resource == null)
+            ? null
             : resource.toArray(new ScriptResource[resource.size()]);
         String content = cursor.getString(10);
+        int enabled = cursor.getInt(11);
         scriptsArr[i] = new Script(name, namespace, excludeArr,
             includeArr, matchArr, description, downloadurl,
-            updateurl, installurl, icon, runat, unwrap == 1,
-            version, requireArr, resourceArr, content);
+            updateurl, installurl, icon, runat, (unwrap == 1),
+            version, requireArr, resourceArr, (enabled == 1), content);
         i++;
       }
       cursor.close();
@@ -759,7 +762,7 @@ public class ScriptStoreSQLite implements ScriptStore {
       fieldsScript.put(COL_UNWRAP, script.isUnwrap());
       fieldsScript.put(COL_VERSION, script.getVersion());
       fieldsScript.put(COL_CONTENT, script.getContent());
-      fieldsScript.put(COL_ENABLED, true);
+      fieldsScript.put(COL_ENABLED, script.isEnabled());
       db.beginTransaction();
       try {
         if (db.insert(TBL_SCRIPT, null, fieldsScript) == -1) {

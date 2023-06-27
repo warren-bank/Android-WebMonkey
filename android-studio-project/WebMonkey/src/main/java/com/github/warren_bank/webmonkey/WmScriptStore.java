@@ -40,6 +40,7 @@ public class WmScriptStore extends ScriptStoreSQLite {
         /* version     = */ old.getVersion(),
         /* requires    = */ old.getRequires(),
         /* resources   = */ old.getResources(),
+        /* enabled     = */ old.isEnabled(),
         /* content     = */ (scripts + old.getContent())
       );
     }

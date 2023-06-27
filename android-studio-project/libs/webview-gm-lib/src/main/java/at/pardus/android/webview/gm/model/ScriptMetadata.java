@@ -39,19 +39,21 @@ public class ScriptMetadata extends ScriptCriteria {
 
   private String runAt;
 
+  private boolean unwrap;
+
+  private String version;
+
   private ScriptRequire[] requires;
 
   private ScriptResource[] resources;
 
-  private boolean unwrap;
-
-  private String version;
+  private boolean enabled;
 
   public ScriptMetadata(String name, String namespace, String[] exclude,
       String[] include, String[] match, String description,
       String downloadurl, String updateurl, String installurl,
       String icon, String runAt, boolean unwrap, String version,
-      ScriptRequire[] requires, ScriptResource[] resources) {
+      ScriptRequire[] requires, ScriptResource[] resources, boolean enabled) {
     super(name, namespace, exclude, include, match);
     this.description = description;
     this.downloadurl = downloadurl;
@@ -63,6 +65,7 @@ public class ScriptMetadata extends ScriptCriteria {
     this.version = version;
     this.requires = requires;
     this.resources = resources;
+    this.enabled = enabled;
   }
 
   public String getDescription() {
@@ -89,14 +92,6 @@ public class ScriptMetadata extends ScriptCriteria {
     return runAt;
   }
 
-  public ScriptRequire[] getRequires() {
-    return requires;
-  }
-
-  public ScriptResource[] getResources() {
-    return resources;
-  }
-
   public boolean isUnwrap() {
     return unwrap;
   }
@@ -105,9 +100,32 @@ public class ScriptMetadata extends ScriptCriteria {
     return version;
   }
 
+  public ScriptRequire[] getRequires() {
+    return requires;
+  }
+
+  public ScriptResource[] getResources() {
+    return resources;
+  }
+
+  public boolean isEnabled() {
+    return enabled;
+  }
+
   @Override
   public String toString() {
-    return super.toString() + ": " + description;
+    StringBuilder sb = new StringBuilder();
+
+    sb.append(enabled ? "[enabled]" : "[disabled]");
+    sb.append(" ");
+    sb.append(super.toString());
+
+    if ((description != null) && !description.isEmpty()) {
+      sb.append(": ");
+      sb.append(description);
+    }
+
+    return sb.toString();
   }
 
 }
