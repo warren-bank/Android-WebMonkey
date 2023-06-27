@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="save_script">Save Script</string>
-    <string name="browse">Browse</string>
-    <string name="list_scripts">List Scripts</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
-    <string name="disable">Disable</string>
-    <string name="enable">Enable</string>
-    <string name="deleted_script">Deleted script</string>
-    <string name="disabled_script">Disabled script</string>
-    <string name="enabled_script">Enabled script</string>
-    <string name="edited_script">Edited script</string>
     <string name="added_new_script">Added new script</string>
-    <string name="error_saving_script">Error saving script</string>
-    <string name="syntax_or_dl_fail">Syntax error or dependency download failed</string>
-    <string name="new_script_id_exists">New script name/namespace already exists</string>
-    <string name="error_while_loading">Error while loading</string>
-    <string name="starting_download_of">Starting download of</string>
+    <string name="browse">Browse</string>
+    <string name="delete">Delete</string>
+    <string name="deleted_script">Deleted script</string>
+    <string name="disable">Disable</string>
+    <string name="disabled">disabled</string>
+    <string name="disabled_script">Disabled script</string>
+    <string name="edit">Edit</string>
+    <string name="edited_script">Edited script</string>
+    <string name="enable">Enable</string>
+    <string name="enabled">enabled</string>
+    <string name="enabled_script">Enabled script</string>
     <string name="error_downloading_from">Error downloading script from</string>
     <string name="error_parsing_at">Error parsing script at</string>
+    <string name="error_saving_script">Error saving script</string>
+    <string name="error_while_loading">Error while loading</string>
+    <string name="list_scripts">List Scripts</string>
+    <string name="new_script_id_exists">New script name and namespace already exists</string>
+    <string name="save_script">Save Script</string>
+    <string name="starting_download_of">Starting download of</string>
+    <string name="syntax_or_dl_fail">Syntax error or dependency download failed</string>
 
 </resources>

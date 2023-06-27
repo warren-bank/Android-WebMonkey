@@ -27,6 +27,9 @@ public class ScriptMetadata extends ScriptCriteria {
 
   public static final String RUNATEND = "document-end";
 
+  public static String DISABLED = "disabled";
+  public static String ENABLED  = "enabled";
+
   private String description;
 
   private String downloadurl;
@@ -116,8 +119,9 @@ public class ScriptMetadata extends ScriptCriteria {
   public String toString() {
     StringBuilder sb = new StringBuilder();
 
-    sb.append(enabled ? "[enabled]" : "[disabled]");
-    sb.append(" ");
+    sb.append("[");
+    sb.append(enabled ? ENABLED : DISABLED);
+    sb.append("] ");
     sb.append(super.toString());
 
     if ((description != null) && !description.isEmpty()) {

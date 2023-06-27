@@ -17,6 +17,7 @@
 package at.pardus.android.webview.gm.store.ui;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuInflater;
@@ -26,6 +27,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
 import at.pardus.android.webview.gm.model.ScriptId;
+import at.pardus.android.webview.gm.model.ScriptMetadata;
 import at.pardus.android.webview.gm.store.ScriptStoreSQLite;
 
 /**
@@ -58,6 +60,13 @@ public abstract class ScriptManagerActivity extends Activity {
    * Displays the browser configured to handle user script downloads.
    */
   public abstract void openScriptBrowser();
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    ScriptMetadata.DISABLED = getString(R.string.disabled);
+    ScriptMetadata.ENABLED  = getString(R.string.enabled);
+  }
 
   @Override
   public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
