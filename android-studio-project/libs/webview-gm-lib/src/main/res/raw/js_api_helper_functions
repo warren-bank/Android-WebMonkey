@@ -53,84 +53,112 @@ var GM_addStyle = function(css) {
   return null;
 };
 
-var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
-  if (!document.body) {
-    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {
-      new MutationObserver(function(mutations, observer) {
-        if (document.body) {
-          observer.disconnect();
-          GM_registerMenuCommand(caption, commandFunc, accessKey);
-        }
-      }).observe(document.documentElement, {childList: true});
-    }
-    else {
-      GM_notImplemented.bind(null, 'GM_registerMenuCommand');
-    }
-    return null;
+var _GM_getMenuCommand_menuId = function() {
+  return 'gm-registered-menu';
+};
+
+var _GM_addMenuCommand_menu = function(menu_container_id) {
+  var css = [
+    'body > ul#' + menu_container_id + '{',
+    '  display: block;',
+    '  position: sticky;',
+    '  z-index: 99999;',
+    '  top: 0px;',
+    '  width: 100%;',
+    '  margin: 0px;',
+    '  padding: 0px;',
+    '  border: 1px solid #e7e7e7;',
+    '  border-collapse: collapse;',
+    '  background-color: #f3f3f3;',
+    '  list-style-type: none;',
+    '}',
+    'body > ul#' + menu_container_id + ' > li {',
+    '  display: inline-block;',
+    '  color: #666666;',
+    '  border: 1px solid #e7e7e7;',
+    '  border-collapse: collapse;',
+    '  margin: 0px;',
+    '  padding: 1em;',
+    '  font-family: sans-serif;',
+    '  font-size: 14px;',
+    '  cursor: pointer;',
+    '}',
+    'body > ul#' + menu_container_id + ' > li:hover {',
+    '  background-color: #e3e3e3;',
+    '}'
+  ];
+
+  css = css.join("\n");
+  GM_addStyle(css);
+  css = null;
+
+  var menu = document.createElement('ul');
+  menu.setAttribute('id', menu_container_id);
+  menu.setAttribute('last-menu-command-index', '0');
+  if (document.body.childNodes.length) {
+    document.body.insertBefore(menu, document.body.childNodes[0]);
   }
-  var menu_container_id = 'gm-registered-menu';
-  var menu = document.getElementById(menu_container_id);
-  if (!menu) {
-    menu = document.createElement('ul');
-    menu.setAttribute('id', menu_container_id);
-    menu.setAttribute('last-menu-command-index', '0');
-    if (document.body.childNodes.length) {
-      document.body.insertBefore(menu, document.body.childNodes[0]);
-    }
-    else {
-      document.body.appendChild(menu);
-    }
-
-    // ---
-    // CSS
-    // ---
-
-    var css = [
-      'body > ul#' + menu_container_id + '{',
-      '  display: block;',
-      '  position: sticky;',
-      '  top: 0px;',
-      '  width: 100%;',
-      '  margin: 0px;',
-      '  padding: 0px;',
-      '  border: 1px solid #e7e7e7;',
-      '  border-collapse: collapse;',
-      '  background-color: #f3f3f3;',
-      '  list-style-type: none;',
-      '}',
-      'body > ul#' + menu_container_id + ' > li {',
-      '  display: inline-block;',
-      '  color: #666666;',
-      '  border: 1px solid #e7e7e7;',
-      '  border-collapse: collapse;',
-      '  margin: 0px;',
-      '  padding: 1em;',
-      '  font-family: sans-serif;',
-      '  font-size: 16px;',
-      '  cursor: pointer;',
-      '}',
-      'body > ul#' + menu_container_id + ' > li:hover {',
-      '  background-color: #e3e3e3;',
-      '}'
-    ];
-
-    css = css.join("\n");
-    GM_addStyle(css);
-    css = null;
+  else {
+    document.body.appendChild(menu);
   }
-  var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;
-  var menuCmdId = 'menu_command_id_' + next_menu_command_index;
-  var menuItem = document.createElement('li');
-  menuItem.setAttribute('id', menuCmdId);
-  menuItem.textContent = caption;
-  menuItem.addEventListener('click', commandFunc, true);
-  menu.appendChild(menuItem);
-  menu.setAttribute('last-menu-command-index', ('' + next_menu_command_index));
+  return menu;
+};
+
+var _GM_addMenuCommand_menuitem = function(menu, caption, commandFunc) {
+  var menutitle = caption.replace(/["]/g, '');
+  var menuitem  = menu.querySelector(':scope > [title="' + menutitle + '"]');
+  var menuCmdId;
+  if (menuitem) {
+    menuCmdId = menuItem.getAttribute('id');
+  }
+  else {
+    var next_menu_command_index = (parseInt(menu.getAttribute('last-menu-command-index'), 10) || 0) + 1;
+    menuCmdId = 'menu_command_id_' + next_menu_command_index;
+
+    menuItem = document.createElement('li');
+    menuItem.setAttribute('id', menuCmdId);
+    menuItem.setAttribute('title', menutitle);
+    menuItem.textContent = caption;
+    menuItem.addEventListener('click', commandFunc, true);
+
+    menu.appendChild(menuItem);
+    menu.setAttribute('last-menu-command-index', ('' + next_menu_command_index));
+  }
   return menuCmdId;
 };
 
+var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
+  if (!document.body) {
+    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {
+      return new Promise(function(resolve, reject) {
+        new MutationObserver(function(mutations, observer) {
+          if (document.body) {
+            observer.disconnect();
+            resolve(
+              GM_registerMenuCommand(caption, commandFunc, accessKey)
+            );
+          }
+        }).observe(document.documentElement, {childList: true});
+      });
+    }
+    else {
+      return GM_notImplemented.bind(null, 'GM_registerMenuCommand');
+    }
+  }
+  var menu_container_id = _GM_getMenuCommand_menuId();
+  var menu = document.getElementById(menu_container_id);
+  if (!menu) {
+    menu = _GM_addMenuCommand_menu(menu_container_id);
+    _GM_addMenuCommand_menuitem(menu, 'Close', function() {
+      menu.style.display = 'none';
+    });
+  }
+  menu.style.display = 'block';
+  return _GM_addMenuCommand_menuitem(menu, caption, commandFunc);
+};
+
 var GM_unregisterMenuCommand = function(menuCmdId) {
-  var menu_container_id = 'gm-registered-menu';
+  var menu_container_id = _GM_getMenuCommand_menuId();
   var menuItem = document.querySelector('body > #' + menu_container_id + ' > #' + menuCmdId);
   if (menuItem) {
     menuItem.parentNode.removeChild(menuItem);
