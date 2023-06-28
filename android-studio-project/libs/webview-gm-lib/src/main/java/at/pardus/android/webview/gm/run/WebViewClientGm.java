@@ -201,14 +201,20 @@ public class WebViewClientGm extends WebViewClient {
         sb.append(").split(\",\"); };");
         sb.append("\n");
 
-        sb.append("var GM_getValue = function(name, defaultValue) { return ");
+        sb.append("var GM_getValue = function(name, defaultValue) { ");
+        sb.append("if (defaultValue === undefined) {defaultValue = null;} ");
+        sb.append("defaultValue = JSON.stringify(defaultValue); ");
+        sb.append("return JSON.parse(");
         sb.append(jsBridgeName);
         sb.append(".getValue(");
         sb.append(defaultSignature);
-        sb.append(", name, defaultValue); };");
+        sb.append(", name, defaultValue)");
+        sb.append("); };");
         sb.append("\n");
 
         sb.append("var GM_setValue = function(name, value) { ");
+        sb.append("if (value === undefined) {value = null;} ");
+        sb.append("value = JSON.stringify(value); ");
         sb.append(jsBridgeName);
         sb.append(".setValue(");
         sb.append(defaultSignature);
