@@ -2,6 +2,7 @@ var GM_addElement = function() {
   try {
     var args = Array.prototype.slice.call(arguments);
     var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];
+    var special_attr_keys = ['innerHTML', 'innerText', 'textContent'];
     var parent_node, tag_name, attributes;
     if (args.length === 1) {
       tag_name = args[0];
@@ -30,7 +31,12 @@ var GM_addElement = function() {
     for (var i=0; i < attr_keys.length; i++) {
       attr_key = attr_keys[i];
       attr_val = attributes[attr_key];
-      element.setAttribute(attr_key, attr_val);
+      if (special_attr_keys.indexOf(attr_key) >= 0) {
+        element[attr_key] = attr_val;
+      }
+      else {
+        element.setAttribute(attr_key, attr_val);
+      }
     }
     parent_node.appendChild(element);
     return element;
