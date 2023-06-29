@@ -22,7 +22,10 @@ var GM_addElement = function() {
     if (!attributes || (typeof attributes !== 'object')) {
       attributes = {};
     }
-    if (!parent_node || !(parent_node instanceof HTMLElement)) {
+    if (!parent_node || !(
+         (window.HTMLElement      && (parent_node instanceof window.HTMLElement))
+      || (window.DocumentFragment && (parent_node instanceof window.DocumentFragment))
+    )) {
       parent_node = (head_elements.indexOf(tag_name.toLowerCase()) >= 0) ? document.head : document.body;
     }
     var element = document.createElement(tag_name);
