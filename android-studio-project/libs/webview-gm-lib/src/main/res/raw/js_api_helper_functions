@@ -2,7 +2,7 @@ var GM_addElement = function() {
   try {
     var args = Array.prototype.slice.call(arguments);
     var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];
-    var special_attr_keys = ['innerHTML', 'innerText', 'textContent'];
+    var special_attr_keys = ['className', 'innerHTML', 'innerText', 'textContent'];
     var parent_node, tag_name, attributes;
     if (args.length === 1) {
       tag_name = args[0];
