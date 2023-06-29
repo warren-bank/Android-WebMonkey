@@ -17,17 +17,24 @@
 package at.pardus.android.webview.gm.run;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import java.util.UUID;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import at.pardus.android.webview.gm.R;
 import at.pardus.android.webview.gm.model.Script;
 import at.pardus.android.webview.gm.model.ScriptRequire;
+import at.pardus.android.webview.gm.model.ScriptResource;
 import at.pardus.android.webview.gm.store.ScriptStore;
 import at.pardus.android.webview.gm.util.ResourceHelper;
 
@@ -65,10 +72,61 @@ public class WebViewClientGm extends WebViewClient {
       + "  \"delete\": "                      + "GM_notImplemented.bind(null, 'GM_cookie.delete')\n"
       + "};\n";
 
+  private static final JSONArray getJsonStringArray(String[] values) {
+    try {
+      if ((values == null) || (values.length == 0))
+        throw new JSONException("");
+
+      return new JSONArray(values);
+    }
+    catch (JSONException e) {
+      return new JSONArray();
+    }
+  }
+
+  private static final JSONArray getJsonScriptResources(ScriptResource[] resources) {
+    JSONArray jsonResources = new JSONArray();
+
+    if ((resources != null) && (resources.length > 0)) {
+      for (ScriptResource resource : resources) {
+        try {
+          JSONObject jsonRes = new JSONObject();
+
+          jsonRes.put(
+            "name",
+            resource.getName()
+          );
+
+          jsonRes.put(
+            "url",
+            resource.getUrl()
+          );
+
+          jsonResources.put(jsonRes);
+        }
+        catch (JSONException e) {}
+      }
+    }
+
+    return jsonResources;
+  }
+
+  private static String APP_PACKAGE_NAME     = "";
+  private static String APP_VERSION_NAME     = "";
   private static String JSAPIHELPERFUNCTIONS = "";
 
-  protected static void setJsApiHelperFunctions(Context context) {
-    if ((JSAPIHELPERFUNCTIONS == null) || JSAPIHELPERFUNCTIONS.isEmpty()) {
+  protected static void initStaticResources(Context context) {
+    if (TextUtils.isEmpty(APP_PACKAGE_NAME)) {
+      try {
+        APP_PACKAGE_NAME = context.getPackageName();
+
+        PackageInfo info = context.getPackageManager().getPackageInfo(APP_PACKAGE_NAME, 0);
+        APP_VERSION_NAME = info.versionName;
+      }
+      catch(Exception e) {}
+    }
+
+    if (TextUtils.isEmpty(JSAPIHELPERFUNCTIONS)) {
       try {
         JSAPIHELPERFUNCTIONS = ResourceHelper.getRawStringResource(context, R.raw.js_api_helper_functions);
       }
@@ -94,8 +152,7 @@ public class WebViewClientGm extends WebViewClient {
    * @param secret
    *            a random string that is added to calls of the GM API
    */
-  public WebViewClientGm(ScriptStore scriptStore, String jsBridgeName,
-      String secret) {
+  public WebViewClientGm(ScriptStore scriptStore, String jsBridgeName, String secret) {
     this.scriptStore = scriptStore;
     this.jsBridgeName = jsBridgeName;
     this.secret = secret;
@@ -126,10 +183,10 @@ public class WebViewClientGm extends WebViewClient {
   protected void runMatchingScripts(WebView view, String url, boolean pageFinished, String jsBeforeScript, String jsAfterScript) {
     String jsCode = getMatchingScripts(url, pageFinished, jsBeforeScript, jsAfterScript);
 
-    if ((jsCode == null) || jsCode.isEmpty())
+    if (TextUtils.isEmpty(jsCode))
       return;
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+    if (Build.VERSION.SDK_INT >= 19)
       view.evaluateJavascript(jsCode, null);
     else
       view.loadUrl("javascript:\n" + jsCode);
@@ -193,6 +250,103 @@ public class WebViewClientGm extends WebViewClient {
         // -------------------------
         // Greasemonkey API (legacy)
         // -------------------------
+
+        sb.append("var GM_info = ");
+        try {
+          JSONObject jsonInfo     = new JSONObject();
+          JSONObject jsonPlatform = new JSONObject();
+          JSONObject jsonScript   = new JSONObject();
+
+          jsonInfo.put(
+            "uuid",
+            String.valueOf(script.hashCode())
+          );
+          jsonInfo.put(
+            "scriptMetaStr",
+            script.getMetaStr()
+          );
+          jsonInfo.put(
+            "scriptWillUpdate",
+            (script.isEnabled() && !TextUtils.isEmpty(script.getUpdateurl()))
+          );
+          jsonInfo.put(
+            "scriptHandler",
+            APP_PACKAGE_NAME
+          );
+          jsonInfo.put(
+            "version",
+            APP_VERSION_NAME
+          );
+          jsonInfo.put(
+            "platform",
+            jsonPlatform
+          );
+          jsonInfo.put(
+            "script",
+            jsonScript
+          );
+
+          jsonPlatform.put(
+            "arch",
+            Build.CPU_ABI
+          );
+          jsonPlatform.put(
+            "browserName",
+            "WebView"
+          );
+          jsonPlatform.put(
+            "browserVersion",
+            ""
+          );
+          jsonPlatform.put(
+            "os",
+            "android"
+          );
+
+          jsonScript.put(
+            "description",
+            script.getDescription()
+          );
+          jsonScript.put(
+            "excludes",
+            getJsonStringArray(script.getExclude())
+          );
+          jsonScript.put(
+            "includes",
+            getJsonStringArray(script.getInclude())
+          );
+          jsonScript.put(
+            "matches",
+            getJsonStringArray(script.getMatch())
+          );
+          jsonScript.put(
+            "name",
+            script.getName()
+          );
+          jsonScript.put(
+            "namespace",
+            script.getNamespace()
+          );
+          jsonScript.put(
+            "resources",
+            getJsonScriptResources(script.getResources())
+          );
+          jsonScript.put(
+            "runAt",
+            script.getRunAt()
+          );
+          jsonScript.put(
+            "version",
+            script.getVersion()
+          );
+
+          sb.append(jsonInfo.toString());
+        }
+        catch (JSONException e) {
+          sb.append("{}");
+        }
+        sb.append(";");
+        sb.append("\n");
 
         sb.append("var GM_listValues = function() { return ");
         sb.append(jsBridgeName);

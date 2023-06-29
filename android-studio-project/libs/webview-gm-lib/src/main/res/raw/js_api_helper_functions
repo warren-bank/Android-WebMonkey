@@ -261,6 +261,7 @@ var GM = {};
   }
 })({
   'fetch': GM_fetch,
+  'info':  GM_info,
   'log':   GM_log
 });
 
@@ -311,7 +312,6 @@ var GM = {};
   'download':                  GM_download,
   'getTab':                    GM_getTab,
   'getTabs':                   GM_getTabs,
-  'info':                      GM_info,
   'notification':              GM_notification,
   'openInTab':                 GM_openInTab,
   'removeValueChangeListener': GM_removeValueChangeListener,

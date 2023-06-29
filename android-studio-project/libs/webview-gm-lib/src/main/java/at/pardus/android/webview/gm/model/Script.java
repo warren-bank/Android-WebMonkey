@@ -16,6 +16,9 @@
 
 package at.pardus.android.webview.gm.model;
 
+import android.text.TextUtils;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -31,6 +34,7 @@ import at.pardus.android.webview.gm.util.DownloadHelper;
 public class Script extends ScriptMetadata {
 
   private String content;
+  private String metaStr;
 
   public Script(String name, String namespace, String[] exclude,
       String[] include, String[] match, String description,
@@ -41,10 +45,21 @@ public class Script extends ScriptMetadata {
         downloadurl, updateurl, installurl, icon, runAt, unwrap,
         version, requires, resources, enabled);
     this.content = content;
+    try {
+      ArrayList<String> metaBlock = getMetaBlock(content);
+      this.metaStr = TextUtils.join("\n", metaBlock);
+    }
+    catch(IllegalStateException e) {
+      this.metaStr = "";
+    }
   }
 
   public String getContent() {
     return content;
+  }
+
+  public String getMetaStr() {
+    return metaStr;
   }
 
   /**
@@ -91,92 +106,79 @@ public class Script extends ScriptMetadata {
     Set<ScriptRequire> requires = new HashSet<ScriptRequire>();
     Set<ScriptResource> resources = new HashSet<ScriptResource>();
 
-    Pattern pattern = Pattern.compile("// @(\\S+)(?:\\s+(.*))?");
-    Scanner scanner = new Scanner(scriptStr);
-    boolean inMetaBlock = false;
-    boolean metaBlockEnded = false;
-    while (scanner.hasNextLine()) {
-      String line = scanner.nextLine();
-      if (!inMetaBlock) {
-        if (line.startsWith("// ==UserScript==")) {
-          inMetaBlock = true;
-        }
-        continue;
-      }
-      if (line.startsWith("// ==/UserScript==")) {
-        metaBlockEnded = true;
-        break;
-      }
-      line = line.trim();
-      Matcher matcher = pattern.matcher(line);
-      if (matcher.matches()) {
-        String propertyName = matcher.group(1);
-        String propertyValue = matcher.group(2);
-        if (propertyValue != null && propertyValue.equals("")) {
-          propertyValue = null;
-        }
-        if (propertyValue != null) {
-          if (propertyName.equals("name")) {
-            name = propertyValue;
-          } else if (propertyName.equals("namespace")) {
-            namespace = propertyValue;
-          } else if (propertyName.equals("description")) {
-            description = propertyValue;
-          } else if (propertyName.equals("downloadURL")) {
-            downloadurl = propertyValue;
-          } else if (propertyName.equals("updateURL")) {
-            updateurl = propertyValue;
-          } else if (propertyName.equals("installURL")) {
-            installurl = propertyValue;
-          } else if (propertyName.equals("icon")) {
-            icon = DownloadHelper.resolveUrl(propertyValue, url);
-          } else if (propertyName.equals("run-at")) {
-            if (propertyValue.equals(RUNATSTART)
-                || propertyValue.equals(RUNATEND)) {
-              runAt = propertyValue;
+    try {
+      ArrayList<String> metaBlock = getMetaBlock(scriptStr);
+
+      Pattern pattern = Pattern.compile("// @(\\S+)(?:\\s+(.*))?");
+      for (String line : metaBlock) {
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.matches()) {
+          String propertyName = matcher.group(1);
+          String propertyValue = matcher.group(2);
+          if (propertyValue != null && propertyValue.equals("")) {
+            propertyValue = null;
+          }
+          if (propertyValue != null) {
+            if (propertyName.equals("name")) {
+              name = propertyValue;
+            } else if (propertyName.equals("namespace")) {
+              namespace = propertyValue;
+            } else if (propertyName.equals("description")) {
+              description = propertyValue;
+            } else if (propertyName.equals("downloadURL")) {
+              downloadurl = propertyValue;
+            } else if (propertyName.equals("updateURL")) {
+              updateurl = propertyValue;
+            } else if (propertyName.equals("installURL")) {
+              installurl = propertyValue;
+            } else if (propertyName.equals("icon")) {
+              icon = DownloadHelper.resolveUrl(propertyValue, url);
+            } else if (propertyName.equals("run-at")) {
+              if (propertyValue.equals(RUNATSTART) || propertyValue.equals(RUNATEND)) {
+                runAt = propertyValue;
+              }
+            } else if (propertyName.equals("version")) {
+              version = propertyValue;
+            } else if (propertyName.equals("require")) {
+              ScriptRequire require = downloadRequire(
+                DownloadHelper.resolveUrl(propertyValue, url)
+              );
+              if (require == null) {
+                return null;
+              }
+              requires.add(require);
+            } else if (propertyName.equals("resource")) {
+              Pattern resourcePattern = Pattern.compile("(\\S+)\\s+(.*)");
+              Matcher resourceMatcher = resourcePattern.matcher(propertyValue);
+              if (!resourceMatcher.matches()) {
+                return null;
+              }
+              ScriptResource resource = downloadResource(
+                resourceMatcher.group(1),
+                DownloadHelper.resolveUrl(resourceMatcher.group(2), url)
+              );
+              if (resource == null) {
+                return null;
+              }
+              resources.add(resource);
+            } else if (propertyName.equals("exclude")) {
+              exclude.add(propertyValue);
+            } else if (propertyName.equals("include")) {
+              include.add(propertyValue);
+            } else if (propertyName.equals("match")) {
+              match.add(propertyValue);
             }
-          } else if (propertyName.equals("version")) {
-            version = propertyValue;
-          } else if (propertyName.equals("require")) {
-            ScriptRequire require = downloadRequire(
-              DownloadHelper.resolveUrl(propertyValue, url)
-            );
-            if (require == null) {
-              return null;
-            }
-            requires.add(require);
-          } else if (propertyName.equals("resource")) {
-            Pattern resourcePattern = Pattern
-                .compile("(\\S+)\\s+(.*)");
-            Matcher resourceMatcher = resourcePattern
-                .matcher(propertyValue);
-            if (!resourceMatcher.matches()) {
-              return null;
-            }
-            ScriptResource resource = downloadResource(
-              resourceMatcher.group(1),
-              DownloadHelper.resolveUrl(resourceMatcher.group(2), url)
-            );
-            if (resource == null) {
-              return null;
-            }
-            resources.add(resource);
-          } else if (propertyName.equals("exclude")) {
-            exclude.add(propertyValue);
-          } else if (propertyName.equals("include")) {
-            include.add(propertyValue);
-          } else if (propertyName.equals("match")) {
-            match.add(propertyValue);
+          }
+          if (propertyName.equals("unwrap")) {
+            unwrap = true;
           }
         }
-        if (propertyName.equals("unwrap")) {
-          unwrap = true;
-        }
       }
     }
-    if (!metaBlockEnded) {
+    catch(IllegalStateException e) {
       return null;
     }
+
     if (name == null || namespace == null) {
       return null;
     }
@@ -187,8 +189,7 @@ public class Script extends ScriptMetadata {
       requireArr = requires.toArray(new ScriptRequire[requires.size()]);
     }
     if (resources.size() > 0) {
-      resourceArr = resources
-          .toArray(new ScriptResource[resources.size()]);
+      resourceArr = resources.toArray(new ScriptResource[resources.size()]);
     }
     if (exclude.size() > 0) {
       excludeArr = exclude.toArray(new String[exclude.size()]);
@@ -202,6 +203,44 @@ public class Script extends ScriptMetadata {
     return new Script(name, namespace, excludeArr, includeArr, matchArr,
         description, downloadurl, updateurl, installurl, icon, runAt,
         unwrap, version, requireArr, resourceArr, /* enabled= */ true, scriptStr);
+  }
+
+  public static ArrayList<String> getMetaBlock(String scriptStr) throws IllegalStateException {
+    Scanner scanner = new Scanner(scriptStr);
+    boolean inMetaBlock = false;
+    boolean metaBlockEnded = false;
+    ArrayList<String> lines = new ArrayList<String>();
+    while (scanner.hasNextLine()) {
+      String line = scanner.nextLine();
+      if (!inMetaBlock) {
+        if (line.startsWith("// ==UserScript==")) {
+          inMetaBlock = true;
+        }
+        continue;
+      }
+      if (line.startsWith("// ==/UserScript==")) {
+        metaBlockEnded = true;
+        break;
+      }
+      line = line.trim();
+      if (!TextUtils.isEmpty(line)) {
+        lines.add(line);
+      }
+    }
+    try {
+      scanner.close();
+    }
+    catch(IllegalStateException e) {}
+    if (!inMetaBlock) {
+      throw new IllegalStateException("MetaBlock not found");
+    }
+    if (!metaBlockEnded) {
+      throw new IllegalStateException("MetaBlock not terminated");
+    }
+    if (lines.isEmpty()) {
+      throw new IllegalStateException("MetaBlock is empty");
+    }
+    return lines;
   }
 
   /**

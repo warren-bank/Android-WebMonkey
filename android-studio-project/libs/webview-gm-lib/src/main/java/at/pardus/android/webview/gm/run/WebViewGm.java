@@ -101,7 +101,7 @@ public class WebViewGm extends WebView {
     WebSettings settings = getSettings();
     settings.setJavaScriptEnabled(true);
 
-    WebViewClientGm.setJsApiHelperFunctions(context);
+    WebViewClientGm.initStaticResources(context);
     webViewClient = new WebViewClientGm(scriptStore, JSBRIDGENAME, generateSecret());
     setWebViewClient(webViewClient);
   }
