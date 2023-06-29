@@ -31,6 +31,7 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
     * `GM_addElement`
     * `GM_fetch`
       - drop-in replacement for `window.fetch` that uses `GM_xmlhttpRequest` to make network requests
+    * `GM_info`
     * `GM_registerMenuCommand`
     * `GM_unregisterMenuCommand`
   - [GM 4](https://www.greasespot.net/2017/09/greasemonkey-4-for-script-authors.html):
@@ -41,6 +42,7 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
     * `GM.getResourceText`
     * `GM.getResourceUrl`
     * `GM.getValue`
+    * `GM.info`
     * `GM.listValues`
     * `GM.log`
     * `GM.registerMenuCommand`
