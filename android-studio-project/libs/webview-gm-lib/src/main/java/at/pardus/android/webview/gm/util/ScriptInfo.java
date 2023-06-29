@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.text.TextUtils;
+import android.webkit.WebSettings;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,6 +56,7 @@ public class ScriptInfo {
 
   private static String APP_PACKAGE_NAME = "";
   private static String APP_VERSION_NAME = "";
+  private static String WEBKIT_USERAGENT = "";
 
   public static void initStaticResources(Context context) {
     if (TextUtils.isEmpty(APP_PACKAGE_NAME)) {
@@ -63,6 +65,10 @@ public class ScriptInfo {
 
         PackageInfo info = context.getPackageManager().getPackageInfo(APP_PACKAGE_NAME, 0);
         APP_VERSION_NAME = info.versionName;
+
+        WEBKIT_USERAGENT = (Build.VERSION.SDK_INT >= 17)
+          ? WebSettings.getDefaultUserAgent(context)
+          : "";
       }
       catch(Exception e) {}
     }
@@ -113,7 +119,7 @@ public class ScriptInfo {
       );
       jsonPlatform.put(
         "browserVersion",
-        ""
+        WEBKIT_USERAGENT
       );
       jsonPlatform.put(
         "os",
