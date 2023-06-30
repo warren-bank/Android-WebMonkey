@@ -1,0 +1,340 @@
+--------------------------------------------------------------------------------
+
+branch: 'v01'
+  - version: 1.x
+  - DOES support closure
+  - does NOT support sandbox
+
+branch: 'v02'
+  - version: 2.x
+  - includes potentially breaking changes
+    to add support for a sandbox
+
+-------------------------------------------------------------------------------- v02: design
+
+Java:
+=====
+
+boolean useJsClosure = script.useJsClosure();
+boolean useJsSandbox = script.useJsSandbox();
+
+JS (!useJsClosure):
+==================
+
+// userscript
+
+JS (useJsClosure):
+==================
+
+(function(unsafeWindow, useSandbox){
+  useSandbox = (useSandbox && unsafeWindow.Proxy && unsafeWindow.Reflect);
+
+  // ====================================================
+  // placeholder: define locally scoped GM.* and GM_* API
+  // ====================================================
+  var GM = GM_info  = {};
+  var var GM_addElement = GM_addStyle = GM_deleteValue = GM_fetch = GM_getResourceText = GM_getResourceURL = GM_getValue = GM_listValues = GM_log = GM_registerMenuCommand = GM_setValue = GM_unregisterMenuCommand = GM_xmlhttpRequest = GM_addValueChangeListener = GM_download = GM_getTab = GM_getTabs = GM_notification = GM_openInTab = GM_removeValueChangeListener = GM_saveTab = GM_setClipboard = GM_webRequest = function(){};
+  // ====================================================
+
+  var _GM_getWindowProxyHander = function(windowOwnProps) {
+    if (!windowOwnProps || (typeof windowOwnProps !== 'object')) {
+      windowOwnProps = {};
+    }
+
+    var windowProxyHander = {
+
+      defineProperty(target, prop, descriptor) {
+        unsafeWindow.Object.defineProperty(windowOwnProps, prop, descriptor);
+        return true;
+      },
+
+      deleteProperty(target, prop) {
+        if (prop in windowOwnProps) {
+          delete windowOwnProps[prop];
+          return true;
+        }
+        return false;
+      },
+
+      get(target, prop, receiver) {
+        var value, thisArg;
+        if (prop in windowOwnProps) {
+          value = windowOwnProps[prop];
+          thisArg = windowOwnProps;
+        }
+        else {
+          value = unsafeWindow.Reflect.get(target, prop);
+          thisArg = target;
+        }
+        return (typeof value === 'function')
+          ? value.bind(thisArg)
+          : value;
+      },
+
+      getOwnPropertyDescriptor(target, prop) {
+        if (prop in windowOwnProps) {
+          return unsafeWindow.Object.getOwnPropertyDescriptor(windowOwnProps, prop);
+        }
+        return unsafeWindow.Reflect.getOwnPropertyDescriptor(target, prop);
+      },
+
+      has(target, prop) {
+        return (prop in windowOwnProps) || (prop in target);
+      },
+
+      ownKeys(target) {
+        return [
+          ...unsafeWindow.Object.keys(windowOwnProps),
+          ...unsafeWindow.Reflect.ownKeys(target)
+        ];
+      },
+
+      set(target, prop, value, receiver) {
+        windowOwnProps[prop] = value;
+      },
+
+    };
+
+    return windowProxyHander;
+  };
+
+  var _GM_addApiToWindowProxy = function(windowProxy) {
+    if (typeof windowProxy === 'object') {
+      var entries = {
+
+        // ---------------------
+        // Greasemonkey API (v4)
+        // ---------------------
+        'GM': GM,
+
+        // -------------------------
+        // Greasemonkey API (legacy)
+        // -------------------------
+        'GM_addElement':                GM_addElement,
+        'GM_addStyle':                  GM_addStyle,
+        'GM_deleteValue':               GM_deleteValue,
+        'GM_fetch':                     GM_fetch,
+        'GM_getResourceText':           GM_getResourceText,
+        'GM_getResourceURL':            GM_getResourceURL,
+        'GM_getValue':                  GM_getValue,
+        'GM_info':                      GM_info,
+        'GM_listValues':                GM_listValues,
+        'GM_log':                       GM_log,
+        'GM_registerMenuCommand':       GM_registerMenuCommand,
+        'GM_setValue':                  GM_setValue,
+        'GM_unregisterMenuCommand':     GM_unregisterMenuCommand,
+        'GM_xmlhttpRequest':            GM_xmlhttpRequest,
+
+        // ------------------
+        // JSMISSINGFUNCTIONS
+        // ------------------
+        'GM_addValueChangeListener':    GM_addValueChangeListener,
+        'GM_download':                  GM_download,
+        'GM_getTab':                    GM_getTab,
+        'GM_getTabs':                   GM_getTabs,
+        'GM_notification':              GM_notification,
+        'GM_openInTab':                 GM_openInTab,
+        'GM_removeValueChangeListener': GM_removeValueChangeListener,
+        'GM_saveTab':                   GM_saveTab,
+        'GM_setClipboard':              GM_setClipboard,
+        'GM_webRequest':                GM_webRequest
+      };
+
+      var keys = Object.keys(entries);
+      var key, val;
+      for (var i=0; i < keys.length; i++) {
+        key = keys[i];
+        val = entries[key];
+        windowProxy[key] = val;
+      }
+    }
+  };
+
+  var window, self, globalThis;
+  if (useSandbox) {
+    window = self = globalThis = new unsafeWindow.Proxy(unsafeWindow, _GM_getWindowProxyHander());
+    window.window = window.self = window;
+    _GM_addApiToWindowProxy(window);
+  }
+  else {
+    window = self = globalThis = unsafeWindow;
+  }
+
+  var userscript_wrapper = function(){
+    // userscript
+  }
+
+  userscript_wrapper.call(window)
+})(window, true);  // where value of 2nd parameter is set by the Java variable: 'useJsSandbox'
+
+-------------------------------------------------------------------------------- v02: development
+
+update: Script model and DB schema
+
+changes to userscript metadata block:
+=====================================
+
+* add properties:
+    @flag noJsClosure
+    @flag noJsSandbox
+
+    @flags noJsClosure|noJsSandbox
+
+changes to Script model:
+========================
+
+* add methods:
+    script.useJsClosure()
+    script.useJsSandbox()
+
+* remove methods:
+    script.isUnwrap()
+
+changes to DB schema in ScriptStoreSQLite:
+==========================================
+
+ALTER TABLE 'script' RENAME COLUMN 'unwrap' TO 'flags';
+
+this column is an INTEGER.
+
+previously, it could only hold values: 0 or 1.
+which correspond to the boolean presence or absence
+of the (now legacy) metadata property: '@unwrap'
+where its value (if any) doesn't matter.
+
+the previous usage for the DB field is compatible with its new usage.
+  static final int noJsClosureFlag = 1;
+  static final int noJsSandboxFlag = 2;
+
+where:
+  @unwrap
+is equivalent to:
+  @flag noJsClosure
+
+cross-reference to other implementations:
+=========================================
+
+----------------
+common behavior:
+----------------
+
+* when there is NOT a sandbox:
+  - 'unsafeWindow' is not defined
+  - 'window' exposes the real 'window'
+
+* when there IS a sandbox:
+  - 'unsafeWindow' is defined and exposes the real 'window'
+  - 'window' is a proxy that restricts access to the real 'window'
+
+--------------
+violentmonkey:
+--------------
+
+https://violentmonkey.github.io/api/metadata-block/#unwrap
+  '@unwrap'
+    does NOT use a closure
+    does NOT use a sandbox
+    does NOT include the GM.* or GM_* API
+    note: '@grant' is ignored
+
+https://violentmonkey.github.io/api/metadata-block/#grant
+  '@grant none'
+    DOES use a closure
+    does NOT use a sandbox
+    does NOT include the GM.* or GM_* API
+  '@grant xxx'
+    conditionally includes a cherry-picked GM.* or GM_* API method
+    note: has the side-effect that a sandbox is enabled
+  when no '@grant' is specified
+    default: '@grant none'
+
+-------------
+tampermonkey:
+-------------
+
+https://www.tampermonkey.net/documentation.php#meta:unwrap
+  '@unwrap'
+    does NOT use a closure
+    does NOT use a sandbox
+    note: documentation is unclear regarding GM_* API and '@grant'
+    test: confirms that behavior is identical to 'violentmonkey'
+
+https://www.tampermonkey.net/documentation.php#meta:grant
+  '@grant none'
+    DOES use a closure
+    does NOT use a sandbox
+    does NOT include the GM.* or GM_* API
+  '@grant xxx'
+    conditionally includes a cherry-picked GM.* or GM_* API method
+  when no '@grant' is specified
+    DOES use a closure
+    DOES use a sandbox
+    does NOT include the GM.* or GM_* API
+
+usage of flags in my implementation:
+====================================
+
+* both a closure and a sandbox ARE used by default,
+  unless explicitly disabled
+* to explicitly disable a closure,
+  use any of:
+    '@unwrap'
+    '@flag noJsClosure'
+    '@flags noJsClosure'
+* a sandbox cannot be used without a closure
+* to explicitly disable a sandbox,
+  either explicitly disable a closure,
+  or use any of:
+    '@grant none'
+    '@flag noJsSandbox'
+    '@flags noJsSandbox'
+
+---------
+behavior:
+---------
+
+* when there is NOT a closure (or a sandbox):
+  - 'unsafeWindow' is not defined
+  - the real 'window' is exposed
+    by the following globally scoped variables:
+    * 'this'
+    * 'window'
+    * 'self'
+  - does NOT include the GM.* or GM_* API
+
+* when there IS a closure:
+  - the real 'window' is exposed
+    by the following locally scoped variables:
+    * 'unsafeWindow'
+  - DOES include the entire GM.* and GM_* API
+
+* when there IS a closure, but NOT a sandbox:
+  - the real 'window' is exposed
+    by the following locally scoped variables:
+    * 'this'
+    * 'window'
+    * 'self'
+    * 'globalThis'
+  - the entire GM.* and GM_* API is exposed by:
+    * locally scoped variables
+
+* when there IS a closure, and IS a sandbox:
+  - a proxy that restricts access to the real 'window' is exposed
+    by the following locally scoped variables:
+    * 'this'
+    * 'window'
+    * 'self'
+    * 'globalThis'
+  - the entire GM.* and GM_* API is exposed by:
+    * locally scoped variables
+    * properties of the proxy object
+      - ex: 'window.GM.*' and 'window.GM_*'
+
+---------
+comments:
+---------
+
+* aside from using '@grant none' to conditionally disable a sandbox,
+  the '@grant' metadata property is otherwise ignored
+
+--------------------------------------------------------------------------------
