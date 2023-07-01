@@ -218,8 +218,7 @@ public class ScriptStoreSQLite implements ScriptStore {
 
     // V2 added tables for @require and @resource metadata directive.
     private static final int DB_SCHEMA_VERSION_2 = 2;
-    private static final int DB_SCHEMA_VERSION_3 = 3;
-    private static final int DB_VERSION = DB_SCHEMA_VERSION_3;
+    private static final int DB_VERSION = DB_SCHEMA_VERSION_2;
 
     private static final String DB = "webviewgm";
 
@@ -232,7 +231,7 @@ public class ScriptStoreSQLite implements ScriptStore {
     private static final String COL_DESCRIPTION = "description";
     private static final String COL_ICON = "icon";
     private static final String COL_RUNAT = "runat";
-    private static final String COL_FLAGS = "flags";
+    private static final String COL_FLAGS = "unwrap";
     private static final String COL_VERSION = "version";
     private static final String COL_CONTENT = "content";
     private static final String COL_ENABLED = "enabled";
@@ -394,9 +393,6 @@ public class ScriptStoreSQLite implements ScriptStore {
         if (v == DB_SCHEMA_VERSION_2) {
           db.execSQL(TBL_REQUIRE_CREATE);
           db.execSQL(TBL_RESOURCE_CREATE);
-        }
-        if (v == DB_SCHEMA_VERSION_3) {
-          db.execSQL("ALTER TABLE " + TBL_SCRIPT + " RENAME COLUMN unwrap TO " + COL_FLAGS + ";");
         }
       }
     }
