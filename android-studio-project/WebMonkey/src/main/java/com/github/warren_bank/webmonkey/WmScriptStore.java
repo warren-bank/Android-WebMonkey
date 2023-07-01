@@ -36,7 +36,7 @@ public class WmScriptStore extends ScriptStoreSQLite {
         /* installurl  = */ old.getInstallurl(),
         /* icon        = */ old.getIcon(),
         /* runAt       = */ old.getRunAt(),
-        /* unwrap      = */ old.isUnwrap(),
+        /* flags       = */ old.getFlags(),
         /* version     = */ old.getVersion(),
         /* requires    = */ old.getRequires(),
         /* resources   = */ old.getResources(),

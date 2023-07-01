@@ -42,7 +42,7 @@ public class ScriptMetadata extends ScriptCriteria {
 
   private String runAt;
 
-  private boolean unwrap;
+  private int flags;
 
   private String version;
 
@@ -55,7 +55,7 @@ public class ScriptMetadata extends ScriptCriteria {
   public ScriptMetadata(String name, String namespace, String[] exclude,
       String[] include, String[] match, String description,
       String downloadurl, String updateurl, String installurl,
-      String icon, String runAt, boolean unwrap, String version,
+      String icon, String runAt, int flags, String version,
       ScriptRequire[] requires, ScriptResource[] resources, boolean enabled) {
     super(name, namespace, exclude, include, match);
     this.description = description;
@@ -64,7 +64,7 @@ public class ScriptMetadata extends ScriptCriteria {
     this.installurl = installurl;
     this.icon = icon;
     this.runAt = runAt;
-    this.unwrap = unwrap;
+    this.flags = flags;
     this.version = version;
     this.requires = requires;
     this.resources = resources;
@@ -95,8 +95,8 @@ public class ScriptMetadata extends ScriptCriteria {
     return runAt;
   }
 
-  public boolean isUnwrap() {
-    return unwrap;
+  public int getFlags() {
+    return flags;
   }
 
   public String getVersion() {

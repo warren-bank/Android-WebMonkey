@@ -363,7 +363,7 @@ public class WebViewClientGm extends WebViewClient {
 
         // jsCode
         sb = new StringBuilder(4 * 1024);
-        if (!script.isUnwrap()) {
+        if (script.useJsClosure()) {
           sb.append(JSCONTAINERSTART);
         }
         sb.append(jsApi);
@@ -371,7 +371,7 @@ public class WebViewClientGm extends WebViewClient {
         sb.append(jsBeforeScript);
         sb.append(script.getContent());
         sb.append(jsAfterScript);
-        if (!script.isUnwrap()) {
+        if (script.useJsClosure()) {
           sb.append(JSCONTAINEREND);
         }
         jsCode = sb.toString();

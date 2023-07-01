@@ -218,7 +218,8 @@ public class ScriptStoreSQLite implements ScriptStore {
 
     // V2 added tables for @require and @resource metadata directive.
     private static final int DB_SCHEMA_VERSION_2 = 2;
-    private static final int DB_VERSION = DB_SCHEMA_VERSION_2;
+    private static final int DB_SCHEMA_VERSION_3 = 3;
+    private static final int DB_VERSION = DB_SCHEMA_VERSION_3;
 
     private static final String DB = "webviewgm";
 
@@ -231,7 +232,7 @@ public class ScriptStoreSQLite implements ScriptStore {
     private static final String COL_DESCRIPTION = "description";
     private static final String COL_ICON = "icon";
     private static final String COL_RUNAT = "runat";
-    private static final String COL_UNWRAP = "unwrap";
+    private static final String COL_FLAGS = "flags";
     private static final String COL_VERSION = "version";
     private static final String COL_CONTENT = "content";
     private static final String COL_ENABLED = "enabled";
@@ -241,7 +242,7 @@ public class ScriptStoreSQLite implements ScriptStore {
         + " TEXT" + ", " + COL_DOWNLOADURL + " TEXT" + ", "
         + COL_UPDATEURL + " TEXT" + ", " + COL_INSTALLURL + " TEXT"
         + ", " + COL_ICON + " TEXT" + ", " + COL_RUNAT + " TEXT" + ", "
-        + COL_UNWRAP + " INTEGER" + ", " + COL_VERSION + " TEXT" + ", "
+        + COL_FLAGS + " INTEGER" + ", " + COL_VERSION + " TEXT" + ", "
         + COL_CONTENT + " TEXT NOT NULL" + ", " + COL_ENABLED
         + " INTEGER NOT NULL DEFAULT 1" + ", PRIMARY KEY (" + COL_NAME
         + ", " + COL_NAMESPACE + "));";
@@ -364,7 +365,7 @@ public class ScriptStoreSQLite implements ScriptStore {
         COL_NAMESPACE, COL_DOWNLOADURL, COL_RESOURCENAME, COL_DATA };
     private static final String[] COLS_SCRIPT = new String[] { COL_NAME,
         COL_NAMESPACE, COL_DESCRIPTION, COL_DOWNLOADURL, COL_UPDATEURL,
-        COL_INSTALLURL, COL_ICON, COL_RUNAT, COL_UNWRAP, COL_VERSION,
+        COL_INSTALLURL, COL_ICON, COL_RUNAT, COL_FLAGS, COL_VERSION,
         COL_CONTENT, COL_ENABLED };
 
     private SQLiteDatabase db;
@@ -388,12 +389,14 @@ public class ScriptStoreSQLite implements ScriptStore {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-      Log.i(TAG, "Upgrading database " + DB + " from version "
-          + oldVersion + " to " + newVersion);
+      Log.i(TAG, "Upgrading database " + DB + " from version " + oldVersion + " to " + newVersion);
       for (int v = oldVersion; v <= newVersion; v++) {
         if (v == DB_SCHEMA_VERSION_2) {
           db.execSQL(TBL_REQUIRE_CREATE);
           db.execSQL(TBL_RESOURCE_CREATE);
+        }
+        if (v == DB_SCHEMA_VERSION_3) {
+          db.execSQL("ALTER TABLE " + TBL_SCRIPT + " RENAME COLUMN unwrap TO " + COL_FLAGS + ";");
         }
       }
     }
@@ -470,7 +473,7 @@ public class ScriptStoreSQLite implements ScriptStore {
         String installurl = cursor.getString(5);
         String icon = cursor.getString(6);
         String runat = cursor.getString(7);
-        int unwrap = cursor.getInt(8);
+        int flags = cursor.getInt(8);
         String version = cursor.getString(9);
         List<ScriptRequire> require = requires.get(id);
         ScriptRequire[] requireArr = (require == null)
@@ -484,7 +487,7 @@ public class ScriptStoreSQLite implements ScriptStore {
         int enabled = cursor.getInt(11);
         scriptsArr[i] = new Script(name, namespace, excludeArr,
             includeArr, matchArr, description, downloadurl,
-            updateurl, installurl, icon, runat, (unwrap == 1),
+            updateurl, installurl, icon, runat, flags,
             version, requireArr, resourceArr, (enabled == 1), content);
         i++;
       }
@@ -759,7 +762,7 @@ public class ScriptStoreSQLite implements ScriptStore {
       fieldsScript.put(COL_INSTALLURL, script.getInstallurl());
       fieldsScript.put(COL_ICON, script.getIcon());
       fieldsScript.put(COL_RUNAT, script.getRunAt());
-      fieldsScript.put(COL_UNWRAP, script.isUnwrap());
+      fieldsScript.put(COL_FLAGS, script.getFlags());
       fieldsScript.put(COL_VERSION, script.getVersion());
       fieldsScript.put(COL_CONTENT, script.getContent());
       fieldsScript.put(COL_ENABLED, script.isEnabled());

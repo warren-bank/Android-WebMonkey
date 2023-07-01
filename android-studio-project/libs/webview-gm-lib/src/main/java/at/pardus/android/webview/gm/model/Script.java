@@ -33,16 +33,45 @@ import at.pardus.android.webview.gm.util.DownloadHelper;
  */
 public class Script extends ScriptMetadata {
 
+  private static final int noJsClosureFlag = 1;
+  private static final int noJsSandboxFlag = 2;
+
+  private static final int setFlags(int flags, String newFlags) {
+    if (!TextUtils.isEmpty(newFlags)) {
+      String[] newFlagsArray = newFlags.split("\\|");
+      for (String newFlag : newFlagsArray) {
+        flags = setFlag(flags, newFlag);
+      }
+    }
+    return flags;
+  }
+
+  private static final int setFlag(int flags, String newFlag) {
+    if (!TextUtils.isEmpty(newFlag)) {
+      newFlag = newFlag.trim().toLowerCase();
+
+      switch(newFlag) {
+        case "nojsclosure":
+          flags |= noJsClosureFlag;
+          break;
+        case "nojssandbox":
+          flags |= noJsSandboxFlag;
+          break;
+      }
+    }
+    return flags;
+  }
+
   private String content;
   private String metaStr;
 
   public Script(String name, String namespace, String[] exclude,
       String[] include, String[] match, String description,
       String downloadurl, String updateurl, String installurl,
-      String icon, String runAt, boolean unwrap, String version,
+      String icon, String runAt, int flags, String version,
       ScriptRequire[] requires, ScriptResource[] resources, boolean enabled, String content) {
     super(name, namespace, exclude, include, match, description,
-        downloadurl, updateurl, installurl, icon, runAt, unwrap,
+        downloadurl, updateurl, installurl, icon, runAt, flags,
         version, requires, resources, enabled);
     this.content = content;
     try {
@@ -60,6 +89,19 @@ public class Script extends ScriptMetadata {
 
   public String getMetaStr() {
     return metaStr;
+  }
+
+  public boolean useJsClosure() {
+    return !hasFlag(noJsClosureFlag);
+  }
+
+  public boolean useJsSandbox() {
+    return !hasFlag(noJsSandboxFlag);
+  }
+
+  private boolean hasFlag(int flag) {
+    int flags = getFlags();
+    return ((flags & flag) == flag);
   }
 
   /**
@@ -85,7 +127,7 @@ public class Script extends ScriptMetadata {
    */
   public static Script parse(String scriptStr, String url) {
     String name = null, namespace = null, description = null, downloadurl = null, updateurl = null, installurl = null, icon = null, runAt = null, version = null;
-    boolean unwrap = false;
+    int flags = 0;
     if (url != null) {
       int filenameStart = url.lastIndexOf("/") + 1;
       if (filenameStart != 0 && filenameStart != url.length()) {
@@ -115,8 +157,11 @@ public class Script extends ScriptMetadata {
         if (matcher.matches()) {
           String propertyName = matcher.group(1);
           String propertyValue = matcher.group(2);
-          if (propertyValue != null && propertyValue.equals("")) {
-            propertyValue = null;
+          if (propertyValue != null) {
+            propertyValue = propertyValue.trim();
+            if (propertyValue.equals("")) {
+              propertyValue = null;
+            }
           }
           if (propertyValue != null) {
             if (propertyName.equals("name")) {
@@ -167,10 +212,18 @@ public class Script extends ScriptMetadata {
               include.add(propertyValue);
             } else if (propertyName.equals("match")) {
               match.add(propertyValue);
+            } else if (propertyName.equals("flag")) {
+              flags = setFlag(flags, propertyValue);
+            } else if (propertyName.equals("flags")) {
+              flags = setFlags(flags, propertyValue);
+            } else if (propertyName.equals("grant")) {
+              if (propertyValue.equals("none")) {
+                flags |= noJsSandboxFlag;
+              }
             }
           }
           if (propertyName.equals("unwrap")) {
-            unwrap = true;
+            flags |= noJsClosureFlag;
           }
         }
       }
@@ -202,7 +255,7 @@ public class Script extends ScriptMetadata {
     }
     return new Script(name, namespace, excludeArr, includeArr, matchArr,
         description, downloadurl, updateurl, installurl, icon, runAt,
-        unwrap, version, requireArr, resourceArr, /* enabled= */ true, scriptStr);
+        flags, version, requireArr, resourceArr, /* enabled= */ true, scriptStr);
   }
 
   public static ArrayList<String> getMetaBlock(String scriptStr) throws IllegalStateException {
