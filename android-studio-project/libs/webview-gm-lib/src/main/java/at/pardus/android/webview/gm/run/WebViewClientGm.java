@@ -374,7 +374,7 @@ public class WebViewClientGm extends WebViewClient {
         if (!script.isUnwrap()) {
           sb.append(JSCONTAINEREND);
         }
-        jsCode = sb.toString();
+        jsCode += sb.toString();
         sb = null;
       }
     }
