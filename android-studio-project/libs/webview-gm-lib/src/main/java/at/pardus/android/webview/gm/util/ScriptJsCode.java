@@ -72,7 +72,10 @@ public class ScriptJsCode {
     ScriptInfo.initStaticResources(context);
   }
 
-  public static String getJsCode(Script script, boolean pageFinished, String jsBeforeScript, String jsAfterScript, String jsBridgeName, String secret) {
+  public ScriptJsCode() {
+  }
+
+  public String getJsCode(Script script, boolean pageFinished, String jsBeforeScript, String jsAfterScript, String jsBridgeName, String secret) {
     boolean runNow = (
         (!pageFinished && Script.RUNATSTART.equals(script.getRunAt()))
      || (pageFinished && (script.getRunAt() == null || Script.RUNATEND.equals(script.getRunAt())))
@@ -85,11 +88,11 @@ public class ScriptJsCode {
         : getJsCodeNoClosure  (script, jsBeforeScript, jsAfterScript);
   }
 
-  private static String getJsCodeNoClosure(Script script, String jsBeforeScript, String jsAfterScript) {
+  private String getJsCodeNoClosure(Script script, String jsBeforeScript, String jsAfterScript) {
     return getJsUserscript(script, jsBeforeScript, jsAfterScript);
   }
 
-  private static String getJsCodeWithClosure(Script script, String jsBeforeScript, String jsAfterScript, String jsBridgeName, String secret) {
+  private String getJsCodeWithClosure(Script script, String jsBeforeScript, String jsAfterScript, String jsBridgeName, String secret) {
     StringBuilder sb = new StringBuilder(4 * 1024);
     sb.append(JS_CLOSURE_1);
     sb.append(getJsApi(script, jsBridgeName, secret));
@@ -101,7 +104,7 @@ public class ScriptJsCode {
     return sb.toString();
   }
 
-  private static String getJsApi(Script script, String jsBridgeName, String secret) {
+  protected String getJsApi(Script script, String jsBridgeName, String secret) {
     StringBuilder sb;
 
     // defaultSignature
@@ -283,7 +286,7 @@ public class ScriptJsCode {
     return sb.toString();
   }
 
-  private static String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
+  private String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
     StringBuilder sb = new StringBuilder(4 * 1024);
 
     // Get @require'd scripts to inject for this script.

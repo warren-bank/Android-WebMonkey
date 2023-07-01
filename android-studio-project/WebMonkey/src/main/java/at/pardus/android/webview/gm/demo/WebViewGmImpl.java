@@ -81,8 +81,7 @@ public class WebViewGmImpl extends ScriptManagerActivity {
         scriptStore = new ScriptStoreSQLite(this);
         scriptStore.open();
       }
-      scriptBrowser = new ScriptBrowser(this, scriptStore,
-          SettingsUtils.getHomePage(this));
+      scriptBrowser = new ScriptBrowser(this, scriptStore, SettingsUtils.getHomePage(this));
     }
     setContentView(scriptBrowser.getBrowser());
     placeHistory.push(BROWSER);

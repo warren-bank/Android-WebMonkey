@@ -16,9 +16,6 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
-    scriptStore = new WmScriptStore(this);
-    scriptStore.open();
-
     super.onCreate(savedInstanceState);
 
     if (Build.VERSION.SDK_INT >= 19)
@@ -26,12 +23,15 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
     WebViewGm webViewGm = scriptBrowser.getWebView();
     customizeWebView(webViewGm);
-    String secret = webViewGm.getWebViewClient().getSecret();
 
+    WebViewClientGm webViewClient = webViewGm.getWebViewClient();
+    String secret = webViewClient.getSecret();
     WmJsApi jsApi = new WmJsApi(secret, /* Activity */ this, /* WebView */ webViewGm, /* IBrowser */ this);
 
-    webViewGm.addJavascriptInterface(jsApi.getGlobalJsApi(), WmJsApi.GlobalJsApiNamespace);
-    ((WmScriptStore) scriptStore).addScript(jsApi.getWrappedJsApi());
+    WmScriptJsCode.initStaticResources(/* Context */ this);
+    WmScriptJsCode scriptJsCode = new WmScriptJsCode(jsApi.getJsApi());
+    webViewGm.addJavascriptInterface(jsApi.getJsInterface(), WmJsApi.GlobalJsApiNamespace);
+    webViewClient.setScriptJsCode(scriptJsCode);
 
     initWebView(webViewGm);
 

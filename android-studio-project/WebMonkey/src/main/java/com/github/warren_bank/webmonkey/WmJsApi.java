@@ -40,7 +40,7 @@ public class WmJsApi {
 
   public static final String GlobalJsApiNamespace = "WebViewWM";
 
-  public Object getGlobalJsApi() {
+  public Object getJsInterface() {
     return new Object() {
 
       private Toast toast = null;
@@ -342,7 +342,7 @@ public class WmJsApi {
     };
   }
 
-  public String getWrappedJsApi() {
+  public String getJsApi() {
     String jsBridgeName     = WmJsApi.GlobalJsApiNamespace;
     String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
     StringBuilder sb;

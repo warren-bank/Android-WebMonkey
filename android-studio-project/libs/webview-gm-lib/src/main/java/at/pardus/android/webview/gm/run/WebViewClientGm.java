@@ -45,6 +45,8 @@ public class WebViewClientGm extends WebViewClient {
 
   private String secret;
 
+  private ScriptJsCode scriptJsCode;
+
   /**
    * Constructs a new WebViewClientGm with a ScriptStore.
    * 
@@ -61,6 +63,7 @@ public class WebViewClientGm extends WebViewClient {
     this.scriptStore = scriptStore;
     this.jsBridgeName = jsBridgeName;
     this.secret = secret;
+    this.scriptJsCode = new ScriptJsCode();
   }
 
   /**
@@ -112,7 +115,7 @@ public class WebViewClientGm extends WebViewClient {
 
     for (Script script : matchingScripts) {
       sb.append(
-        ScriptJsCode.getJsCode(script, pageFinished, jsBeforeScript, jsAfterScript, jsBridgeName, secret)
+        scriptJsCode.getJsCode(script, pageFinished, jsBeforeScript, jsAfterScript, jsBridgeName, secret)
       );
 
       if (sb.length() > length) {
@@ -176,6 +179,21 @@ public class WebViewClientGm extends WebViewClient {
    */
   public void setSecret(String secret) {
     this.secret = secret;
+  }
+
+  /**
+   * @return the scriptJsCode
+   */
+  public ScriptJsCode getScriptJsCode() {
+    return scriptJsCode;
+  }
+
+  /**
+   * @param scriptJsCode
+   *            the scriptJsCode to set
+   */
+  public void setScriptJsCode(ScriptJsCode scriptJsCode) {
+    this.scriptJsCode = scriptJsCode;
   }
 
 }
