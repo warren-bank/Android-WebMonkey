@@ -1,0 +1,24 @@
+// ---------------------------------
+// TODO: implement missing functions
+// ---------------------------------
+
+var GM_notImplemented = function(method_name) {
+  GM_log((method_name ? method_name : 'Called') + ' function not yet implemented');
+};
+
+var GM_addValueChangeListener    = GM_notImplemented.bind(null, 'GM_addValueChangeListener');
+var GM_download                  = GM_notImplemented.bind(null, 'GM_download');
+var GM_getTab                    = GM_notImplemented.bind(null, 'GM_getTab');
+var GM_getTabs                   = GM_notImplemented.bind(null, 'GM_getTabs');
+var GM_info                      = GM_notImplemented.bind(null, 'GM_info');
+var GM_notification              = GM_notImplemented.bind(null, 'GM_notification');
+var GM_openInTab                 = GM_notImplemented.bind(null, 'GM_openInTab');
+var GM_removeValueChangeListener = GM_notImplemented.bind(null, 'GM_removeValueChangeListener');
+var GM_saveTab                   = GM_notImplemented.bind(null, 'GM_saveTab');
+var GM_setClipboard              = GM_notImplemented.bind(null, 'GM_setClipboard');
+var GM_webRequest                = GM_notImplemented.bind(null, 'GM_webRequest');
+var GM_cookie = {
+  "list":   GM_notImplemented.bind(null, 'GM_cookie.list'),
+  "set":    GM_notImplemented.bind(null, 'GM_cookie.set'),
+  "delete": GM_notImplemented.bind(null, 'GM_cookie.delete')
+};

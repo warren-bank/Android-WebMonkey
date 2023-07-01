@@ -58,7 +58,7 @@ public class ScriptInfo {
   private static String APP_VERSION_NAME = "";
   private static String WEBKIT_USERAGENT = "";
 
-  public static void initStaticResources(Context context) {
+  protected static void initStaticResources(Context context) {
     if (TextUtils.isEmpty(APP_PACKAGE_NAME)) {
       try {
         APP_PACKAGE_NAME = context.getPackageName();
@@ -74,7 +74,7 @@ public class ScriptInfo {
     }
   }
 
-  public static String toJSONString(Script script) {
+  protected static String toJSONString(Script script) {
     try {
       JSONObject jsonInfo     = new JSONObject();
       JSONObject jsonPlatform = new JSONObject();

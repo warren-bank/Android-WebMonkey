@@ -1,0 +1,4 @@
+  }
+
+  userscript_wrapper.call(window)
+})(window, 

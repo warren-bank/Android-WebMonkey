@@ -1,6 +1,10 @@
+// -------------------------
+// Greasemonkey API (legacy)
+// -------------------------
+
 var GM_addElement = function() {
   try {
-    var args = Array.prototype.slice.call(arguments);
+    var args = unsafeWindow.Array.prototype.slice.call(arguments);
     var head_elements = ['title', 'base', 'link', 'style', 'meta', 'script', 'noscript'/*, 'template'*/];
     var special_attr_keys = ['className', 'innerHTML', 'innerText', 'textContent'];
     var parent_node, tag_name, attributes;
@@ -17,19 +21,19 @@ var GM_addElement = function() {
       attributes = args[2];
     }
     if (!tag_name || (typeof tag_name !== 'string')) {
-      throw new Error('missing tag name');
+      throw new unsafeWindow.Error('missing tag name');
     }
     if (!attributes || (typeof attributes !== 'object')) {
       attributes = {};
     }
     if (!parent_node || !(
-         (window.HTMLElement      && (parent_node instanceof window.HTMLElement))
-      || (window.DocumentFragment && (parent_node instanceof window.DocumentFragment))
+         (unsafeWindow.HTMLElement      && (parent_node instanceof unsafeWindow.HTMLElement))
+      || (unsafeWindow.DocumentFragment && (parent_node instanceof unsafeWindow.DocumentFragment))
     )) {
       parent_node = (head_elements.indexOf(tag_name.toLowerCase()) >= 0) ? document.head : document.body;
     }
     var element = document.createElement(tag_name);
-    var attr_keys = Object.keys(attributes);
+    var attr_keys = unsafeWindow.Object.keys(attributes);
     var attr_key, attr_val;
     for (var i=0; i < attr_keys.length; i++) {
       attr_key = attr_keys[i];
@@ -138,9 +142,9 @@ var _GM_addMenuCommand_menuitem = function(menu, caption, commandFunc) {
 
 var GM_registerMenuCommand = function(caption, commandFunc, accessKey) {
   if (!document.body) {
-    if (document.readyState === 'loading' && document.documentElement && document.documentElement.localName === 'html') {
-      return new Promise(function(resolve, reject) {
-        new MutationObserver(function(mutations, observer) {
+    if ((document.readyState === 'loading') && document.documentElement && (document.documentElement.localName === 'html') && unsafeWindow.Promise && unsafeWindow.MutationObserver) {
+      return new unsafeWindow.Promise(function(resolve, reject) {
+        new unsafeWindow.MutationObserver(function(mutations, observer) {
           if (document.body) {
             observer.disconnect();
             resolve(
@@ -178,7 +182,7 @@ var GM_unregisterMenuCommand = function(menuCmdId) {
 
 var GM_fetch = function(input, init) {
   var request, theFinalBody;
-  return init || (typeof input == "string" ? init = {} : input = init.url), window.Request && window.Request.prototype && window.Request.prototype.isPrototypeOf && window.Request.prototype.isPrototypeOf(init) ? request = init : (init.body && (theFinalBody = init.body), request = new window.Request(input, init)), new Promise(function(resolve, reject) {
+  return init || (typeof input == "string" ? init = {} : input = init.url), unsafeWindow.Request && unsafeWindow.Request.prototype && unsafeWindow.Request.prototype.isPrototypeOf && unsafeWindow.Request.prototype.isPrototypeOf(init) ? request = init : (init.body && (theFinalBody = init.body), request = new unsafeWindow.Request(input, init)), new unsafeWindow.Promise(function(resolve, reject) {
     var xhr_details = {};
     init && init.extra && (xhr_details = init.extra);
     var _parsedRespHeaders;
@@ -192,7 +196,7 @@ var GM_fetch = function(input, init) {
         });
       } else if (typeof responseHeaders == "object")
         for (var key in responseHeaders)
-          Array.isArray(responseHeaders[key]) && responseHeaders[key].forEach(function(value) {
+          unsafeWindow.Array.isArray(responseHeaders[key]) && responseHeaders[key].forEach(function(value) {
             head.append(key, value);
           });
       return head;
@@ -211,7 +215,7 @@ var GM_fetch = function(input, init) {
     xhr_details.onload = function(resp) {
       var status = resp.status;
       if (status < 100 || status > 599) {
-        reject(new Error("Network request failed"));
+        reject(new unsafeWindow.Error("Network request failed"));
         return;
       }
       var rawRespHeaders = resp.responseHeaders;
@@ -227,17 +231,17 @@ var GM_fetch = function(input, init) {
         headers: _parsedRespHeaders,
         url: finalUrl
       }, body = resp.responseText;
-      var finalResponse = new window.Response(body, options);
+      var finalResponse = new unsafeWindow.Response(body, options);
       resolve(finalResponse);
     };
     xhr_details.onerror = function(err) {
-      console.error("fetch error", err), reject(new Error("Network request failed"));
+      unsafeWindow.console.error("fetch error", err), reject(new unsafeWindow.Error("Network request failed"));
     };
     xhr_details.ontimeout = function(err) {
-      console.error("fetch timeout", err), reject(new Error("Network request timeout"));
+      unsafeWindow.console.error("fetch timeout", err), reject(new unsafeWindow.Error("Network request timeout"));
     };
     xhr_details.onabort = function(err) {
-      console.error("fetch abort", err), reject(new Error("Network request abort"));
+      unsafeWindow.console.error("fetch abort", err), reject(new unsafeWindow.Error("Network request abort"));
     };
     xhr_details.headers = {}, request.headers.forEach(function(value, name) {
       xhr_details.headers[name] = value;
@@ -246,79 +250,3 @@ var GM_fetch = function(input, init) {
     GM_xmlhttpRequest(xhr_details);
   });
 };
-
-// ---------------------------------------------
-// Greasemonkey API (polyfill for v4 and higher)
-// ---------------------------------------------
-
-var GM = {};
-
-// synchronous
-(function(entries) {
-  var keys = Object.keys(entries);
-  var key, val;
-  for (var i=0; i < keys.length; i++) {
-    key = keys[i];
-    val = entries[key];
-    GM[key] = val;
-  }
-})({
-  'fetch': GM_fetch,
-  'info':  GM_info,
-  'log':   GM_log
-});
-
-// asynchronous, returns a Promise
-(function(entries) {
-  var async_handler = function() {
-    var args, sync_method;
-    args = Array.prototype.slice.call(arguments);
-    if (args.length && (typeof args[0] === 'function')) {
-      sync_method = args.shift();
-    }
-    return new Promise(function(resolve, reject) {
-      try {
-        if (!sync_method) {
-          throw new Error('bad params to GM 4 polyfill');
-        }
-        resolve(sync_method.apply(null, args));
-      }
-      catch (e) {
-        reject(e);
-      }
-    });
-  };
-  var keys = Object.keys(entries);
-  var key, val;
-  for (var i=0; i < keys.length; i++) {
-    key = keys[i];
-    val = entries[key];
-    GM[key] = async_handler.bind(null, val);
-  }
-})({
-  'addElement':            GM_addElement,
-  'addStyle':              GM_addStyle,
-  'deleteValue':           GM_deleteValue,
-  'getResourceText':       GM_getResourceText,
-  'getResourceUrl':        GM_getResourceURL,
-  'getValue':              GM_getValue,
-  'listValues':            GM_listValues,
-  'registerMenuCommand':   GM_registerMenuCommand,
-  'setValue':              GM_setValue,
-  'unregisterMenuCommand': GM_unregisterMenuCommand,
-  'xmlHttpRequest':        GM_xmlhttpRequest,
-
-  // ------------------
-  // JSMISSINGFUNCTIONS
-  // ------------------
-  'addValueChangeListener':    GM_addValueChangeListener,
-  'download':                  GM_download,
-  'getTab':                    GM_getTab,
-  'getTabs':                   GM_getTabs,
-  'notification':              GM_notification,
-  'openInTab':                 GM_openInTab,
-  'removeValueChangeListener': GM_removeValueChangeListener,
-  'saveTab':                   GM_saveTab,
-  'setClipboard':              GM_setClipboard,
-  'webRequest':                GM_webRequest
-});

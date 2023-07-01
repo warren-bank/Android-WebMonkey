@@ -1,0 +1,75 @@
+// ---------------------------------------------
+// Greasemonkey API (polyfill for v4 and higher)
+// ---------------------------------------------
+
+var GM = {};
+
+// synchronous
+(function(entries) {
+  var keys = unsafeWindow.Object.keys(entries);
+  var key, val;
+  for (var i=0; i < keys.length; i++) {
+    key = keys[i];
+    val = entries[key];
+    GM[key] = val;
+  }
+})({
+  'fetch': GM_fetch,
+  'info':  GM_info,
+  'log':   GM_log
+});
+
+// asynchronous, returns a Promise
+(function(entries) {
+  var async_handler = function() {
+    var args, sync_method;
+    args = unsafeWindow.Array.prototype.slice.call(arguments);
+    if (args.length && (typeof args[0] === 'function')) {
+      sync_method = args.shift();
+    }
+    return new unsafeWindow.Promise(function(resolve, reject) {
+      try {
+        if (!sync_method) {
+          throw new unsafeWindow.Error('bad params to GM 4 polyfill');
+        }
+        resolve(sync_method.apply(null, args));
+      }
+      catch (e) {
+        reject(e);
+      }
+    });
+  };
+  var keys = unsafeWindow.Object.keys(entries);
+  var key, val;
+  for (var i=0; i < keys.length; i++) {
+    key = keys[i];
+    val = entries[key];
+    GM[key] = async_handler.bind(null, val);
+  }
+})({
+  'addElement':            GM_addElement,
+  'addStyle':              GM_addStyle,
+  'deleteValue':           GM_deleteValue,
+  'getResourceText':       GM_getResourceText,
+  'getResourceUrl':        GM_getResourceURL,
+  'getValue':              GM_getValue,
+  'listValues':            GM_listValues,
+  'registerMenuCommand':   GM_registerMenuCommand,
+  'setValue':              GM_setValue,
+  'unregisterMenuCommand': GM_unregisterMenuCommand,
+  'xmlHttpRequest':        GM_xmlhttpRequest,
+
+  // -----------------
+  // missing functions
+  // -----------------
+  'addValueChangeListener':    GM_addValueChangeListener,
+  'download':                  GM_download,
+  'getTab':                    GM_getTab,
+  'getTabs':                   GM_getTabs,
+  'notification':              GM_notification,
+  'openInTab':                 GM_openInTab,
+  'removeValueChangeListener': GM_removeValueChangeListener,
+  'saveTab':                   GM_saveTab,
+  'setClipboard':              GM_setClipboard,
+  'webRequest':                GM_webRequest
+});

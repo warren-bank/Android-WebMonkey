@@ -44,6 +44,8 @@ public class WebViewXmlHttpRequest {
 
   private static final String TAG = WebViewXmlHttpRequest.class.getName();
 
+  private static final String GLOBAL_JS_OBJECT = "window.wrappedJSObject";
+
   private JSONObject context;
   private String data;
   private JSONObject headers;
@@ -352,7 +354,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + this.onError + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -362,7 +364,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + this.onLoad + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -372,7 +374,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + this.onProgress + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -383,7 +385,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + this.onReadyStateChange + "(JSON.parse("
         + response.toJSONString() + ")); })()");
   }
@@ -393,7 +395,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + this.onTimeout + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -403,7 +405,7 @@ public class WebViewXmlHttpRequest {
       return;
     }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + getUploadOnError() + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
@@ -413,7 +415,7 @@ public class WebViewXmlHttpRequest {
             return;
         }
 
-    loadUrlOnUiThread("javascript: (function() { window.wrappedJSObject."
+    loadUrlOnUiThread("javascript: (function() { " + GLOBAL_JS_OBJECT + "."
         + getUploadOnLoad() + "(JSON.parse(" + response.toJSONString()
         + ")); })()");
   }
