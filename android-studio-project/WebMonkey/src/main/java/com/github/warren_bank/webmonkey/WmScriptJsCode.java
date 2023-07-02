@@ -10,11 +10,18 @@ import at.pardus.android.webview.gm.util.ScriptJsCode;
 public class WmScriptJsCode extends ScriptJsCode {
 
   private static String WM_API_V4_POLYFILL = "";
+  private static String WM_CLOSURE         = "";
 
   public static void initStaticResources(Context context) {
     if (TextUtils.isEmpty(WM_API_V4_POLYFILL)) {
       try {
         WM_API_V4_POLYFILL = ResourceHelper.getRawStringResource(context, R.raw.wm_api_v4_polyfill);
+      }
+      catch(Exception e) {}
+    }
+    if (TextUtils.isEmpty(WM_CLOSURE)) {
+      try {
+        WM_CLOSURE = ResourceHelper.getRawStringResource(context, R.raw.wm_closure);
       }
       catch(Exception e) {}
     }
@@ -37,6 +44,16 @@ public class WmScriptJsCode extends ScriptJsCode {
     );
     sb.append(WM_API);
     sb.append(WM_API_V4_POLYFILL);
+    return sb.toString();
+  }
+
+  @Override
+  protected String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
+    StringBuilder sb = new StringBuilder(4 * 1024);
+    sb.append(WM_CLOSURE);
+    sb.append(
+      super.getJsUserscript(script, jsBeforeScript, jsAfterScript)
+    );
     return sb.toString();
   }
 

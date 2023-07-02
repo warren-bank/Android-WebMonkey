@@ -1,0 +1,12 @@
+    if (useSandbox) {
+      _GM_addApiToWindowProxy(window, {
+        'GM_exit':        GM_exit,
+        'GM_getUrl':      GM_getUrl,
+        'GM_loadFrame':   GM_loadFrame,
+        'GM_loadUrl':     GM_loadUrl,
+        'GM_resolveUrl':  GM_resolveUrl,
+        'GM_startIntent': GM_startIntent,
+        'GM_toastLong':   GM_toastLong,
+        'GM_toastShort':  GM_toastShort
+      });
+    }

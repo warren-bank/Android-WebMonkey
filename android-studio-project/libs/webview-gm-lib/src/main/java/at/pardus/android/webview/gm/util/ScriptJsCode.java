@@ -286,7 +286,7 @@ public class ScriptJsCode {
     return sb.toString();
   }
 
-  private String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
+  protected String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
     StringBuilder sb = new StringBuilder(4 * 1024);
 
     // Get @require'd scripts to inject for this script.
