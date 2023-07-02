@@ -3,17 +3,27 @@
 // @namespace    WebViewWM
 // @match        *://*
 // @run-at       document-start
-// @require      https://cdn.jsdelivr.net/npm/core-js-bundle@3.31.0/minified.js
+// @require      https://github.com/warren-bank/ES2015-wishlist/raw/master/Promise.defer/Promise.defer.js
 // ==/UserScript==
 
-try {
-  var string_0_old = 'abc';
-  var string_0_new = 'def';
-  var string_1 = `${string_0_old} ${string_0_old} ${string_0_old}`;
-  var string_2 = string_1.replaceAll(string_0_old, string_0_new);
+var run_test = async function(val) {
+  try {
+    var defer = Promise.defer();
 
-  GM_toastLong(`replaceAll: ${string_1} => ${string_2}`);
+    setTimeout(function(){defer.resolve(val * 10);}, 1000)
+
+    var result = await defer.promise;
+
+    unsafeWindow.alert(`Promise.defer: ${val} * 10 = ${result}`);
+  }
+  catch(error) {
+    unsafeWindow.alert(`Promise.defer error: ${error.message}`);
+  }
+};
+
+var run_tests = async function() {
+  await run_test(5);
+  await run_test(15);
 }
-catch(error) {
-  GM_toastLong(`replaceAll error: ${error.message}`);
-}
+
+run_tests();
