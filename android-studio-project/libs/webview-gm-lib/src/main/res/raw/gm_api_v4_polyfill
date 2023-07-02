@@ -2,74 +2,81 @@
 // Greasemonkey API (polyfill for v4 and higher)
 // ---------------------------------------------
 
-var GM = {};
-
-// synchronous
-(function(entries) {
-  var keys = unsafeWindow.Object.keys(entries);
-  var key, val;
-  for (var i=0; i < keys.length; i++) {
-    key = keys[i];
-    val = entries[key];
-    GM[key] = val;
+var _GM_addApiToObject = function(target, entries) {
+  if (target && entries && (typeof target === 'object') && (typeof entries === 'object')) {
+    var keys = unsafeWindow.Object.keys(entries);
+    var key, val;
+    for (var i=0; i < keys.length; i++) {
+      key = keys[i];
+      val = entries[key];
+      target[key] = val;
+    }
   }
-})({
-  'fetch': GM_fetch,
-  'info':  GM_info,
-  'log':   GM_log
-});
+}
+
+var _GM_promisifyApiMethod_handler = function() {
+  var args, sync_method;
+  args = unsafeWindow.Array.prototype.slice.call(arguments);
+  if (args.length && (typeof args[0] === 'function')) {
+    sync_method = args.shift();
+  }
+  return new unsafeWindow.Promise(function(resolve, reject) {
+    try {
+      if (!sync_method) {
+        throw new unsafeWindow.Error('bad params to GM 4 polyfill');
+      }
+      resolve(sync_method.apply(null, args));
+    }
+    catch (e) {
+      reject(e);
+    }
+  });
+};
 
 // asynchronous, returns a Promise
-(function(entries) {
-  var async_handler = function() {
-    var args, sync_method;
-    args = unsafeWindow.Array.prototype.slice.call(arguments);
-    if (args.length && (typeof args[0] === 'function')) {
-      sync_method = args.shift();
-    }
-    return new unsafeWindow.Promise(function(resolve, reject) {
-      try {
-        if (!sync_method) {
-          throw new unsafeWindow.Error('bad params to GM 4 polyfill');
-        }
-        resolve(sync_method.apply(null, args));
-      }
-      catch (e) {
-        reject(e);
-      }
-    });
-  };
-  var keys = unsafeWindow.Object.keys(entries);
-  var key, val;
-  for (var i=0; i < keys.length; i++) {
-    key = keys[i];
-    val = entries[key];
-    GM[key] = async_handler.bind(null, val);
-  }
-})({
-  'addElement':            GM_addElement,
-  'addStyle':              GM_addStyle,
-  'deleteValue':           GM_deleteValue,
-  'getResourceText':       GM_getResourceText,
-  'getResourceUrl':        GM_getResourceURL,
-  'getValue':              GM_getValue,
-  'listValues':            GM_listValues,
-  'registerMenuCommand':   GM_registerMenuCommand,
-  'setValue':              GM_setValue,
-  'unregisterMenuCommand': GM_unregisterMenuCommand,
-  'xmlHttpRequest':        GM_xmlhttpRequest,
+var _GM_promisifyApiMethod = function(api) {
+  return _GM_promisifyApiMethod_handler.bind(null, api);
+};
 
-  // -----------------
-  // missing functions
-  // -----------------
-  'addValueChangeListener':    GM_addValueChangeListener,
-  'download':                  GM_download,
-  'getTab':                    GM_getTab,
-  'getTabs':                   GM_getTabs,
-  'notification':              GM_notification,
-  'openInTab':                 GM_openInTab,
-  'removeValueChangeListener': GM_removeValueChangeListener,
-  'saveTab':                   GM_saveTab,
-  'setClipboard':              GM_setClipboard,
-  'webRequest':                GM_webRequest
-});
+var GM = {};
+
+_GM_addApiToObject(
+  GM,
+  {
+    // -----------
+    // synchronous
+    // -----------
+    'fetch': GM_fetch,
+    'info':  GM_info,
+    'log':   GM_log,
+
+    // ------------
+    // asynchronous
+    // ------------
+    'addElement':                _GM_promisifyApiMethod(GM_addElement),
+    'addStyle':                  _GM_promisifyApiMethod(GM_addStyle),
+    'deleteValue':               _GM_promisifyApiMethod(GM_deleteValue),
+    'getResourceText':           _GM_promisifyApiMethod(GM_getResourceText),
+    'getResourceUrl':            _GM_promisifyApiMethod(GM_getResourceURL),
+    'getValue':                  _GM_promisifyApiMethod(GM_getValue),
+    'listValues':                _GM_promisifyApiMethod(GM_listValues),
+    'registerMenuCommand':       _GM_promisifyApiMethod(GM_registerMenuCommand),
+    'setValue':                  _GM_promisifyApiMethod(GM_setValue),
+    'unregisterMenuCommand':     _GM_promisifyApiMethod(GM_unregisterMenuCommand),
+    'xmlHttpRequest':            _GM_promisifyApiMethod(GM_xmlhttpRequest),
+
+    // -----------------
+    // missing functions
+    // -----------------
+    'addValueChangeListener':    _GM_promisifyApiMethod(GM_addValueChangeListener),
+    'download':                  _GM_promisifyApiMethod(GM_download),
+    'getTab':                    _GM_promisifyApiMethod(GM_getTab),
+    'getTabs':                   _GM_promisifyApiMethod(GM_getTabs),
+    'notification':              _GM_promisifyApiMethod(GM_notification),
+    'openInTab':                 _GM_promisifyApiMethod(GM_openInTab),
+    'removeValueChangeListener': _GM_promisifyApiMethod(GM_removeValueChangeListener),
+    'saveTab':                   _GM_promisifyApiMethod(GM_saveTab),
+    'setClipboard':              _GM_promisifyApiMethod(GM_setClipboard),
+    'webRequest':                _GM_promisifyApiMethod(GM_webRequest)
+  }
+);
