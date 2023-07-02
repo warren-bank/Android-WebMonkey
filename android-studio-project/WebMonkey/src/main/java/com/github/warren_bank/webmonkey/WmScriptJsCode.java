@@ -49,12 +49,17 @@ public class WmScriptJsCode extends ScriptJsCode {
 
   @Override
   protected String getJsUserscript(Script script, String jsBeforeScript, String jsAfterScript) {
-    StringBuilder sb = new StringBuilder(4 * 1024);
-    sb.append(WM_CLOSURE);
-    sb.append(
-      super.getJsUserscript(script, jsBeforeScript, jsAfterScript)
-    );
-    return sb.toString();
+    if (script.useJsClosure()) {
+      StringBuilder sb = new StringBuilder(4 * 1024);
+      sb.append(WM_CLOSURE);
+      sb.append(
+        super.getJsUserscript(script, jsBeforeScript, jsAfterScript)
+      );
+      return sb.toString();
+    }
+    else {
+      return super.getJsUserscript(script, jsBeforeScript, jsAfterScript);
+    }
   }
 
 }
