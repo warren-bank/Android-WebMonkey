@@ -114,9 +114,9 @@ public class ScriptBrowser {
         .setOnEditorActionListener(new EditText.OnEditorActionListener() {
           @Override
           public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-            if (actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_NULL) {
+            if ((actionId == EditorInfo.IME_ACTION_GO) || (actionId == EditorInfo.IME_NULL)) {
               String url = v.getText().toString();
-              loadUrl(url);
+              loadUrl(url, /* reloadCurrentUrl= */ true);
               webView.requestFocus();
               ((InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE))
                   .hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -153,10 +153,19 @@ public class ScriptBrowser {
    *            the address to load
    */
   public void loadUrl(String url) {
-    if ((url != null) && !url.isEmpty() && !url.equals(currentUrl)) {
-      changeAddressField(url);
+    loadUrl(url, /* reloadCurrentUrl= */ false);
+  }
 
-      webView.loadUrl(url);
+  protected void loadUrl(String url, boolean reloadCurrentUrl) {
+    if ((url != null) && !url.isEmpty()) {
+      if (!url.equals(currentUrl)) {
+        changeAddressField(url);
+
+        webView.loadUrl(url);
+      }
+      else if (reloadCurrentUrl) {
+        webView.reload();
+      }
     }
   }
 
