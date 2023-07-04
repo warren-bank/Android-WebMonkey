@@ -128,7 +128,7 @@ public class WebViewGmImpl extends ScriptManagerActivity {
   @Override
   protected void onPause() {
     if (scriptBrowser != null) {
-      SettingsUtils.setLastUrl(this, scriptBrowser.getUrl());
+      SettingsUtils.setLastUrl(this, scriptBrowser.getCurrentUrl());
       scriptBrowser.pause();
     }
     if (scriptStore != null) {

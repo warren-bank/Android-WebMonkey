@@ -51,6 +51,7 @@ public class ScriptBrowser {
 
   private String startUrl;
 
+  private String previousUrl;
   private String currentUrl;
 
   protected View browser;
@@ -68,20 +69,16 @@ public class ScriptBrowser {
    *            the location of the script to install
    */
   protected void installScript(String url) {
-    makeToastOnUiThread(activity.getString(R.string.starting_download_of)
-        + " " + url, Toast.LENGTH_SHORT);
+    makeToastOnUiThread(activity.getString(R.string.starting_download_of) + " " + url, Toast.LENGTH_SHORT);
     String scriptStr = DownloadHelper.downloadScript(url);
     if (scriptStr == null) {
-      makeToastOnUiThread(
-          activity.getString(R.string.error_downloading_from) + " "
-              + url, Toast.LENGTH_LONG);
+      makeToastOnUiThread(activity.getString(R.string.error_downloading_from) + " " + url, Toast.LENGTH_LONG);
       return;
     }
     Script script = Script.parse(scriptStr, url);
     if (script == null) {
       Log.d(TAG, "Error parsing script:\n" + scriptStr);
-      makeToastOnUiThread(activity.getString(R.string.error_parsing_at)
-          + " " + url, Toast.LENGTH_LONG);
+      makeToastOnUiThread(activity.getString(R.string.error_parsing_at) + " " + url, Toast.LENGTH_LONG);
       return;
     }
 
@@ -109,41 +106,44 @@ public class ScriptBrowser {
    */
   @SuppressLint("InflateParams")
   private void init() {
-    browser = activity.getLayoutInflater().inflate(
-        R.layout.script_browser, null);
+    browser = activity.getLayoutInflater().inflate(R.layout.script_browser, null);
     webView = (WebViewGm) browser.findViewById(R.id.webView);
     webView.setScriptStore(scriptStore);
     addressField = (EditText) browser.findViewById(R.id.addressField);
     addressField
         .setOnEditorActionListener(new EditText.OnEditorActionListener() {
           @Override
-          public boolean onEditorAction(TextView v, int actionId,
-              KeyEvent event) {
-            if (actionId == EditorInfo.IME_ACTION_GO
-                || actionId == EditorInfo.IME_NULL) {
-              currentUrl = v.getText().toString();
-              webView.loadUrl(currentUrl);
+          public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_NULL) {
+              String url = v.getText().toString();
+              loadUrl(url);
               webView.requestFocus();
-              ((InputMethodManager) activity
-                  .getSystemService(Context.INPUT_METHOD_SERVICE))
-                  .hideSoftInputFromWindow(
-                      v.getWindowToken(), 0);
+              ((InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE))
+                  .hideSoftInputFromWindow(v.getWindowToken(), 0);
               return true;
             }
             return false;
           }
         });
-    webView.setWebViewClient(new ScriptBrowserWebViewClientGm(scriptStore,
-        webView.getWebViewClient().getJsBridgeName(), webView
-            .getWebViewClient().getSecret(), this));
+    webView.setWebViewClient(
+      new ScriptBrowserWebViewClientGm(
+        scriptStore,
+        webView.getWebViewClient().getJsBridgeName(),
+        webView.getWebViewClient().getSecret(),
+        this
+      )
+    );
     webView.setDownloadListener(new ScriptBrowserDownloadListener(this));
     webView.setWebChromeClient(new ScriptBrowserWebChromeClient(this));
     loadUrl(startUrl);
   }
 
   public void changeAddressField(String url) {
-    currentUrl = url;
-    addressField.setText(url);
+    if ((url != null) && !url.isEmpty() && !url.equals(currentUrl)) {
+      previousUrl = currentUrl;
+      currentUrl = url;
+      addressField.setText(url);
+    }
   }
 
   /**
@@ -153,25 +153,23 @@ public class ScriptBrowser {
    *            the address to load
    */
   public void loadUrl(String url) {
-    changeAddressField(url);
-    webView.loadUrl(url);
+    if ((url != null) && !url.isEmpty() && !url.equals(currentUrl)) {
+      changeAddressField(url);
+
+      webView.loadUrl(url);
+    }
   }
 
-  /**
-   * @return the browser's last loaded address
-   */
-  public String getUrl() {
-    currentUrl = webView.getUrl();
-    return currentUrl;
-  }
-
-  /**
-   * @return the browser's last loaded address
-   *
-   * Same as getUrl(), but can be called from a non-UI thread.
-   */
   public String getCurrentUrl() {
     return currentUrl;
+  }
+
+  protected String getPreviousUrl() {
+    return previousUrl;
+  }
+
+  protected void clearPreviousUrl() {
+    previousUrl = null;
   }
 
   /**
@@ -182,8 +180,7 @@ public class ScriptBrowser {
    * @param scriptStore
    *            the database to use
    */
-  public ScriptBrowser(ScriptManagerActivity activity,
-      ScriptStore scriptStore, String startUrl) {
+  public ScriptBrowser(ScriptManagerActivity activity, ScriptStore scriptStore, String startUrl) {
     this.activity = activity;
     this.scriptStore = scriptStore;
     this.startUrl = startUrl;
@@ -298,8 +295,7 @@ public class ScriptBrowser {
      * @param scriptBrowser
      *            reference to its enclosing ScriptBrowser
      */
-    public ScriptBrowserWebViewClientGm(ScriptStore scriptStore,
-        String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
+    public ScriptBrowserWebViewClientGm(ScriptStore scriptStore, String jsBridgeName, String secret, ScriptBrowser scriptBrowser) {
       super(scriptStore, jsBridgeName, secret);
       this.scriptBrowser = scriptBrowser;
     }
@@ -317,24 +313,55 @@ public class ScriptBrowser {
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
-      if (!ScriptBrowser.didWebViewLoadData(view)) {
-        scriptBrowser.changeAddressField(url);
-        scriptBrowser.checkDownload(url);
-      }
+      handlePageNavigation(view, url);
       super.onPageStarted(view, url, favicon);
+    }
+
+    @Override
+    public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
+      handlePageNavigation(view, url);
+      super.doUpdateVisitedHistory(view, url, isReload);
+    }
+
+    @Override
+    public void onPageFinished(WebView view, String url) {
+      if ((url != null) && !url.isEmpty() && url.equals(scriptBrowser.getPreviousUrl())) {
+        scriptBrowser.clearPreviousUrl();
+      }
+      super.onPageFinished(view, url);
     }
 
     @SuppressWarnings("deprecation")
     @Override
-    public void onReceivedError(WebView view, int errorCode,
-        String description, String failingUrl) {
+    public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+      String text = scriptBrowser.activity.getString(R.string.error_while_loading)
+        + " "  + failingUrl
+        + ": " + errorCode
+        + " "  + description;
+
       Toast.makeText(
-          scriptBrowser.activity,
-          scriptBrowser.activity
-              .getString(R.string.error_while_loading)
-              + " "
-              + failingUrl + ": " + errorCode + " " + description,
-          Toast.LENGTH_LONG).show();
+        scriptBrowser.activity,
+        text,
+        Toast.LENGTH_LONG
+      ).show();
+    }
+
+    private void handlePageNavigation(WebView view, String url) {
+      handlePageNavigation(view, url, true, true);
+    }
+
+    private void handlePageNavigation(WebView view, String url, boolean ignoreCurrentUrl, boolean ignorePreviousUrl) {
+      if (!ScriptBrowser.didWebViewLoadData(view)) {
+        if ((url != null) && !url.isEmpty()) {
+          if (ignoreCurrentUrl && url.equals(scriptBrowser.getCurrentUrl()))
+            return;
+          if (ignorePreviousUrl && url.equals(scriptBrowser.getPreviousUrl()))
+            return;
+
+          scriptBrowser.loadUrl(url);
+          scriptBrowser.checkDownload(url);
+        }
+      }
     }
 
   }
@@ -342,8 +369,7 @@ public class ScriptBrowser {
   /**
    * DownloadListener for .user.js downloads.
    */
-  public static class ScriptBrowserDownloadListener implements
-      DownloadListener {
+  public static class ScriptBrowserDownloadListener implements DownloadListener {
 
     private ScriptBrowser scriptBrowser;
 
@@ -358,8 +384,7 @@ public class ScriptBrowser {
     }
 
     @Override
-    public void onDownloadStart(final String url, String userAgent,
-        String contentDisposition, String mimetype, long contentLength) {
+    public void onDownloadStart(final String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
       scriptBrowser.checkDownload(url);
     }
 
