@@ -36,6 +36,7 @@ import at.pardus.android.webview.gm.run.WebViewClientGm;
 import at.pardus.android.webview.gm.run.WebViewGm;
 import at.pardus.android.webview.gm.store.ScriptStore;
 import at.pardus.android.webview.gm.util.DownloadHelper;
+import at.pardus.android.webview.gm.util.UrlUtils;
 
 /**
  * Combines an address field and a WebView intercepting .user.js file downloads
@@ -51,7 +52,7 @@ public class ScriptBrowser {
 
   private String startUrl;
 
-  private String previousUrl;
+  private String loadingUrl;
   private String currentUrl;
 
   protected View browser;
@@ -139,11 +140,12 @@ public class ScriptBrowser {
   }
 
   public void changeAddressField(String url) {
-    if ((url != null) && !url.isEmpty() && !url.equals(currentUrl)) {
-      previousUrl = currentUrl;
-      currentUrl = url;
-      addressField.setText(url);
-    }
+    if ((url == null) || url.isEmpty()) return;
+
+    url = UrlUtils.removeHash(url);
+    if (url.equals(currentUrl)) return;
+
+    addressField.setText(url);
   }
 
   /**
@@ -157,28 +159,33 @@ public class ScriptBrowser {
   }
 
   protected void loadUrl(String url, boolean reloadCurrentUrl) {
-    if ((url != null) && !url.isEmpty()) {
-      if (!url.equals(currentUrl)) {
-        changeAddressField(url);
+    if ((url == null) || url.isEmpty()) return;
 
-        webView.loadUrl(url);
-      }
-      else if (reloadCurrentUrl) {
-        webView.reload();
-      }
+    url = UrlUtils.removeHash(url);
+
+    if (url.equals(currentUrl) && reloadCurrentUrl) {
+      webView.reload();
     }
+
+    if (url.equals(currentUrl) || url.equals(loadingUrl)) return;
+
+    loadingUrl = url;
+
+    changeAddressField(url);
+    webView.stopLoading();
+    webView.loadUrl(url);
+  }
+
+  protected String getLoadingUrl() {
+    return loadingUrl;
   }
 
   public String getCurrentUrl() {
     return currentUrl;
   }
 
-  protected String getPreviousUrl() {
-    return previousUrl;
-  }
-
-  protected void clearPreviousUrl() {
-    previousUrl = null;
+  protected void setCurrentUrl(String url) {
+    currentUrl = UrlUtils.removeHash(url);
   }
 
   /**
@@ -328,15 +335,13 @@ public class ScriptBrowser {
 
     @Override
     public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
-      handlePageNavigation(view, url);
+      handlePageNavigation(view, null);
       super.doUpdateVisitedHistory(view, url, isReload);
     }
 
     @Override
     public void onPageFinished(WebView view, String url) {
-      if ((url != null) && !url.isEmpty() && url.equals(scriptBrowser.getPreviousUrl())) {
-        scriptBrowser.clearPreviousUrl();
-      }
+      handlePageNavigation(view, null);
       super.onPageFinished(view, url);
     }
 
@@ -356,20 +361,46 @@ public class ScriptBrowser {
     }
 
     private void handlePageNavigation(WebView view, String url) {
-      handlePageNavigation(view, url, true, true);
-    }
+      if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return;
 
-    private void handlePageNavigation(WebView view, String url, boolean ignoreCurrentUrl, boolean ignorePreviousUrl) {
-      if (!ScriptBrowser.didWebViewLoadData(view)) {
-        if ((url != null) && !url.isEmpty()) {
-          if (ignoreCurrentUrl && url.equals(scriptBrowser.getCurrentUrl()))
-            return;
-          if (ignorePreviousUrl && url.equals(scriptBrowser.getPreviousUrl()))
-            return;
+      String loadingUrl = scriptBrowser.getLoadingUrl();
+      String currentUrl = scriptBrowser.getCurrentUrl();
+      boolean setCurrent = false;
 
-          scriptBrowser.loadUrl(url);
-          scriptBrowser.checkDownload(url);
-        }
+      if ((url == null) || url.isEmpty()) {
+        url = view.getUrl();
+        url = UrlUtils.removeHash(url);
+
+        if ((url == null) || url.isEmpty()) return;
+
+        if (url.equals(currentUrl)) return;
+
+        setCurrent = true;
+      }
+      else {
+        url = UrlUtils.removeHash(url);
+      }
+
+      // ======================================================
+      // special case: Activity started with data URI in Intent
+      // - calls rapidly:
+      //     scriptBrowser.loadUrl("about:blank")
+      //     scriptBrowser.loadUrl(dataURI)
+      // - where:
+      //     loadingUrl = dataURI
+      //     url = "about:blank"
+      // - must prevent:
+      //     currentUrl = "about:blank"
+      // ======================================================
+      if ((currentUrl == null) && !url.equals(loadingUrl)) return;
+
+      if (!url.equals(loadingUrl) && !url.equals(currentUrl)) {
+        scriptBrowser.loadUrl(url);
+        scriptBrowser.checkDownload(url);
+      }
+
+      if (setCurrent) {
+        scriptBrowser.setCurrentUrl(url);
       }
     }
 

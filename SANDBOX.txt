@@ -293,7 +293,8 @@ usage of flags in my implementation:
 behavior:
 ---------
 
-* when there is NOT a closure (or a sandbox):
+* when there is NOT a closure:
+  - there is NOT a sandbox
   - 'unsafeWindow' is not defined
   - the real 'window' is exposed
     by the following globally scoped variables:
