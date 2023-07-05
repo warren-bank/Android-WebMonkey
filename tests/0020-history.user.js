@@ -31,16 +31,7 @@ setTimeout(
         unsafeWindow.history.replaceState({}, '', url)
     }
   },
-  2500
+  3000
 )
 
-const toastAlarm = setInterval(
-  function() {
-    GM_toastShort(unsafeWindow.location.href)
-  },
-  1000
-)
-
-unsafeWindow.addEventListener('beforeunload', function(event) {
-  clearInterval(toastAlarm)
-})
+GM_toastShort(unsafeWindow.location.href)

@@ -164,6 +164,7 @@ public class WmJsApi {
         activity.runOnUiThread(new Runnable() {
           public void run() {
             try {
+              webview.stopLoading();
               if ((headers != null) && (headers.length >= 2)) {
                 int length = (headers.length % 2 == 0)
                   ? headers.length
@@ -258,6 +259,7 @@ public class WmJsApi {
               String historyUrl = null;
 
               browser.setCurrentUrl(urlFrame);
+              webview.stopLoading();
               webview.loadDataWithBaseURL(/* baseUrl= */ urlParent, /* data= */ html, mimeType, encoding, historyUrl);
             }
             catch(Exception e) {
@@ -287,6 +289,7 @@ public class WmJsApi {
               String historyUrl = null;
 
               browser.setCurrentUrl(urlFrame);
+              webview.stopLoading();
               webview.loadDataWithBaseURL(/* baseUrl= */ urlParent, /* data= */ html, mimeType, encoding, historyUrl);
             }
             catch(Exception e) {

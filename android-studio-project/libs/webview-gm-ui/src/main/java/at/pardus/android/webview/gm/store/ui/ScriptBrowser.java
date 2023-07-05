@@ -19,6 +19,7 @@ package at.pardus.android.webview.gm.store.ui;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -51,14 +52,14 @@ public class ScriptBrowser {
   protected ScriptStore scriptStore;
 
   private String startUrl;
-
   private String loadingUrl;
   private String currentUrl;
 
+  private Handler handler;
+  private Runnable loadUrlRunnable;
+
   protected View browser;
-
   protected WebViewGm webView;
-
   protected EditText addressField;
 
   /**
@@ -70,25 +71,25 @@ public class ScriptBrowser {
    *            the location of the script to install
    */
   protected void installScript(String url) {
-    makeToastOnUiThread(activity.getString(R.string.starting_download_of) + " " + url, Toast.LENGTH_SHORT);
+    makeToastOnUiThread(activity, activity.getString(R.string.starting_download_of) + " " + url, Toast.LENGTH_SHORT);
     String scriptStr = DownloadHelper.downloadScript(url);
     if (scriptStr == null) {
-      makeToastOnUiThread(activity.getString(R.string.error_downloading_from) + " " + url, Toast.LENGTH_LONG);
+      makeToastOnUiThread(activity, activity.getString(R.string.error_downloading_from) + " " + url, Toast.LENGTH_LONG);
       return;
     }
     Script script = Script.parse(scriptStr, url);
     if (script == null) {
       Log.d(TAG, "Error parsing script:\n" + scriptStr);
-      makeToastOnUiThread(activity.getString(R.string.error_parsing_at) + " " + url, Toast.LENGTH_LONG);
+      makeToastOnUiThread(activity, activity.getString(R.string.error_parsing_at) + " " + url, Toast.LENGTH_LONG);
       return;
     }
 
     scriptStore.add(script);
-    makeToastOnUiThread(activity.getString(R.string.added_new_script) + " " + script, Toast.LENGTH_LONG);
+    makeToastOnUiThread(activity, activity.getString(R.string.added_new_script) + " " + script, Toast.LENGTH_LONG);
   }
 
   protected boolean checkDownload(final String url) {
-    if (url.endsWith(".user.js")) {
+    if ((url != null) && url.endsWith(".user.js")) {
       // TODO ask before installing new script
       new Thread() {
         public void run() {
@@ -107,6 +108,18 @@ public class ScriptBrowser {
    */
   @SuppressLint("InflateParams")
   private void init() {
+    loadingUrl = null;
+    currentUrl = null;
+    handler = new Handler();
+    loadUrlRunnable = new Runnable() {
+      public void run() {
+        if ((loadingUrl != null) && !loadingUrl.equals(currentUrl)) {
+          loadUrlOnUiThread(webView, loadingUrl);
+          checkDownload(loadingUrl);
+        }
+        loadingUrl = null;
+      }
+    };
     browser = activity.getLayoutInflater().inflate(R.layout.script_browser, null);
     webView = (WebViewGm) browser.findViewById(R.id.webView);
     webView.setScriptStore(scriptStore);
@@ -172,8 +185,28 @@ public class ScriptBrowser {
     loadingUrl = url;
 
     changeAddressField(url);
-    webView.stopLoading();
-    webView.loadUrl(url);
+    setLoadUrlTimer();
+  }
+
+  private void setLoadUrlTimer() {
+    long delayMillis = (currentUrl == null)
+      ?  250l
+      : 2500l;
+
+    setLoadUrlTimer(delayMillis);
+  }
+
+  private void setLoadUrlTimer(long delayMillis) {
+    unsetLoadUrlTimer();
+
+    handler.postDelayed(
+      loadUrlRunnable,
+      delayMillis
+    );
+  }
+
+  private void unsetLoadUrlTimer() {
+    handler.removeCallbacks(loadUrlRunnable);
   }
 
   protected String getLoadingUrl() {
@@ -245,20 +278,31 @@ public class ScriptBrowser {
     return webView;
   }
 
-  /**
-   * Displays a message created on the UI thread.
-   *
-   * @param message
-   *            the message to show
-   * @param length
-   *            the duration (use Toast.LENGTH_ constants)
-   */
-  private void makeToastOnUiThread(final String message, final int length) {
-    activity.runOnUiThread(new Runnable() {
-      public void run() {
-        Toast.makeText(activity, message, length).show();
+  private void runOnUiThread(Runnable action) {
+    if ((activity == null) || activity.isDestroyed() || activity.isFinishing()) return;
+
+    activity.runOnUiThread(action);
+  }
+
+  private void makeToastOnUiThread(final Context context, final String message, final int length) {
+    runOnUiThread(
+      new Runnable() {
+        public void run() {
+          Toast.makeText(context, message, length).show();
+        }
       }
-    });
+    );
+  }
+
+  private void loadUrlOnUiThread(final WebView webView, final String url) {
+    runOnUiThread(
+      new Runnable() {
+        public void run() {
+          webView.stopLoading();
+          webView.loadUrl(url);
+        }
+      }
+    );
   }
 
   /**
@@ -322,32 +366,36 @@ public class ScriptBrowser {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, final String url) {
-      return (!ScriptBrowser.didWebViewLoadData(view))
-        ? scriptBrowser.checkDownload(url)
-        : false;
+      if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return false;
+
+      if ((url == null) || url.equals(scriptBrowser.getLoadingUrl())) return false;
+
+      return scriptBrowser.checkDownload(url);
     }
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
-      handlePageNavigation(view, url);
+      handlePageNavigation(view, url, false);
       super.onPageStarted(view, url, favicon);
     }
 
     @Override
     public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
-      handlePageNavigation(view, null);
+      handlePageNavigation(view, null, false);
       super.doUpdateVisitedHistory(view, url, isReload);
     }
 
     @Override
     public void onPageFinished(WebView view, String url) {
-      handlePageNavigation(view, null);
+      handlePageNavigation(view, null, true);
       super.onPageFinished(view, url);
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+      if ((scriptBrowser.activity == null) || scriptBrowser.activity.isDestroyed() || scriptBrowser.activity.isFinishing()) return;
+
       String text = scriptBrowser.activity.getString(R.string.error_while_loading)
         + " "  + failingUrl
         + ": " + errorCode
@@ -360,46 +408,23 @@ public class ScriptBrowser {
       ).show();
     }
 
-    private void handlePageNavigation(WebView view, String url) {
+    private void handlePageNavigation(WebView view, String url, boolean setCurrentUrl) {
       if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return;
 
-      String loadingUrl = scriptBrowser.getLoadingUrl();
       String currentUrl = scriptBrowser.getCurrentUrl();
-      boolean setCurrent = false;
 
       if ((url == null) || url.isEmpty()) {
         url = view.getUrl();
-        url = UrlUtils.removeHash(url);
-
-        if ((url == null) || url.isEmpty()) return;
-
-        if (url.equals(currentUrl)) return;
-
-        setCurrent = true;
       }
-      else {
-        url = UrlUtils.removeHash(url);
-      }
+      url = UrlUtils.removeHash(url);
 
-      // ======================================================
-      // special case: Activity started with data URI in Intent
-      // - calls rapidly:
-      //     scriptBrowser.loadUrl("about:blank")
-      //     scriptBrowser.loadUrl(dataURI)
-      // - where:
-      //     loadingUrl = dataURI
-      //     url = "about:blank"
-      // - must prevent:
-      //     currentUrl = "about:blank"
-      // ======================================================
-      if ((currentUrl == null) && !url.equals(loadingUrl)) return;
+      if ((url == null) || url.isEmpty() || url.equals(currentUrl)) return;
 
-      if (!url.equals(loadingUrl) && !url.equals(currentUrl)) {
+      if (currentUrl != null) {
         scriptBrowser.loadUrl(url);
-        scriptBrowser.checkDownload(url);
       }
 
-      if (setCurrent) {
+      if (setCurrentUrl) {
         scriptBrowser.setCurrentUrl(url);
       }
     }
@@ -449,14 +474,18 @@ public class ScriptBrowser {
 
     @Override
     public void onProgressChanged(WebView view, int progress) {
+      if ((scriptBrowser.activity == null) || scriptBrowser.activity.isDestroyed() || scriptBrowser.activity.isFinishing()) return;
+
       scriptBrowser.activity.setProgress(progress * 100);
     }
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-      if (!ScriptBrowser.didWebViewLoadData(view)) {
-        scriptBrowser.activity.setTitle(title);
-      }
+      if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return;
+
+      if ((scriptBrowser.activity == null) || scriptBrowser.activity.isDestroyed() || scriptBrowser.activity.isFinishing()) return;
+
+      scriptBrowser.activity.setTitle(title);
     }
 
   }
