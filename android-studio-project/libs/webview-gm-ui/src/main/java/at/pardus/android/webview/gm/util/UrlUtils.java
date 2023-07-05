@@ -12,4 +12,14 @@ public class UrlUtils {
       : url;
   }
 
+  public static boolean areEqual(String url_1, String url_2) {
+    if ((url_1 == null) && (url_2 == null)) return true;
+    if ((url_1 == null) || (url_2 == null)) return false;
+
+    url_1 = removeHash(url_1);
+    url_2 = removeHash(url_2);
+
+    return url_1.equals(url_2);
+  }
+
 }

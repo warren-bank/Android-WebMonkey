@@ -20,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -52,7 +53,8 @@ public class ScriptBrowser {
   protected ScriptStore scriptStore;
 
   private String startUrl;
-  private String loadingUrl;
+  private String currentLoadingUrl;
+  private String pendingLoadingUrl;
   private String currentUrl;
 
   private Handler handler;
@@ -73,7 +75,7 @@ public class ScriptBrowser {
   protected void installScript(String url) {
     makeToastOnUiThread(activity, activity.getString(R.string.starting_download_of) + " " + url, Toast.LENGTH_SHORT);
     String scriptStr = DownloadHelper.downloadScript(url);
-    if (scriptStr == null) {
+    if (TextUtils.isEmpty(scriptStr)) {
       makeToastOnUiThread(activity, activity.getString(R.string.error_downloading_from) + " " + url, Toast.LENGTH_LONG);
       return;
     }
@@ -108,16 +110,16 @@ public class ScriptBrowser {
    */
   @SuppressLint("InflateParams")
   private void init() {
-    loadingUrl = null;
+    currentLoadingUrl = null;
+    pendingLoadingUrl = null;
     currentUrl = null;
     handler = new Handler();
     loadUrlRunnable = new Runnable() {
       public void run() {
-        if ((loadingUrl != null) && !loadingUrl.equals(currentUrl)) {
-          loadUrlOnUiThread(webView, loadingUrl);
-          checkDownload(loadingUrl);
+        if ((pendingLoadingUrl != null) && !pendingLoadingUrl.equals(currentLoadingUrl)&& !pendingLoadingUrl.equals(currentUrl)) {
+          loadUrlOnUiThread(webView, pendingLoadingUrl);
         }
-        loadingUrl = null;
+        pendingLoadingUrl = null;
       }
     };
     browser = activity.getLayoutInflater().inflate(R.layout.script_browser, null);
@@ -153,7 +155,7 @@ public class ScriptBrowser {
   }
 
   public void changeAddressField(String url) {
-    if ((url == null) || url.isEmpty()) return;
+    if (TextUtils.isEmpty(url)) return;
 
     url = UrlUtils.removeHash(url);
     if (url.equals(currentUrl)) return;
@@ -172,7 +174,7 @@ public class ScriptBrowser {
   }
 
   protected void loadUrl(String url, boolean reloadCurrentUrl) {
-    if ((url == null) || url.isEmpty()) return;
+    if (TextUtils.isEmpty(url)) return;
 
     url = UrlUtils.removeHash(url);
 
@@ -180,9 +182,9 @@ public class ScriptBrowser {
       webView.reload();
     }
 
-    if (url.equals(currentUrl) || url.equals(loadingUrl)) return;
+    if (url.equals(currentUrl) || url.equals(currentLoadingUrl) || url.equals(pendingLoadingUrl)) return;
 
-    loadingUrl = url;
+    pendingLoadingUrl = url;
 
     changeAddressField(url);
     setLoadUrlTimer();
@@ -209,16 +211,26 @@ public class ScriptBrowser {
     handler.removeCallbacks(loadUrlRunnable);
   }
 
-  protected String getLoadingUrl() {
-    return loadingUrl;
-  }
+  protected void setCurrentLoadingUrl(String url) {
+    currentLoadingUrl = UrlUtils.removeHash(url);
 
-  public String getCurrentUrl() {
-    return currentUrl;
+    changeAddressField(url);
+
+    if (UrlUtils.areEqual(currentLoadingUrl, pendingLoadingUrl)) {
+      pendingLoadingUrl = null;
+    }
   }
 
   protected void setCurrentUrl(String url) {
     currentUrl = UrlUtils.removeHash(url);
+
+    if (UrlUtils.areEqual(currentUrl, currentLoadingUrl)) {
+      currentLoadingUrl = null;
+    }
+  }
+
+  public String getCurrentUrl() {
+    return currentUrl;
   }
 
   /**
@@ -368,13 +380,15 @@ public class ScriptBrowser {
     public boolean shouldOverrideUrlLoading(WebView view, final String url) {
       if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return false;
 
-      if ((url == null) || url.equals(scriptBrowser.getLoadingUrl())) return false;
-
-      return scriptBrowser.checkDownload(url);
+      return TextUtils.isEmpty(url)
+        ? false
+        : scriptBrowser.checkDownload(url);
     }
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
+      scriptBrowser.setCurrentLoadingUrl(url);
+
       handlePageNavigation(view, url, false);
       super.onPageStarted(view, url, favicon);
     }
@@ -387,7 +401,9 @@ public class ScriptBrowser {
 
     @Override
     public void onPageFinished(WebView view, String url) {
-      handlePageNavigation(view, null, true);
+      boolean setCurrentUrl = (view != null) && UrlUtils.areEqual(url, view.getUrl());
+
+      handlePageNavigation(view, null, setCurrentUrl);
       super.onPageFinished(view, url);
     }
 
@@ -411,18 +427,14 @@ public class ScriptBrowser {
     private void handlePageNavigation(WebView view, String url, boolean setCurrentUrl) {
       if ((view == null) || ScriptBrowser.didWebViewLoadData(view)) return;
 
-      String currentUrl = scriptBrowser.getCurrentUrl();
-
-      if ((url == null) || url.isEmpty()) {
+      if (TextUtils.isEmpty(url)) {
         url = view.getUrl();
       }
+
       url = UrlUtils.removeHash(url);
+      if (TextUtils.isEmpty(url)) return;
 
-      if ((url == null) || url.isEmpty() || url.equals(currentUrl)) return;
-
-      if (currentUrl != null) {
-        scriptBrowser.loadUrl(url);
-      }
+      scriptBrowser.loadUrl(url);
 
       if (setCurrentUrl) {
         scriptBrowser.setCurrentUrl(url);
