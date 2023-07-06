@@ -184,9 +184,11 @@ public class ScriptBrowser {
 
     if (url.equals(currentUrl) || url.equals(currentLoadingUrl) || url.equals(pendingLoadingUrl)) return;
 
-    pendingLoadingUrl = url;
+    if ((currentUrl == null) && (currentLoadingUrl == null)) {
+      changeAddressField(url);
+    }
 
-    changeAddressField(url);
+    pendingLoadingUrl = url;
     setLoadUrlTimer();
   }
 
@@ -223,6 +225,8 @@ public class ScriptBrowser {
 
   protected void setCurrentUrl(String url) {
     currentUrl = UrlUtils.removeHash(url);
+
+    changeAddressField(url);
 
     if (UrlUtils.areEqual(currentUrl, currentLoadingUrl)) {
       currentLoadingUrl = null;
