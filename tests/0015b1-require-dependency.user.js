@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         test: @require
+// @description  test: Promise.defer() without an external dependency.
 // @namespace    WebViewWM
 // @match        *://*
 // @run-at       document-start
