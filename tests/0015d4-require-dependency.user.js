@@ -10,6 +10,9 @@
 
 // https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
 
+unsafeWindow.Vue = Vue;
+window.Vue = Vue;
+
 var clean_dom = function() {
   while(document.body.childNodes.length) {
     document.body.removeChild(document.body.childNodes[0]);
@@ -38,9 +41,6 @@ var init_vue = function() {
 }
 
 var run_test = function() {
-  unsafeWindow.Vue = Vue;
-  window.Vue = Vue;
-
   unsafeWindow.alert('typeof unsafeWindow.Vue = ' + (typeof unsafeWindow.Vue));
   unsafeWindow.alert('typeof window.Vue = ' + (typeof window.Vue));
   unsafeWindow.alert('typeof Vue = ' + (typeof Vue));

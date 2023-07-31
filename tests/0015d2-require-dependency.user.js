@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         test: @require
-// @description  test: Vue.js with sandbox, and explicit injection of Vue object to both global namespace and sandbox
+// @description  test: Vue.js with sandbox, and explicit injection of Vue object to both global and sandbox namespaces
 // @namespace    WebViewWM
 // @match        *://*
 // @run-at       document-end
@@ -8,6 +8,9 @@
 // ==/UserScript==
 
 // https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
+
+unsafeWindow.Vue = Vue;
+window.Vue = Vue;
 
 var clean_dom = function() {
   while(document.body.childNodes.length) {
@@ -37,9 +40,6 @@ var init_vue = function() {
 }
 
 var run_test = function() {
-  unsafeWindow.Vue = Vue;
-  window.Vue = Vue;
-
   unsafeWindow.alert('typeof unsafeWindow.Vue = ' + (typeof unsafeWindow.Vue));
   unsafeWindow.alert('typeof window.Vue = ' + (typeof window.Vue));
   unsafeWindow.alert('typeof Vue = ' + (typeof Vue));
