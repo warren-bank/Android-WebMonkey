@@ -22,24 +22,27 @@ public class CookieHelper {
   public static Map<String, String> getCookieMap(String url) {
     String              cookieStr = CookieHelper.getCookieString(url);
     Map<String, String> cookieMap = new HashMap<String, String>();
-    String[]            cookieArr = cookieStr.split(";");
 
-    String[] cookieParts;
-    String name, value;
+    if (cookieStr != null) {
+      String[] cookieArr = cookieStr.split(";");
 
-    for (int i=0; i < cookieArr.length; i++) {
-      cookieParts = cookieArr[i].split("=");
+      String[] cookieParts;
+      String name, value;
 
-      if (cookieParts.length == 2) {
-        name  = cookieParts[0].trim();
-        value = cookieParts[1].trim();
+      for (int i=0; i < cookieArr.length; i++) {
+        cookieParts = cookieArr[i].split("=");
 
-        try {
-          value = URLDecoder.decode(value, "UTF-8");
+        if (cookieParts.length == 2) {
+          name  = cookieParts[0].trim();
+          value = cookieParts[1].trim();
+
+          try {
+            value = URLDecoder.decode(value, "UTF-8");
+          }
+          catch(Exception e){}
+
+          cookieMap.put(name, value);
         }
-        catch(Exception e){}
-
-        cookieMap.put(name, value);
       }
     }
 
