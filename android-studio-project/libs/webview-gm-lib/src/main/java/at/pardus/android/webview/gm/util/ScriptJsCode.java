@@ -281,6 +281,69 @@ public class ScriptJsCode {
     sb.append(", JSON.stringify(details))); };");
     sb.append("\n");
 
+    sb.append("var GM_cookie = {};");
+    sb.append("\n");
+
+    sb.append("GM_cookie.list = function(details, callback) {");
+    sb.append(  "if (typeof details === 'function') {callback = details; details = {};}");
+    sb.append(  "if (!details || (typeof details !== 'object')) details = {};");
+    sb.append(  "if (typeof callback !== 'function') return;");
+    sb.append(  "var url, cookies;");
+    sb.append(  "url = details.url ? details.url : details.domain ? ('https://' + details.domain) : unsafeWindow.location.href;");
+    sb.append(  "cookies = JSON.parse(");
+    sb.append(    jsBridgeName);
+    sb.append(    ".listCookies(");
+    sb.append(      defaultSignature);
+    sb.append(      ", url");
+    sb.append(    ")");
+    sb.append(  ");");
+    sb.append(  "if (details.name) {");
+    sb.append(    "cookies = cookies.filter(function(cookie){return (cookie.name === details.name);});"); // note: cookie names ARE case-sensitive
+    sb.append(  "}");
+    sb.append(  "callback(cookies, null);");
+    sb.append("};");
+    sb.append("\n");
+
+    sb.append("GM_cookie.set = function(details, callback) {");
+    sb.append(  "var url, maxAge;");
+    sb.append(  "if (details && (typeof details === 'object') && details.name && details.value) {");
+    sb.append(    "url = details.url ? details.url : details.domain ? ('https://' + details.domain) : unsafeWindow.location.href;");
+    sb.append(    "if (details.expirationDate && (typeof details.expirationDate === 'number')) {");
+    sb.append(      "maxAge = (new Date(details.expirationDate * 1000)) - (new Date());");
+    sb.append(      "maxAge = Math.floor(maxAge / 1000);");
+    sb.append(      "if (maxAge < 0) maxAge = 0;");
+    sb.append(    "}");
+    sb.append(    "else {");
+    sb.append(      "maxAge = -1;");
+    sb.append(    "}");
+    sb.append(    jsBridgeName);
+    sb.append(    ".setCookie(");
+    sb.append(      defaultSignature);
+    sb.append(      ", url, details.name, details.value, !!details.secure, !!details.httpOnly, maxAge");
+    sb.append(    ");");
+    sb.append(  "}");
+    sb.append(  "if (typeof callback === 'function') {");
+    sb.append(    "callback();");
+    sb.append(  "}");
+    sb.append("};");
+    sb.append("\n");
+
+    sb.append("GM_cookie.delete = function(details, callback) {");
+    sb.append(  "var url;");
+    sb.append(  "if (details && (typeof details === 'object') && details.name) {");
+    sb.append(    "url = details.url ? details.url : details.domain ? ('https://' + details.domain) : unsafeWindow.location.href;");
+    sb.append(    jsBridgeName);
+    sb.append(    ".deleteCookie(");
+    sb.append(      defaultSignature);
+    sb.append(      ", url, details.name");
+    sb.append(    ");");
+    sb.append(  "}");
+    sb.append(  "if (typeof callback === 'function') {");
+    sb.append(    "callback();");
+    sb.append(  "}");
+    sb.append("};");
+    sb.append("\n");
+
     sb.append(GM_API_V4_POLYFILL);
 
     return sb.toString();

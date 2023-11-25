@@ -16,8 +16,3 @@ var GM_removeValueChangeListener = GM_notImplemented.bind(null, 'GM_removeValueC
 var GM_saveTab                   = GM_notImplemented.bind(null, 'GM_saveTab');
 var GM_setClipboard              = GM_notImplemented.bind(null, 'GM_setClipboard');
 var GM_webRequest                = GM_notImplemented.bind(null, 'GM_webRequest');
-var GM_cookie = {
-  "list":   GM_notImplemented.bind(null, 'GM_cookie.list'),
-  "set":    GM_notImplemented.bind(null, 'GM_cookie.set'),
-  "delete": GM_notImplemented.bind(null, 'GM_cookie.delete')
-};

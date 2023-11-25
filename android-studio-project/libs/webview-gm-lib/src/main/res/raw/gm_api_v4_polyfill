@@ -38,7 +38,40 @@ var _GM_promisifyApiMethod = function(api) {
   return _GM_promisifyApiMethod_handler.bind(null, api);
 };
 
+var _GM_denodifyApiMethod_handler = function() {
+  var args, sync_method;
+  args = unsafeWindow.Array.prototype.slice.call(arguments);
+  if (args.length && (typeof args[0] === 'function')) {
+    sync_method = args.shift();
+  }
+  return new unsafeWindow.Promise(function(resolve, reject) {
+    try {
+      if (!sync_method) {
+        throw new unsafeWindow.Error('bad params to GM 4 polyfill');
+      }
+      var callback = function(result, error) {
+        if (error)
+          reject(error);
+        else
+          resolve(result);
+      }
+      args.push(callback);
+      sync_method.apply(null, args);
+    }
+    catch (e) {
+      reject(e);
+    }
+  });
+};
+
+// asynchronous, returns a Promise
+var _GM_denodifyApiMethod = function(api) {
+  return _GM_denodifyApiMethod_handler.bind(null, api);
+};
+
 var GM = {};
+GM.cookies = {};
+GM.cookie = GM.cookies;
 
 _GM_addApiToObject(
   GM,
@@ -78,5 +111,17 @@ _GM_addApiToObject(
     'saveTab':                   _GM_promisifyApiMethod(GM_saveTab),
     'setClipboard':              _GM_promisifyApiMethod(GM_setClipboard),
     'webRequest':                _GM_promisifyApiMethod(GM_webRequest)
+  }
+);
+
+_GM_addApiToObject(
+  GM.cookies,
+  {
+    // ------------
+    // asynchronous
+    // ------------
+    'list':                      _GM_denodifyApiMethod(GM_cookie.list),
+    'set':                       _GM_denodifyApiMethod(GM_cookie.set),
+    'delete':                    _GM_denodifyApiMethod(GM_cookie.delete)
   }
 );
