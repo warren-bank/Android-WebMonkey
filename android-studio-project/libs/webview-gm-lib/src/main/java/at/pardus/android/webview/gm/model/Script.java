@@ -33,8 +33,10 @@ import at.pardus.android.webview.gm.util.DownloadHelper;
  */
 public class Script extends ScriptMetadata {
 
-  private static final int noJsClosureFlag = 1;
-  private static final int noJsSandboxFlag = 2;
+  private static final int noJsClosureFlag    = 1;
+  private static final int noJsSandboxFlag    = 2;
+  private static final int enableGmValuesFlag = 4;
+  private static final int enableGmCookieFlag = 8;
 
   private static final int setFlags(int flags, String newFlags) {
     if (!TextUtils.isEmpty(newFlags)) {
@@ -97,6 +99,22 @@ public class Script extends ScriptMetadata {
 
   public boolean useJsSandbox() {
     return !hasFlag(noJsSandboxFlag);
+  }
+
+  public boolean grant(String api) {
+    switch(api) {
+      case "GM_setValue":
+      case "GM_getValue":
+      case "GM_deleteValue":
+      case "GM_listValues":
+        return hasFlag(enableGmValuesFlag);
+      case "GM_cookie":
+      case "GM_cookie.list":
+      case "GM_cookie.set":
+      case "GM_cookie.delete":
+        return hasFlag(enableGmCookieFlag);
+    }
+    return true;
   }
 
   private boolean hasFlag(int flag) {
@@ -217,8 +235,22 @@ public class Script extends ScriptMetadata {
             } else if (propertyName.equals("flags")) {
               flags = setFlags(flags, propertyValue);
             } else if (propertyName.equals("grant")) {
-              if (propertyValue.equals("none")) {
-                flags |= noJsSandboxFlag;
+              switch(propertyValue) {
+                case "none":
+                  flags |= noJsSandboxFlag;
+                  break;
+                case "GM_setValue":
+                case "GM_getValue":
+                case "GM_deleteValue":
+                case "GM_listValues":
+                  flags |= enableGmValuesFlag;
+                  break;
+                case "GM_cookie":
+                case "GM_cookie.list":
+                case "GM_cookie.set":
+                case "GM_cookie.delete":
+                  flags |= enableGmCookieFlag;
+                  break;
               }
             }
           }

@@ -25,8 +25,8 @@ import at.pardus.android.webview.gm.model.ScriptResource;
 import at.pardus.android.webview.gm.store.ScriptStore;
 
 /**
- * Contains methods simulating GM functions that need access to the
- * app/database. Used as interface accessible from javascript code.
+ * Contains methods simulating GM functions that need access to the app/database.
+ * Used as interface accessible from javascript code.
  */
 public class WebViewGmApi {
 
@@ -52,6 +52,16 @@ public class WebViewGmApi {
     this.secret = secret;
   }
 
+  private boolean grant(String scriptName, String scriptNamespace, String api) {
+    ScriptId id = new ScriptId(scriptName, scriptNamespace);
+    Script script = scriptStore.get(id);
+    if (!script.grant(api)) {
+      Log.w(TAG, "Access to \"" + api + "\" API is not granted to script: " + scriptName);
+      return false;
+    }
+    return true;
+  }
+
   /**
    * Equivalent of GM_listValues.
    * 
@@ -65,15 +75,16 @@ public class WebViewGmApi {
    *         commas
    * @see <a href="http://wiki.greasespot.net/GM_listValues">GM_listValues</a>
    */
-    @JavascriptInterface
-  public String listValues(String scriptName, String scriptNamespace,
-      String secret) {
+  @JavascriptInterface
+  public String listValues(String scriptName, String scriptNamespace, String secret) {
     if (!this.secret.equals(secret)) {
       Log.e(TAG, "Call to \"listValues\" did not supply correct secret");
       return null;
     }
-    String[] values = scriptStore.getValueNames(new ScriptId(scriptName,
-        scriptNamespace));
+    if (!grant(scriptName, scriptNamespace, "GM_listValues")) {
+      return null;
+    }
+    String[] values = scriptStore.getValueNames(new ScriptId(scriptName, scriptNamespace));
     if (values == null || values.length == 0) {
       return "";
     }
@@ -102,15 +113,16 @@ public class WebViewGmApi {
    * @return the value of name or defaultValue if not found
    * @see <a href="http://wiki.greasespot.net/GM_getValue">GM_getValue</a>
    */
-    @JavascriptInterface
-  public String getValue(String scriptName, String scriptNamespace,
-      String secret, String name, String defaultValue) {
+  @JavascriptInterface
+  public String getValue(String scriptName, String scriptNamespace, String secret, String name, String defaultValue) {
     if (!this.secret.equals(secret)) {
       Log.e(TAG, "Call to \"getValue\" did not supply correct secret");
       return null;
     }
-    String v = scriptStore.getValue(new ScriptId(scriptName,
-        scriptNamespace), name);
+    if (!grant(scriptName, scriptNamespace, "GM_getValue")) {
+      return null;
+    }
+    String v = scriptStore.getValue(new ScriptId(scriptName, scriptNamespace), name);
     return (v != null) ? v : defaultValue;
   }
 
@@ -129,15 +141,16 @@ public class WebViewGmApi {
    *            the value to set
    * @see <a href="http://wiki.greasespot.net/GM_setValue">GM_setValue</a>
    */
-    @JavascriptInterface
-  public void setValue(String scriptName, String scriptNamespace,
-      String secret, String name, String value) {
+  @JavascriptInterface
+  public void setValue(String scriptName, String scriptNamespace, String secret, String name, String value) {
     if (!this.secret.equals(secret)) {
       Log.e(TAG, "Call to \"setValue\" did not supply correct secret");
       return;
     }
-    scriptStore.setValue(new ScriptId(scriptName, scriptNamespace), name,
-        value);
+    if (!grant(scriptName, scriptNamespace, "GM_setValue")) {
+      return;
+    }
+    scriptStore.setValue(new ScriptId(scriptName, scriptNamespace), name, value);
   }
 
   /**
@@ -153,15 +166,16 @@ public class WebViewGmApi {
    *            the name of the value to delete
    * @see <tt><a href="http://wiki.greasespot.net/GM_deleteValue">GM_deleteValue</a></tt>
    */
-    @JavascriptInterface
-  public void deleteValue(String scriptName, String scriptNamespace,
-      String secret, String name) {
+  @JavascriptInterface
+  public void deleteValue(String scriptName, String scriptNamespace, String secret, String name) {
     if (!this.secret.equals(secret)) {
       Log.e(TAG, "Call to \"deleteValue\" did not supply correct secret");
       return;
     }
-    scriptStore
-        .deleteValue(new ScriptId(scriptName, scriptNamespace), name);
+    if (!grant(scriptName, scriptNamespace, "GM_deleteValue")) {
+      return;
+    }
+    scriptStore.deleteValue(new ScriptId(scriptName, scriptNamespace), name);
   }
 
   /**
@@ -177,9 +191,8 @@ public class WebViewGmApi {
    *            the message to log
    * @see <tt><a href="http://wiki.greasespot.net/GM_log">GM_log</a></tt>
    */
-    @JavascriptInterface
-  public void log(String scriptName, String scriptNamespace, String secret,
-      String message) {
+  @JavascriptInterface
+  public void log(String scriptName, String scriptNamespace, String secret, String message) {
     if (!this.secret.equals(secret)) {
       Log.e(TAG, "Call to \"log\" did not supply correct secret");
       return;
@@ -200,21 +213,17 @@ public class WebViewGmApi {
    *            the name of the resource to retrieve from the database.
    * @see <tt><a href="http://wiki.greasespot.net/GM_getResourceURL">GM_getResourceURL</a></tt>
    */
-    @JavascriptInterface
-  public String getResourceURL(String scriptName, String scriptNamespace,
-      String secret, String resourceName) {
+  @JavascriptInterface
+  public String getResourceURL(String scriptName, String scriptNamespace, String secret, String resourceName) {
     if (!this.secret.equals(secret)) {
-      Log.e(TAG,
-          "Call to \"getResourceURL\" did not supply correct secret");
+      Log.e(TAG, "Call to \"getResourceURL\" did not supply correct secret");
       return "";
     }
 
-    Script script = scriptStore.get(new ScriptId(scriptName,
-        scriptNamespace));
+    Script script = scriptStore.get(new ScriptId(scriptName, scriptNamespace));
 
     for (ScriptResource resource : script.getResources()) {
-      Log.i(TAG, "Resource: " + resource.getName() + " want: "
-          + resourceName + " uri: " + resource.getJavascriptUrl());
+      Log.i(TAG, "Resource: " + resource.getName() + " want: " + resourceName + " uri: " + resource.getJavascriptUrl());
       if (!resource.getName().equals(resourceName)) {
         continue;
       }
@@ -222,8 +231,7 @@ public class WebViewGmApi {
       return resource.getJavascriptUrl();
     }
 
-    Log.e(TAG, "Requested resource: " + resourceName + " not found! ("
-        + script.getResources().length + ")");
+    Log.e(TAG, "Requested resource: " + resourceName + " not found! (" + script.getResources().length + ")");
 
     return "";
   }
@@ -241,17 +249,14 @@ public class WebViewGmApi {
    *            the name of the resource to retrieve from the database.
    * @see <tt><a href="http://wiki.greasespot.net/GM_getResourceText">GM_getResourceText</a></tt>
    */
-    @JavascriptInterface
-  public String getResourceText(String scriptName, String scriptNamespace,
-      String secret, String resourceName) {
+  @JavascriptInterface
+  public String getResourceText(String scriptName, String scriptNamespace, String secret, String resourceName) {
     if (!this.secret.equals(secret)) {
-      Log.e(TAG,
-          "Call to \"getResourceText\" did not supply correct secret");
+      Log.e(TAG, "Call to \"getResourceText\" did not supply correct secret");
       return "";
     }
 
-    Script script = scriptStore.get(new ScriptId(scriptName,
-        scriptNamespace));
+    Script script = scriptStore.get(new ScriptId(scriptName, scriptNamespace));
 
     for (ScriptResource resource : script.getResources()) {
       if (!resource.getName().equals(resourceName)) {
@@ -277,12 +282,10 @@ public class WebViewGmApi {
    *            the HTTP Request object encoded as a JSON string.
    * @see <tt><a href="http://wiki.greasespot.net/GM_xmlhttpRequest">GM_xmlhttpRequest</a></tt>
    */
-    @JavascriptInterface
-  public String xmlHttpRequest(String scriptName, String scriptNamespace,
-      String secret, String jsonRequestString) {
+  @JavascriptInterface
+  public String xmlHttpRequest(String scriptName, String scriptNamespace, String secret, String jsonRequestString) {
     if (!this.secret.equals(secret)) {
-      Log.e(TAG,
-          "Call to \"xmlHttpRequest\" did not supply correct secret");
+      Log.e(TAG, "Call to \"xmlHttpRequest\" did not supply correct secret");
       return "";
     }
 
