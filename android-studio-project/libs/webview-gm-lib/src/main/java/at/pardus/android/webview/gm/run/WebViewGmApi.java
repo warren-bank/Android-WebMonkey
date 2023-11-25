@@ -343,4 +343,49 @@ public class WebViewGmApi {
 
     return CookieHelper.getCookieJSON(url);
   }
+
+  /**
+   * Equivalent of GM_cookie.set
+   *
+   * @param scriptName
+   *            the name of the calling script
+   * @param scriptNamespace
+   *            the namespace of the calling script
+   * @param secret
+   *            the transmitted secret to validate
+   * @param url
+   *            the URL for which the cookie is set
+   * @param name
+   *            the name of the cookie
+   * @param value
+   *            the value of the cookie
+   * @param secure
+   *            whether the cookie should only be sent over HTTPS
+   * @param httpOnly
+   *            whether JavaScript should be Forbidden from accessing the cookie
+   * @param maxAge
+   *            the number of seconds until the cookie expires
+   * @see <tt><a href="https://www.tampermonkey.net/documentation.php#api:GM_cookie.set">GM_cookie.set</a></tt>
+   */
+  @JavascriptInterface
+  public void setCookie(String scriptName, String scriptNamespace, String secret, String url, String name, String value, boolean secure, boolean httpOnly, int maxAge) {
+    if ((url == null) || url.isEmpty())
+      url = view.getUrl();
+
+    if ((url == null) || url.isEmpty()) {
+      return;
+    }
+    if (!this.secret.equals(secret)) {
+      Log.e(TAG, "Call to \"setCookie\" did not supply correct secret");
+      return;
+    }
+    if (!grant(scriptName, scriptNamespace, "GM_cookie.set")) {
+      return;
+    }
+    if (!isAllowed(scriptName, scriptNamespace, url)) {
+      return;
+    }
+
+    CookieHelper.setCookie(url, name, value, secure, httpOnly, maxAge);
+  }
 }

@@ -80,4 +80,20 @@ public class CookieHelper {
     return cookieJSONArray.toString();
   }
 
+  public static void setCookie(String url, String name, String value, boolean secure, boolean httpOnly, int maxAge) {
+    StringBuffer cookieStrBuf = new StringBuffer();
+    cookieStrBuf.append(name + "=" + value);
+    if (secure)
+      cookieStrBuf.append("; Secure");
+    if (httpOnly)
+      cookieStrBuf.append("; HttpOnly");
+    if (maxAge >= 0)
+      cookieStrBuf.append("; Max-Age=" + maxAge);
+
+    CookieManager cookieMgr = CookieManager.getInstance();
+    String        cookieStr = cookieStrBuf.toString();
+
+    cookieMgr.setCookie(url, cookieStr);
+  }
+
 }
