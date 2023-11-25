@@ -3,6 +3,7 @@ package com.github.warren_bank.webmonkey;
 import com.github.warren_bank.webmonkey.settings.SettingsUtils;
 
 import at.pardus.android.webview.gm.run.WebViewClientGm;
+import at.pardus.android.webview.gm.run.WebViewGm;
 import at.pardus.android.webview.gm.util.DownloadHelper;
 
 import android.app.Activity;
@@ -11,7 +12,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
-import android.webkit.WebView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -24,13 +24,13 @@ public class WmJsApi {
 
   public static final String TAG = "WebViewGmApi";
 
-  public String   secret;
-  public Activity activity;
-  public WebView  webview;
-  public IBrowser browser;
-  public boolean  useES6;
+  public String    secret;
+  public Activity  activity;
+  public WebViewGm webview;
+  public IBrowser  browser;
+  public boolean   useES6;
 
-  public WmJsApi(String secret, Activity activity, WebView webview, IBrowser browser) {
+  public WmJsApi(String secret, Activity activity, WebViewGm webview, IBrowser browser) {
     this.secret   = secret;
     this.activity = activity;
     this.webview  = webview;

@@ -26,7 +26,7 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
     WebViewClientGm webViewClient = webViewGm.getWebViewClient();
     String secret = webViewClient.getSecret();
-    WmJsApi jsApi = new WmJsApi(secret, /* Activity */ this, /* WebView */ webViewGm, /* IBrowser */ this);
+    WmJsApi jsApi = new WmJsApi(secret, /* Activity */ this, /* WebViewGm */ webViewGm, /* IBrowser */ this);
 
     WmScriptJsCode.initStaticResources(/* Context */ this);
     WmScriptJsCode scriptJsCode = new WmScriptJsCode(jsApi.getJsApi());
