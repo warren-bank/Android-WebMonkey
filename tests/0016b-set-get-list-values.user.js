@@ -3,6 +3,7 @@
 // @namespace    WebViewWM
 // @match        *://*
 // @run-at       document-start
+// @grant        GM.setValue
 // ==/UserScript==
 
 GM.deleteValue('foo').then(console.log)

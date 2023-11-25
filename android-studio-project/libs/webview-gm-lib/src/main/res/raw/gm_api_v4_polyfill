@@ -69,9 +69,9 @@ var _GM_denodifyApiMethod = function(api) {
   return _GM_denodifyApiMethod_handler.bind(null, api);
 };
 
-var GM = {};
-GM.cookies = {};
-GM.cookie = GM.cookies;
+var GM     = {};
+GM.cookie  = {};
+GM.cookies = GM.cookie;
 
 _GM_addApiToObject(
   GM,
@@ -115,7 +115,7 @@ _GM_addApiToObject(
 );
 
 _GM_addApiToObject(
-  GM.cookies,
+  GM.cookie,
   {
     // ------------
     // asynchronous

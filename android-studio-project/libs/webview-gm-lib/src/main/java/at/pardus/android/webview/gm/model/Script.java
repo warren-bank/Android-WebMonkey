@@ -107,11 +107,23 @@ public class Script extends ScriptMetadata {
       case "GM_getValue":
       case "GM_deleteValue":
       case "GM_listValues":
+      case "GM.setValue":
+      case "GM.getValue":
+      case "GM.deleteValue":
+      case "GM.listValues":
         return hasFlag(enableGmValuesFlag);
       case "GM_cookie":
       case "GM_cookie.list":
       case "GM_cookie.set":
       case "GM_cookie.delete":
+      case "GM.cookie":
+      case "GM.cookie.list":
+      case "GM.cookie.set":
+      case "GM.cookie.delete":
+      case "GM.cookies":
+      case "GM.cookies.list":
+      case "GM.cookies.set":
+      case "GM.cookies.delete":
         return hasFlag(enableGmCookieFlag);
     }
     return true;
@@ -243,12 +255,24 @@ public class Script extends ScriptMetadata {
                 case "GM_getValue":
                 case "GM_deleteValue":
                 case "GM_listValues":
+                case "GM.setValue":
+                case "GM.getValue":
+                case "GM.deleteValue":
+                case "GM.listValues":
                   flags |= enableGmValuesFlag;
                   break;
                 case "GM_cookie":
                 case "GM_cookie.list":
                 case "GM_cookie.set":
                 case "GM_cookie.delete":
+                case "GM.cookie":
+                case "GM.cookie.list":
+                case "GM.cookie.set":
+                case "GM.cookie.delete":
+                case "GM.cookies":
+                case "GM.cookies.list":
+                case "GM.cookies.set":
+                case "GM.cookies.delete":
                   flags |= enableGmCookieFlag;
                   break;
               }
