@@ -96,4 +96,8 @@ public class CookieHelper {
     cookieMgr.setCookie(url, cookieStr);
   }
 
+  public static void deleteCookie(String url, String name) {
+    CookieHelper.setCookie(url, name, "", false, false, 0);
+  }
+
 }

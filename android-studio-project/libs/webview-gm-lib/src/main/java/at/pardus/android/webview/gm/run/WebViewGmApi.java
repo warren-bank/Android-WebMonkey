@@ -388,4 +388,41 @@ public class WebViewGmApi {
 
     CookieHelper.setCookie(url, name, value, secure, httpOnly, maxAge);
   }
+
+  /**
+   * Equivalent of GM_cookie.delete
+   *
+   * @param scriptName
+   *            the name of the calling script
+   * @param scriptNamespace
+   *            the namespace of the calling script
+   * @param secret
+   *            the transmitted secret to validate
+   * @param url
+   *            the URL for which the cookie is deleted
+   * @param name
+   *            the name of the cookie
+   * @see <tt><a href="https://www.tampermonkey.net/documentation.php#api:GM_cookie.delete">GM_cookie.delete</a></tt>
+   */
+  @JavascriptInterface
+  public void deleteCookie(String scriptName, String scriptNamespace, String secret, String url, String name) {
+    if ((url == null) || url.isEmpty())
+      url = view.getUrl();
+
+    if ((url == null) || url.isEmpty()) {
+      return;
+    }
+    if (!this.secret.equals(secret)) {
+      Log.e(TAG, "Call to \"deleteCookie\" did not supply correct secret");
+      return;
+    }
+    if (!grant(scriptName, scriptNamespace, "GM_cookie.delete")) {
+      return;
+    }
+    if (!isAllowed(scriptName, scriptNamespace, url)) {
+      return;
+    }
+
+    CookieHelper.deleteCookie(url, name);
+  }
 }
