@@ -29,6 +29,9 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
 * supplements the list of supported Greasemonkey API functions:
   - legacy:
     * `GM_addElement`
+    * `GM_cookie.delete`
+    * `GM_cookie.list`
+    * `GM_cookie.set`
     * `GM_fetch`
       - drop-in replacement for `window.fetch` that uses `GM_xmlhttpRequest` to make network requests
     * `GM_info`
@@ -37,6 +40,12 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
   - [GM 4](https://www.greasespot.net/2017/09/greasemonkey-4-for-script-authors.html):
     * `GM.addElement`
     * `GM.addStyle`
+    * `GM.cookie.delete`
+    * `GM.cookie.list`
+    * `GM.cookie.set`
+    * `GM.cookies.delete`
+    * `GM.cookies.list`
+    * `GM.cookies.set`
     * `GM.deleteValue`
     * `GM.fetch`
     * `GM.getResourceText`
