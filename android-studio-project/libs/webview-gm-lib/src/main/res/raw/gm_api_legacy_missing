@@ -10,7 +10,6 @@ var GM_addValueChangeListener    = GM_notImplemented.bind(null, 'GM_addValueChan
 var GM_download                  = GM_notImplemented.bind(null, 'GM_download');
 var GM_getTab                    = GM_notImplemented.bind(null, 'GM_getTab');
 var GM_getTabs                   = GM_notImplemented.bind(null, 'GM_getTabs');
-var GM_info                      = GM_notImplemented.bind(null, 'GM_info');
 var GM_notification              = GM_notImplemented.bind(null, 'GM_notification');
 var GM_openInTab                 = GM_notImplemented.bind(null, 'GM_openInTab');
 var GM_removeValueChangeListener = GM_notImplemented.bind(null, 'GM_removeValueChangeListener');
