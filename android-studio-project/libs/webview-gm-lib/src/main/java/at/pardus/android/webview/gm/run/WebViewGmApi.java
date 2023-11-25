@@ -23,6 +23,7 @@ import at.pardus.android.webview.gm.model.Script;
 import at.pardus.android.webview.gm.model.ScriptId;
 import at.pardus.android.webview.gm.model.ScriptResource;
 import at.pardus.android.webview.gm.store.ScriptStore;
+import at.pardus.android.webview.gm.util.CookieHelper;
 
 /**
  * Contains methods simulating GM functions that need access to the app/database.
@@ -57,6 +58,15 @@ public class WebViewGmApi {
     Script script = scriptStore.get(id);
     if (!script.grant(api)) {
       Log.w(TAG, "Access to \"" + api + "\" API is not granted to script: " + scriptName);
+      return false;
+    }
+    return true;
+  }
+
+  private boolean isAllowed(String scriptName, String scriptNamespace, String url) {
+    ScriptId id = new ScriptId(scriptName, scriptNamespace);
+    if (!scriptStore.isAllowed(id, url)) {
+      Log.w(TAG, "Access to URL is not allowed by script: " + scriptName + "\nURL: " + url);
       return false;
     }
     return true;
@@ -297,5 +307,40 @@ public class WebViewGmApi {
     }
 
     return "";
+  }
+
+  /**
+   * Equivalent of GM_cookie.list
+   *
+   * @param scriptName
+   *            the name of the calling script
+   * @param scriptNamespace
+   *            the namespace of the calling script
+   * @param secret
+   *            the transmitted secret to validate
+   * @param url
+   *            the URL for which the cookies are requested
+   * @see <tt><a href="https://www.tampermonkey.net/documentation.php#api:GM_cookie.list">GM_cookie.list</a></tt>
+   */
+  @JavascriptInterface
+  public String listCookies(String scriptName, String scriptNamespace, String secret, String url) {
+    if ((url == null) || url.isEmpty())
+      url = view.getUrl();
+
+    if ((url == null) || url.isEmpty()) {
+      return "[]";
+    }
+    if (!this.secret.equals(secret)) {
+      Log.e(TAG, "Call to \"listCookies\" did not supply correct secret");
+      return "[]";
+    }
+    if (!grant(scriptName, scriptNamespace, "GM_cookie.list")) {
+      return "[]";
+    }
+    if (!isAllowed(scriptName, scriptNamespace, url)) {
+      return "[]";
+    }
+
+    return CookieHelper.getCookieJSON(url);
   }
 }

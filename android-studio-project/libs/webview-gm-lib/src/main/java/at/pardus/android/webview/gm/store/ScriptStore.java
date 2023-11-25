@@ -129,4 +129,15 @@ public interface ScriptStore {
    */
     void deleteValue(ScriptId id, String name);
 
+  /**
+   * Determines whether a user script matches a URL.
+   * Used when an API is granted, but its scope is restricted.
+   * 
+   * @param id
+   *            the owner script
+   * @param url
+   *            the URL
+   */
+    boolean isAllowed(ScriptId id, String url);
+
 }

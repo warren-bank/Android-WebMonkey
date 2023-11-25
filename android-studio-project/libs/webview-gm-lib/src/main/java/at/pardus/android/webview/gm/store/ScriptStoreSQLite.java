@@ -24,6 +24,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -164,6 +165,21 @@ public class ScriptStoreSQLite implements ScriptStore {
       return;
     }
     dbHelper.deleteValue(id, name);
+  }
+
+  @Override
+  public boolean isAllowed(ScriptId id, String url) {
+    ScriptId[] matchingIds = cache.getMatchingScriptIds(url);
+
+    if (matchingIds.length > 0) {
+      List<ScriptId> matchingIdsList = Arrays.asList(matchingIds);
+
+      if (matchingIdsList.contains(id)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   /**
