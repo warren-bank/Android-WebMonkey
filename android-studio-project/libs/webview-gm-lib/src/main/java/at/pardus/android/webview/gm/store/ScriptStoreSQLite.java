@@ -169,12 +169,14 @@ public class ScriptStoreSQLite implements ScriptStore {
 
   @Override
   public boolean isAllowed(ScriptId id, String url) {
+    ScriptCriteria sc = new ScriptCriteria(id.getName(), id.getNamespace(), null, null, null);
+
     ScriptId[] matchingIds = cache.getMatchingScriptIds(url);
 
     if (matchingIds.length > 0) {
       List<ScriptId> matchingIdsList = Arrays.asList(matchingIds);
 
-      if (matchingIdsList.contains(id)) {
+      if (matchingIdsList.contains(sc)) {
         return true;
       }
     }
