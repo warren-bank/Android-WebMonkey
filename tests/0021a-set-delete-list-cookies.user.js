@@ -24,3 +24,7 @@ GM_cookie.list(callback)
 
 GM_cookie.delete({'name': 'bar'})
 GM_cookie.list(callback)
+
+GM_cookie.delete({'name': 'baz'})
+GM_cookie.set({'name': 'baz', 'value': 'hello, baz; hello = baz', 'encode': true})
+GM_cookie.list({'decode': true}, callback)

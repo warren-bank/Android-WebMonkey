@@ -4,8 +4,6 @@ import android.webkit.CookieManager;
 
 import org.json.JSONArray;
 
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,11 +34,6 @@ public class CookieHelper {
         if (cookieParts.length == 2) {
           name  = cookieParts[0].trim();
           value = cookieParts[1].trim();
-
-          try {
-            value = URLDecoder.decode(value, "UTF-8");
-          }
-          catch(Exception e){}
 
           cookieMap.put(name, value);
         }
@@ -85,11 +78,6 @@ public class CookieHelper {
   }
 
   public static void setCookie(String url, String name, String value, boolean secure, boolean httpOnly, int maxAge) {
-    try {
-      value = URLEncoder.encode(value, "UTF-8");
-    }
-    catch(Exception e){}
-
     StringBuffer cookieStrBuf = new StringBuffer();
     cookieStrBuf.append(name + "=" + value);
     if (secure)

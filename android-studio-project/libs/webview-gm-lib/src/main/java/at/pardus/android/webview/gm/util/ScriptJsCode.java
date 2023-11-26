@@ -300,14 +300,20 @@ public class ScriptJsCode {
     sb.append(  "if (details.name) {");
     sb.append(    "cookies = cookies.filter(function(cookie){return (cookie.name === details.name);});"); // note: cookie names ARE case-sensitive
     sb.append(  "}");
+    sb.append(  "if (details.decode) {");
+    sb.append(    "for (var i=0; i < cookies.length; i++) {");
+    sb.append(      "cookies[i].value = unsafeWindow.decodeURIComponent(cookies[i].value);");
+    sb.append(    "}");
+    sb.append(  "}");
     sb.append(  "callback(cookies, null);");
     sb.append("};");
     sb.append("\n");
 
     sb.append("GM_cookie.set = function(details, callback) {");
-    sb.append(  "var url, maxAge;");
+    sb.append(  "var url, value, maxAge;");
     sb.append(  "if (details && (typeof details === 'object') && details.name && details.value) {");
     sb.append(    "url = details.url ? details.url : details.domain ? ('https://' + details.domain) : unsafeWindow.location.href;");
+    sb.append(    "value = details.encode ? unsafeWindow.encodeURIComponent(details.value) : details.value;");
     sb.append(    "if (details.expirationDate && (typeof details.expirationDate === 'number')) {");
     sb.append(      "maxAge = (new Date(details.expirationDate * 1000)) - (new Date());");
     sb.append(      "maxAge = Math.floor(maxAge / 1000);");
@@ -319,7 +325,7 @@ public class ScriptJsCode {
     sb.append(    jsBridgeName);
     sb.append(    ".setCookie(");
     sb.append(      defaultSignature);
-    sb.append(      ", url, details.name, details.value, !!details.secure, !!details.httpOnly, maxAge");
+    sb.append(      ", url, details.name, value, !!details.secure, !!details.httpOnly, maxAge");
     sb.append(    ");");
     sb.append(  "}");
     sb.append(  "if (typeof callback === 'function') {");

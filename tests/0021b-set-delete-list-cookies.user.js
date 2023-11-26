@@ -25,6 +25,10 @@ var init = async function() {
 
   await GM.cookie.delete({'name': 'bar'})
   await GM.cookie.list().then(callback)
+
+  await GM.cookie.delete({'name': 'baz'})
+  await GM.cookie.set({'name': 'baz', 'value': 'hello, baz; hello = baz', 'encode': true})
+  await GM.cookie.list({'decode': true}).then(callback)
 }
 
 init()
