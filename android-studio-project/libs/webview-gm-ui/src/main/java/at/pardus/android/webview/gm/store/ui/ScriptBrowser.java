@@ -55,6 +55,7 @@ public class ScriptBrowser {
   private String startUrl;
   private String currentLoadingUrl;
   private String pendingLoadingUrl;
+  private String pendingLoadingUrlWithHash;
   private String currentUrl;
 
   private Handler handler;
@@ -112,14 +113,16 @@ public class ScriptBrowser {
   private void init() {
     currentLoadingUrl = null;
     pendingLoadingUrl = null;
+    pendingLoadingUrlWithHash = null;
     currentUrl = null;
     handler = new Handler();
     loadUrlRunnable = new Runnable() {
       public void run() {
         if ((pendingLoadingUrl != null) && !pendingLoadingUrl.equals(currentLoadingUrl)&& !pendingLoadingUrl.equals(currentUrl)) {
-          loadUrlOnUiThread(webView, pendingLoadingUrl);
+          loadUrlOnUiThread(webView, pendingLoadingUrlWithHash);
         }
         pendingLoadingUrl = null;
+        pendingLoadingUrlWithHash = null;
       }
     };
     browser = activity.getLayoutInflater().inflate(R.layout.script_browser, null);
@@ -157,10 +160,12 @@ public class ScriptBrowser {
   public void changeAddressField(String url) {
     if (TextUtils.isEmpty(url)) return;
 
+    String urlWithHash = url;
+
     url = UrlUtils.removeHash(url);
     if (url.equals(currentUrl)) return;
 
-    addressField.setText(url);
+    addressField.setText(urlWithHash);
   }
 
   /**
@@ -176,6 +181,8 @@ public class ScriptBrowser {
   protected void loadUrl(String url, boolean reloadCurrentUrl) {
     if (TextUtils.isEmpty(url)) return;
 
+    String urlWithHash = url;
+
     url = UrlUtils.removeHash(url);
 
     if (url.equals(currentUrl) && reloadCurrentUrl) {
@@ -185,10 +192,11 @@ public class ScriptBrowser {
     if (url.equals(currentUrl) || url.equals(currentLoadingUrl) || url.equals(pendingLoadingUrl)) return;
 
     if ((currentUrl == null) && (currentLoadingUrl == null)) {
-      changeAddressField(url);
+      changeAddressField(urlWithHash);
     }
 
     pendingLoadingUrl = url;
+    pendingLoadingUrlWithHash = urlWithHash;
     setLoadUrlTimer();
   }
 
@@ -220,6 +228,7 @@ public class ScriptBrowser {
 
     if (UrlUtils.areEqual(currentLoadingUrl, pendingLoadingUrl)) {
       pendingLoadingUrl = null;
+      pendingLoadingUrlWithHash = null;
     }
   }
 
@@ -435,7 +444,6 @@ public class ScriptBrowser {
         url = view.getUrl();
       }
 
-      url = UrlUtils.removeHash(url);
       if (TextUtils.isEmpty(url)) return;
 
       scriptBrowser.loadUrl(url);
