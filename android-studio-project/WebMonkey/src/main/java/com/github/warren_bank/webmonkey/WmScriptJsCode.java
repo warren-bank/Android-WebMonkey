@@ -15,13 +15,15 @@ public class WmScriptJsCode extends ScriptJsCode {
   public static void initStaticResources(Context context) {
     if (TextUtils.isEmpty(WM_API_V4_POLYFILL)) {
       try {
-        WM_API_V4_POLYFILL = ResourceHelper.getRawStringResource(context, R.raw.wm_api_v4_polyfill);
+        if (useES6)
+          WM_API_V4_POLYFILL = ResourceHelper.getRawStringResource(context, R.raw.wm_api_v4_polyfill);
       }
       catch(Exception e) {}
     }
     if (TextUtils.isEmpty(WM_CLOSURE)) {
       try {
-        WM_CLOSURE = ResourceHelper.getRawStringResource(context, R.raw.wm_closure);
+        if (useES6)
+          WM_CLOSURE = ResourceHelper.getRawStringResource(context, R.raw.wm_closure);
       }
       catch(Exception e) {}
     }

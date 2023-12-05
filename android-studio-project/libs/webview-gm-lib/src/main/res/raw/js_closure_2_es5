@@ -1,0 +1,3 @@
+  var window = self = globalThis = unsafeWindow;
+
+  var userscript_wrapper = function(){

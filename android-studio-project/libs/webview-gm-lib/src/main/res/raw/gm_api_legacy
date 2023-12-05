@@ -226,7 +226,7 @@ var GM_fetch = function(input, init) {
       );
       _parsedRespHeaders.set("X-Final-URL", finalUrl);
       var options = {
-        status,
+        status: status,
         statusText: resp.statusText,
         headers: _parsedRespHeaders,
         url: finalUrl

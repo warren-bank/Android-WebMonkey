@@ -1,6 +1,7 @@
 package at.pardus.android.webview.gm.util;
 
 import android.content.Context;
+import android.os.Build;
 import android.text.TextUtils;
 
 import java.util.UUID;
@@ -12,6 +13,7 @@ import at.pardus.android.webview.gm.util.ResourceHelper;
 import at.pardus.android.webview.gm.util.ScriptInfo;
 
 public class ScriptJsCode {
+  protected static final boolean useES6 = (Build.VERSION.SDK_INT >= 21);  // use ES5 in Android <= 4.4 because WebView is outdated and cannot be updated
 
   private static final String GLOBAL_JS_OBJECT = "unsafeWindow.wrappedJSObject";
 
@@ -39,7 +41,8 @@ public class ScriptJsCode {
     }
     if (TextUtils.isEmpty(GM_API_V4_POLYFILL)) {
       try {
-        GM_API_V4_POLYFILL = ResourceHelper.getRawStringResource(context, R.raw.gm_api_v4_polyfill);
+        if (useES6)
+          GM_API_V4_POLYFILL = ResourceHelper.getRawStringResource(context, R.raw.gm_api_v4_polyfill);
       }
       catch(Exception e) {}
     }
@@ -52,7 +55,10 @@ public class ScriptJsCode {
     }
     if (TextUtils.isEmpty(JS_CLOSURE_2)) {
       try {
-        JS_CLOSURE_2 = ResourceHelper.getRawStringResource(context, R.raw.js_closure_2);
+        if (useES6)
+          JS_CLOSURE_2 = ResourceHelper.getRawStringResource(context, R.raw.js_closure_2_es6);
+        else
+          JS_CLOSURE_2 = ResourceHelper.getRawStringResource(context, R.raw.js_closure_2_es5);
       }
       catch(Exception e) {}
     }
