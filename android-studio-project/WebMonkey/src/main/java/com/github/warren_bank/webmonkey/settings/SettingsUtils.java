@@ -65,14 +65,94 @@ public class SettingsUtils {
   }
 
   private static String getHomePage(Context context, SharedPreferences prefs) {
+    String pref_value = getUnresolvedHomePageValue(context, prefs);
+
+    if (pref_value.equals(context.getString(R.string.pref_lasturl))) {
+      return getLastUrl(context, prefs);
+    }
+
+    if (pref_value.equals(context.getString(R.string.pref_custom_homepage_key))) {
+      return getCustomHomePage(context, prefs);
+    }
+
+    return pref_value;
+  }
+
+  protected static String getUnresolvedHomePageValue(Context context, SharedPreferences prefs) {
     String pref_key     = context.getString(R.string.pref_homepage_key);
     String pref_default = context.getString(R.string.pref_homepage_default);
     String pref_value   = prefs.getString(pref_key, pref_default);
 
-    return (pref_value.equals(context.getString(R.string.pref_lasturl)))
-      ? getLastUrl(context, prefs)
-      : pref_value
-    ;
+    return pref_value;
+  }
+
+  // --------------------
+
+  public static String getCustomHomePage(Context context) {
+    return getCustomHomePage(context, getPrefs(context));
+  }
+
+  private static String getCustomHomePage(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_custom_homepage_key);
+    String pref_default = context.getString(R.string.pref_custom_homepage_default);
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return pref_value;
+  }
+
+  // --------------------
+
+  public static String getUserAgent(Context context) {
+    return getUserAgent(context, getPrefs(context));
+  }
+
+  private static String getUserAgent(Context context, SharedPreferences prefs) {
+    String pref_value = getUnresolvedUserAgentValue(context, prefs);
+
+    if (pref_value.equals(context.getString(R.string.pref_useragent_array_names_1))) {
+      return getDefaultUserAgent(context);
+    }
+
+    if (pref_value.equals(context.getString(R.string.pref_custom_useragent_key))) {
+      return getCustomUserAgent(context, prefs);
+    }
+
+    return pref_value;
+  }
+
+  protected static String getUnresolvedUserAgentValue(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_useragent_key);
+    String pref_default = context.getString(R.string.pref_useragent_default);
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return pref_value;
+  }
+
+  private static String getDefaultUserAgent(Context context) {
+    // https://developer.android.com/reference/android/webkit/WebSettings.html#setUserAgentString(java.lang.String)
+    //   If the string is null or empty, the system default value will be used.
+
+    // https://developer.android.com/reference/android/webkit/WebSettings.html#getDefaultUserAgent(android.content.Context)
+    //   API 11+
+
+    // https://stackoverflow.com/a/10248817
+    //   System.getProperty("http.agent")
+
+    return null;
+  }
+
+  // --------------------
+
+  public static String getCustomUserAgent(Context context) {
+    return getCustomUserAgent(context, getPrefs(context));
+  }
+
+  private static String getCustomUserAgent(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_custom_useragent_key);
+    String pref_default = context.getString(R.string.pref_custom_useragent_default);
+    String pref_value   = prefs.getString(pref_key, pref_default);
+
+    return pref_value;
   }
 
   // --------------------
@@ -131,6 +211,20 @@ public class SettingsUtils {
     String pref_value   = prefs.getString(pref_key, pref_default);
 
     return pref_value;
+  }
+
+  // --------------------
+
+  public static boolean getEnableRemoteDebuggerPreference(Context context) {
+    return getEnableRemoteDebuggerPreference(context, getPrefs(context));
+  }
+
+  private static boolean getEnableRemoteDebuggerPreference(Context context, SharedPreferences prefs) {
+    String pref_key     = context.getString(R.string.pref_enableremotedebugger_key);
+    String pref_default = context.getString(R.string.pref_enableremotedebugger_default);
+    boolean val_default = "true".equals(pref_default);
+
+    return prefs.getBoolean(pref_key, val_default);
   }
 
 }

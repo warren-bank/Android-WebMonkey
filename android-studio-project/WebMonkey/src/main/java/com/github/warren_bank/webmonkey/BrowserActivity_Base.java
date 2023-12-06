@@ -1,6 +1,7 @@
 package com.github.warren_bank.webmonkey;
 
 import com.github.warren_bank.webmonkey.settings.SettingsActivity;
+import com.github.warren_bank.webmonkey.settings.WebViewSettingsMgr;
 
 import at.pardus.android.webview.gm.demo.WebViewGmImpl;
 import at.pardus.android.webview.gm.run.WebViewClientGm;
@@ -10,16 +11,12 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.webkit.WebSettings;
 
 public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    if (Build.VERSION.SDK_INT >= 19)
-      WebViewGm.setWebContentsDebuggingEnabled(true);
 
     WebViewGm webViewGm = scriptBrowser.getWebView();
     customizeWebView(webViewGm);
@@ -50,6 +47,9 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.menu_update_scripts) {
       WmScriptUpdateMgr.run_check_now(BrowserActivity_Base.this, scriptStore);
+      return true;
+    } else if (item.getItemId() == R.id.menu_remove_cookies) {
+      WebViewSettingsMgr.removeAllCookies();
       return true;
     } else if (item.getItemId() == R.id.menu_settings) {
       Intent in = new Intent(BrowserActivity_Base.this, SettingsActivity.class);
@@ -95,29 +95,8 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
   // ---------------------------------------------------------------------------------------------
 
   private void initWebView(WebViewGm webView) {
-    WebSettings webSettings = webView.getSettings();
-    webSettings.setLoadWithOverviewMode(true);
-    webSettings.setSupportZoom(true);
-    webSettings.setBuiltInZoomControls(true);
-    webSettings.setDisplayZoomControls(true);
-    webSettings.setUseWideViewPort(false);
-    webSettings.setJavaScriptEnabled(true);
-    webSettings.setDomStorageEnabled(true);
-    webSettings.setUserAgentString(
-      getString(R.string.user_agent)
-    );
-    if (Build.VERSION.SDK_INT >= 17) {
-      webSettings.setMediaPlaybackRequiresUserGesture(false);
-    }
-    if (Build.VERSION.SDK_INT >= 21) {
-      webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-    }
-
-    webView.setInitialScale(0);
-    webView.setHorizontalScrollBarEnabled(false);
-    webView.setVerticalScrollBarEnabled(false);
-    webView.clearCache(true);
-    webView.clearHistory();
+    WebViewSettingsMgr.initStaticResources(/* Context */ this, /* WebView */ webView);
+    WebViewSettingsMgr.initWebView();
   }
 
   // ---------------------------------------------------------------------------------------------

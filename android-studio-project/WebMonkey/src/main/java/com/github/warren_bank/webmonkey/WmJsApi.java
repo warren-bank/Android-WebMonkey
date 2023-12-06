@@ -214,7 +214,7 @@ public class WmJsApi {
 
       private void loadFrame_srcdoc(final String urlFrame, final String urlParent) {
         HashMap<String, String> httpHeaders = new HashMap<String, String>();
-        httpHeaders.put("User-Agent", activity.getString(R.string.user_agent));
+        httpHeaders.put("User-Agent", SettingsUtils.getUserAgent(activity));
         httpHeaders.put("Referer", urlParent);
         String docFrame = DownloadHelper.downloadUrl(urlFrame, httpHeaders);
         if (docFrame == null) return;

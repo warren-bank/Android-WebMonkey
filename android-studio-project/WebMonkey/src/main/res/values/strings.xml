@@ -4,6 +4,7 @@
 
   <!-- menu/impl_menu -->
   <string name="menu_update_scripts">Update Scripts</string>
+  <string name="menu_remove_cookies">Remove Cookies</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_test_pattern">Test Pattern</string>
   <string name="menu_exit">Exit</string>
@@ -21,17 +22,20 @@
   <string name="pref_homepage_array_names_2">Blank page</string>
   <string name="pref_homepage_array_names_3">Userscripts by developer</string>
   <string name="pref_homepage_array_names_4">Userscripts at Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Custom URL</string>
 
   <string translatable="false" name="pref_homepage_array_values_1">@string/pref_lasturl</string>
   <string translatable="false" name="pref_homepage_array_values_2">about:blank</string>
   <string translatable="false" name="pref_homepage_array_values_3">https://warren-bank.github.io/Android-WebMonkey/index.html</string>
   <string translatable="false" name="pref_homepage_array_values_4">https://greasyfork.org/</string>
+  <string translatable="false" name="pref_homepage_array_values_5">@string/pref_custom_homepage_key</string>
 
   <string-array name="pref_homepage_array_names">
     <item>@string/pref_homepage_array_names_1</item>
     <item>@string/pref_homepage_array_names_2</item>
     <item>@string/pref_homepage_array_names_3</item>
     <item>@string/pref_homepage_array_names_4</item>
+    <item>@string/pref_homepage_array_names_5</item>
   </string-array>
 
   <string-array name="pref_homepage_array_values">
@@ -39,6 +43,7 @@
     <item>@string/pref_homepage_array_values_2</item>
     <item>@string/pref_homepage_array_values_3</item>
     <item>@string/pref_homepage_array_values_4</item>
+    <item>@string/pref_homepage_array_values_5</item>
   </string-array>
 
   <!-- Settings: Home Page on Startup -->
@@ -46,6 +51,45 @@
   <string translatable="false" name="pref_homepage_default">@string/pref_homepage_array_values_1</string>
   <string name="pref_homepage_title">On Startup</string>
   <string name="pref_homepage_summary">choose home page..</string>
+
+  <!-- Settings: Custom URL Home Page on Startup -->
+  <string translatable="false" name="pref_custom_homepage_key">pref_custom_homepage</string>
+  <string translatable="false" name="pref_custom_homepage_default">@string/pref_homepage_array_values_2</string>
+  <string name="pref_custom_homepage_title">@string/pref_homepage_array_names_5</string>
+  <string name="pref_custom_homepage_summary">@string/pref_homepage_summary</string>
+
+  <!-- Settings: User Agent -->
+  <string translatable="false" name="pref_useragent_array_names_1">WebView</string>
+  <string translatable="false" name="pref_useragent_array_names_2">Chrome 120, Windows 10</string>
+  <string                      name="pref_useragent_array_names_3">Custom User Agent</string>
+
+  <string translatable="false" name="pref_useragent_array_values_1">@string/pref_useragent_array_names_1</string>
+  <string translatable="false" name="pref_useragent_array_values_2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</string>
+  <string translatable="false" name="pref_useragent_array_values_3">@string/pref_custom_useragent_key</string>
+
+  <string-array name="pref_useragent_array_names">
+    <item>@string/pref_useragent_array_names_1</item>
+    <item>@string/pref_useragent_array_names_2</item>
+    <item>@string/pref_useragent_array_names_3</item>
+  </string-array>
+
+  <string-array name="pref_useragent_array_values">
+    <item>@string/pref_useragent_array_values_1</item>
+    <item>@string/pref_useragent_array_values_2</item>
+    <item>@string/pref_useragent_array_values_3</item>
+  </string-array>
+
+  <!-- Settings: User Agent -->
+  <string translatable="false" name="pref_useragent_key">pref_useragent</string>
+  <string translatable="false" name="pref_useragent_default">@string/pref_useragent_array_values_1</string>
+  <string name="pref_useragent_title">User Agent</string>
+  <string name="pref_useragent_summary">choose request header value..</string>
+
+  <!-- Settings: Custom User Agent -->
+  <string translatable="false" name="pref_custom_useragent_key">pref_custom_useragent</string>
+  <string translatable="false" name="pref_custom_useragent_default">@string/pref_useragent_array_values_2</string>
+  <string name="pref_custom_useragent_title">@string/pref_useragent_array_names_3</string>
+  <string name="pref_custom_useragent_summary">@string/pref_useragent_summary</string>
 
   <!-- Settings: Page Load Behavior -->
   <string name="pref_pageloadbehavior_array_name_cancel">Cancel</string>
@@ -92,8 +136,12 @@
   <string name="pref_sharedsecret_title">Shared Secret</string>
   <string name="pref_sharedsecret_summary">1st parameter to API method: \"window.WebViewWM.getUserscriptJS(secret, url)\". Primarily intended for use by JS code injected by a \"mitmproxy\" script.. to allow userscripts to run in iframe windows.</string>
 
-  <!-- Settings: Hard Coded -->
-  <string translatable="false" name="user_agent">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4710.39 Safari/537.36</string>
+  <!-- Settings: Enable Remote Debugger -->
+  <string translatable="false" name="pref_enableremotedebugger_key">pref_enableremotedebugger</string>
+  <string translatable="false" name="pref_enableremotedebugger_default">false</string>
+  <string name="pref_enableremotedebugger_title">Enable Remote Debugger</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView can be inspected on LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView cannot be inspected on LAN</string>
 
   <!-- TestPatternActivity -->
   <string name="testpatternactivity_title">@string/menu_test_pattern</string>

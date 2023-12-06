@@ -12,6 +12,28 @@
       android:entryValues="@array/pref_homepage_array_values"
       android:defaultValue="@string/pref_homepage_default" />
 
+    <EditTextPreference
+      android:key="@string/pref_custom_homepage_key"
+      android:title="@string/pref_custom_homepage_title"
+      android:summary="@string/pref_custom_homepage_summary"
+      android:inputType="text"
+      android:defaultValue="@string/pref_custom_homepage_default" />
+
+    <ListPreference
+      android:key="@string/pref_useragent_key"
+      android:title="@string/pref_useragent_title"
+      android:summary="@string/pref_useragent_summary"
+      android:entries="@array/pref_useragent_array_names"
+      android:entryValues="@array/pref_useragent_array_values"
+      android:defaultValue="@string/pref_useragent_default" />
+
+    <EditTextPreference
+      android:key="@string/pref_custom_useragent_key"
+      android:title="@string/pref_custom_useragent_title"
+      android:summary="@string/pref_custom_useragent_summary"
+      android:inputType="text"
+      android:defaultValue="@string/pref_custom_useragent_default" />
+
     <ListPreference
       android:key="@string/pref_badssl_pageloadbehavior_key"
       android:title="@string/pref_badssl_pageloadbehavior_title"
@@ -42,6 +64,13 @@
       android:summary="@string/pref_sharedsecret_summary"
       android:inputType="text"
       android:defaultValue="" />
+
+    <CheckBoxPreference
+      android:key="@string/pref_enableremotedebugger_key"
+      android:title="@string/pref_enableremotedebugger_title"
+      android:summaryOn="@string/pref_enableremotedebugger_summary_on"
+      android:summaryOff="@string/pref_enableremotedebugger_summary_off"
+      android:defaultValue="@string/pref_enableremotedebugger_default" />
 
   </PreferenceCategory>
 </PreferenceScreen>
