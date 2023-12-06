@@ -2,6 +2,7 @@ package com.github.warren_bank.webmonkey.settings;
 
 import com.github.warren_bank.webmonkey.R;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -55,7 +56,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
   }
 
   private void updateVisibilityOf_customHomePagePref(SharedPreferences prefs) {
-    String pref_value = SettingsUtils.getUnresolvedHomePageValue(getContext(), prefs);
+    String pref_value = SettingsUtils.getUnresolvedHomePageValue(getApplicationContext(), prefs);
 
     if (pref_value.equals(getString(R.string.pref_custom_homepage_key))) {
       // ensure that Custom URL text preference is: visible
@@ -76,7 +77,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
   }
 
   private void updateVisibilityOf_customUserAgentPref(SharedPreferences prefs) {
-    String pref_value = SettingsUtils.getUnresolvedUserAgentValue(getContext(), prefs);
+    String pref_value = SettingsUtils.getUnresolvedUserAgentValue(getApplicationContext(), prefs);
 
     if (pref_value.equals(getString(R.string.pref_custom_useragent_key))) {
       // ensure that Custom User Agent text preference is: visible
@@ -94,6 +95,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         isVisible_customUserAgentPref = false;
       }
     }
+  }
+
+  private Context getApplicationContext() {
+    return getActivity().getApplicationContext();
   }
 
   // -------------------------------------------------------
