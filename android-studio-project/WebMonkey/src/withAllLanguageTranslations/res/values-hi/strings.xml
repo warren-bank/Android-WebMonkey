@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">स्क्रिप्ट अद्यतन करें</string>
+  <string name="menu_remove_cookies">कुकी मिटाएँ (R)</string>
   <string name="menu_settings">विन्यास</string>
   <string name="menu_test_pattern">परीक्षण पैटर्न</string>
   <string name="menu_exit">बाहर निकलें</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">खाली पृष्ठ</string>
   <string name="pref_homepage_array_names_3">डेवलपर द्वारा उपयोक्ता स्क्रिप्ट्स</string>
   <string name="pref_homepage_array_names_4">ग्रीसी फॉर्क में यूज़रस्क्रिप्ट्स</string>
+  <string name="pref_homepage_array_names_5">मनपसंद URL</string>
   <string name="pref_homepage_title">स्टार्टअप पर</string>
   <string name="pref_homepage_summary">घर पृष्ठ चुनें..</string>
+  <string name="pref_useragent_array_names_3">मनपसंद उपयोगकर्ता एजेंट</string>
+  <string name="pref_useragent_title">उपयोक्ता एजेंट</string>
+  <string name="pref_useragent_summary">अनुरोध हैडर मान चुनें..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">रद्द करें</string>
   <string name="pref_pageloadbehavior_array_name_proceed">आगे बढ़ें</string>
   <string name="pref_pageloadbehavior_array_name_ask">पूछें</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">सभी होस्ट को अनुरोध की अनुमति देता है</string>
   <string name="pref_sharedsecret_title">साझा गुप्त</string>
   <string name="pref_sharedsecret_summary">पहला पैरामीटर करने के लिए API विधि: \"window.WebViewWM.getUserscriptJS(गुप्त, url)\". प्राथमिक रूप से उपयोग के लिए JS द्वारा इंजेक्शन दिया गया कोड \"mitmproxy\" स्क्रिप्ट .. उन उपयोगकर्ता स्क्रिप्ट में चलाने की अनुमति देने के लिए iframe विंडोज़.</string>
+  <string name="pref_enableremotedebugger_title">रिमोट डिबगर सक्षम करें</string>
+  <string name="pref_enableremotedebugger_summary_on" >वेब-दृश्य लैन पर निरीक्षण किया जा सकता है</string>
+  <string name="pref_enableremotedebugger_summary_off">वेबव्यू का निरीक्षण लैन पर नहीं किया जा सकता है</string>
   <string name="testpatternactivity_description">पैटर्न:\n  * सहारा देना: glob या regex\n  * द्वारा प्रयुक्त: @include, @exclude, और @match\n\nURL:\n  * परीक्षा विषय\n\nटेस्ट चलाएं:\n  * निर्धारित करें कि क्या \"पैटर्न\" मैच "URL"\n  * प्रदर्शन परिणाम Toast</string>
   <string name="testpatternactivity_label_pattern">पैटर्न:</string>
   <string name="testpatternactivity_label_url">URL:</string>

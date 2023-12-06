@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">עדכון קובצי Script</string>
+  <string name="menu_remove_cookies">סילוק קובצי Cookie</string>
   <string name="menu_settings">הגדרות</string>
   <string name="menu_test_pattern">תבנית בדיקה</string>
   <string name="menu_exit">יציאה</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">דף ריק</string>
   <string name="pref_homepage_array_names_3">תסריטי משתמש לפי מפתח</string>
   <string name="pref_homepage_array_names_4">תסריטי משתמש בGנוני Fork</string>
+  <string name="pref_homepage_array_names_5">מותאם URL</string>
   <string name="pref_homepage_title">ב-Startup</string>
   <string name="pref_homepage_summary">לבחור דף הבית...</string>
+  <string name="pref_useragent_array_names_3">סוכן משתמש מותאם</string>
+  <string name="pref_useragent_title">סוכן משתמש</string>
+  <string name="pref_useragent_summary">בחירת ערך כותרת עליונה של בקשה..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">ביטול</string>
   <string name="pref_pageloadbehavior_array_name_proceed">המשך</string>
   <string name="pref_pageloadbehavior_array_name_ask">שאל</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">לאפשר בקשות לכל המארחים</string>
   <string name="pref_sharedsecret_title">סוד משותף</string>
   <string name="pref_sharedsecret_summary">הפרמטר הראשון ל - API שיטה: \"window.WebViewWM.getUserscriptJS(סוד, url)\". מיועד בעיקר לשימוש על ידי JS קוד מוזרק על ידי \"mitmproxy\" קובץ Script ... כדי לאפשר הרצה של קובצי Script iframe חלונות.</string>
+  <string name="pref_enableremotedebugger_title">הפעלת דריד מרוחק</string>
+  <string name="pref_enableremotedebugger_summary_on" >ניתן לבדוק את WebView על LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">לא ניתן לבדוק את WebView על LAN</string>
   <string name="testpatternactivity_description">תבנית:\n  * תומך: glob או regex\n  * בשימוש על-ידי: @include, @exclude, ו - @match\n\nURL:\n  * נתין נבדק\n\nהרצת בדיקה:\n  * לקבוע אם \"תבנית\" מתאימה "URL"\n  * הצגת תוצאות ב - Toast</string>
   <string name="testpatternactivity_label_pattern">תבנית:</string>
   <string name="testpatternactivity_label_url">URL:</string>

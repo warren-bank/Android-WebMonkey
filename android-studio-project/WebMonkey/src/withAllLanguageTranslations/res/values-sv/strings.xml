@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Uppdatera skript</string>
+  <string name="menu_remove_cookies">Ta bort Cookies</string>
   <string name="menu_settings">Inställningar</string>
   <string name="menu_test_pattern">Testmönster</string>
   <string name="menu_exit">Avsluta</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Tom sida</string>
   <string name="pref_homepage_array_names_3">Användarskript efter utvecklare</string>
   <string name="pref_homepage_array_names_4">Userskript på Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Egen URL</string>
   <string name="pref_homepage_title">Vid start</string>
   <string name="pref_homepage_summary">välja startsida..</string>
+  <string name="pref_useragent_array_names_3">Anpassad användaragent</string>
+  <string name="pref_useragent_title">Användaragent</string>
+  <string name="pref_useragent_summary">Välj begäranhuvudvärde..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Avbryt</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Fortsätt</string>
   <string name="pref_pageloadbehavior_array_name_ask">Fråga</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Tillåta begäran till alla värdar</string>
   <string name="pref_sharedsecret_title">Delad hemlighet</string>
   <string name="pref_sharedsecret_summary">den första parametern till API metodför: \"window.WebViewWM.getUserscriptJS(hemlig, url)\". Primärt avsett att användas av JS kod som injiceras av en \"mitmproxy\" skript .. för att tillåta användarskript att köra i iframe fönster.</string>
+  <string name="pref_enableremotedebugger_title">Aktivera fjärradebuggare</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView kan inspekteras på LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView kan inte inspekteras på LAN</string>
   <string name="testpatternactivity_description">Mönster:\n  * stöd: glob eller regex\n  * används av: @include, @exclude, och @match\n\nURL:\n  * försöksämne\n\nKör test:\n  * avgöra om \"Mönster\" matchar "URL"\n  * visa resultat i Toast</string>
   <string name="testpatternactivity_label_pattern">Mönster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

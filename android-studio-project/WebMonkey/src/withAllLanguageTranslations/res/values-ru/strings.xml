@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Обновить сценарии</string>
+  <string name="menu_remove_cookies">Удалить cookie</string>
   <string name="menu_settings">Параметры</string>
   <string name="menu_test_pattern">Тестовый шаблон</string>
   <string name="menu_exit">Выход</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Пустая страница</string>
   <string name="pref_homepage_array_names_3">Пользовательские сценарии по разработчикам</string>
   <string name="pref_homepage_array_names_4">Userscripts at Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Пользовательский URL</string>
   <string name="pref_homepage_title">При запуске</string>
   <string name="pref_homepage_summary">выбрать домашнее страницу..</string>
+  <string name="pref_useragent_array_names_3">Пользовательский агент пользователя</string>
+  <string name="pref_useragent_title">Агент пользователя</string>
+  <string name="pref_useragent_summary">выбрать значение заголовка запроса..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Отмена</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Продолжить</string>
   <string name="pref_pageloadbehavior_array_name_ask">Спросите</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Разрешение запросов всем хостам</string>
   <string name="pref_sharedsecret_title">Общий секретный</string>
   <string name="pref_sharedsecret_summary">первый параметр для API метод: \"window.WebViewWM.getUserscriptJS(секретный, url)\". В первую очередь предназначен для использования JS код, введенный \"mitmproxy\" сценарий .. чтобы разрешить запуск сценариев userscripts iframe окна.</string>
+  <string name="pref_enableremotedebugger_title">Включить удаленный отладчик</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView можно проверить в локальной сети</string>
+  <string name="pref_enableremotedebugger_summary_off">Невозможно проверить WebView в локальной сети</string>
   <string name="testpatternactivity_description">Шаблон:\n  * поддержка: glob или regex\n  * используется в: @include, @exclude, и @match\n\nURL:\n  * тестовый объект\n\nВыполнить тест:\n  * определить, соответствует ли шаблон \"шаблону\" "URL"\n  * показать результат в Toast</string>
   <string name="testpatternactivity_label_pattern">Шаблон:</string>
   <string name="testpatternactivity_label_url">URL:</string>

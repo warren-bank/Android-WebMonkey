@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">স্ক্রিপ্ট আপডেট করো</string>
+  <string name="menu_remove_cookies">কুকি অপসারণ করো</string>
   <string name="menu_settings">সেটিংস</string>
   <string name="menu_test_pattern">টেস্ট প্যাটার্ন</string>
   <string name="menu_exit">এক্সিট</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">ফাঁকা পাতা</string>
   <string name="pref_homepage_array_names_3">ডেভেলপার দ্বারা ব্যবহারকারীName</string>
   <string name="pref_homepage_array_names_4">Greasy Fork-এ Userscripts</string>
+  <string name="pref_homepage_array_names_5">স্বনির্ধারিত URL</string>
   <string name="pref_homepage_title">স্টার্টআপ</string>
   <string name="pref_homepage_summary">হোম পেজ বেছে নিন..</string>
+  <string name="pref_useragent_array_names_3">স্বনির্বাচিত ব্যবহারকারী এজেন্ট</string>
+  <string name="pref_useragent_title">ব্যবহারকারী এজেন্ট</string>
+  <string name="pref_useragent_summary">অনুরোধ হেডার মান নির্বাচন করুন..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">বাতিল করো</string>
   <string name="pref_pageloadbehavior_array_name_proceed">প্রসেস</string>
   <string name="pref_pageloadbehavior_array_name_ask">জিজ্ঞাসা</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">সকল হোস্টকে অনুরোধ করা হচ্ছে</string>
   <string name="pref_sharedsecret_title">শেয়ার করা সিক্রেট</string>
   <string name="pref_sharedsecret_summary">প্রথম পরামিতি API পদ্ধতি: \"window.WebViewWM.getUserscriptJS(গোপন, url)\". প্রাথমিকভাবে ব্যবহার করার উদ্দেশ্যে JS কোড ইনজেকশন \"mitmproxy\" স্ক্রিপ্ট ... ব্যবহারকারীর স্ক্রিপ্ট চালানোর অনুমতি দেবার জন্য iframe উইন্ডোজ.</string>
+  <string name="pref_enableremotedebugger_title">দূরবর্তী ডিবাগার সক্রিয় করো</string>
+  <string name="pref_enableremotedebugger_summary_on" >LAN-এ ওয়েবভিউ পরিদর্শন করা যাবে</string>
+  <string name="pref_enableremotedebugger_summary_off">LAN-এ ওয়েবভিউ পরিদর্শন করা যাবেনা</string>
   <string name="testpatternactivity_description">প্যাটার্ন:\n  * সমর্থন: glob অথবা regex\n  * ব্যবহৃত: @include, @exclude, এবং @match\n\nURL:\n  * পরীক্ষার বিষয়\n\nটেস্ট চালাও:\n  * \"প্যাটার্ন\" খেলাটি নির্ধারণ করে "URL"\n  * ডিসপ্লে ফলাফল Toast</string>
   <string name="testpatternactivity_label_pattern">প্যাটার্ন:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">更新脚本</string>
+  <string name="menu_remove_cookies">除去 cookie</string>
   <string name="menu_settings">设置</string>
   <string name="menu_test_pattern">测试 Pattern</string>
   <string name="menu_exit">退出</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">空白页</string>
   <string name="pref_homepage_array_names_3">开发者的 Userscripts</string>
   <string name="pref_homepage_array_names_4">Greasy Fork 上的 Userscripts</string>
+  <string name="pref_homepage_array_names_5">定制 URL</string>
   <string name="pref_homepage_title">启动时</string>
   <string name="pref_homepage_summary">选择主页..</string>
+  <string name="pref_useragent_array_names_3">定制用户代理程序</string>
+  <string name="pref_useragent_title">用户代理</string>
+  <string name="pref_useragent_summary">选择请求头值..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">取消</string>
   <string name="pref_pageloadbehavior_array_name_proceed">继续</string>
   <string name="pref_pageloadbehavior_array_name_ask">询问</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">允许请求所有主机</string>
   <string name="pref_sharedsecret_title">共享的 Secret</string>
   <string name="pref_sharedsecret_summary">API 方法的第一个参数: \"window.WebViewWM.getUserscriptJS(secret, url)\" 。主要供 \"mitmproxy\" 脚本插入的 JS 代码使用.... 以允许userscripts 在 iframe 窗口中运行。</string>
+  <string name="pref_enableremotedebugger_title">启用远程调试器</string>
+  <string name="pref_enableremotedebugger_summary_on" >可以在 LAN 上检查 WebView</string>
+  <string name="pref_enableremotedebugger_summary_off">无法在 LAN 上检查 WebView</string>
   <string name="testpatternactivity_description">Pattern:\n  * 支持: glob 或 regex\n  * 用于: @include、@exclude 和 @match\n\nURL:\n  * 测试标题\n\n运行测试:\n  * 确定 "Pattern" 是否匹配 "URL"\n  * 在浮窗中展示结果</string>
   <string name="testpatternactivity_label_pattern">Pattern:</string>
   <string name="testpatternactivity_label_url">URL:</string>

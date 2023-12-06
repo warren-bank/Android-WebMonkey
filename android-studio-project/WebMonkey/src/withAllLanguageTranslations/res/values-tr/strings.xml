@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Komut Dosyaları Güncelle</string>
+  <string name="menu_remove_cookies">Tanımlama Bilgilerini Kaldır</string>
   <string name="menu_settings">Ayarlar</string>
   <string name="menu_test_pattern">Test Kalıbı</string>
   <string name="menu_exit">Çıkış</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Boş sayfa</string>
   <string name="pref_homepage_array_names_3">Geliştirici temelinde kullanıcı komut dosyaları</string>
   <string name="pref_homepage_array_names_4">Kullanıcı Komut Dosyaları Yağlı Çatalla</string>
+  <string name="pref_homepage_array_names_5">Özel URL</string>
   <string name="pref_homepage_title">Başlatma Sırasında</string>
   <string name="pref_homepage_summary">ana sayfa seç..</string>
+  <string name="pref_useragent_array_names_3">Özel Kullanıcı Aracısı</string>
+  <string name="pref_useragent_title">Kullanıcı Aracısı</string>
+  <string name="pref_useragent_summary">istek üstbilgisi değerini seçin..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">İptal</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Devam Et</string>
   <string name="pref_pageloadbehavior_array_name_ask">Sor</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Tüm anasistemlere yönelik isteklere izin verilmesi</string>
   <string name="pref_sharedsecret_title">Paylaşılan Gizlilik</string>
   <string name="pref_sharedsecret_summary">için ilk değiştirge API yöntem: \"window.WebViewWM.getUserscriptJS(gizli, url)\". Öncelikli olarak kullanım amacı JS kod tarafından verilen kod \"mitmproxy\" komut dosyası .. kullanıcı komut dosyalarının çalıştırılmasına izin vermek için iframe pencereler.</string>
+  <string name="pref_enableremotedebugger_title">Uzak Hata Ayıklayıcıyı Etkinleştir</string>
+  <string name="pref_enableremotedebugger_summary_on" >Web Görünümü LAN üzerinde incelenebilir</string>
+  <string name="pref_enableremotedebugger_summary_off">Web Görünümü LAN üzerinde denetleyemez</string>
   <string name="testpatternactivity_description">Kalıp:\n  * destekler: glob ya da regex\n  * tarafından kullanılan: @include, @exclude, ve @match\n\nURL:\n  * test konusu\n\nTesti Çalıştır:\n  * \"Kalıp\" eşleşmesinin olup olmadığını belirleme "URL"\n  * sonucu görüntüle Toast</string>
   <string name="testpatternactivity_label_pattern">Kalıp:</string>
   <string name="testpatternactivity_label_url">URL:</string>

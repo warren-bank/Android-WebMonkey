@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Mutakhirkan skrip</string>
+  <string name="menu_remove_cookies">Hapus Cookies</string>
   <string name="menu_settings">Pengaturan</string>
   <string name="menu_test_pattern">Pola Uji</string>
   <string name="menu_exit">Keluar</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Laman Kosong</string>
   <string name="pref_homepage_array_names_3">Userscript oleh pengembang</string>
   <string name="pref_homepage_array_names_4">Userscript di Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Gubahan URL</string>
   <string name="pref_homepage_title">Pada Startup</string>
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
+  <string name="pref_useragent_array_names_3">Agen Pengguna Kustom</string>
+  <string name="pref_useragent_title">Agen Pengguna</string>
+  <string name="pref_useragent_summary">pilih nilai header permintaan..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Batalkan</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Lanjutkan</string>
   <string name="pref_pageloadbehavior_array_name_ask">Tanyakan pada</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Memungkinkan permintaan untuk semua host</string>
   <string name="pref_sharedsecret_title">Rahasia Bersama</string>
   <string name="pref_sharedsecret_summary">parameter pertama ke API metode: \"window.WebViewWM.getUserscriptJS(rahasia, url)\". Terutama dimaksudkan untuk digunakan oleh JS kode disuntikkan oleh sebuah \"mitmproxy\" script .. untuk memungkinkan pengguna skrip untuk berjalan di iframe jendela.</string>
+  <string name="pref_enableremotedebugger_title">Aktifkan Debugger Jarak Jauh</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView dapat diperiksa di LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa di LAN</string>
   <string name="testpatternactivity_description">Pola:\n  * mendukung: glob atau regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek tes\n\nJalankan Uji Coba:\n  * menentukan apakah cocok \"Pattern\" "URL"\n  * tampilkan hasil dalam Toast</string>
   <string name="testpatternactivity_label_pattern">Pola:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Uuenda skripte</string>
+  <string name="menu_remove_cookies">Eemalda küpsised</string>
   <string name="menu_settings">Seadistused</string>
   <string name="menu_test_pattern">Katsemuster</string>
   <string name="menu_exit">Välju</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Tühi leht</string>
   <string name="pref_homepage_array_names_3">Kasutaja skriptid arendaja poolt</string>
   <string name="pref_homepage_array_names_4">Userscrits at Grasy Fork</string>
+  <string name="pref_homepage_array_names_5">Kohandatud URL</string>
   <string name="pref_homepage_title">Käivitamisel</string>
   <string name="pref_homepage_summary">vali kodulehekülg..</string>
+  <string name="pref_useragent_array_names_3">Kohandatud kasutajaagent</string>
+  <string name="pref_useragent_title">Kasutaja</string>
+  <string name="pref_useragent_summary">Vali päiseväärtus..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Loobu</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Jätka</string>
   <string name="pref_pageloadbehavior_array_name_ask">Küsitakse</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Kõigi masinate taotluste lubamine</string>
   <string name="pref_sharedsecret_title">Jagatud saladus</string>
   <string name="pref_sharedsecret_summary">esimene parameeter API Meetod: \"window.WebViewWM.getUserscriptJS(secret, url)\". Peamiselt mõeldud kasutamiseks JS süstitav kood: \"mitmproxy\" skript .. võimaldab kasutajaskriptide kasutamist iframe windows.</string>
+  <string name="pref_enableremotedebugger_title">Võrgusiluri lubamine</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView saab kontrollida LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Veebivaadet ei saa LAN-i kontrollida</string>
   <string name="testpatternactivity_description">Muster:\n  * Toetab: glob või regex\n  * mida kasutatakse: @include, @exclude, ning @match\n\nURL:\n  * katseaine\n\nKäivita Test:\n  * määrata, kas \"muster\" sobib "URL"\n  * kuvamise tulemus Toast</string>
   <string name="testpatternactivity_label_pattern">Muster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

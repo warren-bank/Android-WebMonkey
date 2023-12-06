@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aktualizuj skrypty</string>
+  <string name="menu_remove_cookies">Usuń informacje cookie</string>
   <string name="menu_settings">Ustawienia</string>
   <string name="menu_test_pattern">Wzorzec testu</string>
   <string name="menu_exit">Wyjdź</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Pusta strona</string>
   <string name="pref_homepage_array_names_3">Skrypty użytkownika według programisty</string>
   <string name="pref_homepage_array_names_4">Skrypty użytkownika na rozwidleniu w stanie tłustym</string>
+  <string name="pref_homepage_array_names_5">Niestandardowe URL</string>
   <string name="pref_homepage_title">Podczas uruchamiania</string>
   <string name="pref_homepage_summary">wybierz stronę główną..</string>
+  <string name="pref_useragent_array_names_3">Niestandardowy agent użytkownika</string>
+  <string name="pref_useragent_title">Agent użytkownika</string>
+  <string name="pref_useragent_summary">wybierz wartość nagłówka żądania..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Anuluj</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Kontynuuj</string>
   <string name="pref_pageloadbehavior_array_name_ask">Pytaj</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Zezwalanie na żądania do wszystkich hostów</string>
   <string name="pref_sharedsecret_title">Klucz tajny</string>
   <string name="pref_sharedsecret_summary">pierwszy parametr do API metoda: \"window.WebViewWM.getUserscriptJS(sekret, url)\". Przeznaczony głównie do stosowania przez JS Kod wstrzykiwany przez \"mitmproxy\" skrypt .. zezwalanie skryptom użytkownika na uruchamianie iframe okna.</string>
+  <string name="pref_enableremotedebugger_title">Włącz debuger zdalny</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView może być sprawdzony w sieci LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Nie można sprawdzić widoku WebView w sieci LAN</string>
   <string name="testpatternactivity_description">Wzlubzec:\n  * obsługuje: glob or regex\n  * używane przez: @include, @exclude, oraz @match\n\nURL:\n  * temat testu\n\nUruchom test:\n  * określić, czy \"Wzorzec\" jest zgodny "URL"\n  * wyświetl wynik w Toast</string>
   <string name="testpatternactivity_label_pattern">Wzorzec:</string>
   <string name="testpatternactivity_label_url">URL:</string>

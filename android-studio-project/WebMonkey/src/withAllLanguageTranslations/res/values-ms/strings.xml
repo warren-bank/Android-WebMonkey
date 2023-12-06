@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Kemaskini Skrip</string>
+  <string name="menu_remove_cookies">Buang Cookies</string>
   <string name="menu_settings">Tetapan</string>
   <string name="menu_test_pattern">Corak Ujian</string>
   <string name="menu_exit">Keluar</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Halaman kosong</string>
   <string name="pref_homepage_array_names_3">Pengguna pengguna mengikut pembangun</string>
   <string name="pref_homepage_array_names_4">Skrip Pengguna di Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">&amp; Suai URL</string>
   <string name="pref_homepage_title">Semasa Permulaan</string>
   <string name="pref_homepage_summary">pilih halaman rumah..</string>
+  <string name="pref_useragent_array_names_3">Ejen Pengguna Suai</string>
+  <string name="pref_useragent_title">Ejen Pengguna</string>
+  <string name="pref_useragent_summary">pilih nilai pengepala permintaan..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Batal</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Teruskan</string>
   <string name="pref_pageloadbehavior_array_name_ask">Tanya</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Membenarkan permintaan kepada semua hos</string>
   <string name="pref_sharedsecret_title">Rahsia Dikongsi</string>
   <string name="pref_sharedsecret_summary">Parameter pertama untuk API kaedah: \"window.WebViewWM.getUserscriptJS(rahsia, url)\". Bertujuan untuk digunakan oleh JS kod disuntik oleh a \"mitmproxy\" skrip .. untuk membenarkan skrip pengguna2 masuk iframe tetingkap.</string>
+  <string name="pref_enableremotedebugger_title">Benarkan Penyahpepijat Jauh</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView boleh diperiksa pada LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView tidak dapat diperiksa pada LAN</string>
   <string name="testpatternactivity_description">Catauak:\n  * menyokong: glob or regex\n  * digunakan oleh: @include, @exclude, dan @match\n\nURL:\n  * subjek ujian\n\nJalankan Ujian:\n  * menentukan sama ada padanan \"Pattern\" "URL"\n  * Hasil paparan dalam Toast</string>
   <string name="testpatternactivity_label_pattern">Corak:</string>
   <string name="testpatternactivity_label_url">URL:</string>

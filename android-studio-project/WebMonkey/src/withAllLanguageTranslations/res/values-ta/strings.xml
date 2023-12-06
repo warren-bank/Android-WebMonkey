@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">சிறுநிரலை புதுப்பி</string>
+  <string name="menu_remove_cookies">குக்கிகளை நீக்கு</string>
   <string name="menu_settings">அமைப்புகள்</string>
   <string name="menu_test_pattern">பரிசோதனை</string>
   <string name="menu_exit">வெளியேறு</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">வெற்று பக்கம்</string>
   <string name="pref_homepage_array_names_3">உருவாக்குபவர்</string>
   <string name="pref_homepage_array_names_4">Greasy Fork Userscripts</string>
+  <string name="pref_homepage_array_names_5">தனிப்பயன் URL</string>
   <string name="pref_homepage_title">துவக்கத்தில்</string>
   <string name="pref_homepage_summary">வீட்டு பக்கத்தை தேர்ந்தெடுக்கவும்..</string>
+  <string name="pref_useragent_array_names_3">தனிப்பயன் பயனர் முகவர்</string>
+  <string name="pref_useragent_title">பயனர் அஜென்ட்</string>
+  <string name="pref_useragent_summary">கோரிக்கை தலைப்பை தேர்ந்தெடுக்கவும்..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">ரத்து செய்</string>
   <string name="pref_pageloadbehavior_array_name_proceed">மேற்கோள்</string>
   <string name="pref_pageloadbehavior_array_name_ask">கேள்வி</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">அனைத்து புள்ளிகளையும் அனுமதிக்கிறது</string>
   <string name="pref_sharedsecret_title">பகிரப்பட்ட இரகசியம்</string>
   <string name="pref_sharedsecret_summary">முதல் அளவுரு API முறைமை: \"window.WebViewWM.getUserscriptJS(இரகசியம், url)\". முதன்மையாகத் தேவையான பயன்பாடு JS குறியீடு \"mitmproxy\" ஸ்கிரிப்ட் .. iframe சாளரங்கள்.</string>
+  <string name="pref_enableremotedebugger_title">தொலைதூர வழுநீக்கியை செயல்படுத்து</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView முடியும் LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView முடியவில்லை LAN</string>
   <string name="testpatternactivity_description">பாட்டர்ன்:\n  * ஆதரவு: glob அல்லது regex\n  * பயன்படுத்தப்பட்டது: @include, @exclude, மற்றும் @match\n\nURL:\n  * சோதனை\n\nசோதனை இயக்கு:\n  * \"Pattern\" பொருட்களை தீர்மானிக்கும் "URL"\n  * காட்சி முடிவு Toast</string>
   <string name="testpatternactivity_label_pattern">பாட்டர்ன்:</string>
   <string name="testpatternactivity_label_url">URL:</string>

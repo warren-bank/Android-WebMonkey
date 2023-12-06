@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Atnaujinti scenarijus</string>
+  <string name="menu_remove_cookies">Pašalinti slapukus</string>
   <string name="menu_settings">Nustatymai</string>
   <string name="menu_test_pattern">Bandymo Modelis</string>
   <string name="menu_exit">Išvykimas</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Tuščias puslapis</string>
   <string name="pref_homepage_array_names_3">Userscript kūrėjas</string>
   <string name="pref_homepage_array_names_4">Userscripts ne Gerey Fork</string>
+  <string name="pref_homepage_array_names_5">Parinkta URL</string>
   <string name="pref_homepage_title">Paleidimo metu</string>
   <string name="pref_homepage_summary">pasirinkite pagrindinį puslapį..</string>
+  <string name="pref_useragent_array_names_3">Naudotojo agentas</string>
+  <string name="pref_useragent_title">Naudotojo agentas</string>
+  <string name="pref_useragent_summary">Pasirinkite pageidaujamos antraštės vertę..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Atšaukti</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Tęsti</string>
   <string name="pref_pageloadbehavior_array_name_ask">Klausti</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Leisti užklausas visiems šeimininkams</string>
   <string name="pref_sharedsecret_title">Bendrinė paslaptis</string>
   <string name="pref_sharedsecret_summary">pirmas parametras, susijęs su API Metodas: \"window.WebViewWM.getUserscriptJS(slaptas, url)\". Visų pirma skirta naudoti: JS kodas suleidžiamas pagal a \"mitmproxy\" scenarijus .. leisti userscript paleisti iframe Langai.</string>
+  <string name="pref_enableremotedebugger_title">Įjungti nutolę derintuvę</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView gali būti patikrinta ant LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView negali būti apžiūrėtas ant LAN</string>
   <string name="testpatternactivity_description">Modelis:\n  * atrama: glob arba regex\n  * Vartoti per: @include, @exclude, ir @match\n\nURL:\n  * Bandymo objektas\n\nAtlikti bandymą:\n  * nustatyti, ar \"Pattern\" atitinka "URL"\n  * Rodytuvas Toast</string>
   <string name="testpatternactivity_label_pattern">Modelis:</string>
   <string name="testpatternactivity_label_url">URL:</string>

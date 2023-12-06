@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">อัพเดตสคริปต์</string>
+  <string name="menu_remove_cookies">ลบคุกกี้</string>
   <string name="menu_settings">การตั้งค่า</string>
   <string name="menu_test_pattern">รูปแบบการทดสอบ</string>
   <string name="menu_exit">ออก</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">หน้าว่าง</string>
   <string name="pref_homepage_array_names_3">สคริปต์ผู้ใช้ตามผู้พัฒนา</string>
   <string name="pref_homepage_array_names_4">ผู้ใช้สคริปต์ที่ Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">กำหนดเอง URL</string>
   <string name="pref_homepage_title">เมื่อเริ่มทำงาน</string>
   <string name="pref_homepage_summary">เลือกโฮมเพจ..</string>
+  <string name="pref_useragent_array_names_3">เอเจนต์ผู้ใช้กำหนดเอง</string>
+  <string name="pref_useragent_title">เอเจนต์ผู้ใช้</string>
+  <string name="pref_useragent_summary">เลือกค่าส่วนหัวคำร้องขอ..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">ยกเลิก</string>
   <string name="pref_pageloadbehavior_array_name_proceed">ดำเนินการต่อ</string>
   <string name="pref_pageloadbehavior_array_name_ask">ถาม</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">การอนุญาตให้คำร้องขอไปยังโฮสต์ทั้งหมด</string>
   <string name="pref_sharedsecret_title">ความลับที่แบ่งใช้</string>
   <string name="pref_sharedsecret_summary">พารามิเตอร์แรกใน API เมธอด: \"window.WebViewWM.getUserscriptJS(Secret, url)\". แรกเริ่มที่ตั้งใจใช้โดย JS โค้ดที่แทรกโดย \"mitmproxy\" สคริปต์.. เพื่ออนุญาตให้สคริปต์ผู้ใช้รันใน iframe หน้าต่าง.</string>
+  <string name="pref_enableremotedebugger_title">เปิดใช้งาน Debugger แบบรีโมต</string>
+  <string name="pref_enableremotedebugger_summary_on" >Web View สามารถตรวจสอบได้บน LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Web View ไม่สามารถตรวจสอบได้บน LAN</string>
   <string name="testpatternactivity_description">รูปแบบ:\n  * สนับสนุน: glob หรือ regex\n  * ใช้โดย: @include, @exclude, และ @match\n\nURL:\n  * หัวข้อการทดสอบ\n\nรันการทดสอบ:\n  * พิจารณาว่าตรงกับ \"รูปแบบ\" หรือไม่ "URL"\n  * แสดงผลลัพธ์ใน Toast</string>
   <string name="testpatternactivity_label_pattern">รูปแบบ:</string>
   <string name="testpatternactivity_label_url">URL:</string>

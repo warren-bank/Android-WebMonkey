@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">സ്ക്രിപ്റ്റുകള് പുതുക്കുക</string>
+  <string name="menu_remove_cookies">കുക്കികള് നീക്കം ചെയ്യുക</string>
   <string name="menu_settings">സജ്ജീകരണങ്ങള്</string>
   <string name="menu_test_pattern">ടെസ്റ്റ് പാറ്റേണ്</string>
   <string name="menu_exit">പ്രദര്ശിപ്പിക്കുക</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">ബ്ലാങ്ക് താള്</string>
   <string name="pref_homepage_array_names_3">ഡെവലപ്പറിന്റെ ഉപാധി</string>
   <string name="pref_homepage_array_names_4">ഗ്രാസി ഫോറിലെ Userscripts</string>
+  <string name="pref_homepage_array_names_5">തയ്യാറാക്കുക URL</string>
   <string name="pref_homepage_title">തുടക്കത്തില്</string>
   <string name="pref_homepage_summary">ഹോം പേജ് തെരഞ്ഞെടുക്കുക..</string>
+  <string name="pref_useragent_array_names_3">ഇഷ്ടപ്പെട്ട ഉപയോക്താവു് ഏജന്റ്</string>
+  <string name="pref_useragent_title">ഉപയോക്താവ് ഏജന്റ്</string>
+  <string name="pref_useragent_summary">അപേക്ഷ ഹെഡര് മൂല്ല്യം തിരഞ്ഞെടുക്കുക..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">റദ്ദാക്കുക</string>
   <string name="pref_pageloadbehavior_array_name_proceed">പ്രോസീഡ്</string>
   <string name="pref_pageloadbehavior_array_name_ask">ചോദിയ്ക്കുക</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">എല്ലാ ഹോസ്റ്റുകള്ക്കു് ആവശ്യങ്ങള് അനുവദിക്കുന്നു</string>
   <string name="pref_sharedsecret_title">രഹസ്യ രഹസ്യ</string>
   <string name="pref_sharedsecret_summary">ആദ്യത്തെ പരാമീറ്റര് API രീതി: \"window.WebViewWM.getUserscriptJS(രഹസ്യ, url)\". ഉപയോഗിക്കുവാനായി പ്രയത്നമായി ഉദ്ദേശിച്ചിരിക്കുന്നു JS കോഡ് ഇൻജൻഡ് ചെയ്യപ്പെട്ടിരിക്കുന്നു. \"mitmproxy\" സ്ക്രിപ്റ്റ് .. iframe ജാലകങ്ങള്.</string>
+  <string name="pref_enableremotedebugger_title">വിദൂര ഡീബഗ്ഗര് സജ്ജമാക്കുക</string>
+  <string name="pref_enableremotedebugger_summary_on" >വെബ് കാഴ്ച്ച ലാനില് പരിശോധിക്കാം.</string>
+  <string name="pref_enableremotedebugger_summary_off">LAN-ല് വെബ്വ്യൂ പരിശോധിക്കുവാന് സാധ്യമല്ല</string>
   <string name="testpatternactivity_description">പാറ്റേണ്:\n  * പിന്തുണ: glob അല്ലെങ്കില് regex\n  * ഉപയോഗിച്ചു്: @include, @exclude, ... @match\n\nURL:\n  * പരീക്ഷണ വിഷയം\n\nടെസ്റ്റ് പ്രവര്ത്തിപ്പിക്കുക:\n  * \" Patterns-action "URL"\n  * പ്രദര്ശന ഫലം Toast</string>
   <string name="testpatternactivity_label_pattern">പാറ്റേണ്:</string>
   <string name="testpatternactivity_label_url">URL:</string>

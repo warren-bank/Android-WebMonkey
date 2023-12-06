@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Posodobi Skripte</string>
+  <string name="menu_remove_cookies">Odstrani Piškotke</string>
   <string name="menu_settings">Nastavitve</string>
   <string name="menu_test_pattern">Preskusni Vzorec</string>
   <string name="menu_exit">Izhod</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Prazna stran</string>
   <string name="pref_homepage_array_names_3">Uporabniški skripti po razvijalcu</string>
   <string name="pref_homepage_array_names_4">Uporabniški skripti v \"Greasy Fork\"</string>
+  <string name="pref_homepage_array_names_5">Po meri URL</string>
   <string name="pref_homepage_title">Ob zagonu</string>
   <string name="pref_homepage_summary">izbira domače strani..</string>
+  <string name="pref_useragent_array_names_3">Uporabniški posrednik po meri</string>
+  <string name="pref_useragent_title">Uporabniški posrednik</string>
+  <string name="pref_useragent_summary">izbira vrednosti glave zahteve..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Preklici</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Nadaljuj.</string>
   <string name="pref_pageloadbehavior_array_name_ask">Vprašaj</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Omogočanje zahtev vsem gostiteljem</string>
   <string name="pref_sharedsecret_title">Skupna skrivnost</string>
   <string name="pref_sharedsecret_summary">prvi parameter za API metoda: \"window.WebViewWM.getUserscriptJS(skrivnost, url)\". V prvi vrsti namenjen za uporabo v JS šifra, vbrizga \"mitmproxy\" skript .., da se omogoči izvajanje uporabniških skriptov v iframe okna.</string>
+  <string name="pref_enableremotedebugger_title">Omogoči oddaljeni razhroščevalnik</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView je mogoče pregledati v lokalnem omrežju</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView ni mogoče pregledati v lokalnem omrežju</string>
   <string name="testpatternactivity_description">Vzaliec:\n  * podpira: glob or regex\n  * v uporabi: @include, @exclude, in @match\n\nURL:\n  * preizkusi predmet\n\nZaženi preizkus:\n  * določi, ali se \"Vzorn\" ujema "URL"\n  * prikaži rezultat v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzorec:</string>
   <string name="testpatternactivity_label_url">URL:</string>

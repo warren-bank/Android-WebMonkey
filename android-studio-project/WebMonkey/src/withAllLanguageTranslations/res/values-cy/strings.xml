@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Hidlau Diweddaru</string>
+  <string name="menu_remove_cookies">Tynnu Cwcis</string>
   <string name="menu_settings">Gosodiadau</string>
   <string name="menu_test_pattern">Patrwm Prawf</string>
   <string name="menu_exit">Gadael</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Tudalen wag</string>
   <string name="pref_homepage_array_names_3">Gosodiadau defnyddiwr gan ddatblygwr</string>
   <string name="pref_homepage_array_names_4">Name</string>
+  <string name="pref_homepage_array_names_5">Addasedig URL</string>
   <string name="pref_homepage_title">Wrth Gychwyn</string>
   <string name="pref_homepage_summary">dewis tudalen cartref..</string>
+  <string name="pref_useragent_array_names_3">Asiant Defnyddiwr Cyfaddas</string>
+  <string name="pref_useragent_title">Asiant Defnyddiwr</string>
+  <string name="pref_useragent_summary">dewis gwerth pennawd cais..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Diddymu</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Mynd ymlaen</string>
   <string name="pref_pageloadbehavior_array_name_ask">Gofyn</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Caniatáu ceisiadau i bob gwesteiwr</string>
   <string name="pref_sharedsecret_title">Cyfrinachol wedi\'i rannu</string>
   <string name="pref_sharedsecret_summary">y paramedr cyntaf i API dull: \"window.WebViewWM.getUserscriptJS(cyfrinach, url)\". Y bwriad yn bennaf i\'w ddefnyddio gan JS cod a chwistrellwyd \"mitmproxy\" sgript ... i ganiatáu i sgriptiau defnyddiwr redeg yn iframe ffenestri.</string>
+  <string name="pref_enableremotedebugger_title">Galluogi Dadfygiwr pell</string>
+  <string name="pref_enableremotedebugger_summary_on" >Gellir archwilio webView ar LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Ni ellir archwilio webView ar LAN</string>
   <string name="testpatternactivity_description">Patrwm:\n  * cefnogi: glob neu regex\n  * a ddefnyddir gan: @include, @exclude, a @match\n\nURL:\n  * pwnc prawf\n\nRhedeg Prawf:\n  * penderfynu a yw \"Patrwm\" yn cydweddu "URL"\n  * canlyniad dangosydd Toast</string>
   <string name="testpatternactivity_label_pattern">Patrwm:</string>
   <string name="testpatternactivity_label_url">URL:</string>

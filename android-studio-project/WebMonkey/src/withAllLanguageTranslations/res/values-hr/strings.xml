@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ažuriranje Skripti</string>
+  <string name="menu_remove_cookies">Ukloni Kolačiće</string>
   <string name="menu_settings">Postavke</string>
   <string name="menu_test_pattern">Uzorak Testa</string>
   <string name="menu_exit">Izlaz</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Prazna stranica</string>
   <string name="pref_homepage_array_names_3">Korisnički skripti po razvijaču</string>
   <string name="pref_homepage_array_names_4">Userskripte na Masnoj Vilici</string>
+  <string name="pref_homepage_array_names_5">Prilagođeno URL</string>
   <string name="pref_homepage_title">Kod Pokretanja</string>
   <string name="pref_homepage_summary">izbor početne stranice..</string>
+  <string name="pref_useragent_array_names_3">Prilagođeni agent korisnika</string>
+  <string name="pref_useragent_title">Korisnički agent</string>
+  <string name="pref_useragent_summary">izbor vrijednosti zaglavlja zahtjeva..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Otkaži</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Nastavi</string>
   <string name="pref_pageloadbehavior_array_name_ask">Pitaj.</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Dozvoljavanje zahtjeva svim hostovima</string>
   <string name="pref_sharedsecret_title">Dijeljena tajna</string>
   <string name="pref_sharedsecret_summary">prvi parametar u API metoda: \"window.WebViewWM.getUserscriptJS(tajna, url)\". Primarno namijenjen za upotrebu od strane JS kod ubrizgan od strane \"mitmproxy\" skripta .. da dozvoli izvođenje korisničkih skripti u iframe prozori.</string>
+  <string name="pref_enableremotedebugger_title">Omogući daljinsku debug program</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView se može pregledati na LAN-u</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView se ne može pregledati na LAN-u</string>
   <string name="testpatternactivity_description">Uziliak:\n  * podržava: glob or regex\n  * korišten od strane: @include, @exclude, i @match\n\nURL:\n  * testna tema\n\nIzvedi test:\n  * odrediti da li se \"Obrazac\" podudara "URL"\n  * prikaz rezultata u Toast</string>
   <string name="testpatternactivity_label_pattern">Uzorak:</string>
   <string name="testpatternactivity_label_url">URL:</string>

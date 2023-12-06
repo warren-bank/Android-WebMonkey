@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Оновити скрипти</string>
+  <string name="menu_remove_cookies">Вилучити куки</string>
   <string name="menu_settings">ПараметриName</string>
   <string name="menu_test_pattern">Шаблон перевірки</string>
   <string name="menu_exit">Вийти</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Порожня сторінка</string>
   <string name="pref_homepage_array_names_3">Скрипти користувачаName</string>
   <string name="pref_homepage_array_names_4">Скрипти користувача у Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Нетиповий URL</string>
   <string name="pref_homepage_title">Після запуску</string>
   <string name="pref_homepage_summary">Вибрати домашню сторінку..</string>
+  <string name="pref_useragent_array_names_3">Нетиповий агент користувача</string>
+  <string name="pref_useragent_title">Агент користувача</string>
+  <string name="pref_useragent_summary">Обрати значення заголовка запиту..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Скасувати</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Продовжити</string>
   <string name="pref_pageloadbehavior_array_name_ask">Запитувати</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Дозволяти запити на всі вузли</string>
   <string name="pref_sharedsecret_title">Спільна таємна</string>
   <string name="pref_sharedsecret_summary">перший параметр до API метод: \"window.WebViewWM.getUserscriptJS(таємна, url)\". Здебільшого призначений для використання JS ін\'єкції коду \"mitmproxy\" скрипт ... для того, щоб скрипт користувача виконуватися iframe windows.</string>
+  <string name="pref_enableremotedebugger_title">Увімкнути віддалений зневаджу</string>
+  <string name="pref_enableremotedebugger_summary_on" >Веб-перегляд можна перевіряти на LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Неможливо інспекти у мережі</string>
   <string name="testpatternactivity_description">Шаблон:\n  * підтримує: glob або regex\n  * Використано: @include, @exclude, і @match\n\nURL:\n  * тестовий предмет\n\nВиконати перевірку:\n  * визначити, чи слід відповідати \"Шаблон\" "URL"\n  * показати результат Toast</string>
   <string name="testpatternactivity_label_pattern">Шаблон:</string>
   <string name="testpatternactivity_label_url">URL:</string>

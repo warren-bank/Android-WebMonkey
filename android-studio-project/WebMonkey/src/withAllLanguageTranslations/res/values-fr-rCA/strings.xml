@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Modifier les scripts</string>
+  <string name="menu_remove_cookies">Supprimer les cookies</string>
   <string name="menu_settings">Paramètres</string>
   <string name="menu_test_pattern">Modèle de test</string>
   <string name="menu_exit">Quitter</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Page blanche</string>
   <string name="pref_homepage_array_names_3">Userscripts par développeur</string>
   <string name="pref_homepage_array_names_4">Userscripts at Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Personnalisé URL</string>
   <string name="pref_homepage_title">Au démarrage</string>
   <string name="pref_homepage_summary">choisir page d\'accueil..</string>
+  <string name="pref_useragent_array_names_3">Agent d\'utilisateur personnalisé</string>
+  <string name="pref_useragent_title">Agent utilisateur</string>
+  <string name="pref_useragent_summary">choisir la valeur de l\'en-tête..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Annuler</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Poursuivre</string>
   <string name="pref_pageloadbehavior_array_name_ask">Demander</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Autoriser les demandes à tous les hôtes</string>
   <string name="pref_sharedsecret_title">Secret partagé</string>
   <string name="pref_sharedsecret_summary">le premier paramètre à API méthode: \"window.WebViewWM.getUserscriptJS(secret, url)\". Principalement destiné à être utilisé par JS code injecté par un \"mitmproxy\" script .. pour autoriser l\'exécution des scripts userscripts dans iframe Windows.</string>
+  <string name="pref_enableremotedebugger_title">Activer le débogueur distant</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView peut être inspecté sur le réseau local</string>
+  <string name="pref_enableremotedebugger_summary_off">Impossible d\'inspecter WebView sur le réseau local</string>
   <string name="testpatternactivity_description">Modèle:\n  * suppouts: glob or regex\n  * utilisé par: @include, @exclude, et @match\n\nURL:\n  * sujet de test\n\nExécuter le test:\n  * déterminer si les correspondances \"Pattern\" "URL"\n  * affichage du résultat dans Toast</string>
   <string name="testpatternactivity_label_pattern">Modèle:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">ස්ක්රිප්ට් යාවත්කාලීන කරන්න</string>
+  <string name="menu_remove_cookies">කුකීස් ඉවත් කරන්න</string>
   <string name="menu_settings">සැකසුම්</string>
   <string name="menu_test_pattern">පටිගත කිරීම</string>
   <string name="menu_exit">Exit</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">හිස් පිටුව</string>
   <string name="pref_homepage_array_names_3">සංවර්ධක විසින් Userscripts</string>
   <string name="pref_homepage_array_names_4">Greasy Fork වල Userscripts</string>
+  <string name="pref_homepage_array_names_5">\@ action: button Choose font URL</string>
   <string name="pref_homepage_title">ආරම්භයේදී</string>
   <string name="pref_homepage_summary">ගෙදර පිටුව තෝරන්න..</string>
+  <string name="pref_useragent_array_names_3">රුචි පරිශීලක ඒජන්ත</string>
+  <string name="pref_useragent_title">පරිශීලක නියෝජිත</string>
+  <string name="pref_useragent_summary">ඉල්ලීම ශීර්ෂ අගය තෝරන්න..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">අවලංගු කරන්න</string>
   <string name="pref_pageloadbehavior_array_name_proceed">සැකසීම</string>
   <string name="pref_pageloadbehavior_array_name_ask">අහන්න</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">සියලු ධාරාවන් වෙත ඉල්ලීම්</string>
   <string name="pref_sharedsecret_title">රහසිගත රහස්ය</string>
   <string name="pref_sharedsecret_summary">පළමු पैराමිතිය API ක්රමය: \"window.WebViewWM.getUserscriptJS(රහසිගත, url)\". විසින් භාවිතා කිරීම සඳහා අභිමානයෙන් අදහස් කරන JS කේතය මගින් එන්නත් කර ඇත \"mitmproxy\" ස්ක්රිප්ට් .. iframe කවුළු.</string>
+  <string name="pref_enableremotedebugger_title">දුරස්ථ ඩිබියුගර් සක්රීය කරන්න</string>
+  <string name="pref_enableremotedebugger_summary_on" >වෙබ් දසුන LAN මත පරීක්ෂා කළ හැක</string>
+  <string name="pref_enableremotedebugger_summary_off">LAN මත වෙබ් දර්ශනය පරීක්ෂා කළ නොහැක</string>
   <string name="testpatternactivity_description">පැටර්න්:\n  * සහය දක්වනවා: glob හෝ regex\n  * විසින් භාවිතා කරන: @include, @exclude, සහ @match\n\nURL:\n  * පරීක්ෂණ විෂයය\n\n\@ option: check:\n  * \" Patterns-action "URL"\n  * වල ප්රතිඵල පෙන්වන්න Toast</string>
   <string name="testpatternactivity_label_pattern">පැටර්න්:</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Oppdater skript</string>
+  <string name="menu_remove_cookies">Fjern informasjonskapsler</string>
   <string name="menu_settings">Innstillinger</string>
   <string name="menu_test_pattern">Testmønster</string>
   <string name="menu_exit">Avslutt</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Tom side</string>
   <string name="pref_homepage_array_names_3">Userskript etter utvikler</string>
   <string name="pref_homepage_array_names_4">Userskript hos Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Tilpasset URL</string>
   <string name="pref_homepage_title">Ved oppstart</string>
   <string name="pref_homepage_summary">velge hjemmeside..</string>
+  <string name="pref_useragent_array_names_3">Tilpasset brukeragent</string>
+  <string name="pref_useragent_title">Brukeragent</string>
+  <string name="pref_useragent_summary">velge overskriftstoppverdi..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Annuller</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Fortsett</string>
   <string name="pref_pageloadbehavior_array_name_ask">Spør</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Alløsende forespørsler til alle verter</string>
   <string name="pref_sharedsecret_title">Delt hemmelighet</string>
   <string name="pref_sharedsecret_summary">den første parameteren til API metode: \"window.WebViewWM.getUserscriptJS(hemmelighet, url)\". Primært ment for bruk av JS kode injisert av en \"mitmproxy\" script .. for å tillate userskript å kjøre i iframe vinduer.</string>
+  <string name="pref_enableremotedebugger_title">Aktiver Remote Debugger</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView kan inspiseres på LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView kan ikke inspiseres på LAN</string>
   <string name="testpatternactivity_description">Mønster:\n  * støtter: glob eller regex\n  * brukt av: @include, @exclude, og @match\n\nURL:\n  * test emne\n\nKjør test:\n  * avgjøre om \"Mønster\" samsvarer "URL"\n  * vis resultat i Toast</string>
   <string name="testpatternactivity_label_pattern">Mønster:</string>
   <string name="testpatternactivity_label_url">URL:</string>

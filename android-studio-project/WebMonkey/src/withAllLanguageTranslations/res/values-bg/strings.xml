@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Обновяване на скриптове</string>
+  <string name="menu_remove_cookies">Премахване на бисквитки</string>
   <string name="menu_settings">Настройки:</string>
   <string name="menu_test_pattern">Модел на изпитване:</string>
   <string name="menu_exit">Изход:</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Празна страница</string>
   <string name="pref_homepage_array_names_3">Потребителски скриптове от разработчика</string>
   <string name="pref_homepage_array_names_4">Потребителски скриптове в Greйси Разклонение</string>
+  <string name="pref_homepage_array_names_5">\" URL</string>
   <string name="pref_homepage_title">При стартиране:</string>
   <string name="pref_homepage_summary">Изберете начална страница..</string>
+  <string name="pref_useragent_array_names_3">Потребителски агент на потребител</string>
+  <string name="pref_useragent_title">Потребителски агент</string>
+  <string name="pref_useragent_summary">изберете заглавна стойност на заявката..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Отмяна\?</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Давайте!</string>
   <string name="pref_pageloadbehavior_array_name_ask">Питай!</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Разрешаване на заявки за всички хостове</string>
   <string name="pref_sharedsecret_title">Споделена тайна.</string>
   <string name="pref_sharedsecret_summary">първият параметър на API метод:: \"window.WebViewWM.getUserscriptJS(Тайна!, url)\". Главно предназначени за употреба от JS Код, инжектиран от \"mitmproxy\" скрипт .. за да позволите на скриптове да се изпълняват в iframe Прозорци:.</string>
+  <string name="pref_enableremotedebugger_title">Активиране на отдалечен дебъгер</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView може да бъде инспектиран на LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView не може да бъде инспектиран на LAN</string>
   <string name="testpatternactivity_description">Образец::\n  * -: glob или ... regex\n  * използван от: @include, @exclude, и ... @match\n\nURL:\n  * изпитван обект\n\nТест за изпитване:\n  * определя дали \"Схемата\" съвпада "URL"\n  * показва резултата в Toast</string>
   <string name="testpatternactivity_label_pattern">Образец::</string>
   <string name="testpatternactivity_label_url">URL:</string>

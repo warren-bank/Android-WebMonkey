@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Ενημέρωση σεναρίων</string>
+  <string name="menu_remove_cookies">Αφαίρεση Cookies</string>
   <string name="menu_settings">Ρυθμίσεις:</string>
   <string name="menu_test_pattern">Πρότυπο δοκιμής:</string>
   <string name="menu_exit">Έξοδος:</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Κενό σελίδα:</string>
   <string name="pref_homepage_array_names_3">Userscripts από προγραμματιστή</string>
   <string name="pref_homepage_array_names_4">Σενάρια χρήστη στο Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">\' Έθιμο URL</string>
   <string name="pref_homepage_title">Στο Startup</string>
   <string name="pref_homepage_summary">επιλογή αρχικής σελίδας..</string>
+  <string name="pref_useragent_array_names_3">Προσαρμοσμένη χρήστης</string>
+  <string name="pref_useragent_title">Ρουτίνα χρήστη</string>
+  <string name="pref_useragent_summary">επιλογή τιμής κεφαλίδας αίτησης..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Ακύρωση.</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Συνεχίστε.</string>
   <string name="pref_pageloadbehavior_array_name_ask">-Ρώτα.</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Επιτρέποντας αιτήσεις σε όλους τους υπολογιστές.</string>
   <string name="pref_sharedsecret_title">Κοινό μυστικό.</string>
   <string name="pref_sharedsecret_summary">η πρώτη παράμετρος στο API -μέθοδος: \"window.WebViewWM.getUserscriptJS(-Μυστικό, url)\". Αρχικά προοριζόμενο για χρήση από: JS κωδικός που ενίεται από: \"mitmproxy\" σενάριο ... για να επιτρέπεται η εκτέλεση σεναρίων iframe παράθυρα..</string>
+  <string name="pref_enableremotedebugger_title">Ενεργοποίηση απομακρυσμένου Debugger</string>
+  <string name="pref_enableremotedebugger_summary_on" >Το WebView μπορεί να ελεγχθεί στο LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Δεν είναι δυνατή η επιθεώρηση του WebView στο LAN</string>
   <string name="testpatternactivity_description">Μοτίβο:\n  * υποστηρίζει:: glob ή regex\n  * χρησιμοποιείται από:: @include, @exclude, και @match\n\nURL:\n  * αντικειμε.\n\nΔοκιμή εκτέλεσης:\n  * καθορίζει αν τα αποτελέσματα \"Μοτίβο\" "URL"\n  * αποτέλεσμα εμφάνισης σε: Toast</string>
   <string name="testpatternactivity_label_pattern">Μοτίβο:</string>
   <string name="testpatternactivity_label_url">URL:</string>

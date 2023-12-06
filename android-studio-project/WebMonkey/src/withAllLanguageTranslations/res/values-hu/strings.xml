@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Parancsfájlok frissítése</string>
+  <string name="menu_remove_cookies">Cookie-k eltávolítása</string>
   <string name="menu_settings">Beállítások</string>
   <string name="menu_test_pattern">Teszt minta</string>
   <string name="menu_exit">Kilép</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Üres oldal</string>
   <string name="pref_homepage_array_names_3">Felhasználói parancsfájlok fejlesztők szerint</string>
   <string name="pref_homepage_array_names_4">Userparancsfájlok a Greasy Forkban</string>
+  <string name="pref_homepage_array_names_5">Egyéni URL</string>
   <string name="pref_homepage_title">Indításkor</string>
   <string name="pref_homepage_summary">Kezdőlap kiválasztása..</string>
+  <string name="pref_useragent_array_names_3">Egyéni felhasználói ügynök</string>
+  <string name="pref_useragent_title">Felhasználói ügynök</string>
+  <string name="pref_useragent_summary">Válassza a kérés fejléc értékét..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Mégse</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Folytatás</string>
   <string name="pref_pageloadbehavior_array_name_ask">Kérdés</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Kérések engedélyezése az összes hoszthoz</string>
   <string name="pref_sharedsecret_title">Megosztott titok</string>
   <string name="pref_sharedsecret_summary">Az első paraméter API Módszer: \"window.WebViewWM.getUserscriptJS(Titok, url)\". Elsősorban arra szánták, hogy JS A kód beszúrása \"mitmproxy\" Parancsfájl .. a userparancsfájlok futtatására iframe Ablakok.</string>
+  <string name="pref_enableremotedebugger_title">Távoli hibakereső engedélyezése</string>
+  <string name="pref_enableremotedebugger_summary_on" >A WebView ellenőrizhető a LAN hálózaton</string>
+  <string name="pref_enableremotedebugger_summary_off">A WebView nem ellenőrizhető a LAN hálózaton</string>
   <string name="testpatternactivity_description">Minta:\n  * Támogatja: glob Vagy regex\n  * által használt: @include, @exclude, és @match\n\nURL:\n  * Vizsgált tárgy\n\nTeszt futtatása:\n  * Meghatározza, hogy a \"minta\" egyezik-e "URL"\n  * Eredmény megjelenítése Toast</string>
   <string name="testpatternactivity_label_pattern">Minta:</string>
   <string name="testpatternactivity_label_url">URL:</string>

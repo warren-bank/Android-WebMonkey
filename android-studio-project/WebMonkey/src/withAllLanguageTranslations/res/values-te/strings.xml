@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">స్క్రిప్ట్లను నవీకరణ చేయి</string>
+  <string name="menu_remove_cookies">కుకీలను తొలగించుము</string>
   <string name="menu_settings">అమరిక</string>
   <string name="menu_test_pattern">టెస్ట్ పాంటర్న్</string>
   <string name="menu_exit">ఎక్విట్</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">ఖాళీ పేజీ</string>
   <string name="pref_homepage_array_names_3">డెవలపర్ ద్వారా Userscripts</string>
   <string name="pref_homepage_array_names_4">Greasy Fork వద్ద Userscripts</string>
+  <string name="pref_homepage_array_names_5">\@ action: button URL</string>
   <string name="pref_homepage_title">ప్రారంభంలో</string>
   <string name="pref_homepage_summary">హోమ్ పేజీ యెంపికచేయుము..</string>
+  <string name="pref_useragent_array_names_3">యూజర్ అజెంట్Comment</string>
+  <string name="pref_useragent_title">యూజర్ అజెంట్</string>
+  <string name="pref_useragent_summary">అభ్యర్ధన హెడర్ విలువుని..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">రద్దు</string>
   <string name="pref_pageloadbehavior_array_name_proceed">ప్రాసెస్</string>
   <string name="pref_pageloadbehavior_array_name_ask">అడిగి</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">అన్ని సైన్సులకు అభ్యర్ధనలను అనుమతిస్తుంది</string>
   <string name="pref_sharedsecret_title">షేర్డ్ సీక్రెట్</string>
   <string name="pref_sharedsecret_summary">మొదటి పారామీటర్లు API పద్ధతి: \"window.WebViewWM.getUserscriptJS(రహస్యం, url)\". ఉపయోగం కోసం ప్రీమార్లీ ఉద్దేశించింది. JS కోడ్ ఇన్జెక్ట్ \"mitmproxy\" లిపి .. స్క్రిప్ట్స్క్రిప్ట్లను అమలు చేయడానికి అనుమతిస్తుంది iframe విండోలు.</string>
+  <string name="pref_enableremotedebugger_title">రిమోట్ డీబగ్గర్ చేతనము చేయుము</string>
+  <string name="pref_enableremotedebugger_summary_on" >వెబ్ వీక్షను LAN మీద విమర్ధం చేయవచ్చు.</string>
+  <string name="pref_enableremotedebugger_summary_off">వెబ్ వీక్షను LAN మీద निरीक्षण చేయలేము</string>
   <string name="testpatternactivity_description">పాంటెన్:\n  * మద్దతును: glob లేదా regex\n  * వాడుకలో: @include, @exclude, మరియు @match\n\nURL:\n  * పరీక్ష విషయం\n\nపరీక్షను నడుపుము:\n  * \"Pattern\" మ్యాచ్లు లేదో నిర్ణయించుము "URL"\n  * ప్రదర్శన ఫలితము Toast</string>
   <string name="testpatternactivity_label_pattern">పాంటెన్:</string>
   <string name="testpatternactivity_label_url">URL:</string>

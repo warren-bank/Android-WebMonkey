@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aġġornament Skripts</string>
+  <string name="menu_remove_cookies">Neħħi l-Cookies</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_test_pattern">Mudell tat-Test</string>
   <string name="menu_exit">Ħruġ</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Paġna vojta</string>
   <string name="pref_homepage_array_names_3">Userskripts minn żvilupp</string>
   <string name="pref_homepage_array_names_4">Userskripts at Gregy furketta</string>
+  <string name="pref_homepage_array_names_5">Dwana URL</string>
   <string name="pref_homepage_title">Fuq L-istartjar</string>
   <string name="pref_homepage_summary">jagħżlu dar paġna..</string>
+  <string name="pref_useragent_array_names_3">Aġent tad-dwana Aġent</string>
+  <string name="pref_useragent_title">Aġent Utent</string>
+  <string name="pref_useragent_summary">tagħżel talba valur header..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Tħassir</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Kompli</string>
   <string name="pref_pageloadbehavior_array_name_ask">Staqsi</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Permess ta \' talbiet għall-ospiti kollha</string>
   <string name="pref_sharedsecret_title">Sigriet Sigriet</string>
   <string name="pref_sharedsecret_summary">l-ewwel parametru li API metodu: \"window.WebViewWM.getUserscriptJS(sigriet, url)\". Primarjament maħsub għall-użu minn JS kodiċi injettat minn \"mitmproxy\" kitba .. biex jippermettu uerskripts jiddekorri fil iframe twieqi.</string>
+  <string name="pref_enableremotedebugger_title">Jippermettu Debugger Remoti</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView jistgħu jiġu spezzjonati fuq LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView ma jistgħux jiġu spezzjonati fuq LAN</string>
   <string name="testpatternactivity_description">Mudell:\n  * jappoġġja: glob jew regex\n  * użat minn: @include, @exclude, u @match\n\nURL:\n  * suġġett għall-ittestjar\n\nTest Run:\n  * jiddetermina jekk \"Pattern\" logħbiet "URL"\n  * riżultat tad-displej Toast</string>
   <string name="testpatternactivity_label_pattern">Mudell:</string>
   <string name="testpatternactivity_label_url">URL:</string>

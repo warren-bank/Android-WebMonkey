@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">스크립트 업데이트</string>
+  <string name="menu_remove_cookies">쿠키 제거</string>
   <string name="menu_settings">설정</string>
   <string name="menu_test_pattern">테스트 패턴</string>
   <string name="menu_exit">종료</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">공백 페이지</string>
   <string name="pref_homepage_array_names_3">개발자에 의한 사용자 스크립트</string>
   <string name="pref_homepage_array_names_4">Greasy Fork에 있는 사용자 스크립트</string>
+  <string name="pref_homepage_array_names_5">사용자 정의 URL</string>
   <string name="pref_homepage_title">시작 시</string>
   <string name="pref_homepage_summary">홈 페이지 선택하기..</string>
+  <string name="pref_useragent_array_names_3">사용자 정의 사용자 에이전트</string>
+  <string name="pref_useragent_title">사용자 에이전트</string>
+  <string name="pref_useragent_summary">요청 헤더 값 선택..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">취소</string>
   <string name="pref_pageloadbehavior_array_name_proceed">진행하기</string>
   <string name="pref_pageloadbehavior_array_name_ask">물어보세요</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">모든 호스트에 대한 요청 허용</string>
   <string name="pref_sharedsecret_title">공유 시크릿</string>
   <string name="pref_sharedsecret_summary">첫 번째 매개변수를 사용하여 API 메소드: \"window.WebViewWM.getUserscriptJS(비밀의, url)\". 기본적으로 사용하기 위해 의도된 JS 에 의해 주입되는 코드 \"mitmproxy\" 스크립트를 사용하여 사용자 스크립트를 실행할 수 있습니다. iframe 창.</string>
+  <string name="pref_enableremotedebugger_title">원격 디버거 사용</string>
+  <string name="pref_enableremotedebugger_summary_on" >웹 보기는 LAN 에서 검사할 수 있습니다.</string>
+  <string name="pref_enableremotedebugger_summary_off">웹 보기를 LAN 에서 검사할 수 없음</string>
   <string name="testpatternactivity_description">패턴:\n  * 지원하다: glob 또는 regex\n  * 사용되는: @include, @exclude, 및 @match\n\nURL:\n  * 테스트 대상\n\n테스트 실행:\n  * \"패턴\" 일치 여부 판별 "URL"\n  * 표시 결과 표시 Toast</string>
   <string name="testpatternactivity_label_pattern">패턴:</string>
   <string name="testpatternactivity_label_url">URL:</string>

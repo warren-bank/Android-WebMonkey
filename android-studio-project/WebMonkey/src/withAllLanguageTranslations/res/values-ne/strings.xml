@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">स्क्रिप्ट अद्यावधिक गर्नुहोस्</string>
+  <string name="menu_remove_cookies">कुकीहरू हटाउनुहोस्</string>
   <string name="menu_settings">सेटिङ</string>
   <string name="menu_test_pattern">परीक्षण बाँन्की</string>
   <string name="menu_exit">निस्कदा</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">खाली पृष्ठ</string>
   <string name="pref_homepage_array_names_3">विकासकर्ता द्वारा प्रयोगकर्ता स्क्रिप्ट</string>
   <string name="pref_homepage_array_names_4">ग्रेसी फोर्क मा प्रयोगकर्ता स्क्रिप्टहरू</string>
+  <string name="pref_homepage_array_names_5">अनुकूल URL</string>
   <string name="pref_homepage_title">सुरुआतमा</string>
   <string name="pref_homepage_summary">गृह पृष्ठ रोज्नुहोस्..</string>
+  <string name="pref_useragent_array_names_3">अनुकूल प्रयोगकर्ता एजेन्ट</string>
+  <string name="pref_useragent_title">प्रयोगकर्ता एजेन्ट</string>
+  <string name="pref_useragent_summary">अनुरोध हेडर मान रोज्नुहोस्..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">रद्द गर्नुहोस्</string>
   <string name="pref_pageloadbehavior_array_name_proceed">प्रोसेड</string>
   <string name="pref_pageloadbehavior_array_name_ask">सोध्नुहोस्</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">सबै होस्टमा अनुरोधहरू अनुमति</string>
   <string name="pref_sharedsecret_title">साझेदार गरिएको गोप्य</string>
   <string name="pref_sharedsecret_summary">पहिलो परिमिति API विधि: \"window.WebViewWM.getUserscriptJS(गुप्त, url)\". द्वारा प्रयोग गर्नका लागि प्रथमतः JS द्वारा कोड इन्जेक्ट गरिएको छ \"mitmproxy\" स्क्रिप्ट .. प्रयोगकर्ता स्क्रिप्टलाई चलाउन अनुमति दिने iframe सञ्झ्याल.</string>
+  <string name="pref_enableremotedebugger_title">टाढाको डिबगर सक्षम पार्नुहोस्</string>
+  <string name="pref_enableremotedebugger_summary_on" >LAN मा वेबव्यू निरीक्षण गर्न सकिन्छ</string>
+  <string name="pref_enableremotedebugger_summary_off">LAN मा वेबव्यू निरीक्षण गर्न सकिँदैन</string>
   <string name="testpatternactivity_description">बाँन्की:\n  * समर्थन गर्दछ: glob वा regex\n  * द्वारा प्रयोग गरिएको: @include, @exclude, र @match\n\nURL:\n  * परीक्षण विषय\n\nपरीक्षण चलाउनुहोस्:\n  * \"बाँन्की\" मिल्दछ कि छैन निर्धारण गर्नुहोस् "URL"\n  * मा परिणाम प्रदर्शन गर्नुहोस् Toast</string>
   <string name="testpatternactivity_label_pattern">बाँन्की:</string>
   <string name="testpatternactivity_label_url">URL:</string>

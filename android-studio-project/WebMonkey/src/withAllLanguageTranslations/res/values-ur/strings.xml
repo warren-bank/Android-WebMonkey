@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">اپ ڈیٹ سکرپٹ</string>
+  <string name="menu_remove_cookies">Cookies کو ہٹا دیں</string>
   <string name="menu_settings">سیٹنگز</string>
   <string name="menu_test_pattern">ٹیسٹ پیٹرن</string>
   <string name="menu_exit">باہر نکلیں</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">خالی صفحہ</string>
   <string name="pref_homepage_array_names_3">ڈیولپر کی طرف سے استعمال</string>
   <string name="pref_homepage_array_names_4">Greasy فورک میں Userسکرپٹ</string>
+  <string name="pref_homepage_array_names_5">کسٹم URL</string>
   <string name="pref_homepage_title">Startup پر</string>
   <string name="pref_homepage_summary">ہوم پیج چنیں..</string>
+  <string name="pref_useragent_array_names_3">کسٹم یوزر ایجنٹ</string>
+  <string name="pref_useragent_title">صارفی ایجنٹ</string>
+  <string name="pref_useragent_summary">ہیڈر کی قیمت کا انتخاب کریں..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">منسوخ</string>
   <string name="pref_pageloadbehavior_array_name_proceed">پراکتاد</string>
   <string name="pref_pageloadbehavior_array_name_ask">پوچھیے</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">تمام میزبانوں کو Allowing کی درخواستوں</string>
   <string name="pref_sharedsecret_title">شارڈ سیکریٹ</string>
   <string name="pref_sharedsecret_summary">پہلا پیرامیٹر API طریقہ: \"window.WebViewWM.getUserscriptJS(راز, url)\". اصل میں استعمال کے لئے Primarily کا ارادہ JS ایک کی طرف سے کوڈ انجکشن \"mitmproxy\" تحریر .. یوزر سکرپٹ کی اجازت دینے کے لیے iframe کھڑکیاں.</string>
+  <string name="pref_enableremotedebugger_title">Enable ریموٹ Debugger</string>
+  <string name="pref_enableremotedebugger_summary_on" >LAN پر ویب سائیٹ کا معائنہ کیا جا سکتا ہے</string>
+  <string name="pref_enableremotedebugger_summary_off">LAN پر ویب سائیٹ کا معائنہ نہیں کیا جاسکتا</string>
   <string name="testpatternactivity_description">پیٹرن):\n  * کی حمایت: glob یا regex\n  * کے ذریعے استعمال: @include, @exclude, اور @match\n\nURL:\n  * ٹیسٹ مشروط\n\nرن ٹیسٹ:\n  * تعین کریں کہ آیا \"پیٹرن\" میچ "URL"\n  * ظاہر ہے Toast</string>
   <string name="testpatternactivity_label_pattern">پیٹرن):</string>
   <string name="testpatternactivity_label_url">URL:</string>

@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">تعديل البرامج النصية</string>
+  <string name="menu_remove_cookies">ازالة Cookies</string>
   <string name="menu_settings">المحددات</string>
   <string name="menu_test_pattern">نموذج الاختبار</string>
   <string name="menu_exit">خروج</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">صفحة خالية</string>
   <string name="pref_homepage_array_names_3">Userscripts حسب Developer</string>
   <string name="pref_homepage_array_names_4">برامج Userscripts في Ghassy Fork</string>
+  <string name="pref_homepage_array_names_5">معدل URL</string>
   <string name="pref_homepage_title">عند بدء التشغيل</string>
   <string name="pref_homepage_summary">اختيار الصفحة الرئيسية..</string>
+  <string name="pref_useragent_array_names_3">البرنامج الوسيط للمستخدم المهيأ</string>
+  <string name="pref_useragent_title">البرنامج الوسيط للمستخدم</string>
+  <string name="pref_useragent_summary">اختيار قيمة نص رأس الطلب..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">الغاء</string>
   <string name="pref_pageloadbehavior_array_name_proceed">الاستمرار</string>
   <string name="pref_pageloadbehavior_array_name_ask">سؤال</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">السماح بالطلبات لكل الأنظمة الرئيسية</string>
   <string name="pref_sharedsecret_title">سر مشترك</string>
   <string name="pref_sharedsecret_summary">المعامل الأول الى API الطريقة: \"window.WebViewWM.getUserscriptJS(سرية, url)\". مخصص بالدرجة الأولى للاستخدام بواسطة JS رمز تم حقنه بواسطة \"mitmproxy\" النص .. للسماح للمستخدم scripts بالعمل في iframe نوافذ.</string>
+  <string name="pref_enableremotedebugger_title">اتاحة وحدة تصحيح الأخطاء عن بعد</string>
+  <string name="pref_enableremotedebugger_summary_on" >يمكن فحص WebView على LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">لا يمكن فحص WebView على LAN</string>
   <string name="testpatternactivity_description">نموذج:\n  * دعم: glob أو regex\n  * مستخدم بواسطة: @include, @exclude, و /- @match\n\nURL:\n  * اختبار الموضوع\n\nتشغيل الاختبار:\n  * تحديد ما اذا كان \"نموذج\" يطابق "URL"\n  * عرض النتيجة في Toast</string>
   <string name="testpatternactivity_label_pattern">نموذج:</string>
   <string name="testpatternactivity_label_url">URL:</string>

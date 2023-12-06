@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Nuashonraigh scripteanna</string>
+  <string name="menu_remove_cookies">Bain Cookies</string>
   <string name="menu_settings">Socruithe</string>
   <string name="menu_test_pattern">Patrún Tástála</string>
   <string name="menu_exit">Scoir</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Leathanach bán</string>
   <string name="pref_homepage_array_names_3">Forbróirí ag forbróir</string>
   <string name="pref_homepage_array_names_4">Scripteanna Úsáideora ag Forc Grey</string>
+  <string name="pref_homepage_array_names_5">Saincheaptha URL</string>
   <string name="pref_homepage_title">Ag am tosaithe</string>
   <string name="pref_homepage_summary">Roghnaigh leathanach baile..</string>
+  <string name="pref_useragent_array_names_3">Oibreóir Saincheaptha Úsáideora</string>
+  <string name="pref_useragent_title">Gníomhaire Úsáideora</string>
+  <string name="pref_useragent_summary">roghnú luach ceanntásc..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Cealaigh</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Ar Aghaidh</string>
   <string name="pref_pageloadbehavior_array_name_ask">\@ info</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Ceadaigh iarratais ar gach óstáin</string>
   <string name="pref_sharedsecret_title">Rúnda Roinnte</string>
   <string name="pref_sharedsecret_summary">an chéad paraiméadar le API modh: \"window.WebViewWM.getUserscriptJS(\@ info, url)\". Go príomha atá beartaithe le húsáid ag JS cód inmheasta ag \"mitmproxy\" script .. chun a cheadú scripteanna a reáchtáil i iframe Fuinneoga.</string>
+  <string name="pref_enableremotedebugger_title">Cumasaigh an Dífhabhtóir Cianda</string>
+  <string name="pref_enableremotedebugger_summary_on" >Is féidir Gréasáin Gréasáin a iniúchadh ar LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">Ní féidir Gréasáin Gréasáin a iniúchadh ar LAN</string>
   <string name="testpatternactivity_description">Patrún:\n  * Tacaíochtaí: glob nó regex\n  * a úsáidtear le: @include, @exclude, agus @match\n\nURL:\n  * ábhar tástála\n\nRith Tástáil:\n  * a chinneadh cé acu \"\" \"\" \"patrún\" "URL"\n  * \@ info: Toast</string>
   <string name="testpatternactivity_label_pattern">Patrún:</string>
   <string name="testpatternactivity_label_url">URL:</string>

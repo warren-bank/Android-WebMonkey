@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">スクリプトの更新</string>
+  <string name="menu_remove_cookies">Cookie の削除</string>
   <string name="menu_settings">設定</string>
   <string name="menu_test_pattern">テスト・パターン</string>
   <string name="menu_exit">出口</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">ブランク・ページ</string>
   <string name="pref_homepage_array_names_3">開発者別のユーザー・スクリプト</string>
   <string name="pref_homepage_array_names_4">グリシー・フォークのユーザースクリプト</string>
+  <string name="pref_homepage_array_names_5">カスタム URL</string>
   <string name="pref_homepage_title">開始時</string>
   <string name="pref_homepage_summary">ホームページの選択..</string>
+  <string name="pref_useragent_array_names_3">カスタムユーザーエージェント</string>
+  <string name="pref_useragent_title">ユーザー・エージェント</string>
+  <string name="pref_useragent_summary">要求ヘッダー値の選択..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">キャンセル</string>
   <string name="pref_pageloadbehavior_array_name_proceed">プロシード</string>
   <string name="pref_pageloadbehavior_array_name_ask">訊問</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">すべてのホストへの要求の許可</string>
   <string name="pref_sharedsecret_title">共有秘密鍵</string>
   <string name="pref_sharedsecret_summary">最初のパラメータ API 方法: \"window.WebViewWM.getUserscriptJS(秘密, url)\". 主として使用されることを意図したもの JS 注入されたコード \"mitmproxy\" スクリプト.. ユーザー・スクリプトの実行を許可する iframe ウィンドウ.</string>
+  <string name="pref_enableremotedebugger_title">リモート・デバッガーを有効にする</string>
+  <string name="pref_enableremotedebugger_summary_on" >Web ビューを LAN 上で検査できます</string>
+  <string name="pref_enableremotedebugger_summary_off">Web ビューを LAN 上で検査できません</string>
   <string name="testpatternactivity_description">パターン:\n  * 支柱: glob 又は regex\n  * 使用者: @include, @exclude, 及び @match\n\nURL:\n  * テスト・サブジェクト\n\nテストの実行:\n  * 「パターン」が一致するかどうか "URL"\n  * 結果の表示 Toast</string>
   <string name="testpatternactivity_label_pattern">パターン:</string>
   <string name="testpatternactivity_label_url">URL:</string>

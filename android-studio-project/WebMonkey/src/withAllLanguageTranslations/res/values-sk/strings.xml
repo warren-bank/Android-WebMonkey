@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Aktualizovať skripty</string>
+  <string name="menu_remove_cookies">Odstrániť cookies</string>
   <string name="menu_settings">Nastavenia</string>
   <string name="menu_test_pattern">Skúšobný vzor</string>
   <string name="menu_exit">Ukončiť</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Prázdna stránka</string>
   <string name="pref_homepage_array_names_3">Užívateľské skripty podľa vývojára</string>
   <string name="pref_homepage_array_names_4">Používateľské skripty v Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Vlastné URL</string>
   <string name="pref_homepage_title">Pri štarte</string>
   <string name="pref_homepage_summary">vybrať domovskú stránku..</string>
+  <string name="pref_useragent_array_names_3">Užívateľský agent užívateľa</string>
+  <string name="pref_useragent_title">Užívateľský agent</string>
+  <string name="pref_useragent_summary">vybrať hodnotu hlavičky požiadavky..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Zrušiť</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Pokračovať</string>
   <string name="pref_pageloadbehavior_array_name_ask">Opýtať sa</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Povolenie požiadaviek pre všetkých hostiteľov</string>
   <string name="pref_sharedsecret_title">Zdieľané tajomstvo</string>
   <string name="pref_sharedsecret_summary">prvý parameter na API Metóda: \"window.WebViewWM.getUserscriptJS(tajný, url)\". Primárne určené na použitie JS F812: Kód \"mitmproxy\" script .. na povolenie spúšťania userskriptov v iframe Windows.</string>
+  <string name="pref_enableremotedebugger_title">Povoliť vzdialený ladiaci program</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView môže byť skontrolované v sieti LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView nie je možné kontrolovať v sieti LAN</string>
   <string name="testpatternactivity_description">Vzalebo:\n  * podpery: glob or regex\n  * používaný: @include, @exclude, a @match\n\nURL:\n  * predmet skúšky\n\nSpustiť test:\n  * určuje, či sa zhoduje s \"vzorom\" "URL"\n  * zobraziť výsledok v Toast</string>
   <string name="testpatternactivity_label_pattern">Vzor:</string>
   <string name="testpatternactivity_label_url">URL:</string>

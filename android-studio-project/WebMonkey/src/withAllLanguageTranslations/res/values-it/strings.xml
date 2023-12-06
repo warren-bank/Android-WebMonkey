@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Script Aggiornamento</string>
+  <string name="menu_remove_cookies">Rimuovi Cookies</string>
   <string name="menu_settings">Impostazioni</string>
   <string name="menu_test_pattern">Modello Test</string>
   <string name="menu_exit">Uscita</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Pagina vuota</string>
   <string name="pref_homepage_array_names_3">Userscripts per sviluppatore</string>
   <string name="pref_homepage_array_names_4">Userscripts a Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Personalizzato URL</string>
   <string name="pref_homepage_title">Su Startup</string>
   <string name="pref_homepage_summary">scegliere la home page..</string>
+  <string name="pref_useragent_array_names_3">Agent utente personalizzato</string>
+  <string name="pref_useragent_title">Agente utente</string>
+  <string name="pref_useragent_summary">scegliere valore di intestazione della richiesta..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Annulla</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Procedi</string>
   <string name="pref_pageloadbehavior_array_name_ask">Chiedi</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Consentire richieste a tutti gli host</string>
   <string name="pref_sharedsecret_title">Segreto condiviso</string>
   <string name="pref_sharedsecret_summary">il primo parametro a API metodo: \"window.WebViewWM.getUserscriptJS(segreto, url)\". Principalmente destinato ad essere utilizzato da JS codice iniettato da un \"mitmproxy\" script .. per consentire agli userscripts di eseguire in iframe finestre.</string>
+  <string name="pref_enableremotedebugger_title">Abilitare Debugger Remoto</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView può essere ispezionato su LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView non può essere ispezionato su LAN</string>
   <string name="testpatternactivity_description">Modello:\n  * suppota: glob or regex\n  * utilizzato da: @include, @exclude, e @match\n\nURL:\n  * soggetto di prova\n\nTest di esecuzione:\n  * determinare se le corrispondenze \"Pattern\" "URL"\n  * risultato del display in Toast</string>
   <string name="testpatternactivity_label_pattern">Modello:</string>
   <string name="testpatternactivity_label_url">URL:</string>

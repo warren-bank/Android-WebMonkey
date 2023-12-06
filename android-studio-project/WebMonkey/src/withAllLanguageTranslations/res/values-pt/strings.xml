@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Atualizar Scripts</string>
+  <string name="menu_remove_cookies">Remover Cookies</string>
   <string name="menu_settings">Configurações</string>
   <string name="menu_test_pattern">Padrão De Teste</string>
   <string name="menu_exit">Saída</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Página em branco</string>
   <string name="pref_homepage_array_names_3">Userscripts por desenvolvedor</string>
   <string name="pref_homepage_array_names_4">Userscripts em Greasy Fork</string>
+  <string name="pref_homepage_array_names_5">Costume URL</string>
   <string name="pref_homepage_title">Na Inicialização</string>
   <string name="pref_homepage_summary">escolha página inicial..</string>
+  <string name="pref_useragent_array_names_3">Agente do Usuário Personalizado</string>
+  <string name="pref_useragent_title">Agente do Usuário</string>
+  <string name="pref_useragent_summary">escolher valor do cabeçalho da solicitação..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Cancelar</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Prosseguir</string>
   <string name="pref_pageloadbehavior_array_name_ask">Pergunte</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Permitindo solicitações a todos os hosts</string>
   <string name="pref_sharedsecret_title">Segredo compartilhado</string>
   <string name="pref_sharedsecret_summary">o primeiro parâmetro para API método: \"window.WebViewWM.getUserscriptJS(segredo, url)\". Primariamente destinado ao uso por JS código injetado por um \"mitmproxy\" script .. para permitir que scripts do usuário sejam executados em iframe windows.</string>
+  <string name="pref_enableremotedebugger_title">Ativar o Depurador Remoto</string>
+  <string name="pref_enableremotedebugger_summary_on" >O WebView pode ser inspecionado na LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">O WebView não pode ser inspecionado na LAN</string>
   <string name="testpatternactivity_description">Padrão:\n  * supoutes: glob or regex\n  * utilizado por: @include, @exclude, e @match\n\nURL:\n  * assunto de teste\n\nTeste de Execução:\n  * determinar se \"Pattern\" corresponde "URL"\n  * exibir resultado em Toast</string>
   <string name="testpatternactivity_label_pattern">Padrão:</string>
   <string name="testpatternactivity_label_url">URL:</string>

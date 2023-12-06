@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Scripts bijwerken</string>
+  <string name="menu_remove_cookies">Cookies verwijderen</string>
   <string name="menu_settings">Instellingen</string>
   <string name="menu_test_pattern">Testpatroon</string>
   <string name="menu_exit">Afsluiten</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Blanco pagina</string>
   <string name="pref_homepage_array_names_3">Gebruikersscripts door ontwikkelaar</string>
   <string name="pref_homepage_array_names_4">Gebruikersscripts bij Vette Fork</string>
+  <string name="pref_homepage_array_names_5">Aangepast URL</string>
   <string name="pref_homepage_title">Bij opstarten</string>
   <string name="pref_homepage_summary">homepage kiezen..</string>
+  <string name="pref_useragent_array_names_3">Aangepaste gebruikersagent</string>
+  <string name="pref_useragent_title">Gebruikersagent</string>
+  <string name="pref_useragent_summary">waarde voor opdrachtheader kiezen..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Annuleren</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Doorgaan</string>
   <string name="pref_pageloadbehavior_array_name_ask">Vragen</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Aanvragen voor alle hosts toestaan</string>
   <string name="pref_sharedsecret_title">Gedeeld geheim</string>
   <string name="pref_sharedsecret_summary">de eerste parameter voor API methode: \"window.WebViewWM.getUserscriptJS(Geheim, url)\". Hoofdzakelijk bedoeld voor gebruik door JS code geïnjecteerd door een \"mitmproxy\" script .. om toe te staan dat userscripts worden uitgevoerd iframe vensters.</string>
+  <string name="pref_enableremotedebugger_title">Debugger op afstand inschakelen</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView kan worden geïnspecteerd op LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView kan niet worden geïnspecteerd op LAN</string>
   <string name="testpatternactivity_description">Patroon:\n  * ondersteunt: glob of regex\n  * gebruikt door: @include, @exclude, en @match\n\nURL:\n  * testonderwerp\n\nTest uitvoeren:\n  * bepalen of \"Patroon\" overeenkomt "URL"\n  * resultaat afbeelden in Toast</string>
   <string name="testpatternactivity_label_pattern">Patroon:</string>
   <string name="testpatternactivity_label_url">URL:</string>

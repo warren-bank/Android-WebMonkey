@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">Actualizar scripts</string>
+  <string name="menu_remove_cookies">Eliminar cookies</string>
   <string name="menu_settings">Configuración</string>
   <string name="menu_test_pattern">Patrón de prueba</string>
   <string name="menu_exit">Salida</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">Página en blanco</string>
   <string name="pref_homepage_array_names_3">Scripts de usuario por desarrollador</string>
   <string name="pref_homepage_array_names_4">Scripts de usuario en greasy fork</string>
+  <string name="pref_homepage_array_names_5">Personalizado URL</string>
   <string name="pref_homepage_title">Al inicio</string>
   <string name="pref_homepage_summary">elegir página de inicio..</string>
+  <string name="pref_useragent_array_names_3">Agente de usuario personalizado</string>
+  <string name="pref_useragent_title">Agente de usuario</string>
+  <string name="pref_useragent_summary">seleccionar valor de cabecera de solicitud..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">Cancelar</string>
   <string name="pref_pageloadbehavior_array_name_proceed">Proceda</string>
   <string name="pref_pageloadbehavior_array_name_ask">Preguntar</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">Permitir solicitudes a todos los hosts</string>
   <string name="pref_sharedsecret_title">Secreto compartido</string>
   <string name="pref_sharedsecret_summary">el primer parámetro a API método: \"window.WebViewWM.getUserscriptJS(Secreto, url)\". Destinado principalmente a ser utilizado por JS código inyectado por un \"mitmproxy\" script .. para permitir que los scripts de usuario se ejecuten en iframe Ventanas.</string>
+  <string name="pref_enableremotedebugger_title">Habilitar el depurador remoto</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView se puede inspeccionar en LAN</string>
+  <string name="pref_enableremotedebugger_summary_off">No se puede inspeccionar WebView en LAN</string>
   <string name="testpatternactivity_description">Patrón:\n  * Sopote: glob or regex\n  * utilizado por: @include, @exclude, y @match\n\nURL:\n  * objeto de ensayo\n\nEjecutar prueba:\n  * determinar si las coincidencias de \"Patrón\" "URL"\n  * mostrar el resultado en Toast</string>
   <string name="testpatternactivity_label_pattern">Patrón:</string>
   <string name="testpatternactivity_label_url">URL:</string>

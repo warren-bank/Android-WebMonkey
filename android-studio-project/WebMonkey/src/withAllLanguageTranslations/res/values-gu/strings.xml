@@ -2,6 +2,7 @@
 <resources>
   <string name="app_name">WebMonkey</string>
   <string name="menu_update_scripts">સ્ક્રિપ્ટો સુધારો</string>
+  <string name="menu_remove_cookies">કુકીઓને દૂર કરો</string>
   <string name="menu_settings">સુયોજનો</string>
   <string name="menu_test_pattern">ચકાસણી ભાત</string>
   <string name="menu_exit">બહાર નીકળવો</string>
@@ -10,8 +11,12 @@
   <string name="pref_homepage_array_names_2">ખાલી પાનું</string>
   <string name="pref_homepage_array_names_3">ડેવલપર દ્વારા વપરાશકર્તા સ્ક્રિપ્ટ</string>
   <string name="pref_homepage_array_names_4">Greasy Fork પર Userscripts</string>
+  <string name="pref_homepage_array_names_5">વૈવિધ્યપૂર્ણ URL</string>
   <string name="pref_homepage_title">શરૂઆત પર</string>
   <string name="pref_homepage_summary">ઘર પાનું પસંદ કરો..</string>
+  <string name="pref_useragent_array_names_3">વૈવિધ્યપૂર્ણ વપરાશકર્તા ઍજન્ટ</string>
+  <string name="pref_useragent_title">User Agent</string>
+  <string name="pref_useragent_summary">માંગણી હેડર કિંમત પસંદ કરો..</string>
   <string name="pref_pageloadbehavior_array_name_cancel">રદ કરો</string>
   <string name="pref_pageloadbehavior_array_name_proceed">પ્રક્રિયા કરો</string>
   <string name="pref_pageloadbehavior_array_name_ask">પૂછો</string>
@@ -24,6 +29,9 @@
   <string name="pref_enableadblock_summary_off">બધા યજમાનોને મંજૂરી આપે છે</string>
   <string name="pref_sharedsecret_title">વહેંચાયેલ ખાનગી</string>
   <string name="pref_sharedsecret_summary">પ્રથમ પરિમાણ API પદ્ધતિ: \"window.WebViewWM.getUserscriptJS(ગુપ્ત, url)\". પ્રમાણે વાપરવા માટે પ્રયત્ન કર્યું JS કોડ દ્વારા ઇન્જેક્ટ થયેલ કોડ \"mitmproxy\" સ્ક્રિપ્ટ .. વપરાશકર્તાઓને ચલાવવા માટે પરવાનગી આપવા માટે iframe વિન્ડો.</string>
+  <string name="pref_enableremotedebugger_title">દૂરસ્થ ડિબગર સક્રિય કરો</string>
+  <string name="pref_enableremotedebugger_summary_on" >WebView ને LAN પર નિરીક્ષણ કરી શકાય છે</string>
+  <string name="pref_enableremotedebugger_summary_off">WebView ને LAN પર નિરીક્ષણ કરી શકાતુ નથી</string>
   <string name="testpatternactivity_description">ભાત:\n  * આધાર: glob અથવા regex\n  * દ્વારા વપરાયેલ: @include, @exclude, અને @match\n\nURL:\n  * ચકાસણી વિષય\n\nચકાસણી ચલાવો:\n  * નક્કી કરો કે શું \"ભાત\" બંધબેસતુ નથી "URL"\n  * તેમાં પરિણામ દર્શાવો Toast</string>
   <string name="testpatternactivity_label_pattern">ભાત:</string>
   <string name="testpatternactivity_label_url">URL:</string>
