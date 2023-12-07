@@ -4,17 +4,20 @@ _GM_addApiToObject(
     // -----------
     // synchronous
     // -----------
-    'exit':        GM_exit,
-    'loadFrame':   GM_loadFrame,
-    'loadUrl':     GM_loadUrl,
-    'startIntent': GM_startIntent,
-    'toastLong':   GM_toastLong,
-    'toastShort':  GM_toastShort,
+    'exit':             GM_exit,
+    'loadFrame':        GM_loadFrame,
+    'loadUrl':          GM_loadUrl,
+    'removeAllCookies': GM_removeAllCookies,
+    'setUserAgent':     GM_setUserAgent,
+    'startIntent':      GM_startIntent,
+    'toastLong':        GM_toastLong,
+    'toastShort':       GM_toastShort,
 
     // ------------
     // asynchronous
     // ------------
-    'getUrl':      _GM_promisifyApiMethod(GM_getUrl),
-    'resolveUrl':  _GM_promisifyApiMethod(GM_resolveUrl)
+    'getUrl':           _GM_promisifyApiMethod(GM_getUrl),
+    'getUserAgent':     _GM_promisifyApiMethod(GM_getUserAgent),
+    'resolveUrl':       _GM_promisifyApiMethod(GM_resolveUrl)
   }
 );

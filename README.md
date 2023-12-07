@@ -69,6 +69,8 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
           - server response status codes: 301, 302
       - example:
         * `var is_redirect = (GM_getUrl() !== unsafeWindow.location.href)`
+    * `GM_getUserAgent()`
+      - returns a String containing the _User Agent_ that is currently configured in [_Settings_](#settings) for use by the WebView
     * `GM_loadFrame(urlFrame, urlParent, proxyFrame)`
       - loads an iframe into the WebView
       - where:
@@ -129,6 +131,8 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
         * [optional] `headers` is a list of String name/value pairs
       - example:
         * `('http://example.com/iframe_window.html', 'Referer', 'http://example.com/parent_window.html')`
+    * `GM_removeAllCookies()`
+      - completely removes _all_ cookies for _all_ web sites
     * `GM_resolveUrl(urlRelative, urlBase)`
       - returns a String containing `urlRelative` resolved relative to `urlBase`
       - where:
@@ -138,6 +142,13 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
       - examples:
         * `('video.mp4', 'http://example.com/iframe_window.html')`
         * `('video.mp4')`
+    * `GM_setUserAgent(value)`
+      - changes the _User Agent_ value that is configured in [_Settings_](#settings)
+      - where:
+        * [optional] `value` is a String
+          - special cases:
+            * `WebView` (or falsy)
+            * `Chrome`
     * `GM_startIntent(action, data, type, ...extras)`
       - starts an implicit [Intent](https://developer.android.com/training/basics/intents/sending)
       - where:
@@ -152,9 +163,12 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
   - [GM 4](https://www.greasespot.net/2017/09/greasemonkey-4-for-script-authors.html):
     * `GM.exit`
     * `GM.getUrl`
+    * `GM.getUserAgent`
     * `GM.loadFrame`
     * `GM.loadUrl`
+    * `GM.removeAllCookies`
     * `GM.resolveUrl`
+    * `GM.setUserAgent`
     * `GM.startIntent`
     * `GM.toastLong`
     * `GM.toastShort`
@@ -244,6 +258,12 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
         * `GM.cookies.list`
         * `GM.cookies.set`
         * `GM.cookies.delete`
+     3. group:
+        * `GM_setUserAgent`
+        * `GM.setUserAgent`
+     4. group:
+        * `GM_removeAllCookies`
+        * `GM.removeAllCookies`
 
 #### Caveats
 

@@ -1,6 +1,7 @@
 package com.github.warren_bank.webmonkey;
 
 import com.github.warren_bank.webmonkey.settings.SettingsUtils;
+import com.github.warren_bank.webmonkey.settings.WebViewSettingsMgr;
 
 import at.pardus.android.webview.gm.run.WebViewClientGm;
 import at.pardus.android.webview.gm.run.WebViewGm;
@@ -316,6 +317,33 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
+      public String getUserAgent(String secret) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"getUserAgent\" did not supply correct secret");
+          return null;
+        }
+        return SettingsUtils.getUserAgent(/* Context */ WmJsApi.this.activity);
+      }
+
+      @JavascriptInterface
+      public void setUserAgent(String secret, String value) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"setUserAgent\" did not supply correct secret");
+          return null;
+        }
+        return SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value);
+      }
+
+      @JavascriptInterface
+      public void removeAllCookies(String secret) {
+        if (!WmJsApi.this.secret.equals(secret)) {
+          Log.e(WmJsApi.TAG, "Call to \"removeAllCookies\" did not supply correct secret");
+          return null;
+        }
+        return WebViewSettingsMgr.removeAllCookies();
+      }
+
+      @JavascriptInterface
       public String getUserscriptJS(String shared_secret_assertion, String url) {
         String shared_secret_value = SettingsUtils.getSharedSecretPreference(activity);
         if (
@@ -429,6 +457,27 @@ public class WmJsApi {
     sb.append("var GM_exit = function() { ");
     sb.append(jsBridgeName);
     sb.append(".exit(");
+    sb.append(defaultSignature);
+    sb.append("); };");
+    sb.append("\n");
+
+    sb.append("var GM_getUserAgent = function() { return ");
+    sb.append(jsBridgeName);
+    sb.append(".getUserAgent(");
+    sb.append(defaultSignature);
+    sb.append("); };");
+    sb.append("\n");
+
+    sb.append("var GM_setUserAgent = function(value) { ");
+    sb.append(jsBridgeName);
+    sb.append(".setUserAgent(");
+    sb.append(defaultSignature);
+    sb.append(", (value || '')); };");
+    sb.append("\n");
+
+    sb.append("var GM_removeAllCookies = function() { ");
+    sb.append(jsBridgeName);
+    sb.append(".removeAllCookies(");
     sb.append(defaultSignature);
     sb.append("); };");
     sb.append("\n");

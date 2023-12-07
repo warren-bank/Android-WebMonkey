@@ -2,14 +2,17 @@
       _GM_addApiToObject(
         window,
         {
-          'GM_exit':        GM_exit,
-          'GM_getUrl':      GM_getUrl,
-          'GM_loadFrame':   GM_loadFrame,
-          'GM_loadUrl':     GM_loadUrl,
-          'GM_resolveUrl':  GM_resolveUrl,
-          'GM_startIntent': GM_startIntent,
-          'GM_toastLong':   GM_toastLong,
-          'GM_toastShort':  GM_toastShort
+          'GM_exit':             GM_exit,
+          'GM_getUrl':           GM_getUrl,
+          'GM_getUserAgent':     GM_getUserAgent,
+          'GM_loadFrame':        GM_loadFrame,
+          'GM_loadUrl':          GM_loadUrl,
+          'GM_removeAllCookies': GM_removeAllCookies,
+          'GM_resolveUrl':       GM_resolveUrl,
+          'GM_setUserAgent':     GM_setUserAgent,
+          'GM_startIntent':      GM_startIntent,
+          'GM_toastLong':        GM_toastLong,
+          'GM_toastShort':       GM_toastShort
         }
       );
     }

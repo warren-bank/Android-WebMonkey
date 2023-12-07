@@ -102,6 +102,54 @@ public class SettingsUtils {
 
   // --------------------
 
+  public static void setUserAgent(Context context, String value) {
+    SharedPreferences.Editor editor = getPrefsEditor(context);
+    String pref_key   = null;
+    String pref_value = null;
+
+    if (value != null)
+      value = value.trim();
+
+    // WebView
+    if ((value == null) || value.isEmpty() || value.toLowerCase().equals("webview")) {
+      pref_key   = context.getString(R.string.pref_useragent_key);
+      pref_value = context.getString(R.string.pref_useragent_array_values_1);
+
+      editor.putString(pref_key, pref_value);
+
+      editor.commit();
+      return;
+    }
+
+    // Chrome desktop
+    if (value.toLowerCase().equals("chrome")) {
+      pref_key   = context.getString(R.string.pref_useragent_key);
+      pref_value = context.getString(R.string.pref_useragent_array_values_2);
+
+      editor.putString(pref_key, pref_value);
+
+      editor.commit();
+      return;
+    }
+
+    // Custom URL
+    {
+      pref_key   = context.getString(R.string.pref_useragent_key);
+      pref_value = context.getString(R.string.pref_useragent_array_values_3);
+
+      editor.putString(pref_key, pref_value);
+    }
+    {
+      pref_key   = context.getString(R.string.pref_custom_useragent_key);
+      pref_value = value;
+
+      editor.putString(pref_key, pref_value);
+
+      editor.commit();
+      return;
+    }
+  }
+
   public static String getUserAgent(Context context) {
     return getUserAgent(context, getPrefs(context));
   }
