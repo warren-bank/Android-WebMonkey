@@ -3,9 +3,12 @@ package com.github.warren_bank.webmonkey;
 import com.github.warren_bank.webmonkey.settings.SettingsUtils;
 import com.github.warren_bank.webmonkey.settings.WebViewSettingsMgr;
 
+import at.pardus.android.webview.gm.model.Script;
 import at.pardus.android.webview.gm.run.WebViewClientGm;
 import at.pardus.android.webview.gm.run.WebViewGm;
+import at.pardus.android.webview.gm.store.ScriptStore;
 import at.pardus.android.webview.gm.util.DownloadHelper;
+import at.pardus.android.webview.gm.util.ScriptPermissionHelper;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -47,7 +50,7 @@ public class WmJsApi {
       private Toast toast = null;
 
       @JavascriptInterface
-      public void toast(String secret, int duration, String message) {
+      public void toast(String scriptName, String scriptNamespace, String secret, int duration, String message) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"toast\" did not supply correct secret");
           return;
@@ -65,7 +68,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public String getUrl(String secret) {
+      public String getUrl(String scriptName, String scriptNamespace, String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"getUrl\" did not supply correct secret");
           return null;
@@ -74,7 +77,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public String resolveUrl(String secret, String urlRelative, String urlBase) {
+      public String resolveUrl(String scriptName, String scriptNamespace, String secret, String urlRelative, String urlBase) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"resolveUrl\" did not supply correct secret");
           return null;
@@ -86,7 +89,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void startIntent(String secret, String action, String data, String type, String[] extras) {
+      public void startIntent(String scriptName, String scriptNamespace, String secret, String action, String data, String type, String[] extras) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not supply correct secret");
           return;
@@ -157,7 +160,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void loadUrl(String secret, String url, String[] headers) {
+      public void loadUrl(String scriptName, String scriptNamespace, String secret, String url, String[] headers) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"loadUrl\" did not supply correct secret");
           return;
@@ -193,7 +196,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void loadFrame(String secret, String urlFrame, String urlParent, boolean proxyFrame) {
+      public void loadFrame(String scriptName, String scriptNamespace, String secret, String urlFrame, String urlParent, boolean proxyFrame) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"loadFrame\" did not supply correct secret");
           return;
@@ -301,7 +304,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void exit(String secret) {
+      public void exit(String scriptName, String scriptNamespace, String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"exit\" did not supply correct secret");
           return;
@@ -317,7 +320,7 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public String getUserAgent(String secret) {
+      public String getUserAgent(String scriptName, String scriptNamespace, String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"getUserAgent\" did not supply correct secret");
           return null;
@@ -326,19 +329,25 @@ public class WmJsApi {
       }
 
       @JavascriptInterface
-      public void setUserAgent(String secret, String value) {
+      public void setUserAgent(String scriptName, String scriptNamespace, String secret, String value) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"setUserAgent\" did not supply correct secret");
           return null;
+        }
+        if (!grant(scriptName, scriptNamespace, "GM_setUserAgent")) {
+          return;
         }
         return SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value);
       }
 
       @JavascriptInterface
-      public void removeAllCookies(String secret) {
+      public void removeAllCookies(String scriptName, String scriptNamespace, String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"removeAllCookies\" did not supply correct secret");
           return null;
+        }
+        if (!grant(scriptName, scriptNamespace, "GM_removeAllCookies")) {
+          return;
         }
         return WebViewSettingsMgr.removeAllCookies();
       }
@@ -373,10 +382,29 @@ public class WmJsApi {
     };
   }
 
-  public String getJsApi() {
-    String jsBridgeName     = WmJsApi.GlobalJsApiNamespace;
-    String defaultSignature = "\"" + WmJsApi.this.secret + "\"";
+  private boolean grant(String scriptName, String scriptNamespace, String api) {
+    return ScriptPermissionHelper.isGranted(getScriptStore(), scriptName, scriptNamespace, api);
+  }
+
+  private ScriptStore getScriptStore() {
+    return webview.getScriptStore();
+  }
+
+  public String getJsApi(Script script) {
+    String jsBridgeName = WmJsApi.GlobalJsApiNamespace;
     StringBuilder sb;
+
+    // defaultSignature
+    sb = new StringBuilder(1 * 1024);
+    sb.append("\"");
+    sb.append(script.getName().replace("\"", "\\\""));
+    sb.append("\", \"");
+    sb.append(script.getNamespace().replace("\"", "\\\""));
+    sb.append("\", \"");
+    sb.append(WmJsApi.this.secret);
+    sb.append("\"");
+    String defaultSignature = sb.toString();
+    sb = null;
 
     // jsApi
     sb = new StringBuilder(4 * 1024);

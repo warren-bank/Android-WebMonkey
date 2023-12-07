@@ -31,10 +31,10 @@ public class WmScriptJsCode extends ScriptJsCode {
     ScriptJsCode.initStaticResources(context);
   }
 
-  private String WM_API;
+  private WmJsApi jsApi;
 
-  protected WmScriptJsCode(String wmApi) {
-    this.WM_API = wmApi;
+  protected WmScriptJsCode(WmJsApi jsApi) {
+    this.jsApi = jsApi;
   }
 
   @Override
@@ -44,7 +44,9 @@ public class WmScriptJsCode extends ScriptJsCode {
     sb.append(
       super.getJsApi(script, jsBridgeName, secret)
     );
-    sb.append(WM_API);
+    sb.append(
+      jsApi.getJsApi(script)
+    );
     sb.append(WM_API_V4_POLYFILL);
     return sb.toString();
   }

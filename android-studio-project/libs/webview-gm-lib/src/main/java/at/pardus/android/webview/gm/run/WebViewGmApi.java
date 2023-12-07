@@ -24,6 +24,7 @@ import at.pardus.android.webview.gm.model.ScriptId;
 import at.pardus.android.webview.gm.model.ScriptResource;
 import at.pardus.android.webview.gm.store.ScriptStore;
 import at.pardus.android.webview.gm.util.CookieHelper;
+import at.pardus.android.webview.gm.util.ScriptPermissionHelper;
 
 /**
  * Contains methods simulating GM functions that need access to the app/database.
@@ -54,9 +55,9 @@ public class WebViewGmApi {
   }
 
   private boolean grant(String scriptName, String scriptNamespace, String api) {
-    ScriptId id = new ScriptId(scriptName, scriptNamespace);
-    Script script = scriptStore.get(id);
-    if (!script.grant(api)) {
+    boolean OK = ScriptPermissionHelper.isGranted(scriptStore, scriptName, scriptNamespace, api);
+
+    if (!OK) {
       Log.w(TAG, "Access to \"" + api + "\" API is not granted to script: " + scriptName);
       return false;
     }
@@ -64,8 +65,9 @@ public class WebViewGmApi {
   }
 
   private boolean isAllowed(String scriptName, String scriptNamespace, String url) {
-    ScriptId id = new ScriptId(scriptName, scriptNamespace);
-    if (!scriptStore.isAllowed(id, url)) {
+    boolean OK = ScriptPermissionHelper.isAllowed(scriptStore, scriptName, scriptNamespace, url);
+
+    if (!OK) {
       Log.w(TAG, "Access to URL is not allowed by script: " + scriptName + "\nURL: " + url);
       return false;
     }
