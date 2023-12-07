@@ -44,6 +44,21 @@ public class WebViewSettingsMgr {
     webView.clearHistory();
   }
 
+  public static String getDefaultUserAgent() {
+    if ((webView == null) || (context == null)) return null;
+
+    if (Build.VERSION.SDK_INT >= 17)
+      return WebSettings.getDefaultUserAgent(context);
+
+    // https://stackoverflow.com/a/10248817
+    try {
+      return System.getProperty("http.agent");
+    }
+    catch(Exception e) {}
+
+    return null;
+  }
+
   public static void updateUserAgent() {
     if ((webView == null) || (context == null)) return;
 
@@ -54,7 +69,7 @@ public class WebViewSettingsMgr {
   private static void updateUserAgent(WebSettings webSettings) {
     if ((webView == null) || (context == null) || (webSettings == null)) return;
 
-    String agent = SettingsUtils.getUserAgent(/* Context */ context);
+    String agent = SettingsUtils.getUserAgent(/* Context */ context, false);
     webSettings.setUserAgentString(agent);
   }
 

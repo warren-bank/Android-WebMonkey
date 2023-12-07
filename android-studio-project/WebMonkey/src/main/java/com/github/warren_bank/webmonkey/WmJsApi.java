@@ -218,7 +218,7 @@ public class WmJsApi {
 
       private void loadFrame_srcdoc(final String urlFrame, final String urlParent) {
         HashMap<String, String> httpHeaders = new HashMap<String, String>();
-        httpHeaders.put("User-Agent", SettingsUtils.getUserAgent(activity));
+        httpHeaders.put("User-Agent", SettingsUtils.getUserAgent(activity, true));
         httpHeaders.put("Referer", urlParent);
         String docFrame = DownloadHelper.downloadUrl(urlFrame, httpHeaders);
         if (docFrame == null) return;
@@ -325,7 +325,7 @@ public class WmJsApi {
           Log.e(WmJsApi.TAG, "Call to \"getUserAgent\" did not supply correct secret");
           return null;
         }
-        return SettingsUtils.getUserAgent(/* Context */ WmJsApi.this.activity);
+        return SettingsUtils.getUserAgent(/* Context */ WmJsApi.this.activity, true);
       }
 
       @JavascriptInterface

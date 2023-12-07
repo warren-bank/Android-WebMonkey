@@ -151,14 +151,18 @@ public class SettingsUtils {
   }
 
   public static String getUserAgent(Context context) {
-    return getUserAgent(context, getPrefs(context));
+    return getUserAgent(context, true);
   }
 
-  private static String getUserAgent(Context context, SharedPreferences prefs) {
+  public static String getUserAgent(Context context, boolean resolveDefaultUserAgent) {
+    return getUserAgent(context, resolveDefaultUserAgent, getPrefs(context));
+  }
+
+  private static String getUserAgent(Context context, boolean resolveDefaultUserAgent, SharedPreferences prefs) {
     String pref_value = getUnresolvedUserAgentValue(context, prefs);
 
     if (pref_value.equals(context.getString(R.string.pref_useragent_array_names_1))) {
-      return getDefaultUserAgent(context);
+      return getDefaultUserAgent(context, resolveDefaultUserAgent);
     }
 
     if (pref_value.equals(context.getString(R.string.pref_custom_useragent_key))) {
@@ -176,17 +180,14 @@ public class SettingsUtils {
     return pref_value;
   }
 
-  private static String getDefaultUserAgent(Context context) {
+  private static String getDefaultUserAgent(Context context, boolean resolveDefaultUserAgent) {
     // https://developer.android.com/reference/android/webkit/WebSettings.html#setUserAgentString(java.lang.String)
     //   If the string is null or empty, the system default value will be used.
 
-    // https://developer.android.com/reference/android/webkit/WebSettings.html#getDefaultUserAgent(android.content.Context)
-    //   API 11+
-
-    // https://stackoverflow.com/a/10248817
-    //   System.getProperty("http.agent")
-
-    return null;
+    return (resolveDefaultUserAgent)
+      ? WebViewSettingsMgr.getDefaultUserAgent()
+      : null
+    ;
   }
 
   // --------------------
