@@ -13,7 +13,7 @@ public class ScriptPermissionHelper {
 
   public static boolean isGranted(ScriptStore scriptStore, ScriptId scriptId, String api) {
     Script script = scriptStore.get(scriptId);
-    return script.grant(api)
+    return script.grant(api);
   }
 
   public static boolean isAllowed(ScriptStore scriptStore, String scriptName, String scriptNamespace, String url) {

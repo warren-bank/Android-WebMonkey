@@ -33,10 +33,12 @@ import at.pardus.android.webview.gm.util.DownloadHelper;
  */
 public class Script extends ScriptMetadata {
 
-  private static final int noJsClosureFlag    = 1;
-  private static final int noJsSandboxFlag    = 2;
-  private static final int enableGmValuesFlag = 4;
-  private static final int enableGmCookieFlag = 8;
+  private static final int noJsClosureFlag        = 1;
+  private static final int noJsSandboxFlag        = 2;
+  private static final int enableGmValuesFlag     = 4;
+  private static final int enableGmCookieFlag     = 8;
+  private static final int enableGmAllCookiesFlag = 16;
+  private static final int enableGmUserAgentFlag  = 32;
 
   private static final int setFlags(int flags, String newFlags) {
     if (!TextUtils.isEmpty(newFlags)) {
@@ -125,6 +127,12 @@ public class Script extends ScriptMetadata {
       case "GM.cookies.set":
       case "GM.cookies.delete":
         return hasFlag(enableGmCookieFlag);
+      case "GM_removeAllCookies":
+      case "GM.removeAllCookies":
+        return hasFlag(enableGmAllCookiesFlag);
+      case "GM_setUserAgent":
+      case "GM.setUserAgent":
+        return hasFlag(enableGmUserAgentFlag);
     }
     return true;
   }
@@ -274,6 +282,14 @@ public class Script extends ScriptMetadata {
                 case "GM.cookies.set":
                 case "GM.cookies.delete":
                   flags |= enableGmCookieFlag;
+                  break;
+                case "GM_removeAllCookies":
+                case "GM.removeAllCookies":
+                  flags |= enableGmAllCookiesFlag;
+                  break;
+                case "GM_setUserAgent":
+                case "GM.setUserAgent":
+                  flags |= enableGmUserAgentFlag;
                   break;
               }
             }

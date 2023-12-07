@@ -259,11 +259,11 @@ Builds upon the [WebView GM library](https://github.com/wbayer/webview-gm) demo 
         * `GM.cookies.set`
         * `GM.cookies.delete`
      3. group:
-        * `GM_setUserAgent`
-        * `GM.setUserAgent`
-     4. group:
         * `GM_removeAllCookies`
         * `GM.removeAllCookies`
+     4. group:
+        * `GM_setUserAgent`
+        * `GM.setUserAgent`
 
 #### Caveats
 

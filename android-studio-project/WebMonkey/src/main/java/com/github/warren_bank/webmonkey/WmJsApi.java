@@ -332,24 +332,24 @@ public class WmJsApi {
       public void setUserAgent(String scriptName, String scriptNamespace, String secret, String value) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"setUserAgent\" did not supply correct secret");
-          return null;
+          return;
         }
         if (!grant(scriptName, scriptNamespace, "GM_setUserAgent")) {
           return;
         }
-        return SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value);
+        SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value);
       }
 
       @JavascriptInterface
       public void removeAllCookies(String scriptName, String scriptNamespace, String secret) {
         if (!WmJsApi.this.secret.equals(secret)) {
           Log.e(WmJsApi.TAG, "Call to \"removeAllCookies\" did not supply correct secret");
-          return null;
+          return;
         }
         if (!grant(scriptName, scriptNamespace, "GM_removeAllCookies")) {
           return;
         }
-        return WebViewSettingsMgr.removeAllCookies();
+        WebViewSettingsMgr.removeAllCookies();
       }
 
       @JavascriptInterface
