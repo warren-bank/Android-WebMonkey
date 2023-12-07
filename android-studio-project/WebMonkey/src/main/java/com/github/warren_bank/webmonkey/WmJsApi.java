@@ -337,7 +337,12 @@ public class WmJsApi {
         if (!grant(scriptName, scriptNamespace, "GM_setUserAgent")) {
           return;
         }
-        SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value);
+        SettingsUtils.setUserAgent(/* Context */ WmJsApi.this.activity, value, /* updateWebViewSettings */ false);
+        activity.runOnUiThread(new Runnable() {
+          public void run() {
+            WebViewSettingsMgr.updateUserAgent();
+          }
+        });
       }
 
       @JavascriptInterface

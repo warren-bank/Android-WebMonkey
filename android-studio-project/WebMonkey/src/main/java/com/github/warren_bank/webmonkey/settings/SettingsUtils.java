@@ -103,6 +103,10 @@ public class SettingsUtils {
   // --------------------
 
   public static void setUserAgent(Context context, String value) {
+    setUserAgent(context, value, true);
+  }
+
+  public static void setUserAgent(Context context, String value, boolean updateWebViewSettings) {
     SharedPreferences.Editor editor = getPrefsEditor(context);
     String pref_key   = null;
     String pref_value = null;
@@ -116,38 +120,33 @@ public class SettingsUtils {
       pref_value = context.getString(R.string.pref_useragent_array_values_1);
 
       editor.putString(pref_key, pref_value);
-
-      editor.commit();
-      return;
     }
 
     // Chrome desktop
-    if (value.toLowerCase().equals("chrome")) {
+    else if (value.toLowerCase().equals("chrome")) {
       pref_key   = context.getString(R.string.pref_useragent_key);
       pref_value = context.getString(R.string.pref_useragent_array_values_2);
 
       editor.putString(pref_key, pref_value);
-
-      editor.commit();
-      return;
     }
 
     // Custom URL
-    {
+    else {
       pref_key   = context.getString(R.string.pref_useragent_key);
       pref_value = context.getString(R.string.pref_useragent_array_values_3);
 
       editor.putString(pref_key, pref_value);
-    }
-    {
+
       pref_key   = context.getString(R.string.pref_custom_useragent_key);
       pref_value = value;
 
       editor.putString(pref_key, pref_value);
-
-      editor.commit();
-      return;
     }
+
+    editor.commit();
+
+    if (updateWebViewSettings)
+      WebViewSettingsMgr.updateUserAgent();
   }
 
   public static String getUserAgent(Context context) {
