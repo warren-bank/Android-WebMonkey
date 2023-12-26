@@ -7,211 +7,179 @@
   <style>
     body
       {font-family: sans-serif; font-size: 16px;}
-    div.heading > a
-      {display: block; float: left; width: 100px; text-decoration: none;}
-    div.heading > a > img.logo
-      {width: 100px; height: 100px;}
-    div.heading > div.title
-      {padding-left: 110px; vertical-align: top; font-size: 2em;}
-    hr
+    body > hr
       {clear: both;}
-    li
-      {line-height: 2.0em;}
-    li > a
-      {text-decoration: none;}
-    li > a:hover
-      {text-decoration: underline;}
-    li.offline
-      {text-decoration: line-through;}
-    h3.pre
+
+    div.container h3.pre,
+    div.container h4.pre,
       {margin-bottom: 0;}
-    h5.post
-      {margin-top: 0; padding-left: 1em; margin-bottom: 1em;}
+    div.container li > a
+      {text-decoration: none;}
+    div.container li > a:hover
+      {text-decoration: underline;}
+
+    div.container.heading > a
+      {display: block; float: left; width: 100px; text-decoration: none;}
+    div.container.heading > a > img.logo
+      {width: 100px; height: 100px;}
+    div.container.heading > div.title
+      {padding-left: 110px; vertical-align: top; font-size: 2em;}
+
+    div.container.userscripts li
+      {line-height: 2.0em;}
+    div.container.userscripts li.offline
+      {text-decoration: line-through;}
 
     @media screen and (min-width: 500px) {
-      div.heading > div.title
+      div.container.heading > div.title
         {line-height: 100px; padding-left: 125px;}
     }
 
-    sup.reference
+    div.container.userscripts sup.reference
       {font-size: 80%; padding-left: 0.25em;}
-    ol > li
-      {line-height: 1.25em;}
-    ol > li > div
-      {font-size: 90%;}
-    ol > li > ul > li
-      {font-size: 80%; line-height: 1.5em;}
+    div.container.notes
+      {font-size: 0.9em;}
+    div.container.notes li
+      {line-height: 1.5em;}
   </style>
 </head>
 <body>
-  <div class="heading">
+  <div class="container heading">
     <a target="_blank" href="https://github.com/warren-bank/Android-WebMonkey">
       <img class="logo" src="https://github.com/warren-bank/Android-WebMonkey/raw/v01/android-studio-project/WebMonkey/src/main/res/drawable/launcher.png" />
     </a>
     <div class="title">Welcome To The Jungle&hellip;</div>
   </div>
+
   <hr />
   <h2>Curated Userscript Collection:</h2>
 
   <hr />
-  <ul>
-    <li>
-      <h3 class="pre">ECMAScript 6+</h3><h5 class="post">(Android &gt;= 5.0)</h5>
-      <ul>
-        <li><a href="https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/external_website_helper/external_website_webmonkey.user.js">WebCast-Reloaded</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://warren-bank.github.io/crx-webcast-reloaded/external_website/index.html"><img src="img/open-external-website.png" /></a></sup><sup class="reference"><a target="_blank" href="http://webcast-reloaded.surge.sh/index.html"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ABC/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC.user.js">ABC</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://abc.com/browse"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ABC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC-News.user.js">ABC News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://abcnews.go.com/live"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBS/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS.user.js">CBS</a><sup class="reference">[4]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cbs.com/shows/all/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBS-News/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS-News.user.js">CBS News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cbsnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-NBC/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC.user.js">NBC</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.nbc.com/shows/all/a-z"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-NBC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC-News.user.js">NBC News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.nbcnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es6/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a><sup class="reference"><a target="_blank" href="https://www.pbs.org/shows/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-The-CW/raw/webmonkey-userscript/es5/webmonkey-userscript/The-CW.user.js">The CW</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cwtv.com/shows/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-BBC-iPlayer/raw/webmonkey-userscript/es5/webmonkey-userscript/BBC-iPlayer.user.js">BBC iPlayer (UK)</a><sup class="reference">[3]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.bbc.co.uk/iplayer"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBC-Gem/raw/webmonkey-userscript/es6/webmonkey-userscript/CBC-Gem.user.js">CBC Gem (Canada)</a><sup class="reference">[1]</sup><sup class="reference">[3]</sup><sup class="reference"><a target="_blank" href="https://gem.cbc.ca/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Tubi-TV/raw/webmonkey-userscript/es5/webmonkey-userscript/Tubi-TV.user.js">Tubi TV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://tubitv.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Crackle/raw/webmonkey-userscript/es6/webmonkey-userscript/Crackle.user.js">Crackle</a><sup class="reference">[6]</sup><sup class="reference"><a target="_blank" href="https://www.crackle.com/tos"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/live-tv/webmonkey-userscript/es6/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: live-tv</a><sup class="reference">[2]</sup><sup class="reference">[6]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#live-tv"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/on-demand/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: on-demand</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#on-demand"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Youtube/raw/webmonkey-userscript/es6/webmonkey-userscript/Youtube.user.js">Youtube</a><sup class="reference"><a target="_blank" href="https://www.youtube.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-US-TV-Go/raw/webmonkey-userscript/es5/webmonkey-userscript/US-TV-Go.user.js">US TV Go</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://ustvgo.tv/guide/index.html"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es6/webmonkey-userscript/123TV.user.js">123TV</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="http://123tv.live/category/united-states-usa/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Streameast/raw/webmonkey-userscript/es5/webmonkey-userscript/Streameast.user.js">Streameast</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streameast.live/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-YourSports-Stream/raw/webmonkey-userscript/es5/webmonkey-userscript/YourSports-Stream.user.js">YourSports Stream</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://yoursports.to/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ShowSport/raw/webmonkey-userscript/es5/webmonkey-userscript/ShowSport.user.js">ShowSport.xyz</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://freestreams-live1.com/live-tvchannel/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Radio-Net/raw/webmonkey-userscript/es5/webmonkey-userscript/Radio-Net.user.js">Radio.net</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.radio.net/top-stations"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-TuneIn-Radio/raw/webmonkey-userscript/es5/webmonkey-userscript/TuneIn-Radio.user.js">TuneIn Radio</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://tunein.com/radio/trending/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-MHD-TV-World/raw/webmonkey-userscript/es5/webmonkey-userscript/MHD-TV-World.user.js">MHD TV World</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://mhdtvworld.xyz/channel/english/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Daddylive/raw/webmonkey-userscript/es5/webmonkey-userscript/Daddylive.user.js">Daddylive</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://daddylive.me/24-hours-channels.php"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-LiveNewsOn/raw/webmonkey-userscript/es5/webmonkey-userscript/LiveNewsOn.user.js">LiveNewsOn</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.livenewsnow.com/category/american"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-DistroTV/raw/webmonkey-userscript/es5/webmonkey-userscript/DistroTV.user.js">DistroTV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://distro.tv/terms_of_use/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-AiryTV/raw/webmonkey-userscript/es5/webmonkey-userscript/AiryTV.user.js">AiryTV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://airy.tv/privacy-policy/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Vidcloud/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidcloud.user.js">Vidcloud</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidembed.cc/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Vidstreaming/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidstreaming.user.js">Vidstreaming (anime)</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streamani.net/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-9Anime-vc/raw/webmonkey-userscript/es5/webmonkey-userscript/9Anime-vc.user.js">9Anime.vc</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://9anime.vc/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li>
-          <a href="https://github.com/warren-bank/crx-IMDb/raw/webmonkey-userscript/es5/webmonkey-userscript/IMDb.user.js">IMDb</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.imdb.com/"><img src="img/open-external-website.png" /></a></sup>
-          <ul>
-            <li><a href="https://github.com/warren-bank/crx-VidSrc/raw/webmonkey-userscript/es5/webmonkey-userscript/VidSrc.user.js">VidSrc - Video streaming API</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidsrc.me/"><img src="img/open-external-website.png" /></a></sup></li>
-            <li><a href="https://github.com/warren-bank/crx-Gdrive-Player/raw/webmonkey-userscript/es5/webmonkey-userscript/Gdrive-Player.user.js">Gdrive Player - Google Drive Proxy API</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://gdriveplayer.to/"><img src="img/open-external-website.png" /></a></sup></li>
-            <li>
-              <a href="https://github.com/warren-bank/crx-2Embed/raw/webmonkey-userscript/es5/webmonkey-userscript/2Embed.user.js">2Embed</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.2embed.ru/"><img src="img/open-external-website.png" /></a></sup>
-              <ul>
-                <li><a href="https://github.com/warren-bank/crx-VidCloud-co/raw/webmonkey-userscript/es5/webmonkey-userscript/VidCloud-co.user.js">VidCloud.co</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidcloud.co/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-UpStream/raw/webmonkey-userscript/es5/webmonkey-userscript/UpStream.user.js">UpStream</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://upstream.to/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-Voxzer/raw/webmonkey-userscript/es5/webmonkey-userscript/Voxzer.user.js">Voxzer</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://player.voxzer.org/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-Streamlare/raw/webmonkey-userscript/es5/webmonkey-userscript/Streamlare.user.js">Streamlare</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streamlare.com/"><img src="img/open-external-website.png" /></a></sup></li>
-              </ul>
-            </li>
-            <li>
-              <a href="https://github.com/warren-bank/crx-Apimdb/raw/webmonkey-userscript/es5/webmonkey-userscript/Apimdb.user.js">Apimdb</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://v2.apimdb.net/"><img src="img/open-external-website.png" /></a></sup>
-              <ul>
-                <li><a href="https://github.com/warren-bank/crx-VOE/raw/webmonkey-userscript/es5/webmonkey-userscript/VOE.user.js">VOE</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://voe.sx/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-DoodStream/raw/webmonkey-userscript/es5/webmonkey-userscript/DoodStream.user.js">DoodStream</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://doodstream.com/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-MixDrop/raw/webmonkey-userscript/es5/webmonkey-userscript/MixDrop.user.js">MixDrop</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://mixdrop.co/"><img src="img/open-external-website.png" /></a></sup></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        </li>
-        <li class="offline"><a href="https://github.com/warren-bank/crx-StreamLive-To/raw/webmonkey-userscript/es6/webmonkey-userscript/StreamLive-To.user.js">StreamLive To</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://www.streamlive.to/channels"><img src="img/open-external-website.png" /></a></sup></li>
-      </ul>
-    </li>
-  </ul>
+  <a id="es5"></a>
+  <h3>ECMAScript 5</h3>
+  <div class="container userscripts">
+    <h4 class="pre">Utilities</h4>
+    <ul>
+      <li><a href="https://github.com/warren-bank/crx-password-manager/raw/webmonkey-userscript/es5/webmonkey-userscript/helper/homepage.user.js">home page</a><sup class="reference"><a target="_blank" href="about:blank"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-password-manager/raw/webmonkey-userscript/es5/webmonkey-userscript/password-manager.user.js">password manager</a></li>
+      <li><a href="https://github.com/warren-bank/crx-cookie-cleaner/raw/webmonkey-userscript/es5/webmonkey-userscript/cookie-cleaner.user.js">cookie cleaner</a></li>
+      <li><a href="https://github.com/warren-bank/crx-fixed-position-scroll-buttons/raw/webmonkey-userscript/es5/webmonkey-userscript/fixed-position-scroll-buttons.user.js">fixed position scroll buttons</a></li>
+    </ul>
+  </div>
+  <div class="container userscripts">
+    <h4 class="pre">Entertainment</h4>
+    <ul>
+      <li><a href="https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/external_website_helper/external_website_webmonkey.user.js">WebCast-Reloaded</a><sup class="reference"><a target="_blank" href="https://warren-bank.github.io/crx-webcast-reloaded/external_website/index.html"><img src="img/open-external-website.png" /></a></sup><sup class="reference"><a target="_blank" href="http://webcast-reloaded.surge.sh/index.html"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-ABC/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC.user.js">ABC</a><sup class="reference"><a target="_blank" href="https://abc.com/browse"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-ABC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC-News.user.js">ABC News</a><sup class="reference"><a target="_blank" href="https://abcnews.go.com/live"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-CBS/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS.user.js">CBS</a><sup class="reference">[4]</sup><sup class="reference"><a target="_blank" href="https://www.cbs.com/shows/all/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-CBS-News/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS-News.user.js">CBS News</a><sup class="reference"><a target="_blank" href="https://www.cbsnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-NBC/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC.user.js">NBC</a><sup class="reference"><a target="_blank" href="https://www.nbc.com/shows/all/a-z"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-NBC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC-News.user.js">NBC News</a><sup class="reference"><a target="_blank" href="https://www.nbcnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es5/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a><sup class="reference"><a target="_blank" href="https://www.pbs.org/shows/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-The-CW/raw/webmonkey-userscript/es5/webmonkey-userscript/The-CW.user.js">The CW</a><sup class="reference"><a target="_blank" href="https://www.cwtv.com/shows/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-BBC-iPlayer/raw/webmonkey-userscript/es5/webmonkey-userscript/BBC-iPlayer.user.js">BBC iPlayer (UK)</a><sup class="reference">[3]</sup><sup class="reference"><a target="_blank" href="https://www.bbc.co.uk/iplayer"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-CBC-Gem/raw/webmonkey-userscript/es5/webmonkey-userscript/CBC-Gem.user.js">CBC Gem (Canada)</a><sup class="reference">[1]</sup><sup class="reference">[3]</sup><sup class="reference"><a target="_blank" href="https://gem.cbc.ca/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Tubi-TV/raw/webmonkey-userscript/es5/webmonkey-userscript/Tubi-TV.user.js">Tubi TV</a><sup class="reference"><a target="_blank" href="https://tubitv.com/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Crackle/raw/webmonkey-userscript/es5/webmonkey-userscript/Crackle.user.js">Crackle</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.crackle.com/tos"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/live-tv/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: live-tv</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#live-tv"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/on-demand/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: on-demand</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#on-demand"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Youtube/raw/webmonkey-userscript/es5/webmonkey-userscript/Youtube.user.js">Youtube</a><sup class="reference"><a target="_blank" href="https://www.youtube.com/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-US-TV-Go/raw/webmonkey-userscript/es5/webmonkey-userscript/US-TV-Go.user.js">US TV Go</a><sup class="reference"><a target="_blank" href="https://ustvgo.tv/guide/index.html"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es5/webmonkey-userscript/123TV.user.js">123TV</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="http://123tv.live/category/united-states-usa/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Streameast/raw/webmonkey-userscript/es5/webmonkey-userscript/Streameast.user.js">Streameast</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://streameast.live/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-YourSports-Stream/raw/webmonkey-userscript/es5/webmonkey-userscript/YourSports-Stream.user.js">YourSports Stream</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="http://yoursports.to/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-ShowSport/raw/webmonkey-userscript/es5/webmonkey-userscript/ShowSport.user.js">ShowSport.xyz</a><sup class="reference"><a target="_blank" href="http://freestreams-live1.com/live-tvchannel/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Radio-Net/raw/webmonkey-userscript/es5/webmonkey-userscript/Radio-Net.user.js">Radio.net</a><sup class="reference"><a target="_blank" href="https://www.radio.net/top-stations"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-TuneIn-Radio/raw/webmonkey-userscript/es5/webmonkey-userscript/TuneIn-Radio.user.js">TuneIn Radio</a><sup class="reference"><a target="_blank" href="https://tunein.com/radio/trending/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-MHD-TV-World/raw/webmonkey-userscript/es5/webmonkey-userscript/MHD-TV-World.user.js">MHD TV World</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://mhdtvworld.xyz/channel/english/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Daddylive/raw/webmonkey-userscript/es5/webmonkey-userscript/Daddylive.user.js">Daddylive</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://daddylive.me/24-hours-channels.php"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-LiveNewsOn/raw/webmonkey-userscript/es5/webmonkey-userscript/LiveNewsOn.user.js">LiveNewsOn</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://www.livenewsnow.com/category/american"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-DistroTV/raw/webmonkey-userscript/es5/webmonkey-userscript/DistroTV.user.js">DistroTV</a><sup class="reference"><a target="_blank" href="https://distro.tv/terms_of_use/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-AiryTV/raw/webmonkey-userscript/es5/webmonkey-userscript/AiryTV.user.js">AiryTV</a><sup class="reference"><a target="_blank" href="https://airy.tv/privacy-policy/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Vidcloud/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidcloud.user.js">Vidcloud</a><sup class="reference"><a target="_blank" href="https://vidembed.cc/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Vidstreaming/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidstreaming.user.js">Vidstreaming (anime)</a><sup class="reference"><a target="_blank" href="https://streamani.net/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-9Anime-vc/raw/webmonkey-userscript/es5/webmonkey-userscript/9Anime-vc.user.js">9Anime.vc</a><sup class="reference"><a target="_blank" href="https://9anime.vc/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li>
+        <a href="https://github.com/warren-bank/crx-IMDb/raw/webmonkey-userscript/es5/webmonkey-userscript/IMDb.user.js">IMDb</a><sup class="reference"><a target="_blank" href="https://www.imdb.com/"><img src="img/open-external-website.png" /></a></sup>
+        <ul>
+          <li><a href="https://github.com/warren-bank/crx-VidSrc/raw/webmonkey-userscript/es5/webmonkey-userscript/VidSrc.user.js">VidSrc - Video streaming API</a><sup class="reference"><a target="_blank" href="https://vidsrc.me/"><img src="img/open-external-website.png" /></a></sup></li>
+          <li><a href="https://github.com/warren-bank/crx-Gdrive-Player/raw/webmonkey-userscript/es5/webmonkey-userscript/Gdrive-Player.user.js">Gdrive Player - Google Drive Proxy API</a><sup class="reference"><a target="_blank" href="http://gdriveplayer.to/"><img src="img/open-external-website.png" /></a></sup></li>
+          <li>
+            <a href="https://github.com/warren-bank/crx-2Embed/raw/webmonkey-userscript/es5/webmonkey-userscript/2Embed.user.js">2Embed</a><sup class="reference"><a target="_blank" href="https://www.2embed.ru/"><img src="img/open-external-website.png" /></a></sup>
+            <ul>
+              <li><a href="https://github.com/warren-bank/crx-VidCloud-co/raw/webmonkey-userscript/es5/webmonkey-userscript/VidCloud-co.user.js">VidCloud.co</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://vidcloud.co/"><img src="img/open-external-website.png" /></a></sup></li>
+              <li><a href="https://github.com/warren-bank/crx-UpStream/raw/webmonkey-userscript/es5/webmonkey-userscript/UpStream.user.js">UpStream</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://upstream.to/"><img src="img/open-external-website.png" /></a></sup></li>
+              <li><a href="https://github.com/warren-bank/crx-Voxzer/raw/webmonkey-userscript/es5/webmonkey-userscript/Voxzer.user.js">Voxzer</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://player.voxzer.org/"><img src="img/open-external-website.png" /></a></sup></li>
+              <li><a href="https://github.com/warren-bank/crx-Streamlare/raw/webmonkey-userscript/es5/webmonkey-userscript/Streamlare.user.js">Streamlare</a><sup class="reference"><a target="_blank" href="https://streamlare.com/"><img src="img/open-external-website.png" /></a></sup></li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://github.com/warren-bank/crx-Apimdb/raw/webmonkey-userscript/es5/webmonkey-userscript/Apimdb.user.js">Apimdb</a><sup class="reference"><a target="_blank" href="https://v2.apimdb.net/"><img src="img/open-external-website.png" /></a></sup>
+            <ul>
+              <li><a href="https://github.com/warren-bank/crx-VOE/raw/webmonkey-userscript/es5/webmonkey-userscript/VOE.user.js">VOE</a><sup class="reference"><a target="_blank" href="https://voe.sx/"><img src="img/open-external-website.png" /></a></sup></li>
+              <li><a href="https://github.com/warren-bank/crx-DoodStream/raw/webmonkey-userscript/es5/webmonkey-userscript/DoodStream.user.js">DoodStream</a><sup class="reference"><a target="_blank" href="https://doodstream.com/"><img src="img/open-external-website.png" /></a></sup></li>
+              <li><a href="https://github.com/warren-bank/crx-MixDrop/raw/webmonkey-userscript/es5/webmonkey-userscript/MixDrop.user.js">MixDrop</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://mixdrop.co/"><img src="img/open-external-website.png" /></a></sup></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="offline"><a href="https://github.com/warren-bank/crx-StreamLive-To/raw/webmonkey-userscript/es5/webmonkey-userscript/StreamLive-To.user.js">StreamLive To</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://www.streamlive.to/channels"><img src="img/open-external-website.png" /></a></sup></li>
+    </ul>
+  </div>
 
   <hr />
-  <ul>
-    <li>
-      <h3 class="pre">ECMAScript 5</h3><h5 class="post">(Android &lt; 5.0)</h5>
-      <ul>
-        <li><a href="https://github.com/warren-bank/crx-webcast-reloaded/raw/gh-pages/external_website_helper/external_website_webmonkey.user.js">WebCast-Reloaded</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://warren-bank.github.io/crx-webcast-reloaded/external_website/index.html"><img src="img/open-external-website.png" /></a></sup><sup class="reference"><a target="_blank" href="http://webcast-reloaded.surge.sh/index.html"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ABC/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC.user.js">ABC</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://abc.com/browse"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ABC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/ABC-News.user.js">ABC News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://abcnews.go.com/live"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBS/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS.user.js">CBS</a><sup class="reference">[4]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cbs.com/shows/all/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBS-News/raw/webmonkey-userscript/es5/webmonkey-userscript/CBS-News.user.js">CBS News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cbsnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-NBC/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC.user.js">NBC</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.nbc.com/shows/all/a-z"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-NBC-News/raw/webmonkey-userscript/es5/webmonkey-userscript/NBC-News.user.js">NBC News</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.nbcnews.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es5/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a><sup class="reference"><a target="_blank" href="https://www.pbs.org/shows/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-The-CW/raw/webmonkey-userscript/es5/webmonkey-userscript/The-CW.user.js">The CW</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.cwtv.com/shows/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-BBC-iPlayer/raw/webmonkey-userscript/es5/webmonkey-userscript/BBC-iPlayer.user.js">BBC iPlayer (UK)</a><sup class="reference">[3]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.bbc.co.uk/iplayer"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-CBC-Gem/raw/webmonkey-userscript/es5/webmonkey-userscript/CBC-Gem.user.js">CBC Gem (Canada)</a><sup class="reference">[1]</sup><sup class="reference">[3]</sup><sup class="reference"><a target="_blank" href="https://gem.cbc.ca/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Tubi-TV/raw/webmonkey-userscript/es5/webmonkey-userscript/Tubi-TV.user.js">Tubi TV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://tubitv.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Crackle/raw/webmonkey-userscript/es5/webmonkey-userscript/Crackle.user.js">Crackle</a><sup class="reference">[6]</sup><sup class="reference"><a target="_blank" href="https://www.crackle.com/tos"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/live-tv/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: live-tv</a><sup class="reference">[2]</sup><sup class="reference">[6]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#live-tv"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/on-demand/webmonkey-userscript/es5/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: on-demand</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#on-demand"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Youtube/raw/webmonkey-userscript/es5/webmonkey-userscript/Youtube.user.js">Youtube</a><sup class="reference"><a target="_blank" href="https://www.youtube.com/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-US-TV-Go/raw/webmonkey-userscript/es5/webmonkey-userscript/US-TV-Go.user.js">US TV Go</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://ustvgo.tv/guide/index.html"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es5/webmonkey-userscript/123TV.user.js">123TV</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="http://123tv.live/category/united-states-usa/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Streameast/raw/webmonkey-userscript/es5/webmonkey-userscript/Streameast.user.js">Streameast</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streameast.live/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-YourSports-Stream/raw/webmonkey-userscript/es5/webmonkey-userscript/YourSports-Stream.user.js">YourSports Stream</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://yoursports.to/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-ShowSport/raw/webmonkey-userscript/es5/webmonkey-userscript/ShowSport.user.js">ShowSport.xyz</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://freestreams-live1.com/live-tvchannel/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Radio-Net/raw/webmonkey-userscript/es5/webmonkey-userscript/Radio-Net.user.js">Radio.net</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.radio.net/top-stations"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-TuneIn-Radio/raw/webmonkey-userscript/es5/webmonkey-userscript/TuneIn-Radio.user.js">TuneIn Radio</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://tunein.com/radio/trending/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-MHD-TV-World/raw/webmonkey-userscript/es5/webmonkey-userscript/MHD-TV-World.user.js">MHD TV World</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://mhdtvworld.xyz/channel/english/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Daddylive/raw/webmonkey-userscript/es5/webmonkey-userscript/Daddylive.user.js">Daddylive</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://daddylive.me/24-hours-channels.php"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-LiveNewsOn/raw/webmonkey-userscript/es5/webmonkey-userscript/LiveNewsOn.user.js">LiveNewsOn</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.livenewsnow.com/category/american"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-DistroTV/raw/webmonkey-userscript/es5/webmonkey-userscript/DistroTV.user.js">DistroTV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://distro.tv/terms_of_use/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-AiryTV/raw/webmonkey-userscript/es5/webmonkey-userscript/AiryTV.user.js">AiryTV</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://airy.tv/privacy-policy/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Vidcloud/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidcloud.user.js">Vidcloud</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidembed.cc/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-Vidstreaming/raw/webmonkey-userscript/es5/webmonkey-userscript/Vidstreaming.user.js">Vidstreaming (anime)</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streamani.net/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li><a href="https://github.com/warren-bank/crx-9Anime-vc/raw/webmonkey-userscript/es5/webmonkey-userscript/9Anime-vc.user.js">9Anime.vc</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://9anime.vc/"><img src="img/open-external-website.png" /></a></sup></li>
-        <li>
-          <a href="https://github.com/warren-bank/crx-IMDb/raw/webmonkey-userscript/es5/webmonkey-userscript/IMDb.user.js">IMDb</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.imdb.com/"><img src="img/open-external-website.png" /></a></sup>
-          <ul>
-            <li><a href="https://github.com/warren-bank/crx-VidSrc/raw/webmonkey-userscript/es5/webmonkey-userscript/VidSrc.user.js">VidSrc - Video streaming API</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidsrc.me/"><img src="img/open-external-website.png" /></a></sup></li>
-            <li><a href="https://github.com/warren-bank/crx-Gdrive-Player/raw/webmonkey-userscript/es5/webmonkey-userscript/Gdrive-Player.user.js">Gdrive Player - Google Drive Proxy API</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="http://gdriveplayer.to/"><img src="img/open-external-website.png" /></a></sup></li>
-            <li>
-              <a href="https://github.com/warren-bank/crx-2Embed/raw/webmonkey-userscript/es5/webmonkey-userscript/2Embed.user.js">2Embed</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.2embed.ru/"><img src="img/open-external-website.png" /></a></sup>
-              <ul>
-                <li><a href="https://github.com/warren-bank/crx-VidCloud-co/raw/webmonkey-userscript/es5/webmonkey-userscript/VidCloud-co.user.js">VidCloud.co</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://vidcloud.co/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-UpStream/raw/webmonkey-userscript/es5/webmonkey-userscript/UpStream.user.js">UpStream</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://upstream.to/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-Voxzer/raw/webmonkey-userscript/es5/webmonkey-userscript/Voxzer.user.js">Voxzer</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://player.voxzer.org/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-Streamlare/raw/webmonkey-userscript/es5/webmonkey-userscript/Streamlare.user.js">Streamlare</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://streamlare.com/"><img src="img/open-external-website.png" /></a></sup></li>
-              </ul>
-            </li>
-            <li>
-              <a href="https://github.com/warren-bank/crx-Apimdb/raw/webmonkey-userscript/es5/webmonkey-userscript/Apimdb.user.js">Apimdb</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://v2.apimdb.net/"><img src="img/open-external-website.png" /></a></sup>
-              <ul>
-                <li><a href="https://github.com/warren-bank/crx-VOE/raw/webmonkey-userscript/es5/webmonkey-userscript/VOE.user.js">VOE</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://voe.sx/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-DoodStream/raw/webmonkey-userscript/es5/webmonkey-userscript/DoodStream.user.js">DoodStream</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://doodstream.com/"><img src="img/open-external-website.png" /></a></sup></li>
-                <li><a href="https://github.com/warren-bank/crx-MixDrop/raw/webmonkey-userscript/es5/webmonkey-userscript/MixDrop.user.js">MixDrop</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://mixdrop.co/"><img src="img/open-external-website.png" /></a></sup></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="offline"><a href="https://github.com/warren-bank/crx-StreamLive-To/raw/webmonkey-userscript/es5/webmonkey-userscript/StreamLive-To.user.js">StreamLive To</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://www.streamlive.to/channels"><img src="img/open-external-website.png" /></a></sup></li>
-      </ul>
-    </li>
-  </ul>
+  <a id="es6"></a>
+  <h3>ECMAScript 6+</h3>
+  <div class="container userscripts">
+    <h4 class="pre">Entertainment</h4>
+    <ul>
+      <li><a href="https://github.com/warren-bank/crx-pbs-passport/raw/webmonkey-userscript/es6/webmonkey-userscript/PBS-Passport.user.js">PBS Passport</a><sup class="reference"><a target="_blank" href="https://www.pbs.org/shows/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-CBC-Gem/raw/webmonkey-userscript/es6/webmonkey-userscript/CBC-Gem.user.js">CBC Gem (Canada)</a><sup class="reference">[1]</sup><sup class="reference">[3]</sup><sup class="reference"><a target="_blank" href="https://gem.cbc.ca/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Crackle/raw/webmonkey-userscript/es6/webmonkey-userscript/Crackle.user.js">Crackle</a><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://www.crackle.com/tos"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Pluto-TV/raw/live-tv/webmonkey-userscript/es6/webmonkey-userscript/Pluto-TV.user.js">Pluto TV: live-tv</a><sup class="reference">[2]</sup><sup class="reference">[5]</sup><sup class="reference"><a target="_blank" href="https://pluto.tv/careers#live-tv"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-Youtube/raw/webmonkey-userscript/es6/webmonkey-userscript/Youtube.user.js">Youtube</a><sup class="reference"><a target="_blank" href="https://www.youtube.com/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li><a href="https://github.com/warren-bank/crx-123TV/raw/webmonkey-userscript/es6/webmonkey-userscript/123TV.user.js">123TV</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="http://123tv.live/category/united-states-usa/"><img src="img/open-external-website.png" /></a></sup></li>
+      <li class="offline"><a href="https://github.com/warren-bank/crx-StreamLive-To/raw/webmonkey-userscript/es6/webmonkey-userscript/StreamLive-To.user.js">StreamLive To</a><sup class="reference">[2]</sup><sup class="reference"><a target="_blank" href="https://www.streamlive.to/channels"><img src="img/open-external-website.png" /></a></sup></li>
+    </ul>
+  </div>
 
   <hr />
-  <h3 class="pre">[Notes]:</h3>
-  <ol>
-    <li>
-      <div>website requires login</div>
-    </li>
-    <li>
-      <div>video host requires <i>Referer</i> request header</div>
-    </li>
-    <li>
-      <div>video host only permits access to IP addresses that originate from within a geo-fenced region;</div>
-      <div>a VPN service can be used to satisfy this requirement</div>
-    </li>
-    <li>
-      <div>video streams are DRM protected</div>
-    </li>
-    <li>
-      <div>ES6 URL links to ES5 userscript</div>
-    </li>
-    <li>
-      <div>ES6 and ES5 userscripts behave differently:</div>
-      <ul>
-        <li>ES6 userscript works with the existing webpage</li>
-        <li>ES5 userscript replaces the existing webpage with an entirely new interface, which does not require modern Javascript</li>
-        <li>devices running Android &gt;= 5.0 can run either version, and the user can choose which they prefer</li>
-      </ul>
-    </li>
-  </ol>
+  <div class="container notes">
+    <h4 class="pre">Notes:</h4>
+    <ul>
+      <li>
+        unless otherwise noted, all userscripts are written in ECMAScript 5 (ES5)
+        <ul>
+          <li>can be used by both modern web browsers, and very old browsers</li>
+          <li>they are tested and confirmed to work in Android 4.4 WebView, which is Chrome 30</li>
+          <li>Android 5.0 WebView became user-upgradable, and is assumed to be modern</li>
+        </ul>
+      </li>
+      <li>
+        in <a href="#es6"><i>ECMAScript 6+</i></a>, all userscripts are written in ECMAScript 6 (ES6) or higher
+        <ul>
+          <li>this is only done when ES6+ features greatly enhance or simplify the ES5 code</li>
+          <li>devices running Android &gt;= 5.0 can run either version, and the user can choose which they prefer</li>
+          <li>
+            in some instances, the ES6 and ES5 userscripts behave differently:
+            <ul>
+              <li>ES6 userscript works with the existing webpage</li>
+              <li>ES5 userscript replaces the existing webpage with an entirely new interface, which does not require modern Javascript</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h4 class="pre">[Notes]:</h4>
+    <ol>
+      <li>website requires login</li>
+      <li>video host requires <i>Referer</i> request header</li>
+      <li>video host only permits access to IP addresses that originate from within a geo-fenced region; a VPN service can be used to satisfy this requirement</li>
+      <li>video streams are DRM protected</li>
+      <li>ES6 and ES5 userscripts behave differently</li>
+    </ol>
+  </div>
 
 </body>
 </html>
