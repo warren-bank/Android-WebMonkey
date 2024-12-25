@@ -1,2 +1,10 @@
 https://commons.wikimedia.org/wiki/File:External_link_font_awesome.svg
 https://upload.wikimedia.org/wikipedia/commons/6/6a/External_link_font_awesome.svg
+  This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license.
+  Attribution: Font Awesome by Dave Gandy - https://fortawesome.github.com/Font-Awesome
+
+https://uxwing.com/color-wheel-icon/
+https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/color-wheel-icon.svg
+https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=16x16&file=color-wheel-icon.png&category_slug=arts-graphic-shapes
+https://uxwing.com/license/
+  License: All icons on this site can be used in personal, commercial, and client projects without any attribution or credit.
