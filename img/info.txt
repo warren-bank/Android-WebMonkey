@@ -8,3 +8,12 @@ https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/color-w
 https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=16x16&file=color-wheel-icon.png&category_slug=arts-graphic-shapes
 https://uxwing.com/license/
   License: All icons on this site can be used in personal, commercial, and client projects without any attribution or credit.
+
+https://www.svgrepo.com/vectors/question/
+https://www.svgrepo.com/svg/522998/question-square
+https://www.svgrepo.com/download/522998/question-square.svg
+https://www.svgrepo.com/page/licensing/#CC%20Attribution
+  LICENSE: CC Attribution License
+  AUTHOR: Solar Icons - https://www.svgrepo.com/author/Solar%20Icons/
+
+https://cloudconvert.com/svg-to-png
