@@ -135,6 +135,9 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
   // ---------------------------------------------------------------------------------------------
 
   private void initWebView(WebViewGm webView) {
+    WmDownloadListener downloadListener = new WmDownloadListener(/* Activity */ this, /* WebView */ webView);
+    webView.setDownloadListener(downloadListener);
+
     WebViewSettingsMgr.initStaticResources(/* Context */ this, /* WebView */ webView);
     WebViewSettingsMgr.initWebView();
   }

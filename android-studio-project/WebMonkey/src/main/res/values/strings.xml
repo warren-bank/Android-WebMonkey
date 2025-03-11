@@ -182,4 +182,9 @@
   <string name="alertdialog_badssl_pageloadbehavior_label_button_positive">@string/pref_pageloadbehavior_array_name_proceed</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_button_negative">@string/pref_pageloadbehavior_array_name_cancel</string>
 
+  <!-- AlertDialog: WmDownloadListener -->
+  <string name="alertdialog_downloadlistener_title">Download URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Save File As..</string>
+  <string name="alertdialog_downloadlistener_label_button_negative">@string/pref_pageloadbehavior_array_name_cancel</string>
+
 </resources>
