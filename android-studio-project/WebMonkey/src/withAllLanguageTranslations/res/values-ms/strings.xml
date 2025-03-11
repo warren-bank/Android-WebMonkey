@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sijil belum lagi sah.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Kuasa sijil tidak dipercayai.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Muat turun URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Simpan Fail Sebagai..</string>
 </resources>

@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">प्रमाणपत्र अधिकार विश्वस्त छैन.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">डाउनलोड गर्नुहोस् URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">यस रूपमा फाइल बचत गर्नुहोस्..</string>
 </resources>

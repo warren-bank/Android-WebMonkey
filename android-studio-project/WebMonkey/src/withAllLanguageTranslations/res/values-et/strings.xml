@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikaat ei ole veel kehtiv.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikaadiasutus ei ole usaldusväärne.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Laadi alla URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Faili salvestamine..</string>
 </resources>

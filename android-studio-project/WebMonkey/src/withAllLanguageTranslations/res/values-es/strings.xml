@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">El certificado aún no es válido.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">La entidad emisora de certificados no es de confianza.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Descargar URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Guardar Archivo Como..</string>
 </resources>

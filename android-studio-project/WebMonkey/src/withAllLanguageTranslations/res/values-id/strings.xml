@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikat belum valid.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Otoritas sertifikat tidak dipercaya.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Unduh URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Simpan Berkas Sebagai..</string>
 </resources>

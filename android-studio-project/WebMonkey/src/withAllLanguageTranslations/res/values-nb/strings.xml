@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikatet er ikke gyldig ennå.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikatutsteder er ikke klarert.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Last ned URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Lagre fil som..</string>
 </resources>

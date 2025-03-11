@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">సర్టిఫికేట్ ఇంకా చెల్లునది కాదు.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL నమ్మకం.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">డౌన్లోడ్ URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">దస్త్రం వలె దాయుము..</string>
 </resources>

@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">प्रमाणपत्र अभी मान्य नहीं है.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">प्रमाणपत्र प्राधिकारी विश्वसनीय नहीं है.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">डाउनलोड करें URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">फ़ाइल इस रूप में सहेजें..</string>
 </resources>

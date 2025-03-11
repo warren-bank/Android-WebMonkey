@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">സാക്ഷ്യപത്രം ഇതുവരെ സാധിച്ചിട്ടില്ല.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">സര്ട്ടിഫിക്കേറ്റ് അധികാരം വിശ്വസിക്കില്ല.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">ഡൌണ്ലോട് URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">ഫയല് സൂക്ഷിയ്ക്കുക..</string>
 </resources>

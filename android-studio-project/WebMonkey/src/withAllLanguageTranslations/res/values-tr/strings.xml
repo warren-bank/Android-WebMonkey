@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifika henüz geçerli değil.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifika yetkilisi güvenilir değil.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Karşıdan Yükle URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Dosyayı Farklı Kaydet..</string>
 </resources>

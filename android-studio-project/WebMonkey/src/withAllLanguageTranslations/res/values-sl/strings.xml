@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikat še ni veljaven.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Pooblastilo za potrdilo ni overjeno.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Prenesi URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Shrani datoteko kot..</string>
 </resources>

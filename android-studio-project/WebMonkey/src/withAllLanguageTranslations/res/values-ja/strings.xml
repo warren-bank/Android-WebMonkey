@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">証明書はまだ有効ではありません.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">認証局は信頼されていません.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">ダウンロード URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">名前を付けて保存..</string>
 </resources>

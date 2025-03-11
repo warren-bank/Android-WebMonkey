@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">SSL error.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">SSL error.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">இறக்குபவர் URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">கோப்பினை சேமி..</string>
 </resources>

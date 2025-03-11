@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">પ્રમાણપત્ર હજુ યોગ્ય નથી.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">પ્રમાણપત્ર સત્તા વિશ્ર્વાસપાત્ર નથી.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">ડાઉનલોડ URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">ફાઈલને આ રીતે સંગ્રહો..</string>
 </resources>

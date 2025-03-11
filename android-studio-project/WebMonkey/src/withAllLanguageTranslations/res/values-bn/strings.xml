@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">সার্টিফিকেট এখনো বৈধ নয়.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">সার্টিফিকেটের কর্তৃত্ব বিশ্বস্ত নয়.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">ডাউনলোড করুন URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">ফাইল সংরক্ষণ করো..</string>
 </resources>

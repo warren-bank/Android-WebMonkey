@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Сертифікат ще не дійсний.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Авторитет сертифіката не є надійним.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Звантажити URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Зберегти файл як..</string>
 </resources>

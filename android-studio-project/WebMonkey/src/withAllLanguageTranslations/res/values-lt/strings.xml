@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Sertifikatas dar neišduotas.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Sertifikavimo institucija nėra patikima.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Atsiųsti URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Įrašyti failą kaip..</string>
 </resources>

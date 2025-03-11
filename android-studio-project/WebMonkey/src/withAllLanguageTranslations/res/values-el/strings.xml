@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Το πιστοποιητικό δεν είναι ακόμα έγκυρο..</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Η αρχή έκδοσης πιστοποιητικών δεν είναι έμπιστη.</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">&amp; Λήψη URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Αποθήκευση αρχείου ως..</string>
 </resources>

@@ -46,4 +46,6 @@
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_notyetvalid">Certifikát ještě není platný.</string>
   <string name="alertdialog_badssl_pageloadbehavior_reason_ssl_untrusted">Certifikační autorita není důvěryhodná..</string>
   <string name="alertdialog_badssl_pageloadbehavior_label_url">URL:</string>
+  <string name="alertdialog_downloadlistener_title">Stáhnout URL?</string>
+  <string name="alertdialog_downloadlistener_label_button_positive">Uložit soubor jako..</string>
 </resources>
