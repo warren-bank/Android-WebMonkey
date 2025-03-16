@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>test: file input (multiple selection, any type)</title>
+</head>
+<body>
+  <input type="file" multiple />
+  <div><pre></pre></div>
+  <script>
+    const $input = document.querySelector('input')
+    const $pre   = document.querySelector('pre')
+
+    $input.onchange = () => {
+      $pre.textContent = `${$input.files.length} files:\n  ${[...$input.files].map(f => f.name).join("\n  ")}`
+    }
+  </script>
+</body>
+</html>

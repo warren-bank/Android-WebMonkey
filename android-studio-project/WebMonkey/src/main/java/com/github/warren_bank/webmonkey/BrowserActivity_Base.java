@@ -1,5 +1,7 @@
 package com.github.warren_bank.webmonkey;
 
+import com.github.warren_bank.webmonkey.file_input.CaptureImageFileHelper;
+import com.github.warren_bank.webmonkey.file_input.InputFileHelper;
 import com.github.warren_bank.webmonkey.settings.SettingsActivity;
 import com.github.warren_bank.webmonkey.settings.WebViewSettingsMgr;
 import com.github.warren_bank.webmonkey.util.BackupRestoreHelper;
@@ -99,6 +101,12 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
     handled = BackupRestoreHelper.onActivityResult(BrowserActivity_Base.this, scriptStore, requestCode, resultCode, data);
     if (handled) return;
 
+    handled = InputFileHelper.onActivityResult(requestCode, resultCode, data);
+    if (handled) return;
+
+    handled = CaptureImageFileHelper.onActivityResult(BrowserActivity_Base.this, requestCode, resultCode, data);
+    if (handled) return;
+
     handled = SaveFileHelper.onActivityResult(BrowserActivity_Base.this, requestCode, resultCode, data);
     if (handled) return;
   }
@@ -137,6 +145,9 @@ public class BrowserActivity_Base extends WebViewGmImpl implements IBrowser {
   private void initWebView(WebViewGm webView) {
     WmDownloadListener downloadListener = new WmDownloadListener(/* Activity */ this, /* WebView */ webView);
     webView.setDownloadListener(downloadListener);
+
+    WmWebChromeClient webChromeClient = new WmWebChromeClient(/* Activity */ this);
+    webView.setWebChromeClient(webChromeClient);
 
     WebViewSettingsMgr.initStaticResources(/* Context */ this, /* WebView */ webView);
     WebViewSettingsMgr.initWebView();
