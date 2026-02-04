@@ -27,10 +27,12 @@ import at.pardus.android.webview.gm.store.ui.ScriptList;
 import at.pardus.android.webview.gm.store.ui.ScriptManagerActivity;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
 import java.util.EmptyStackException;
@@ -162,6 +164,15 @@ public class WebViewGmImpl extends ScriptManagerActivity {
     } catch (EmptyStackException e) {
       super.onBackPressed();
     }
+  }
+
+  @Override
+  public void setContentView(View view) {
+    super.setContentView(view);
+
+    // fix for Android 15+ edge-to-edge layout enforcement
+    if ((view != null) && (Build.VERSION.SDK_INT >= 14))
+      view.setFitsSystemWindows(true);
   }
 
 }

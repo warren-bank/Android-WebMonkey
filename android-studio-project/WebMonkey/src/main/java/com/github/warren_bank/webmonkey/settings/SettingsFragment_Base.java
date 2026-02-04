@@ -4,10 +4,14 @@ import com.github.warren_bank.webmonkey.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class SettingsFragment_Base extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -35,6 +39,17 @@ public class SettingsFragment_Base extends PreferenceFragment implements SharedP
     initCustomPrefs();
 
     getPrefs().registerOnSharedPreferenceChangeListener(this);
+  }
+
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    View view = super.onCreateView(inflater, container, savedInstanceState);
+
+    // fix for Android 15+ edge-to-edge layout enforcement
+    if ((view != null) && (Build.VERSION.SDK_INT >= 14))
+      view.setFitsSystemWindows(true);
+
+    return view;
   }
 
   @Override
