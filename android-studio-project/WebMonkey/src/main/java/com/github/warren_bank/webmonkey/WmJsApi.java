@@ -13,6 +13,7 @@ import at.pardus.android.webview.gm.util.ScriptJsTemplateHelper;
 import at.pardus.android.webview.gm.util.ScriptPermissionHelper;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -158,9 +159,10 @@ public class WmJsApi {
             }
           }
 
-          if (in.resolveActivity(WmJsApi.this.activity.getPackageManager()) != null) {
-            WmJsApi.this.activity.startActivity(in);
-          }
+          WmJsApi.this.activity.startActivity(in);
+        }
+        catch(ActivityNotFoundException e) {
+          Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not resolve to any matching Activity", e);
         }
         catch(Exception e) {
           Log.e(WmJsApi.TAG, "Call to \"startIntent\" did not supply valid input and raised the following error", e);
