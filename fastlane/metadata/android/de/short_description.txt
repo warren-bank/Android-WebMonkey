@@ -1,0 +1,1 @@
+Simpler, leichter Web-Browser mit Unterstützung für Greasemonkey-Benutzerskripte

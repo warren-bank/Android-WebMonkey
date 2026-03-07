@@ -1,0 +1,1 @@
+No-frills light-weight web browser with support for Greasemonkey user scripts
